@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 30
+@export var move_speed : float = 100
 @export var starting_direction : Vector2 = Vector2(0, 1)
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 
+@onready var all_interactions = []
+@onready var interact_label = $"InteractionComponents/InteractLabel"
+
 func _ready():
 	update_animation_parameters(starting_direction)
+	update_interactions()
 	#position = Vector2(100, 100)
 
 func _physics_process(_delta):
@@ -23,6 +27,9 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	pick_new_state()
+	
+	if Input.is_action_just_pressed("interact"):
+		execute_interaction()
 
 func update_animation_parameters(move_input : Vector2):
 	if (move_input != Vector2.ZERO):
@@ -34,3 +41,26 @@ func pick_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
+
+#Interaction methods
+
+func _on_interaction_area_area_entered(area):
+	all_interactions.insert(0, area)
+	update_interactions()
+
+func _on_interaction_area_area_exited(area):
+	all_interactions.erase(area)
+	update_interactions()
+
+func update_interactions():
+	if all_interactions:
+		interact_label.text = all_interactions[0].interact_label
+	else:
+		interact_label.text = ""
+
+func execute_interaction():
+	if all_interactions:
+		var cur_interaction = all_interactions[0]
+		match cur_interaction.interact_type:
+			"print" : print(cur_interaction.interact_value)
+			"cooler" : cur_interaction.fill()

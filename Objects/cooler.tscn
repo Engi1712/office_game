@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://b8as3kshhxx86"]
+
+[ext_resource type="Script" path="res://Objects/cooler.gd" id="1_frt06"]
+[ext_resource type="Texture2D" uid="uid://bn6c0kf7gom72" path="res://Art/Office Pack/Objects/cooler.png" id="1_ltr5v"]
+[ext_resource type="Script" path="res://Objects/cooler_interaction.gd" id="3_paej8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdite"]
+size = Vector2(10, 32)
+
+[sub_resource type="Animation" id="Animation_qlnhp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_651i7"]
+resource_name = "fill"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xuv0g"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sonnt"]
+_data = {
+"RESET": SubResource("Animation_qlnhp"),
+"fill": SubResource("Animation_651i7"),
+"idle": SubResource("Animation_xuv0g")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oaaii"]
+animation = &"fill"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ueeg"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lomuc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dm2sy"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vfyr3"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lgvvn"]
+states/fill/node = SubResource("AnimationNodeAnimation_oaaii")
+states/fill/position = Vector2(463, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_8ueeg")
+states/idle/position = Vector2(321, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_lomuc"), "idle", "fill", SubResource("AnimationNodeStateMachineTransition_dm2sy"), "fill", "idle", SubResource("AnimationNodeStateMachineTransition_vfyr3")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on1wi"]
+size = Vector2(10, 32)
+
+[node name="Cooler" type="StaticBody2D"]
+position = Vector2(654, -11)
+script = ExtResource("1_frt06")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ltr5v")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pdite")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sonnt")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sonnt")
+}
+tree_root = SubResource("AnimationNodeStateMachine_lgvvn")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_paej8")
+interact_label = "Студёная (Z)"
+interact_type = "cooler"
+interact_value = "Fill"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_on1wi")
