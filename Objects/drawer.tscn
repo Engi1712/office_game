@@ -1,0 +1,175 @@
+[gd_scene load_steps=22 format=3 uid="uid://bl763vqldmjg5"]
+
+[ext_resource type="Script" path="res://Objects/drawer.gd" id="1_0q8gd"]
+[ext_resource type="Texture2D" uid="uid://dff3hqbve6onf" path="res://Art/Office Pack/Objects/drawer.png" id="1_si3l1"]
+[ext_resource type="Script" path="res://Objects/drawer_interaction.gd" id="3_vm821"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mb4kh"]
+size = Vector2(16, 5.5)
+
+[sub_resource type="Animation" id="Animation_3yhia"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sq0k5"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_28bhi"]
+resource_name = "close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_xabgd"]
+resource_name = "closed"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6x8us"]
+resource_name = "opened"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxad6"]
+_data = {
+"RESET": SubResource("Animation_3yhia"),
+"close": SubResource("Animation_28bhi"),
+"closed": SubResource("Animation_xabgd"),
+"open": SubResource("Animation_sq0k5"),
+"opened": SubResource("Animation_6x8us")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ar4eb"]
+animation = &"close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fn3jn"]
+animation = &"closed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_banka"]
+animation = &"open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u27yf"]
+animation = &"opened"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pu38d"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c6nqu"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d5uj1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_js6vs"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q0qaw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c6pl1"]
+states/Start/position = Vector2(170, 100)
+states/close/node = SubResource("AnimationNodeAnimation_ar4eb")
+states/close/position = Vector2(504, 36)
+states/closed/node = SubResource("AnimationNodeAnimation_fn3jn")
+states/closed/position = Vector2(356, 100)
+states/open/node = SubResource("AnimationNodeAnimation_banka")
+states/open/position = Vector2(504, 165)
+states/opened/node = SubResource("AnimationNodeAnimation_u27yf")
+states/opened/position = Vector2(650, 100)
+transitions = ["Start", "closed", SubResource("AnimationNodeStateMachineTransition_pu38d"), "closed", "open", SubResource("AnimationNodeStateMachineTransition_c6nqu"), "open", "opened", SubResource("AnimationNodeStateMachineTransition_d5uj1"), "opened", "close", SubResource("AnimationNodeStateMachineTransition_js6vs"), "close", "closed", SubResource("AnimationNodeStateMachineTransition_q0qaw")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nre4"]
+size = Vector2(16, 27)
+
+[node name="Drawer" type="StaticBody2D"]
+script = ExtResource("1_0q8gd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_si3l1")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_mb4kh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xxad6")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xxad6")
+}
+tree_root = SubResource("AnimationNodeStateMachine_c6pl1")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_vm821")
+interact_label = ""
+interact_type = "drawer"
+interact_value = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_8nre4")
+
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

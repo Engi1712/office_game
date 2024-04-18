@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkdi62kn2xku7"]
+[gd_scene load_steps=17 format=3 uid="uid://dkdi62kn2xku7"]
 
 [ext_resource type="PackedScene" uid="uid://d1la7rjth75dw" path="res://Characters/cat.tscn" id="1_kfoq5"]
 [ext_resource type="Texture2D" uid="uid://dlxw7rkllnwkw" path="res://Art/Office Pack/Tiles/carpet32_var.png" id="2_23bim"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c08f15y6csu3i" path="res://Art/Office Pack/Tiles/roof32_var.png" id="5_j4ga3"]
 [ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="6_w7e43"]
 [ext_resource type="PackedScene" uid="uid://b8as3kshhxx86" path="res://Objects/cooler.tscn" id="8_1tmcm"]
+[ext_resource type="PackedScene" uid="uid://bl763vqldmjg5" path="res://Objects/drawer.tscn" id="9_ilr3x"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wgghf"]
 tile_data = PackedInt32Array(0, 65542, 0, 1, 6, 0)
@@ -293,3 +294,7 @@ drag_right_margin = 0.3
 drag_bottom_margin = 0.3
 
 [node name="Cooler" parent="." instance=ExtResource("8_1tmcm")]
+position = Vector2(654, -20)
+
+[node name="Drawer" parent="." instance=ExtResource("9_ilr3x")]
+position = Vector2(612, -13)
