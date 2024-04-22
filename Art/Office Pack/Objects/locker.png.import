@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2b63kmjydqcn"
-path="res://.godot/imported/roof.png-54cf05344da1d10dee85c3251608e1b0.ctex"
+uid="uid://r85cge532v2d"
+path="res://.godot/imported/locker.png-c4dc8d516eaa5922ae9f3baa9905a415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Office Pack/roof.png"
-dest_files=["res://.godot/imported/roof.png-54cf05344da1d10dee85c3251608e1b0.ctex"]
+source_file="res://Art/Office Pack/Objects/locker.png"
+dest_files=["res://.godot/imported/locker.png-c4dc8d516eaa5922ae9f3baa9905a415.ctex"]
 
 [params]
 

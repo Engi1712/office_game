@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var move_speed : float = 100
 @export var starting_direction : Vector2 = Vector2(0, 1)
 
@@ -10,9 +12,22 @@ extends CharacterBody2D
 @onready var interact_label = $"InteractionComponents/InteractLabel"
 
 func _ready():
+	NavigationManager.on_triggered_player_spawn.connect(_on_spawn)
 	update_animation_parameters(starting_direction)
 	update_interactions()
 	#position = Vector2(100, 100)
+
+func _on_spawn(spawn_position : Vector2, direction : String):
+	global_position = spawn_position
+	match direction:
+		"up" :
+			animation_tree.set("parameters/Walk/blend_position", Vector2(0, -1))
+		"down" :
+			animation_tree.set("parameters/Walk/blend_position", Vector2(0, 1))
+		"right" :
+			animation_tree.set("parameters/Walk/blend_position", Vector2(1, 0))
+		"left" :
+			animation_tree.set("parameters/Walk/blend_position", Vector2(-1, 0))
 
 func _physics_process(_delta):
 	var input_direction = Vector2(
@@ -70,6 +85,8 @@ func execute_interaction(cur_interaction):
 			cur_interaction.fill()
 		"drawer" :
 			cur_interaction.touch()
+		"locker" :
+			cur_interaction.touch()
 
 func de_execute_interaction(cur_interaction):
 	match cur_interaction.interact_type:
@@ -79,6 +96,8 @@ func de_execute_interaction(cur_interaction):
 			cur_interaction.stop()
 		"drawer" :
 			pass
+		"locker" :
+			pass
 
 func leave_interaction(cur_interaction):
 	match cur_interaction.interact_type:
@@ -87,4 +106,6 @@ func leave_interaction(cur_interaction):
 		"cooler" :
 			cur_interaction.stop()
 		"drawer" :
+			cur_interaction.touch()
+		"locker" :
 			cur_interaction.touch()
