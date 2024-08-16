@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8t8pj6ill58m"]
+
+[ext_resource type="Script" path="res://Objects/draw_area.gd" id="1_7rfxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ln67k"]
+size = Vector2(64, 64)
+
+[node name="DrawArea" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_7rfxh")
+
+[node name="DrawCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ln67k")

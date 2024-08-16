@@ -1,15 +1,26 @@
 extends StaticBody2D
 
-@export var is_filled : bool = false
+@onready var animation_player = $AnimationPlayer
 
-@onready var animation_tree = $AnimationTree
-@onready var state_machine = animation_tree.get("parameters/playback")
+var state : String = "fill"
 
-func _physics_process(_delta):
-	pick_new_state()
+func _ready():
+	animation_player.play("idle")
+	
+func touch():
+	if state == "idle":
+		state = "fill"
+		animation_player.play("fill")
 
-func pick_new_state():
-	if (is_filled):
-		state_machine.travel("fill")
-	else:
-		state_machine.travel("idle")
+func release():
+	if state == "fill":
+		state = "idle"
+		animation_player.play("idle")
+
+func approach():
+	pass
+
+func leave():
+	if state == "fill":
+		state = "idle"
+		animation_player.play("idle")

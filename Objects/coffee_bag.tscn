@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceeecw0uierv0"]
+
+[ext_resource type="Texture2D" uid="uid://dx2omqt8v3a2v" path="res://Art/Office Pack/Objects/coffee_bag.png" id="1_l57bk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_783ck"]
+size = Vector2(6, 3)
+
+[node name="CoffeeBag" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_l57bk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_783ck")

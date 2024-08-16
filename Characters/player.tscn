@@ -1,10 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://btvdoxokxd0yt"]
+[gd_scene load_steps=31 format=3 uid="uid://btvdoxokxd0yt"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_pkdx8"]
-[ext_resource type="Texture2D" uid="uid://c6cgdq68v6161" path="res://Art/Office Pack/Characters/shirt_all.png" id="2_12pw8"]
+[ext_resource type="Texture2D" uid="uid://cs8sscpdg25kj" path="res://Art/Office Pack/Characters/mc_64.png" id="2_cimam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5qrb"]
-size = Vector2(8, 8)
+size = Vector2(20, 6)
 
 [sub_resource type="Animation" id="Animation_xtsw5"]
 length = 0.001
@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [20, 21]
 }
 
 [sub_resource type="Animation" id="Animation_f1bd5"]
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [16, 17]
+"values": [10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_5ncn1"]
@@ -66,7 +66,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [24, 25]
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_x6q08"]
@@ -82,11 +82,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [8, 9]
+"values": [30, 31]
 }
 
 [sub_resource type="Animation" id="Animation_75poh"]
 resource_name = "walk_down"
+length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -95,14 +96,15 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.7, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 3, 4, 5, 6, 7]
+"values": [22, 23, 24, 25, 26, 27, 28, 29]
 }
 
 [sub_resource type="Animation" id="Animation_sekxt"]
 resource_name = "walk_left"
+length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -111,14 +113,15 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.7, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [18, 19, 20, 21, 22, 23]
+"values": [12, 13, 14, 15, 16, 17, 18, 19]
 }
 
 [sub_resource type="Animation" id="Animation_mkeuu"]
 resource_name = "walk_right"
+length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -127,14 +130,15 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.7, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [26, 27, 28, 29, 30, 31]
+"values": [2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_pccl2"]
 resource_name = "walk_up"
+length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -143,10 +147,10 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.5, 0.7, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [10, 11, 12, 13, 14, 15]
+"values": [32, 33, 34, 35, 36, 37, 38, 39]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ds41a"]
@@ -232,19 +236,22 @@ states/Walk/position = Vector2(515, 100)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_5rjk1"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_nfihn"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_idtky")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mw1dh"]
-radius = 16.0312
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv38s"]
+size = Vector2(18, 2)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pkdx8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_12pw8")
-hframes = 8
+position = Vector2(0, -32)
+texture = ExtResource("2_cimam")
+hframes = 10
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 11)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_y5qrb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -263,6 +270,7 @@ parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="InteractionComponents" type="Node2D" parent="."]
 z_index = 1
+position = Vector2(0, -15)
 
 [node name="InteractionArea" type="Area2D" parent="InteractionComponents"]
 collision_layer = 0
@@ -270,6 +278,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/InteractionArea"]
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_mw1dh")
 
 [node name="InteractLabel" type="Label" parent="InteractionComponents"]
@@ -279,9 +288,20 @@ offset_right = 20.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LocationArea" type="Area2D" parent="."]
+position = Vector2(0, -15)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LocationArea"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_fv38s")
+
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[connection signal="area_entered" from="LocationArea" to="." method="_on_location_area_area_entered"]
+[connection signal="area_exited" from="LocationArea" to="." method="_on_location_area_area_exited"]

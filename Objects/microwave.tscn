@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8yldds2026o"]
+
+[ext_resource type="Texture2D" uid="uid://dd1xbhids8wl8" path="res://Art/Office Pack/Objects/microwave.png" id="1_uvj3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n64h1"]
+size = Vector2(22, 5)
+
+[node name="Microwave" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("1_uvj3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_n64h1")

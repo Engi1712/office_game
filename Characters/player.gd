@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var move_speed : float = 100
+@export var move_speed : float = 80
 @export var starting_direction : Vector2 = Vector2(0, 1)
+@export var cam_ready = false
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -11,10 +12,15 @@ class_name Player
 @onready var all_interactions = []
 @onready var interact_label = $"InteractionComponents/InteractLabel"
 
+@onready var all_zones = []
+
 func _ready():
 	NavigationManager.on_triggered_player_spawn.connect(_on_spawn)
 	update_animation_parameters(starting_direction)
-	update_interactions()
+	if all_interactions:
+		enter_interaction(all_interactions[0])
+	if all_zones:
+		enter_zone(all_zones[0])
 	#position = Vector2(100, 100)
 
 func _on_spawn(spawn_position : Vector2, direction : String):
@@ -22,12 +28,17 @@ func _on_spawn(spawn_position : Vector2, direction : String):
 	match direction:
 		"up" :
 			animation_tree.set("parameters/Walk/blend_position", Vector2(0, -1))
+			animation_tree.set("parameters/Idle/blend_position", Vector2(0, -1))
 		"down" :
 			animation_tree.set("parameters/Walk/blend_position", Vector2(0, 1))
+			animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
 		"right" :
 			animation_tree.set("parameters/Walk/blend_position", Vector2(1, 0))
+			animation_tree.set("parameters/Idle/blend_position", Vector2(1, 0))
 		"left" :
 			animation_tree.set("parameters/Walk/blend_position", Vector2(-1, 0))
+			animation_tree.set("parameters/Idle/blend_position", Vector2(-1, 0))
+	cam_ready = true
 
 func _physics_process(_delta):
 	var input_direction = Vector2(
@@ -63,49 +74,42 @@ func pick_new_state():
 
 func _on_interaction_area_area_entered(area):
 	all_interactions.insert(0, area)
-	update_interactions()
+	enter_interaction(area)
 
 func _on_interaction_area_area_exited(area):
-	if area.interact_active:
-		leave_interaction(area)
 	all_interactions.erase(area)
-	update_interactions()
+	exit_interaction(area)
 
-func update_interactions():
-	if all_interactions:
-		interact_label.text = all_interactions[0].interact_label
-	else:
-		interact_label.text = ""
+func _on_location_area_area_entered(area):
+	all_zones.insert(0, area)
+	enter_zone(area)
+
+func _on_location_area_area_exited(area):
+	all_zones.erase(area)
+	exit_zone(area)
+
+func enter_interaction(cur_interaction):
+	cur_interaction.enter()
+
+func exit_interaction(cur_interaction):
+	cur_interaction.exit()
+
+func enter_zone(cur_zone):
+	match cur_zone.zone_type:
+		"draw" :
+			z_index = -9
+		"open" :
+			cur_zone.open()
+
+func exit_zone(cur_zone):
+	match cur_zone.zone_type:
+		"draw" :
+			z_index = 0
+		"open" :
+			cur_zone.close()
 
 func execute_interaction(cur_interaction):
-	match cur_interaction.interact_type:
-		"print" :
-			print(cur_interaction.interact_value)
-		"cooler" :
-			cur_interaction.fill()
-		"drawer" :
-			cur_interaction.touch()
-		"locker" :
-			cur_interaction.touch()
+	cur_interaction.activate()
 
 func de_execute_interaction(cur_interaction):
-	match cur_interaction.interact_type:
-		"print" :
-			print(cur_interaction.interact_value)
-		"cooler" :
-			cur_interaction.stop()
-		"drawer" :
-			pass
-		"locker" :
-			pass
-
-func leave_interaction(cur_interaction):
-	match cur_interaction.interact_type:
-		"print" :
-			print(cur_interaction.interact_value)
-		"cooler" :
-			cur_interaction.stop()
-		"drawer" :
-			cur_interaction.touch()
-		"locker" :
-			cur_interaction.touch()
+	cur_interaction.deactivate()

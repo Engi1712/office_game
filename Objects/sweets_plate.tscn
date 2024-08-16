@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcmjs8441guso"]
+
+[ext_resource type="Texture2D" uid="uid://crps1058up33e" path="res://Art/Office Pack/Objects/sweets_plate.png" id="1_5wutj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03ck5"]
+size = Vector2(16, 5)
+
+[node name="SweetsPlate" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_5wutj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_03ck5")

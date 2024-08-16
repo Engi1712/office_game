@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b053ag0mqdti3"]
+
+[ext_resource type="Texture2D" uid="uid://b54oj2rnuq872" path="res://Art/Office Pack/Objects/kettle.png" id="1_y2ci3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmqb"]
+size = Vector2(10, 3)
+
+[node name="Kettle" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_y2ci3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_pxmqb")

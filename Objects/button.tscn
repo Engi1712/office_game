@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://jmlb1ibl0mjv"]
+
+[ext_resource type="Script" path="res://Objects/button.gd" id="1_anntr"]
+[ext_resource type="Texture2D" uid="uid://dihdattuawdiw" path="res://Art/Office Pack/Objects/button_n.png" id="1_o4p4w"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_y08bk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pikia"]
+size = Vector2(12, 16)
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_anntr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o4p4w")
+hframes = 2
+
+[node name="InteractionArea" parent="." instance=ExtResource("4_y08bk")]
+interact_type = "button"
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+shape = SubResource("RectangleShape2D_pikia")
+
+[editable path="InteractionArea"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://71g2fycioj6v"]
+
+[ext_resource type="Texture2D" uid="uid://bvfwf7u32l0ou" path="res://Art/Office Pack/Objects/long_table_wood.png" id="1_jnq1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eckk7"]
+size = Vector2(32, 32)
+
+[node name="LongTableWood" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("1_jnq1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eckk7")

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bx78qkjopjaxn"]
+
+[ext_resource type="FontFile" uid="uid://cx17lvsh1a3jh" path="res://Assests/BestTen-DOT.otf" id="1_7m340"]
+
+[resource]
+default_font = ExtResource("1_7m340")
+default_font_size = 20

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://e5dsmpxgiq7m"]
+
+[ext_resource type="Texture2D" uid="uid://kokry4s0hb71" path="res://Art/Office Pack/Objects/high_table_white.png" id="1_f2vua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73yes"]
+size = Vector2(48, 16)
+
+[node name="HighTableWhite" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_f2vua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_73yes")

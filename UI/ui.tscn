@@ -1,0 +1,506 @@
+[gd_scene load_steps=17 format=3 uid="uid://drsh2i2e8vw55"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_i4jcq"]
+[ext_resource type="Texture2D" uid="uid://c7u0xkh6l77hb" path="res://Art/Office Pack/HUD/elevator_panel.png" id="1_osmaf"]
+[ext_resource type="Theme" uid="uid://bx78qkjopjaxn" path="res://UI/base_theme.tres" id="2_0vatb"]
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="2_30857"]
+[ext_resource type="Script" path="res://UI/elevator_panel.gd" id="3_4top2"]
+[ext_resource type="Texture2D" uid="uid://c4a6fk1uqtqww" path="res://Art/Office Pack/HUD/floor_number.png" id="4_7jkfc"]
+[ext_resource type="Texture2D" uid="uid://b8tmxh3bnu43l" path="res://Art/Office Pack/HUD/button_select.png" id="5_p0nx8"]
+[ext_resource type="Texture2D" uid="uid://2khvaf3rn22i" path="res://Art/Office Pack/HUD/alarm_buttom_select.png" id="6_uws4h"]
+[ext_resource type="Texture2D" uid="uid://cvrtdwbnm2sgk" path="res://Art/Office Pack/HUD/button_light.png" id="8_ga5d7"]
+[ext_resource type="Script" path="res://UI/Inventory.gd" id="10_1albi"]
+[ext_resource type="Texture2D" uid="uid://b2he7yqvkfy5f" path="res://Art/Office Pack/HUD/inventory1.png" id="11_yqvkt"]
+[ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="12_k7qmh"]
+[ext_resource type="Script" path="res://UI/Toolbar.gd" id="13_caupd"]
+[ext_resource type="Texture2D" uid="uid://dx2omqt8v3a2v" path="res://Art/Office Pack/Objects/coffee_bag.png" id="13_kxgfy"]
+[ext_resource type="Texture2D" uid="uid://dxn5f00tls4ws" path="res://Art/Office Pack/HUD/toolbar.png" id="14_hbl7p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sva8p"]
+atlas = ExtResource("4_7jkfc")
+region = Rect2(0, 0, 60, 30)
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_i4jcq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0vatb")
+
+[node name="PauseMenu" type="Control" parent="Control"]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_30857")
+
+[node name="Panel" type="Panel" parent="Control/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -136.0
+offset_right = 121.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PAUSED"
+
+[node name="ResumeButton" type="Button" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="SaveButton" type="Button" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Save Game"
+
+[node name="LoadButton" type="Button" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="OptionsButton" type="Button" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Exit to Desktop"
+
+[node name="Button" type="Button" parent="Control/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "0123456789"
+
+[node name="ElevatorPanel" type="Control" parent="Control"]
+process_mode = 2
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_4top2")
+
+[node name="Panel" type="TextureRect" parent="Control/ElevatorPanel"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 36.0
+offset_right = 604.0
+offset_bottom = 324.0
+texture = ExtResource("1_osmaf")
+
+[node name="Indicator" type="TextureRect" parent="Control/ElevatorPanel"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 92.0
+offset_right = 570.0
+offset_bottom = 122.0
+texture = SubResource("AtlasTexture_sva8p")
+stretch_mode = 2
+
+[node name="ButtonSelect" type="Control" parent="Control/ElevatorPanel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B-3" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 253.0
+offset_right = 582.0
+offset_bottom = 267.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B-2" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 253.0
+offset_right = 530.0
+offset_bottom = 267.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B-1" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 232.0
+offset_right = 530.0
+offset_bottom = 246.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B0" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 232.0
+offset_right = 582.0
+offset_bottom = 246.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B1" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 211.0
+offset_right = 530.0
+offset_bottom = 225.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B2" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 211.0
+offset_right = 582.0
+offset_bottom = 225.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B3" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 190.0
+offset_right = 530.0
+offset_bottom = 204.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B4" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 190.0
+offset_right = 582.0
+offset_bottom = 204.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B5" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 169.0
+offset_right = 530.0
+offset_bottom = 183.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B6" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 169.0
+offset_right = 582.0
+offset_bottom = 183.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B7" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 148.0
+offset_right = 530.0
+offset_bottom = 162.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B8" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 148.0
+offset_right = 582.0
+offset_bottom = 162.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B9" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 127.0
+offset_right = 530.0
+offset_bottom = 141.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="B10" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 127.0
+offset_right = 582.0
+offset_bottom = 141.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="BOpen" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 274.0
+offset_right = 530.0
+offset_bottom = 288.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="BClose" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 274.0
+offset_right = 582.0
+offset_bottom = 288.0
+texture = ExtResource("5_p0nx8")
+stretch_mode = 2
+
+[node name="BAlarm" type="TextureRect" parent="Control/ElevatorPanel/ButtonSelect"]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 295.0
+offset_right = 556.0
+offset_bottom = 309.0
+texture = ExtResource("6_uws4h")
+stretch_mode = 2
+
+[node name="ButtonLight" type="Control" parent="Control/ElevatorPanel"]
+anchors_preset = 0
+offset_left = 442.0
+offset_top = 223.0
+offset_right = 482.0
+offset_bottom = 263.0
+
+[node name="B-3" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 30.0
+offset_right = 140.0
+offset_bottom = 44.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B-2" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 30.0
+offset_right = 88.0
+offset_bottom = 44.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B-1" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 9.0
+offset_right = 88.0
+offset_bottom = 23.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B0" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 9.0
+offset_right = 140.0
+offset_bottom = 23.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B1" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -12.0
+offset_right = 88.0
+offset_bottom = 2.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B2" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = -12.0
+offset_right = 140.0
+offset_bottom = 2.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B3" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -33.0
+offset_right = 88.0
+offset_bottom = -19.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B4" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = -33.0
+offset_right = 140.0
+offset_bottom = -19.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B5" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -54.0
+offset_right = 88.0
+offset_bottom = -40.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B6" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = -54.0
+offset_right = 140.0
+offset_bottom = -40.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B7" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -75.0
+offset_right = 88.0
+offset_bottom = -61.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B8" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = -75.0
+offset_right = 140.0
+offset_bottom = -61.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B9" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -96.0
+offset_right = 88.0
+offset_bottom = -82.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="B10" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = -96.0
+offset_right = 140.0
+offset_bottom = -82.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="BOpen" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 51.0
+offset_right = 88.0
+offset_bottom = 65.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="BClose" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 51.0
+offset_right = 140.0
+offset_bottom = 65.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="BAlarm" type="TextureRect" parent="Control/ElevatorPanel/ButtonLight"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 72.0
+offset_right = 114.0
+offset_bottom = 86.0
+texture = ExtResource("8_ga5d7")
+stretch_mode = 2
+
+[node name="Inventory" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_1albi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_yqvkt")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control/Inventory"]
+visible = false
+layout_mode = 0
+offset_left = 131.0
+offset_top = 117.0
+offset_right = 189.0
+offset_bottom = 243.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/Inventory/SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Player" parent="Control/Inventory/SubViewportContainer/SubViewport" instance=ExtResource("12_k7qmh")]
+position = Vector2(50, 60)
+
+[node name="Panel" type="Panel" parent="Control/Inventory"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 205.0
+offset_top = 72.0
+offset_right = 231.0
+offset_bottom = 98.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Inventory/Panel"]
+position = Vector2(13, 13)
+texture = ExtResource("13_kxgfy")
+
+[node name="Toolbar" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_caupd")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Toolbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_hbl7p")

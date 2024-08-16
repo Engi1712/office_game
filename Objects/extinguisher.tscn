@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck7qevph7sck3"]
+
+[ext_resource type="Texture2D" uid="uid://dqhrq0eyvgkj1" path="res://Art/Office Pack/Objects/extinguisher.png" id="1_w44t5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjn2f"]
+size = Vector2(8, 3)
+
+[node name="Extinguisher" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -7)
+texture = ExtResource("1_w44t5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rjn2f")

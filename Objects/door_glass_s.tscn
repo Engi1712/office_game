@@ -1,0 +1,157 @@
+[gd_scene load_steps=17 format=3 uid="uid://dox6swhj5vsbx"]
+
+[ext_resource type="Script" path="res://Objects/door_glass_s.gd" id="1_340rn"]
+[ext_resource type="Texture2D" uid="uid://bdmpilup313om" path="res://Art/Office Pack/Objects/door_glass_s.png" id="1_pepru"]
+[ext_resource type="Texture2D" uid="uid://vah6fqg8da7p" path="res://Art/Office Pack/MISC/fade_down.png" id="2_7d0f5"]
+[ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="4_hxpvd"]
+[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="5_ulivu"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="6_lwyrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcgj4"]
+size = Vector2(32, 4)
+
+[sub_resource type="Animation" id="Animation_8nsdx"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_hvtmf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o1fxc"]
+resource_name = "close"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_t8poj"]
+resource_name = "opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_ra42j"]
+resource_name = "closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_she5n"]
+_data = {
+"RESET": SubResource("Animation_hvtmf"),
+"close": SubResource("Animation_o1fxc"),
+"closing": SubResource("Animation_ra42j"),
+"open": SubResource("Animation_8nsdx"),
+"opening": SubResource("Animation_t8poj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdfbb"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dakqp"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptpws"]
+size = Vector2(32, 65)
+
+[node name="DoorGlassS" type="StaticBody2D"]
+script = ExtResource("1_340rn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_hcgj4")
+
+[node name="Door" type="Sprite2D" parent="."]
+z_index = -7
+texture = ExtResource("1_pepru")
+hframes = 5
+
+[node name="Fade" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(0, 20)
+texture = ExtResource("2_7d0f5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_she5n")
+}
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(0, -21)
+
+[node name="DrawArea" parent="." instance=ExtResource("4_hxpvd")]
+
+[node name="DrawCollision" parent="DrawArea" index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_hdfbb")
+
+[node name="TransferArea" parent="." instance=ExtResource("5_ulivu")]
+
+[node name="TransferCollision" parent="TransferArea" index="0"]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_dakqp")
+
+[node name="InteractionArea" parent="." instance=ExtResource("6_lwyrj")]
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_ptpws")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="DrawArea"]
+[editable path="TransferArea"]
+[editable path="InteractionArea"]

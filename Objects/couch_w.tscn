@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmt6nwsc7v5dl"]
+
+[ext_resource type="Texture2D" uid="uid://ddoj0cpjc2en8" path="res://Art/Office Pack/Objects/couch_w.png" id="1_86ewp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivkff"]
+size = Vector2(37, 32)
+
+[node name="CouchW" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -21)
+texture = ExtResource("1_86ewp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ivkff")

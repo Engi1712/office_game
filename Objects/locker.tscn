@@ -1,11 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://coealsnqqcvdr"]
+[gd_scene load_steps=12 format=3 uid="uid://coealsnqqcvdr"]
 
 [ext_resource type="Script" path="res://Objects/locker.gd" id="1_np76t"]
 [ext_resource type="Texture2D" uid="uid://r85cge532v2d" path="res://Art/Office Pack/Objects/locker.png" id="1_q7lg8"]
-[ext_resource type="Script" path="res://Objects/locker_interaction.gd" id="3_1nk3c"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_0mvub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grons"]
-size = Vector2(46, 9)
+size = Vector2(48, 10)
 
 [sub_resource type="Animation" id="Animation_4t75c"]
 length = 0.001
@@ -23,7 +23,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_q617f"]
-resource_name = "close"
+resource_name = "closing"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,24 +38,8 @@ tracks/0/keys = {
 "values": [3, 2, 1, 0]
 }
 
-[sub_resource type="Animation" id="Animation_0so5a"]
-resource_name = "closed"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_5qfv1"]
-resource_name = "open"
+resource_name = "opening"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -70,8 +54,24 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_0so5a"]
+resource_name = "close"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_b3d2h"]
-resource_name = "opened"
+resource_name = "open"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -89,52 +89,14 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6f1th"]
 _data = {
 "RESET": SubResource("Animation_4t75c"),
-"close": SubResource("Animation_q617f"),
-"closed": SubResource("Animation_0so5a"),
-"open": SubResource("Animation_5qfv1"),
-"opened": SubResource("Animation_b3d2h")
+"close": SubResource("Animation_0so5a"),
+"closing": SubResource("Animation_q617f"),
+"open": SubResource("Animation_b3d2h"),
+"opening": SubResource("Animation_5qfv1")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_18ntt"]
-animation = &"close"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2phy"]
-animation = &"closed"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_88qm5"]
-animation = &"open"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5aomu"]
-animation = &"opened"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_or4gm"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gqwnn"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t2hgu"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dukh4"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ofu2n"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iiura"]
-states/close/node = SubResource("AnimationNodeAnimation_18ntt")
-states/close/position = Vector2(528, 49)
-states/closed/node = SubResource("AnimationNodeAnimation_c2phy")
-states/closed/position = Vector2(370, 100)
-states/open/node = SubResource("AnimationNodeAnimation_88qm5")
-states/open/position = Vector2(528, 161)
-states/opened/node = SubResource("AnimationNodeAnimation_5aomu")
-states/opened/position = Vector2(683, 100)
-transitions = ["Start", "closed", SubResource("AnimationNodeStateMachineTransition_or4gm"), "closed", "open", SubResource("AnimationNodeStateMachineTransition_gqwnn"), "open", "opened", SubResource("AnimationNodeStateMachineTransition_t2hgu"), "opened", "close", SubResource("AnimationNodeStateMachineTransition_dukh4"), "close", "closed", SubResource("AnimationNodeStateMachineTransition_ofu2n")]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi8fc"]
-size = Vector2(46, 71)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6o5n"]
+size = Vector2(48, 73)
 
 [node name="Locker" type="StaticBody2D"]
 script = ExtResource("1_np76t")
@@ -152,24 +114,13 @@ libraries = {
 "": SubResource("AnimationLibrary_6f1th")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6f1th")
-}
-tree_root = SubResource("AnimationNodeStateMachine_iiura")
-anim_player = NodePath("../AnimationPlayer")
-
-[node name="InteractionArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-monitoring = false
-script = ExtResource("3_1nk3c")
-interact_label = ""
+[node name="InteractionArea" parent="." instance=ExtResource("3_0mvub")]
 interact_type = "locker"
-interact_value = ""
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
 position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_oi8fc")
+shape = SubResource("RectangleShape2D_b6o5n")
 
-[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="InteractionArea"]

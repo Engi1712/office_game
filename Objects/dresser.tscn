@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcsvr65wgjyc"]
+
+[ext_resource type="Texture2D" uid="uid://dxnwuyvfyvtxh" path="res://Art/Office Pack/Objects/dresser.png" id="1_d8uk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8am"]
+size = Vector2(49, 10)
+
+[node name="Dresser" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -10)
+texture = ExtResource("1_d8uk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6p8am")

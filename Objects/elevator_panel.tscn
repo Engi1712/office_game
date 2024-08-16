@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0oql0pi8txbx"]
+
+[ext_resource type="Script" path="res://Objects/elevator_panel.gd" id="1_1pjnx"]
+[ext_resource type="Texture2D" uid="uid://c50urx88ac3w3" path="res://Art/Office Pack/Objects/elevator_panel.png" id="1_y6srh"]
+[ext_resource type="Texture2D" uid="uid://c62o0otjdl8in" path="res://Art/Office Pack/Objects/floor_number.png" id="2_wmwdd"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_d8ge0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ft7y"]
+size = Vector2(16, 32)
+
+[node name="ElevatorPanel" type="Node2D"]
+script = ExtResource("1_1pjnx")
+
+[node name="Panel" type="Sprite2D" parent="."]
+texture = ExtResource("1_y6srh")
+
+[node name="Indicator" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("2_wmwdd")
+hframes = 14
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_d8ge0")]
+interact_type = "elevator_panel"
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+shape = SubResource("RectangleShape2D_1ft7y")
+
+[editable path="InteractionArea"]

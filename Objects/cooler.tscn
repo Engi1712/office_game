@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8as3kshhxx86"]
+[gd_scene load_steps=10 format=3 uid="uid://b8as3kshhxx86"]
 
 [ext_resource type="Script" path="res://Objects/cooler.gd" id="1_frt06"]
-[ext_resource type="Texture2D" uid="uid://cd7oigqc6tbaj" path="res://Art/Office Pack/Objects/cooler_var.png" id="2_bo7in"]
-[ext_resource type="Script" path="res://Objects/cooler_interaction.gd" id="3_paej8"]
+[ext_resource type="Texture2D" uid="uid://cd7oigqc6tbaj" path="res://Art/Office Pack/Objects/cooler.png" id="2_jntl0"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_8vc4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdite"]
-size = Vector2(14, 7)
+size = Vector2(14, 5)
 
 [sub_resource type="Animation" id="Animation_qlnhp"]
 length = 0.001
@@ -62,39 +62,19 @@ _data = {
 "idle": SubResource("Animation_xuv0g")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oaaii"]
-animation = &"fill"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ueeg"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lomuc"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dm2sy"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vfyr3"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lgvvn"]
-states/fill/node = SubResource("AnimationNodeAnimation_oaaii")
-states/fill/position = Vector2(463, 100)
-states/idle/node = SubResource("AnimationNodeAnimation_8ueeg")
-states/idle/position = Vector2(321, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_lomuc"), "idle", "fill", SubResource("AnimationNodeStateMachineTransition_dm2sy"), "fill", "idle", SubResource("AnimationNodeStateMachineTransition_vfyr3")]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_on1wi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy3pd"]
 size = Vector2(14, 27)
 
 [node name="Cooler" type="StaticBody2D"]
-position = Vector2(654, -11)
 script = ExtResource("1_frt06")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_bo7in")
+position = Vector2(0, -20)
+texture = ExtResource("2_jntl0")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_pdite")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -102,23 +82,12 @@ libraries = {
 "": SubResource("AnimationLibrary_sonnt")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_sonnt")
-}
-tree_root = SubResource("AnimationNodeStateMachine_lgvvn")
-anim_player = NodePath("../AnimationPlayer")
-
-[node name="InteractionArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-monitoring = false
-script = ExtResource("3_paej8")
-interact_label = ""
+[node name="InteractionArea" parent="." instance=ExtResource("3_8vc4d")]
+position = Vector2(0, -20)
 interact_type = "cooler"
-interact_value = "Fill"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-visible = false
-position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_on1wi")
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_hy3pd")
+
+[editable path="InteractionArea"]

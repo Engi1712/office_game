@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxu5o5n28815"]
+
+[ext_resource type="Texture2D" uid="uid://dvxe6004giboj" path="res://Art/Office Pack/Objects/ping_pong_table.png" id="1_fygyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugqbp"]
+size = Vector2(95, 41)
+
+[node name="PingPongTable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("1_fygyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_ugqbp")

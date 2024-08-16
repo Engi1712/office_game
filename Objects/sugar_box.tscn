@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2xivoaffylcl"]
+
+[ext_resource type="Texture2D" uid="uid://r5v0s716kak0" path="res://Art/Office Pack/Objects/sugarbox.png" id="1_2v8up"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqp6t"]
+size = Vector2(10, 4)
+
+[node name="SugarBox" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_2v8up")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rqp6t")

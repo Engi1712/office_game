@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dultdxno3wk2w"]
+
+[ext_resource type="Texture2D" uid="uid://cw1turoqvkin8" path="res://Art/Office Pack/Objects/teabox1.png" id="1_7pyeb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl8q3"]
+size = Vector2(10, 4)
+
+[node name="Teabox1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7pyeb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_dl8q3")

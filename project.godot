@@ -11,25 +11,41 @@ config_version=5
 [application]
 
 config/name="Office"
-run/main_scene="res://Levels/it_dep.tscn"
+run/main_scene="res://Global/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 NavigationManager="*res://Global/navigation_manager.gd"
+TransitionScreen="*res://Global/transition_screen.tscn"
+ElevatorManager="*res://Global/elevator_manager.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/mode="canvas_items"
-window/stretch/scale=2.0
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/initial_position_type=0
+window/size/resizable=false
+window/size/borderless=true
+window/subwindows/embed_subwindows=false
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom="res://UI/base_theme.tres"
+theme/custom_font="res://UI/base_theme.tres"
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=0
+theme/lcd_subpixel_layout=0
 
 [input]
 
@@ -58,11 +74,24 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"echo":false,"script":null)
 ]
 }
+menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+inv={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
 2d_physics/layer_2="interactions"
+2d_physics/layer_3="zones"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

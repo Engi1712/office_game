@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bormgw3tryfp3"]
+
+[ext_resource type="PackedScene" uid="uid://dqf1hfrj4kan4" path="res://Objects/elevator_n.tscn" id="1_6i1gi"]
+[ext_resource type="Script" path="res://Objects/elevators_n.gd" id="1_s5jra"]
+[ext_resource type="PackedScene" uid="uid://jmlb1ibl0mjv" path="res://Objects/button.tscn" id="2_o5en7"]
+[ext_resource type="Texture2D" uid="uid://cyg2024po4fdo" path="res://Art/Office Pack/Objects/floor_sign_n.png" id="4_3k2pq"]
+
+[node name="ElevatorsN" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_s5jra")
+
+[node name="ElevatorR" parent="." instance=ExtResource("1_6i1gi")]
+position = Vector2(48, -9)
+elevator_tag = "R"
+spawn_direction = "down"
+
+[node name="ElevatorL" parent="." instance=ExtResource("1_6i1gi")]
+position = Vector2(-48, -9)
+elevator_tag = "L"
+spawn_direction = "down"
+
+[node name="Button" parent="." instance=ExtResource("2_o5en7")]
+position = Vector2(0, 8)
+
+[node name="FloorSign" type="Sprite2D" parent="."]
+position = Vector2(0, -45)
+texture = ExtResource("4_3k2pq")
+hframes = 11
+
+[connection signal="on_elevator_called" from="Button" to="." method="_on_button_on_elevator_called"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://x5e7njpaaf1s"]
+
+[ext_resource type="Script" path="res://Global/game.gd" id="1_ll4m4"]
+
+[node name="Game" type="Node"]
+process_mode = 3
+script = ExtResource("1_ll4m4")

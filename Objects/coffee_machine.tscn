@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xlirpq05cxwf"]
+
+[ext_resource type="Texture2D" uid="uid://dbk76so1vek73" path="res://Art/Office Pack/Objects/coffee_machine.png" id="1_5lybc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06q30"]
+size = Vector2(12, 3)
+
+[node name="CoffeeMachine" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_5lybc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_06q30")

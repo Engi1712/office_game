@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsrosndfwgkde"]
+
+[ext_resource type="Texture2D" uid="uid://cc6128m6ucs6f" path="res://Art/Office Pack/Objects/indicator_n.png" id="1_ipapb"]
+[ext_resource type="Script" path="res://Objects/indicator.gd" id="1_q2ehq"]
+
+[node name="Indicator" type="Node2D"]
+script = ExtResource("1_q2ehq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ipapb")
+hframes = 16
