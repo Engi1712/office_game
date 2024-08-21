@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dkdi62kn2xku7"]
+[gd_scene load_steps=41 format=3 uid="uid://dkdi62kn2xku7"]
 
 [ext_resource type="Script" path="res://Levels/floor_2.gd" id="1_ubmyi"]
 [ext_resource type="PackedScene" uid="uid://78pmsn1o2adm" path="res://Characters/player_cam.tscn" id="2_nurjd"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://s6kea4f26spt" path="res://Art/Office Pack/Objects/aircon_shaft.png" id="15_14r3r"]
 [ext_resource type="PackedScene" uid="uid://qf73xkx1bvms" path="res://Objects/couch_e.tscn" id="15_a62pg"]
 [ext_resource type="Texture2D" uid="uid://b2n50sp6aidhi" path="res://Art/Office Pack/Objects/fire_hose.png" id="16_j670t"]
+[ext_resource type="PackedScene" uid="uid://bl763vqldmjg5" path="res://Objects/drawer.tscn" id="16_kp4fi"]
 [ext_resource type="Texture2D" uid="uid://1hkuqjqjrqyr" path="res://Art/Office Pack/Objects/fusebox.png" id="16_oc3xi"]
 [ext_resource type="Texture2D" uid="uid://dy4ko0kg0mor5" path="res://Art/Office Pack/Objects/sign_wc.png" id="16_r4yul"]
 [ext_resource type="Texture2D" uid="uid://du358my5tptqb" path="res://Art/Office Pack/Objects/sign_floor2.png" id="17_0syug"]
@@ -407,6 +408,9 @@ position = Vector2(-363, 121)
 
 [node name="Table2" parent="." instance=ExtResource("14_0sreh")]
 position = Vector2(-360, 83)
+
+[node name="Drawer" parent="." instance=ExtResource("16_kp4fi")]
+position = Vector2(-351, 155)
 
 [node name="Socket" type="Sprite2D" parent="."]
 position = Vector2(-280, 170)

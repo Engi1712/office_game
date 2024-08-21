@@ -26,7 +26,7 @@ func _on_close(id):
 		elevator.close()
 
 func _on_elevator_panel_activate():
-	ui.elevator_panel_toggle(elevator_id)
+	ui.elevator_panel_open(elevator_id)
 
 func _on_level_spawn():
 	NavigationManager.trigger_player_spawn(elevator.spawn.global_position, elevator.spawn_direction)

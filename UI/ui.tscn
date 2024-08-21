@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://drsh2i2e8vw55"]
+[gd_scene load_steps=19 format=3 uid="uid://drsh2i2e8vw55"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_i4jcq"]
 [ext_resource type="Texture2D" uid="uid://c7u0xkh6l77hb" path="res://Art/Office Pack/HUD/elevator_panel.png" id="1_osmaf"]
@@ -10,11 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://2khvaf3rn22i" path="res://Art/Office Pack/HUD/alarm_buttom_select.png" id="6_uws4h"]
 [ext_resource type="Texture2D" uid="uid://cvrtdwbnm2sgk" path="res://Art/Office Pack/HUD/button_light.png" id="8_ga5d7"]
 [ext_resource type="Script" path="res://UI/Inventory.gd" id="10_1albi"]
-[ext_resource type="Texture2D" uid="uid://b2he7yqvkfy5f" path="res://Art/Office Pack/HUD/inventory1.png" id="11_yqvkt"]
+[ext_resource type="Texture2D" uid="uid://bj27efvxmq554" path="res://Art/Office Pack/HUD/inventory.png" id="11_qyv4i"]
 [ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="12_k7qmh"]
 [ext_resource type="Script" path="res://UI/Toolbar.gd" id="13_caupd"]
 [ext_resource type="Texture2D" uid="uid://dx2omqt8v3a2v" path="res://Art/Office Pack/Objects/coffee_bag.png" id="13_kxgfy"]
 [ext_resource type="Texture2D" uid="uid://dxn5f00tls4ws" path="res://Art/Office Pack/HUD/toolbar.png" id="14_hbl7p"]
+[ext_resource type="Script" path="res://UI/chest.gd" id="16_tfplt"]
+[ext_resource type="Texture2D" uid="uid://hip3p6sl25at" path="res://Art/Office Pack/HUD/chest.png" id="17_tma7j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sva8p"]
 atlas = ExtResource("4_7jkfc")
@@ -439,6 +441,7 @@ texture = ExtResource("8_ga5d7")
 stretch_mode = 2
 
 [node name="Inventory" type="Control" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -454,7 +457,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_yqvkt")
+texture = ExtResource("11_qyv4i")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
@@ -483,7 +486,7 @@ offset_right = 231.0
 offset_bottom = 98.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/Inventory/Panel"]
-position = Vector2(13, 13)
+position = Vector2(26, 8)
 texture = ExtResource("13_kxgfy")
 
 [node name="Toolbar" type="Control" parent="Control"]
@@ -497,6 +500,7 @@ grow_vertical = 2
 script = ExtResource("13_caupd")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Toolbar"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -504,3 +508,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_hbl7p")
+
+[node name="Chest" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_tfplt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Chest"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_tma7j")

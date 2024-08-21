@@ -22,38 +22,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_28bhi"]
-resource_name = "closing"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [2, 1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_sq0k5"]
-resource_name = "opening"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
 [sub_resource type="Animation" id="Animation_xabgd"]
 resource_name = "close"
 loop_mode = 1
@@ -68,6 +36,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_28bhi"]
+resource_name = "closing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_6x8us"]
@@ -86,6 +70,22 @@ tracks/0/keys = {
 "values": [2]
 }
 
+[sub_resource type="Animation" id="Animation_sq0k5"]
+resource_name = "opening"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxad6"]
 _data = {
 "RESET": SubResource("Animation_3yhia"),
@@ -102,11 +102,11 @@ size = Vector2(16, 27)
 script = ExtResource("1_0q8gd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
 texture = ExtResource("1_si3l1")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_mb4kh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -115,10 +115,11 @@ libraries = {
 }
 
 [node name="InteractionArea" parent="." instance=ExtResource("4_mr8op")]
+position = Vector2(0, -10)
 interact_type = "drawer"
 
 [node name="InteractionCollision" parent="InteractionArea" index="0"]
-position = Vector2(0, 2.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_sasmv")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
