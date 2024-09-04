@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://biw6to63mv8o0"]
+[gd_scene load_steps=14 format=3 uid="uid://biw6to63mv8o0"]
 
 [ext_resource type="Script" path="res://Levels/elevator_l.gd" id="1_7ak72"]
 [ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="1_g1j04"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bnysq25mpbohp" path="res://Art/Office Pack/Tiles/floor.png" id="3_e4mbv"]
 [ext_resource type="Texture2D" uid="uid://x01lrhxwhc4j" path="res://Art/Office Pack/Tiles/walls.png" id="4_chb5j"]
 [ext_resource type="Texture2D" uid="uid://c08f15y6csu3i" path="res://Art/Office Pack/Tiles/roof_borders.png" id="5_34jda"]
-[ext_resource type="PackedScene" uid="uid://drsh2i2e8vw55" path="res://UI/ui.tscn" id="5_ayek3"]
 [ext_resource type="PackedScene" uid="uid://nvgwthfdonkf" path="res://Objects/elevator_s.tscn" id="6_ulq6h"]
 [ext_resource type="PackedScene" uid="uid://d0oql0pi8txbx" path="res://Objects/elevator_panel.tscn" id="7_m7y34"]
 
@@ -282,5 +281,3 @@ spawn_direction = "up"
 
 [node name="ElevatorPanel" parent="." instance=ExtResource("7_m7y34")]
 position = Vector2(320, 152)
-
-[node name="UI" parent="." instance=ExtResource("5_ayek3")]

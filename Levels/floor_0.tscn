@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jp7fuv4lg4r5"]
+[gd_scene load_steps=13 format=3 uid="uid://jp7fuv4lg4r5"]
 
 [ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="1_e4nrh"]
 [ext_resource type="Script" path="res://Levels/floor_0.gd" id="1_mo363"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c08f15y6csu3i" path="res://Art/Office Pack/Tiles/roof_borders.png" id="4_3uyay"]
 [ext_resource type="Texture2D" uid="uid://cbkqa8ldpc0fg" path="res://Art/Office Pack/Tiles/roof.png" id="5_oiqrf"]
 [ext_resource type="PackedScene" uid="uid://bormgw3tryfp3" path="res://Objects/elevators_n.tscn" id="6_2nncq"]
-[ext_resource type="PackedScene" uid="uid://drsh2i2e8vw55" path="res://UI/ui.tscn" id="7_51ur8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtn3n"]
 texture = ExtResource("2_dxwf6")
@@ -135,5 +134,3 @@ layer_4/tile_data = PackedInt32Array(-327683, 65538, 0, -393214, 65538, 0, -6554
 [node name="ElevatorsN" parent="." instance=ExtResource("6_2nncq")]
 position = Vector2(16, -103)
 floor_id = "0"
-
-[node name="UI" parent="." instance=ExtResource("7_51ur8")]

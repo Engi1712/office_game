@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvList" load_steps=4 format=3 uid="uid://bj3pqkumqvqru"]
+
+[ext_resource type="Script" path="res://UI/inv_list.gd" id="1_mwvle"]
+[ext_resource type="Resource" uid="uid://dys47n70tpwwr" path="res://UI/Items/plastic_cup.tres" id="1_wgwrm"]
+[ext_resource type="Resource" uid="uid://dmehmi18qcnhf" path="res://UI/Items/teabag.tres" id="2_w27fr"]
+
+[resource]
+script = ExtResource("1_mwvle")
+items = Array[Resource("res://UI/inv_item.gd")]([ExtResource("1_wgwrm"), ExtResource("1_wgwrm"), ExtResource("2_w27fr"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

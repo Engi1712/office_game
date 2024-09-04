@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dkdi62kn2xku7"]
+[gd_scene load_steps=40 format=3 uid="uid://dkdi62kn2xku7"]
 
 [ext_resource type="Script" path="res://Levels/floor_2.gd" id="1_ubmyi"]
 [ext_resource type="PackedScene" uid="uid://78pmsn1o2adm" path="res://Characters/player_cam.tscn" id="2_nurjd"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://vt33hyg4kbec" path="res://Objects/door_s.tscn" id="13_rdwtm"]
 [ext_resource type="PackedScene" uid="uid://f663vvdqlai5" path="res://Objects/table.tscn" id="14_0sreh"]
 [ext_resource type="Texture2D" uid="uid://cr68lninr3dnq" path="res://Art/Office Pack/Objects/electric_panel.png" id="14_7411m"]
-[ext_resource type="PackedScene" uid="uid://drsh2i2e8vw55" path="res://UI/ui.tscn" id="14_o4h1j"]
 [ext_resource type="Texture2D" uid="uid://s6kea4f26spt" path="res://Art/Office Pack/Objects/aircon_shaft.png" id="15_14r3r"]
 [ext_resource type="PackedScene" uid="uid://qf73xkx1bvms" path="res://Objects/couch_e.tscn" id="15_a62pg"]
 [ext_resource type="Texture2D" uid="uid://b2n50sp6aidhi" path="res://Art/Office Pack/Objects/fire_hose.png" id="16_j670t"]
@@ -411,6 +410,7 @@ position = Vector2(-360, 83)
 
 [node name="Drawer" parent="." instance=ExtResource("16_kp4fi")]
 position = Vector2(-351, 155)
+inv_res = "flr2_drw1"
 
 [node name="Socket" type="Sprite2D" parent="."]
 position = Vector2(-280, 170)
@@ -557,7 +557,5 @@ position = Vector2(1592, 506)
 texture = ExtResource("17_0syug")
 hframes = 17
 frame = 13
-
-[node name="UI" parent="." instance=ExtResource("14_o4h1j")]
 
 [editable path="PlayerCam"]

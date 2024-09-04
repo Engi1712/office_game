@@ -24,27 +24,20 @@ func _input(event : InputEvent):
 		else:
 			submenu_active = true
 			cur_menu = pause_menu
-			pause_menu.activate()
+			cur_menu.activate()
 	elif event.is_action_pressed("inv"):
 		if submenu_active:
-			if cur_menu == inventory:
-				inventory.deactivate()
+			if (cur_menu == inventory or cur_menu == chest):
+				if cur_menu != inventory:
+					on_closed_menu.emit()
+				cur_menu.deactivate()
 				submenu_active = false
 		else:
 			submenu_active = true
 			cur_menu = inventory
-			inventory.activate()
+			cur_menu.activate()
 
 func elevator_panel_open(elevator_id):
 	submenu_active = true
 	cur_menu = elevator_panel
 	elevator_panel.activate(elevator_id)
-
-func chest_open():
-	submenu_active = true
-	cur_menu = chest
-	chest.activate()
-
-func chest_close():
-	chest.deactivate()
-	submenu_active = false
