@@ -12,6 +12,7 @@ extends CanvasLayer
 signal on_closed_menu
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	toolbar.activate()
 
 func _input(event : InputEvent):
@@ -24,7 +25,7 @@ func _input(event : InputEvent):
 		else:
 			submenu_active = true
 			cur_menu = pause_menu
-			cur_menu.activate()
+			pause_menu.activate()
 	elif event.is_action_pressed("inv"):
 		if submenu_active:
 			if (cur_menu == inventory or cur_menu == chest):
@@ -35,7 +36,7 @@ func _input(event : InputEvent):
 		else:
 			submenu_active = true
 			cur_menu = inventory
-			cur_menu.activate()
+			inventory.activate(null)
 
 func elevator_panel_open(elevator_id):
 	submenu_active = true
