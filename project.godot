@@ -23,6 +23,10 @@ TransitionScreen="*res://Global/transition_screen.tscn"
 ElevatorManager="*res://Global/elevator_manager.gd"
 UI="*res://UI/ui.tscn"
 
+[debug]
+
+gdscript/warnings/integer_division=0
+
 [display]
 
 window/size/viewport_width=640

@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dys47n70tpwwr"]
 
-[ext_resource type="Script" path="res://UI/inv_item.gd" id="1_vbaos"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_vbaos"]
 [ext_resource type="Texture2D" uid="uid://bjv2y3k2xoy01" path="res://Art/Office Pack/HUD/Icons/plastic_cup.png" id="2_xrg20"]
 
 [resource]
 script = ExtResource("1_vbaos")
 name = "plastic_cup"
 texture = ExtResource("2_xrg20")
+size = 1

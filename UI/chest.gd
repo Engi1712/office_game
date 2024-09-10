@@ -12,11 +12,11 @@ func _ready():
 	hide()
 
 func update_slots():
-	inv_size = min(inv_list.items.size(), slots.size())
+	inv_size = inv_list.slots.size()
 	for i in range(slots.size()):
 		if i < inv_size:
 			slots[i].set_available()
-			slots[i].set_item(inv_list.items[i])
+			slots[i].set_slot(inv_list.slots[i])
 		else:
 			slots[i].set_locked()
 			slots[i].visible = false
@@ -38,20 +38,18 @@ func deactivate():
 	inventory.deactivate()
 	ui.submenu_active = false
 
-func click(point: Vector2):
+func left_click(point: Vector2):
 	var found_slot = false
 	for i in range(inv_size):
 		if slots[i].get_global_rect().has_point(point):
 			if slot_selected != -1:
-				var tmp = inv_list.items[slot_selected]
-				inv_list.items[slot_selected] = inv_list.items[i]
-				inv_list.items[i] = tmp
+				if i != slot_selected:
+					inventory.place_item(inv_list.slots[i], inv_list.slots[slot_selected])
 				slot_selected = -1
 				update_slots()
 			elif inventory.slot_selected != -1:
-				var tmp = inventory.inv_list.items[inventory.slot_selected]
-				inventory.inv_list.items[inventory.slot_selected] = inv_list.items[i]
-				inv_list.items[i] = tmp
+				if i != slot_selected:
+					inventory.place_item(inv_list.slots[i], inventory.inv_list.slots[inventory.slot_selected])
 				inventory.slot_selected = -1
 				update_slots()
 				inventory.update_slots()
@@ -59,6 +57,25 @@ func click(point: Vector2):
 				if !slots[i].free:
 					slots[i].set_selected()
 					slot_selected = i
+			found_slot = true
 			break
 	if !found_slot:
-		inventory.click(point)
+		inventory.left_click(point)
+
+func right_click(point: Vector2):
+	var found_slot = false
+	for i in range(inv_size):
+		if slots[i].get_global_rect().has_point(point):
+			if slot_selected != -1:
+				if inventory.merge_item(inv_list.slots[i], inv_list.slots[slot_selected]):
+					slot_selected = -1
+					update_slots()
+			elif inventory.slot_selected != -1:
+				if inventory.merge_item(inv_list.slots[i], inventory.inv_list.slots[inventory.slot_selected]):
+					inventory.slot_selected = -1
+					update_slots()
+					inventory.update_slots()
+			found_slot = true
+			break
+	if !found_slot:
+		inventory.right_click(point)

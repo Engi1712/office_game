@@ -3,7 +3,11 @@ extends Panel
 @onready var available_sprite = $Available
 @onready var locked_sprite = $Locked
 @onready var selected_sprite = $Selected
-@onready var item_display = $Item
+@onready var placeholder_sprite = $Placeholder
+@onready var content = $Content
+@onready var item_display = $Content/Item
+
+@export var placeholder_texture: Texture2D
 
 var cur_state: String
 var mutex: Mutex
@@ -11,13 +15,14 @@ var free: bool
 
 func _ready():
 	mutex = Mutex.new()
-	set_locked()
-	cur_state = "locked"
+	set_available()
+	content.visible = false
 	free = true
+	placeholder_sprite.texture = placeholder_texture
+	placeholder_sprite.visible = true
 
 func set_available():
 	mutex.lock()
-	available_sprite.visible = true
 	locked_sprite.visible = false
 	selected_sprite.visible = false
 	cur_state = "available"
@@ -25,7 +30,6 @@ func set_available():
 
 func set_locked():
 	mutex.lock()
-	available_sprite.visible = false
 	locked_sprite.visible = true
 	selected_sprite.visible = false
 	cur_state = "locked"
@@ -33,17 +37,20 @@ func set_locked():
 
 func set_selected():
 	mutex.lock()
-	available_sprite.visible = false
 	locked_sprite.visible = false
 	selected_sprite.visible = true
 	cur_state = "selected"
 	mutex.unlock()
 
-func set_item(item: InvItem):
-	if !item:
-		item_display.visible = false
+func set_slot(slot: InvSlot):
+	if !slot.item:
+		content.visible = false
 		free = true
+		placeholder_sprite.visible = true
 	else:
-		item_display.visible = true
-		item_display.texture = item.texture
+		content.visible = true
+		item_display.texture = slot.item.texture
+		item_display.hframes = 1
+		item_display.frame = 0
 		free = false
+		placeholder_sprite.visible = true

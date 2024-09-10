@@ -12,7 +12,7 @@ func _ready():
 		DisplayServer.window_set_size(window_size)
 		DisplayServer.window_set_position(centered)
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		get_window().borderless = true
 		print(get_window().get_size_with_decorations())
 		print(get_window().borderless)

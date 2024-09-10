@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://g3vcxmygsqf5"]
+
+[ext_resource type="Script" path="res://UI/Inventory/slot.gd" id="1_qxsjt"]
+[ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/inv_slot.png" id="2_w8i0r"]
+[ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/inv_locked_slot.png" id="3_y3xxa"]
+[ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/inv_selected_slot.png" id="4_tiu5y"]
+[ext_resource type="Texture2D" uid="uid://dwfkwdcg3hh0h" path="res://Art/Office Pack/HUD/smal_numbers.png" id="5_fg1tt"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(22, 22)
+script = ExtResource("1_qxsjt")
+
+[node name="Available" type="Sprite2D" parent="."]
+position = Vector2(11, 11)
+texture = ExtResource("2_w8i0r")
+
+[node name="Locked" type="Sprite2D" parent="."]
+position = Vector2(11, 11)
+texture = ExtResource("3_y3xxa")
+
+[node name="Selected" type="Sprite2D" parent="."]
+position = Vector2(11, 11)
+texture = ExtResource("4_tiu5y")
+
+[node name="Content" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="Item" type="Sprite2D" parent="Content"]
+position = Vector2(11, 11)
+
+[node name="Number10" type="Sprite2D" parent="Content"]
+position = Vector2(12, 17)
+texture = ExtResource("5_fg1tt")
+hframes = 10
+frame = 9
+
+[node name="Number1" type="Sprite2D" parent="Content"]
+position = Vector2(18, 17)
+texture = ExtResource("5_fg1tt")
+hframes = 10
+frame = 9

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b68hyesng0fk3"]
+
+[ext_resource type="PackedScene" uid="uid://g3vcxmygsqf5" path="res://UI/Inventory/slot.tscn" id="1_3ty8f"]
+
+[node name="SmallGrid" type="GridContainer"]
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+
+[node name="Slot1" parent="." instance=ExtResource("1_3ty8f")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("1_3ty8f")]
+layout_mode = 2

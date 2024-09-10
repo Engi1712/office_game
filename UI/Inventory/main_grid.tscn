@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://csps7d47vffd2"]
 
-[ext_resource type="PackedScene" uid="uid://g3vcxmygsqf5" path="res://UI/inv_slot.tscn" id="1_dd32k"]
+[ext_resource type="PackedScene" uid="uid://g3vcxmygsqf5" path="res://UI/Inventory/slot.tscn" id="1_dd32k"]
 
 [node name="GridContainer" type="GridContainer"]
 custom_minimum_size = Vector2(22, 22)
