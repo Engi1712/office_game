@@ -1,5 +1,7 @@
 extends Node
 
+signal on_translation_updated
+
 func _ready():
 	var is_debug = true
 	if is_debug:
@@ -16,4 +18,6 @@ func _ready():
 		get_window().borderless = true
 		print(get_window().get_size_with_decorations())
 		print(get_window().borderless)
+	TranslationServer.set_locale("ru")
+	on_translation_updated.emit()
 	NavigationManager.call_deferred("go_to_level", "floor_2", "202")

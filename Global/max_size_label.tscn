@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drx25pwuce2jb"]
+
+[ext_resource type="Script" path="res://Global/max_size_label.gd" id="1_ai32i"]
+
+[node name="MaxSizeLabel" type="RichTextLabel"]
+script = ExtResource("1_ai32i")

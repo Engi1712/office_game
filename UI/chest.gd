@@ -7,6 +7,7 @@ extends Control
 var slot_selected: int
 var inv_size: int
 var inv_list: InvList
+var cur_hover: int
 
 func _ready():
 	hide()
@@ -27,6 +28,7 @@ func activate(inv_res: InvList):
 	inv_list = inv_res
 	update_slots()
 	slot_selected = -1
+	cur_hover = -1
 	inventory.activate(self)
 	show()
 
@@ -79,3 +81,20 @@ func right_click(point: Vector2):
 			break
 	if !found_slot:
 		inventory.right_click(point)
+
+func hover(point: Vector2):
+	var found_slot = false
+	for i in range(inv_size):
+		if slots[i].get_global_rect().has_point(point):
+			if cur_hover != i:
+				if cur_hover != -1:
+					slots[cur_hover].hover_hide()
+				slots[i].hover_show()
+				cur_hover = i
+			found_slot = true
+			break
+	if !found_slot:
+		if cur_hover != -1:
+			slots[cur_hover].hover_hide()
+			cur_hover = -1
+		inventory.hover(point)

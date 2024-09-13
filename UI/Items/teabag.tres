@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dmehmi18qcnhf"]
 
-[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_2ofaa"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_5skg5"]
 [ext_resource type="Texture2D" uid="uid://kg4w7o5251ai" path="res://Art/Office Pack/HUD/Icons/teabag.png" id="2_570cr"]
 
 [resource]
-script = ExtResource("1_2ofaa")
-name = "teabag"
+script = ExtResource("1_5skg5")
+id = "teabag"
+name = "ITEM_NAME_TEABAG"
 texture = ExtResource("2_570cr")
+size = 0

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_xdw8a")
-name = "plastic_cup_tea"
+id = "plastic_cup_tea"
+name = "ITEM_NAME_PLASTIC_CUP_TEA"
 texture = ExtResource("2_jfesd")
 size = 0
