@@ -23,6 +23,7 @@ func _ready():
 	free = true
 	cur_slot = null
 	Game.on_translation_updated.connect(update_text)
+	hover_name.resized.connect(hover_resize)
 	hover_hide()
 
 func update_text():
@@ -97,9 +98,20 @@ func set_amount(amount: int):
 
 func hover_show():
 	if !free:
+		#hover_label.position.x = position.x - hover_label.size.x - 3
+		#hover_label.position.x = - hover_label.size.x - 3
+		#await get_tree().process_frame
 		print(position)
 		print(hover_label.position)
+		print(hover_name.size)
+		print(hover_label.size)
+		print("\n")
 		hover_label.show()
+
+func hover_resize():
+	print("Resize ")
+	print(hover_name.size)
+	hover_label.position.x = - hover_label.size.x - 3
 
 func hover_hide():
 	hover_label.hide()

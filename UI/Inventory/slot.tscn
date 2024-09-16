@@ -71,8 +71,9 @@ theme_override_constants/margin_bottom = 6
 [node name="HoverText" type="VBoxContainer" parent="HoverLabel/Margins"]
 layout_mode = 2
 
-[node name="ItemName" type="Label" parent="HoverLabel/Margins/HoverText"]
+[node name="ItemName" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
 layout_mode = 2
+fit_content = true
 
 [node name="ItemParam" type="Label" parent="HoverLabel/Margins/HoverText"]
 layout_mode = 2
