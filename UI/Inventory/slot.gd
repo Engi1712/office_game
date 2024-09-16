@@ -13,21 +13,24 @@ extends Panel
 
 var cur_state: String
 var mutex: Mutex
-var free: bool
-var cur_slot: InvSlot
+var free: bool = true
+var cur_slot: InvSlot = null
+var cur_hover_side = "right"
+var grey = "b3b3b3"
+var water_color = "7abecc"
+var tea_color = "99632e"
 
 func _ready():
 	mutex = Mutex.new()
 	set_locked()
 	content.visible = false
-	free = true
 	cur_slot = null
 	Game.on_translation_updated.connect(update_text)
 	hover_name.resized.connect(hover_resize)
 	hover_hide()
 
 func update_text():
-	set_slot(cur_slot)
+	set_slot(cur_slot, cur_hover_side)
 
 func set_available():
 	mutex.lock()
@@ -50,7 +53,7 @@ func set_selected():
 	cur_state = "selected"
 	mutex.unlock()
 
-func set_slot(slot: InvSlot):
+func set_slot(slot: InvSlot, hover_side: String):
 	cur_slot = slot
 	if !slot:
 		return
@@ -73,15 +76,31 @@ func set_slot(slot: InvSlot):
 		set_amount(slot.amount)
 		hover_name.text = slot.item.name
 		match slot.item.id:
+			"plastic_cup":
+				hover_param.bbcode_text = ("[color=" + grey + "]"
+						+ str(slot.item.param)
+						+ "[/color] "
+						+ tr("SUFFIX_ML"))
 			"plastic_cup_water":
-				if slot.param != 0:
-					hover_param.text = str(slot.param) + " " + tr("SUFFIX_ML")
+				hover_param.bbcode_text = ("[color=" + water_color + "]"
+						+ str(slot.param)
+						+ "[/color]/[color=" + grey + "]"
+						+ str(slot.item.param)
+						+ "[/color] "
+						+ tr("SUFFIX_ML"))
 			"plastic_cup_tea":
-				if slot.param != 0:
-					hover_param.text = str(slot.param) + " " + tr("SUFFIX_ML")
+				hover_param.bbcode_text = ("[color=" + tea_color + "]"
+						+ str(slot.param)
+						+ "[/color]/[color=" + grey + "]"
+						+ str(slot.item.param)
+						+ "[/color] "
+						+ tr("SUFFIX_ML"))
 			_:
 				hover_param.text = ""
 		free = false
+		cur_hover_side = hover_side
+		if hover_side == "left":
+			hover_label.position.x = -153
 
 func set_amount(amount: int):
 	if amount == 1 or amount == 0:
@@ -111,7 +130,7 @@ func hover_show():
 func hover_resize():
 	print("Resize ")
 	print(hover_name.size)
-	hover_label.position.x = - hover_label.size.x - 3
+	#hover_label.position.x = - hover_label.size.x - 3
 
 func hover_hide():
 	hover_label.hide()

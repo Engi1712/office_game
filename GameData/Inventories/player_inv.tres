@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="InvList" load_steps=58 format=3 uid="uid://lajh2ocw0en"]
+[gd_resource type="Resource" script_class="InvList" load_steps=59 format=3 uid="uid://lajh2ocw0en"]
 
 [ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="1_y241y"]
 [ext_resource type="Resource" uid="uid://dys47n70tpwwr" path="res://UI/Items/plastic_cup.tres" id="2_eyrsa"]
 [ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3_xyh07"]
 [ext_resource type="Resource" uid="uid://difl7ot64gmkf" path="res://UI/Items/plastic_cup_water.tres" id="4_yp2rp"]
+[ext_resource type="Resource" uid="uid://dmehmi18qcnhf" path="res://UI/Items/teabag.tres" id="5_yrcwf"]
 
 [sub_resource type="Resource" id="Resource_pc70s"]
 script = ExtResource("3_xyh07")
@@ -15,11 +16,12 @@ param = 0
 script = ExtResource("3_xyh07")
 item = ExtResource("4_yp2rp")
 amount = 1
-param = 200
+param = 56
 
 [sub_resource type="Resource" id="Resource_gw0hs"]
 script = ExtResource("3_xyh07")
-amount = 0
+item = ExtResource("5_yrcwf")
+amount = 1
 param = 0
 
 [sub_resource type="Resource" id="Resource_d86qh"]

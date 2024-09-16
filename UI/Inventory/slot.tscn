@@ -50,8 +50,8 @@ self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 0
 offset_left = 25.0
-offset_right = 125.0
-offset_bottom = 38.0
+offset_right = 175.0
+offset_bottom = 81.0
 
 [node name="HoverBG" type="NinePatchRect" parent="HoverLabel"]
 layout_mode = 2
@@ -73,7 +73,10 @@ layout_mode = 2
 
 [node name="ItemName" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
 layout_mode = 2
+bbcode_enabled = true
 fit_content = true
 
-[node name="ItemParam" type="Label" parent="HoverLabel/Margins/HoverText"]
+[node name="ItemParam" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
 layout_mode = 2
+bbcode_enabled = true
+fit_content = true

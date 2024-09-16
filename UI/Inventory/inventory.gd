@@ -9,23 +9,21 @@ var crafts = {
 	}
 }
 
-var slot_selected: int
-var inv_size: int = 12
+var slot_selected: int = -1
+var inv_size: int = 54
 var transferring: bool
 var remote_inv: Control
-var cur_hover: int
+var cur_hover: int = -1
 
 func _ready():
 	hide()
 	update_slots()
-	slot_selected = -1
-	cur_hover = -1
 
 func update_slots():
 	for i in range(slots.size()):
+		slots[i].set_slot(inv_list.slots[i], "right")
 		if i < inv_size:
 			slots[i].set_available()
-			slots[i].set_slot(inv_list.slots[i])
 		else:
 			slots[i].set_locked()
 

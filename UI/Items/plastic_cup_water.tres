@@ -9,3 +9,4 @@ id = "plastic_cup_water"
 name = "ITEM_NAME_PLASTIC_CUP_WATER"
 texture = ExtResource("2_l5qjg")
 size = 0
+param = 200

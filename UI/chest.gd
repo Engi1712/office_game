@@ -8,6 +8,7 @@ var slot_selected: int
 var inv_size: int
 var inv_list: InvList
 var cur_hover: int
+var grey = Color(179/255.0, 179/255.0, 179/255.0, 1.0)
 
 func _ready():
 	hide()

@@ -1,6 +1,10 @@
 extends Node
 
+@export var current_scale: int = 1
+
 signal on_translation_updated
+
+var resolution = Vector2(640, 360)
 
 func _ready():
 	var is_debug = true
@@ -13,11 +17,14 @@ func _ready():
 		#DisplayServer.window_set_current_screen(2)
 		DisplayServer.window_set_size(window_size)
 		DisplayServer.window_set_position(centered)
+		current_scale = 2
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		get_window().borderless = true
-		print(get_window().get_size_with_decorations())
-		print(get_window().borderless)
-	TranslationServer.set_locale("ru")
+		current_scale = min(get_window().get_size_with_decorations().x / resolution.x,
+				get_window().get_size_with_decorations().y / resolution.y)
+	var arrow = load("res://Art/Office Pack/HUD/cursor" + str(current_scale) + ".png")
+	Input.set_custom_mouse_cursor(arrow)
+	TranslationServer.set_locale("ja")
 	on_translation_updated.emit()
 	NavigationManager.call_deferred("go_to_level", "floor_2", "202")

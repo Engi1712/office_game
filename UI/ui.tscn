@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dsx6yqcxynog3" path="res://Art/Office Pack/HUD/inv_hand_slot.png" id="16_gmi3q"]
 [ext_resource type="Script" path="res://UI/chest.gd" id="16_tfplt"]
 [ext_resource type="Texture2D" uid="uid://c6qjximvs4fef" path="res://Art/Office Pack/HUD/inv_jacket_slot.png" id="17_hm7v1"]
-[ext_resource type="PackedScene" path="res://UI/cursor.tscn" id="17_mqexb"]
+[ext_resource type="PackedScene" uid="uid://2tlsbeyvph4a" path="res://UI/cursor.tscn" id="17_mqexb"]
 [ext_resource type="Texture2D" uid="uid://hip3p6sl25at" path="res://Art/Office Pack/HUD/chest.png" id="17_tma7j"]
 [ext_resource type="Texture2D" uid="uid://ueqy7cxna7un" path="res://Art/Office Pack/HUD/inv_shirt_slot.png" id="18_ep81g"]
 [ext_resource type="Texture2D" uid="uid://hw52vegq35rk" path="res://Art/Office Pack/HUD/inv_trousers_slot.png" id="19_8xhmo"]
