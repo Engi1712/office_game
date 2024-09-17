@@ -6,10 +6,10 @@ uid="uid://cc8wo0hl1dqmv"
 
 [deps]
 
-files=["res://GameData/translations.en.translation", "res://GameData/translations.ru.translation", "res://GameData/translations.ja.translation", "res://GameData/translations.es.translation", "res://GameData/translations.cmn.translation", "res://GameData/translations.de.translation", "res://GameData/translations.fr.translation", "res://GameData/translations.pt.translation", "res://GameData/translations.it.translation", "res://GameData/translations.tr.translation"]
+files=["res://GameData/translations.en.translation", "res://GameData/translations.ru.translation", "res://GameData/translations.ja.translation", "res://GameData/translations.es.translation", "res://GameData/translations.de.translation", "res://GameData/translations.fr.translation", "res://GameData/translations.pt.translation", "res://GameData/translations.it.translation", "res://GameData/translations.tr.translation"]
 
 source_file="res://GameData/translations.csv"
-dest_files=["res://GameData/translations.en.translation", "res://GameData/translations.ru.translation", "res://GameData/translations.ja.translation", "res://GameData/translations.es.translation", "res://GameData/translations.cmn.translation", "res://GameData/translations.de.translation", "res://GameData/translations.fr.translation", "res://GameData/translations.pt.translation", "res://GameData/translations.it.translation", "res://GameData/translations.tr.translation"]
+dest_files=["res://GameData/translations.en.translation", "res://GameData/translations.ru.translation", "res://GameData/translations.ja.translation", "res://GameData/translations.es.translation", "res://GameData/translations.de.translation", "res://GameData/translations.fr.translation", "res://GameData/translations.pt.translation", "res://GameData/translations.it.translation", "res://GameData/translations.tr.translation"]
 
 [params]
 

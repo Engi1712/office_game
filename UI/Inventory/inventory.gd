@@ -62,16 +62,19 @@ func merge_item(to: InvSlot, from: InvSlot):
 			to.item = load("res://UI/Items/" + crafts[to.item.id][from.item.id] + ".tres")
 			from.item = null
 			from.amount = 0
-			from.param = 0
+			from.param1 = 0
+			from.param2 = 0
 			return true
 	if crafts.has(from.item.id):
 		if crafts[from.item.id].has(to.item.id):
 			to.item = load("res://UI/Items/" + crafts[from.item.id][to.item.id] + ".tres")
 			to.amount = from.amount
-			to.param = from.param
+			to.param1 = from.param1
+			to.param2 = from.param2
 			from.item = null
 			from.amount = 0
-			from.param = 0
+			from.param1 = 0
+			from.param2 = 0
 			return true
 	return false
 

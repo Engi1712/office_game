@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d0nsy25iwei63"]
+
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_tf0jg"]
+[ext_resource type="Texture2D" uid="uid://b2j5l5fh22npa" path="res://Art/Office Pack/HUD/Icons/plastic_cup_coffee.png" id="2_xgkhh"]
+
+[resource]
+script = ExtResource("1_tf0jg")
+id = "plastic_cup_coffee"
+name = "ITEM_NAME_PLASTIC_CUP_COFFEE"
+texture = ExtResource("2_xgkhh")
+size = 2
+stack_size = 1
+param = 200

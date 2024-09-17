@@ -51,7 +51,7 @@ z_index = 1
 layout_mode = 0
 offset_left = 25.0
 offset_right = 175.0
-offset_bottom = 81.0
+offset_bottom = 20.0
 
 [node name="HoverBG" type="NinePatchRect" parent="HoverLabel"]
 layout_mode = 2
@@ -76,7 +76,17 @@ layout_mode = 2
 bbcode_enabled = true
 fit_content = true
 
-[node name="ItemParam" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
+[node name="ItemAmount" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ItemParam1" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ItemParam2" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true

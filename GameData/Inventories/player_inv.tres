@@ -1,278 +1,337 @@
-[gd_resource type="Resource" script_class="InvList" load_steps=59 format=3 uid="uid://lajh2ocw0en"]
+[gd_resource type="Resource" script_class="InvList" load_steps=62 format=3 uid="uid://lajh2ocw0en"]
 
 [ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="1_y241y"]
 [ext_resource type="Resource" uid="uid://dys47n70tpwwr" path="res://UI/Items/plastic_cup.tres" id="2_eyrsa"]
 [ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3_xyh07"]
 [ext_resource type="Resource" uid="uid://difl7ot64gmkf" path="res://UI/Items/plastic_cup_water.tres" id="4_yp2rp"]
+[ext_resource type="Resource" uid="uid://b82krjvu5n7yb" path="res://UI/Items/plastic_cup_tea.tres" id="5_xhyry"]
 [ext_resource type="Resource" uid="uid://dmehmi18qcnhf" path="res://UI/Items/teabag.tres" id="5_yrcwf"]
+[ext_resource type="Resource" uid="uid://biqylehgmp7lo" path="res://UI/Items/plastic_cup_milk.tres" id="6_s3ith"]
+[ext_resource type="Resource" uid="uid://d0nsy25iwei63" path="res://UI/Items/plastic_cup_coffee.tres" id="7_ge5fx"]
 
 [sub_resource type="Resource" id="Resource_pc70s"]
 script = ExtResource("3_xyh07")
 item = ExtResource("2_eyrsa")
 amount = 3
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_pg4ir"]
 script = ExtResource("3_xyh07")
 item = ExtResource("4_yp2rp")
 amount = 1
-param = 56
+param1 = 200
+param2 = 21
 
 [sub_resource type="Resource" id="Resource_gw0hs"]
 script = ExtResource("3_xyh07")
-item = ExtResource("5_yrcwf")
+item = ExtResource("5_xhyry")
 amount = 1
-param = 0
+param1 = 200
+param2 = 46
 
 [sub_resource type="Resource" id="Resource_d86qh"]
 script = ExtResource("3_xyh07")
-amount = 0
-param = 0
+item = ExtResource("6_s3ith")
+amount = 1
+param1 = 200
+param2 = 4
 
 [sub_resource type="Resource" id="Resource_p4dx3"]
 script = ExtResource("3_xyh07")
-amount = 0
-param = 0
+item = ExtResource("7_ge5fx")
+amount = 1
+param1 = 200
+param2 = 99
 
 [sub_resource type="Resource" id="Resource_irfv3"]
 script = ExtResource("3_xyh07")
-amount = 0
-param = 0
+item = ExtResource("5_yrcwf")
+amount = 1
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_cvfl1"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_deaw6"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_vrvdy"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_ylg5v"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_vhhfe"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_bhqox"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_yif33"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_qmxyj"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_w11dv"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_8i5a3"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_fokny"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_uxb2w"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_ujkes"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_72y8t"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_xt5x8"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_s5wvh"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_xnkfx"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_e31tr"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_xb4oj"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_yvicx"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_hldh0"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_3erj2"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_wxtbe"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_r5330"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_t33pm"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_tes4p"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_2bt7o"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_2byb2"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_wx4ir"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_afdlb"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_8lm6o"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_073dw"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_unutm"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_fjkb3"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_r3wad"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_0r1xr"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_4p5ri"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_lsuci"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_r1m6q"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_e6et6"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_t67me"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_wog50"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_jd58g"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_d1dxw"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_sms4y"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_s3t0r"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [sub_resource type="Resource" id="Resource_c3d17"]
 script = ExtResource("3_xyh07")
 amount = 0
-param = 0
+param1 = 0
+param2 = 0
 
 [resource]
 script = ExtResource("1_y241y")

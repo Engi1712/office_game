@@ -1,7 +1,9 @@
-keys,en,ru,ja,es,cmn,de,fr,pt,it,tr
-ITEM_NAME_PLASTIC_CUP,Plastic cup,Пластиковый стаканчик,プラスチックカップ,Vaso de plástico,塑料杯,Plastikbecher,Tasse en plastique,Copo de plástico,Bicchiere di plastica,Plastik bardak
-ITEM_NAME_PLASTIC_CUP_WATER,Water (plastic cup),Вода (пластиковый стаканчик),水（プラスチックカップ）,Agua (vaso de plástico),水 (塑料杯),Wasser (Plastikbecher),Eau (tasse en plastique),Água (copo de plástico),Acqua (bicchiere di plastica),Su (plastik bardak)
-ITEM_NAME_PLASTIC_CUP_TEA,Tea (plastic cup),Чай (пластиковый стаканчик),紅茶（プラスチックカップ）,Té (vaso de plástico),红茶 (塑料杯),Tee (Plastikbecher),Thé (tasse en plastique),Chá (copo de plástico),Tè (bicchiere di plastica),Çay (plastik bardak)
-ITEM_NAME_TEABAG,Teabag,Чайный пакетик,茶袋,Bolsita de té,茶包,Teebeutel,Sachet de thé,Chá em saquinho,Bustina di tè,Çay poşeti
-ITEM_NAME_MILK,Milk,Молоко,牛乳,Leche,牛奶,Milch,lait,Leite,Latte,Süt
-SUFFIX_ML,ml,мл,ｍｌ,ml,毫升,ml,ml,ml,ml,ml
+keys,en,ru,ja,es,de,fr,pt,it,tr
+ITEM_NAME_PLASTIC_CUP,Plastic cup,Пластиковый стаканчик,プラスチックカップ,Vaso de plástico,Plastikbecher,Tasse en plastique,Copo de plástico,Bicchiere di plastica,Plastik bardak
+ITEM_NAME_PLASTIC_CUP_WATER,Water (plastic cup),Вода (пластиковый стаканчик),水（プラスチックカップ）,Agua (vaso de plástico),Wasser (Plastikbecher),Eau (tasse en plastique),Água (copo de plástico),Acqua (bicchiere di plastica),Su (plastik bardak)
+ITEM_NAME_PLASTIC_CUP_TEA,Tea (plastic cup),Чай (пластиковый стаканчик),紅茶（プラスチックカップ）,Té (vaso de plástico),Tee (Plastikbecher),Thé (tasse en plastique),Chá (copo de plástico),Tè (bicchiere di plastica),Çay (plastik bardak)
+ITEM_NAME_PLASTIC_CUP_MILK,Milk (plastic cup),Молоко (пластиковый стаканчик),牛乳（プラスチックカップ）,Leche (vaso de plástico),Milch (Plastikbecher),Lait (tasse en plastique),Leite (copo de plástico),Latte (bicchiere di plastica),Süt (plastik bardak)
+ITEM_NAME_PLASTIC_CUP_COFFEE,Coffee (plastic cup),Кофе (пластиковый стаканчик),コーヒー （プラスチックカップ）,Café (vaso de plástico),Kaffee (Plastikbecher),Café (tasse en plastique),Café (copo de plástico),Caffè (bicchiere di plastica),Kahve (plastik bardak)
+ITEM_NAME_TEABAG,Teabag,Чайный пакетик,茶袋,Bolsita de té,Teebeutel,Sachet de thé,Chá em saquinho,Bustina di tè,Çay poşeti
+ITEM_NAME_MILK,Milk,Молоко,牛乳,Leche,Milch,Lait,Leite,Latte,Süt
+SUFFIX_ML,ml,мл,ｍｌ,ml,ml,ml,ml,ml,ml

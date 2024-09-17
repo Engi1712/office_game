@@ -9,16 +9,17 @@ extends Panel
 @onready var number1 = $Content/Number1
 @onready var hover_label = $HoverLabel
 @onready var hover_name = $HoverLabel/Margins/HoverText/ItemName
-@onready var hover_param = $HoverLabel/Margins/HoverText/ItemParam
+@onready var hover_amount = $HoverLabel/Margins/HoverText/ItemAmount
+@onready var hover_param1 = $HoverLabel/Margins/HoverText/ItemParam1
+@onready var hover_param2 = $HoverLabel/Margins/HoverText/ItemParam2
 
 var cur_state: String
 var mutex: Mutex
 var free: bool = true
 var cur_slot: InvSlot = null
 var cur_hover_side = "right"
-var grey = "b3b3b3"
-var water_color = "7abecc"
-var tea_color = "99632e"
+var temp_gradient = ["52a3cc", "73bfe6", "99ddff", "cceeff", "ffffff", "ffcccc", "ff9999", "e67373", "cc5252"]
+var grey = "999999"
 
 func _ready():
 	mutex = Mutex.new()
@@ -28,6 +29,16 @@ func _ready():
 	Game.on_translation_updated.connect(update_text)
 	hover_name.resized.connect(hover_resize)
 	hover_hide()
+
+func get_temp_color(degree: int):
+	if degree < 21:
+		return temp_gradient[(degree - 1) / 5]
+	elif degree == 21:
+		return temp_gradient[4]
+	elif degree < 98:
+		return temp_gradient[((degree - 21) / 19) + 5]
+	else:
+		return temp_gradient[8]
 
 func update_text():
 	set_slot(cur_slot, cur_hover_side)
@@ -64,39 +75,38 @@ func set_slot(slot: InvSlot, hover_side: String):
 		content.visible = true
 		item_display.texture = slot.item.texture
 		match slot.item.id:
-			"plastic_cup_water":
+			"plastic_cup_water", "plastic_cup_tea", "plastic_cup_milk", "plastic_cup_coffee":
 				item_display.hframes = 10
-				item_display.frame = (slot.param - 1) / 20
-			"plastic_cup_tea":
-				item_display.hframes = 10
-				item_display.frame = (slot.param - 1) / 20
+				item_display.frame = (slot.param1 - 1) / 20
 			_:
 				item_display.hframes = 1
 				item_display.frame = 0
 		set_amount(slot.amount)
-		hover_name.text = slot.item.name
+		hover_name.bbcode_text = slot.item.name
+		hover_amount.bbcode_text = (str(slot.amount)
+				+ "[color=" + grey + "]/"
+				+ str(slot.item.stack_size)
+				+ "[/color]")
 		match slot.item.id:
 			"plastic_cup":
-				hover_param.bbcode_text = ("[color=" + grey + "]"
+				hover_param1.bbcode_text = ("[color=" + grey + "]"
+						+ str(slot.item.param)
+						+ " "
+						+ tr("SUFFIX_ML")
+						+ "[/color]")
+			"plastic_cup_water", "plastic_cup_tea", "plastic_cup_milk", "plastic_cup_coffee":
+				hover_param1.bbcode_text = (str(slot.param1)
+						+ "[color=" + grey + "]/"
 						+ str(slot.item.param)
 						+ "[/color] "
 						+ tr("SUFFIX_ML"))
-			"plastic_cup_water":
-				hover_param.bbcode_text = ("[color=" + water_color + "]"
-						+ str(slot.param)
-						+ "[/color]/[color=" + grey + "]"
-						+ str(slot.item.param)
-						+ "[/color] "
-						+ tr("SUFFIX_ML"))
-			"plastic_cup_tea":
-				hover_param.bbcode_text = ("[color=" + tea_color + "]"
-						+ str(slot.param)
-						+ "[/color]/[color=" + grey + "]"
-						+ str(slot.item.param)
-						+ "[/color] "
-						+ tr("SUFFIX_ML"))
+				hover_param2.bbcode_text = ("[color="
+						+ get_temp_color(slot.param2) + "]"
+						+ str(slot.param2)
+						+ "[/color]°C")
+				print(slot.param2)
 			_:
-				hover_param.text = ""
+				hover_param1.text = ""
 		free = false
 		cur_hover_side = hover_side
 		if hover_side == "left":
