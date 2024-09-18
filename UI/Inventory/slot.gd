@@ -3,6 +3,7 @@ extends Panel
 @onready var available_sprite = $Available
 @onready var locked_sprite = $Locked
 @onready var selected_sprite = $Selected
+@onready var capacity_sprite = $Capacity
 @onready var content = $Content
 @onready var item_display = $Content/Item
 @onready var number10 = $Content/Number10
@@ -20,6 +21,7 @@ var cur_slot: InvSlot = null
 var cur_hover_side = "right"
 var temp_gradient = ["52a3cc", "73bfe6", "99ddff", "cceeff", "ffffff", "ffcccc", "ff9999", "e67373", "cc5252"]
 var grey = "999999"
+var cur_capacity: int = 0
 
 func _ready():
 	mutex = Mutex.new()
@@ -41,7 +43,7 @@ func get_temp_color(degree: int):
 		return temp_gradient[8]
 
 func update_text():
-	set_slot(cur_slot, cur_hover_side)
+	set_slot(cur_slot, cur_hover_side, cur_capacity)
 
 func set_available():
 	mutex.lock()
@@ -64,13 +66,20 @@ func set_selected():
 	cur_state = "selected"
 	mutex.unlock()
 
-func set_slot(slot: InvSlot, hover_side: String):
+func set_slot(slot: InvSlot, hover_side: String, capacity: int):
 	cur_slot = slot
 	if !slot:
 		return
+	cur_capacity = capacity
 	if !slot.item:
 		content.visible = false
 		free = true
+		if capacity == 0:
+			capacity_sprite.texture = null
+		else:
+			capacity_sprite.texture = load("res://Art/Office Pack/HUD/capacity" + str(capacity) + ".png")
+			capacity_sprite.hframes = capacity + 1
+			capacity_sprite.frame = 0
 	else:
 		content.visible = true
 		item_display.texture = slot.item.texture
@@ -111,6 +120,12 @@ func set_slot(slot: InvSlot, hover_side: String):
 		cur_hover_side = hover_side
 		if hover_side == "left":
 			hover_label.position.x = -153
+		if capacity == 0:
+			capacity_sprite = null
+		else:
+			capacity_sprite.texture = load("res://Art/Office Pack/HUD/capacity" + str(capacity) + ".png")
+			capacity_sprite.hframes = capacity + 1
+			capacity_sprite.frame = slot.item.size
 
 func set_amount(amount: int):
 	if amount == 1 or amount == 0:

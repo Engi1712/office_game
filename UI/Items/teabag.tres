@@ -8,6 +8,6 @@ script = ExtResource("1_5skg5")
 id = "teabag"
 name = "ITEM_NAME_TEABAG"
 texture = ExtResource("2_570cr")
-size = 0
+size = 1
 stack_size = 5
 param = 0

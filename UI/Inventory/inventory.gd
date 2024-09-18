@@ -21,7 +21,7 @@ func _ready():
 
 func update_slots():
 	for i in range(slots.size()):
-		slots[i].set_slot(inv_list.slots[i], "right")
+		slots[i].set_slot(inv_list.slots[i], "right", 2)
 		if i < inv_size:
 			slots[i].set_available()
 		else:

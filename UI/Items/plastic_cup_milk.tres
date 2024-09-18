@@ -8,6 +8,6 @@ script = ExtResource("1_xrwj0")
 id = "plastic_cup_milk"
 name = "ITEM_NAME_PLASTIC_CUP_MILK"
 texture = ExtResource("2_wwq0d")
-size = 2
+size = 3
 stack_size = 1
 param = 200

@@ -7,7 +7,7 @@ signal on_translation_updated
 var resolution = Vector2(640, 360)
 
 func _ready():
-	var is_debug = true
+	var is_debug = false
 	if is_debug:
 		#var window_size = Vector2(1920, 1080)
 		var window_size = Vector2(1280, 720)

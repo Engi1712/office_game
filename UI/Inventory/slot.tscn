@@ -24,6 +24,10 @@ texture = ExtResource("3_y3xxa")
 position = Vector2(11, 11)
 texture = ExtResource("4_tiu5y")
 
+[node name="Capacity" type="Sprite2D" parent="."]
+position = Vector2(11, 11)
+hframes = 2
+
 [node name="Content" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
