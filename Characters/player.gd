@@ -3,42 +3,34 @@ extends CharacterBody2D
 class_name Player
 
 @export var move_speed : float = 80
-@export var starting_direction : Vector2 = Vector2(0, 1)
 @export var cam_ready = false
 
-@onready var animation_tree = $AnimationTree
-@onready var state_machine = animation_tree.get("parameters/playback")
+@onready var character_sprite = $CharacterSprite
 
 @onready var all_interactions = []
-@onready var interact_label = $"InteractionComponents/InteractLabel"
 
 @onready var all_zones = []
 
 func _ready():
 	NavigationManager.on_triggered_player_spawn.connect(_on_spawn)
-	update_animation_parameters(starting_direction)
 	if all_interactions:
 		enter_interaction(all_interactions[0])
 	if all_zones:
 		enter_zone(all_zones[0])
-	#position = Vector2(100, 100)
 
-func _on_spawn(spawn_position : Vector2, direction : String):
+func _on_spawn(spawn_position: Vector2, direction: String):
 	global_position = spawn_position
 	match direction:
-		"up" :
-			animation_tree.set("parameters/Walk/blend_position", Vector2(0, -1))
-			animation_tree.set("parameters/Idle/blend_position", Vector2(0, -1))
-		"down" :
-			animation_tree.set("parameters/Walk/blend_position", Vector2(0, 1))
-			animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
-		"right" :
-			animation_tree.set("parameters/Walk/blend_position", Vector2(1, 0))
-			animation_tree.set("parameters/Idle/blend_position", Vector2(1, 0))
-		"left" :
-			animation_tree.set("parameters/Walk/blend_position", Vector2(-1, 0))
-			animation_tree.set("parameters/Idle/blend_position", Vector2(-1, 0))
+		"up":
+			character_sprite.update_animation("Idle", Vector2(0, -1))
+		"down":
+			character_sprite.update_animation("Idle", Vector2(0, 1))
+		"right":
+			character_sprite.update_animation("Idle", Vector2(1, 0))
+		"left":
+			character_sprite.update_animation("Idle", Vector2(-1, 0))
 	cam_ready = true
+	UI.minimap.set_map(global_position)
 
 func _physics_process(_delta):
 	var input_direction = Vector2(
@@ -46,29 +38,30 @@ func _physics_process(_delta):
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	).normalized()
 	
-	update_animation_parameters(input_direction)
-	
 	velocity = input_direction * move_speed
 	
 	move_and_slide()
 	
-	pick_new_state()
+	if (velocity != Vector2.ZERO):
+		character_sprite.update_animation("Walk", input_direction)
+		UI.minimap.move_map(global_position)
+	else:
+		character_sprite.update_animation("Idle", input_direction)
 	
 	if Input.is_action_just_pressed("interact") and all_interactions:
 		execute_interaction(all_interactions[0])
 	if Input.is_action_just_released("interact") and all_interactions:
 		de_execute_interaction(all_interactions[0])
-
-func update_animation_parameters(move_input : Vector2):
-	if (move_input != Vector2.ZERO):
-		animation_tree.set("parameters/Walk/blend_position", move_input)
-		animation_tree.set("parameters/Idle/blend_position", move_input)
-
-func pick_new_state():
-	if (velocity != Vector2.ZERO):
-		state_machine.travel("Walk")
-	else:
-		state_machine.travel("Idle")
+	if Input.is_action_just_released("debug"):
+		character_sprite.skin = ["White", "Black", "Asian", "Arab", "Latina"].pick_random()
+		character_sprite.hair = ["BlondeBob", "BrownBob", "GingerBob", "BlackBob", "GreyBob", "WhiteBob"].pick_random()
+		character_sprite.brows = ["Blonde", "Brown", "Ginger", "Black", "Grey", "White"].pick_random()
+		character_sprite.eyes = ["Blue", "Brown", "Red", "Green", "Grey"].pick_random()
+		character_sprite.lips = ["Pink", "Brown", "Red"].pick_random()
+		character_sprite.shoes = ["Black", "Brown", "Burgundy"].pick_random()
+		character_sprite.trousers = ["Black", "Cream", "Navy"].pick_random()
+		character_sprite.shirt = ["White", "Cream", "Black", "Blue"].pick_random()
+		character_sprite.update_sprite()
 
 #Interaction methods
 

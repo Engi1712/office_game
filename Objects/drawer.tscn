@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl763vqldmjg5"]
+[gd_scene load_steps=13 format=3 uid="uid://bl763vqldmjg5"]
 
 [ext_resource type="Script" path="res://Objects/drawer.gd" id="1_0q8gd"]
 [ext_resource type="Texture2D" uid="uid://dff3hqbve6onf" path="res://Art/Office Pack/Objects/drawer.png" id="1_si3l1"]
+[ext_resource type="PackedScene" uid="uid://b4flbw0cq4jdo" path="res://UI/interact_label.tscn" id="4_41bdn"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_mr8op"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb4kh"]
@@ -121,6 +122,10 @@ interact_type = "drawer"
 [node name="InteractionCollision" parent="InteractionArea" index="0"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_sasmv")
+
+[node name="InteractLabel" parent="." instance=ExtResource("4_41bdn")]
+offset_top = -50.0
+offset_bottom = -26.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

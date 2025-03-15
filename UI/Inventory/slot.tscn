@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://g3vcxmygsqf5"]
+[gd_scene load_steps=8 format=3 uid="uid://g3vcxmygsqf5"]
 
 [ext_resource type="Script" path="res://UI/Inventory/slot.gd" id="1_qxsjt"]
 [ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/inv_slot.png" id="2_w8i0r"]
 [ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/inv_locked_slot.png" id="3_y3xxa"]
 [ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/inv_selected_slot.png" id="4_tiu5y"]
-[ext_resource type="Texture2D" uid="uid://dwfkwdcg3hh0h" path="res://Art/Office Pack/HUD/smal_numbers.png" id="5_fg1tt"]
-[ext_resource type="Texture2D" uid="uid://v63jh2vut10s" path="res://Art/Office Pack/HUD/inv_hover_bg.png" id="6_eq2xu"]
+[ext_resource type="Texture2D" uid="uid://dwfkwdcg3hh0h" path="res://Art/Office Pack/HUD/small_numbers_black.png" id="5_o6na8"]
+[ext_resource type="Texture2D" uid="uid://cj6172hscrjhy" path="res://Art/Office Pack/HUD/small_numbers_red.png" id="6_t4dqh"]
+[ext_resource type="PackedScene" uid="uid://cqj5nahpvm5nq" path="res://UI/Inventory/hover_label.tscn" id="7_meegu"]
 
 [node name="Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -16,17 +17,12 @@ script = ExtResource("1_qxsjt")
 position = Vector2(11, 11)
 texture = ExtResource("2_w8i0r")
 
-[node name="Locked" type="Sprite2D" parent="."]
+[node name="Placeholder" type="Sprite2D" parent="."]
 position = Vector2(11, 11)
-texture = ExtResource("3_y3xxa")
 
 [node name="Selected" type="Sprite2D" parent="."]
 position = Vector2(11, 11)
 texture = ExtResource("4_tiu5y")
-
-[node name="Capacity" type="Sprite2D" parent="."]
-position = Vector2(11, 11)
-hframes = 2
 
 [node name="Content" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -39,58 +35,31 @@ position = Vector2(11, 11)
 
 [node name="Number10" type="Sprite2D" parent="Content"]
 position = Vector2(12, 17)
-texture = ExtResource("5_fg1tt")
+texture = ExtResource("5_o6na8")
 hframes = 10
 frame = 9
 
 [node name="Number1" type="Sprite2D" parent="Content"]
 position = Vector2(18, 17)
-texture = ExtResource("5_fg1tt")
+texture = ExtResource("5_o6na8")
 hframes = 10
 frame = 9
 
-[node name="HoverLabel" type="PanelContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-z_index = 1
+[node name="Toolbar" type="Sprite2D" parent="Content"]
+position = Vector2(18, 6)
+texture = ExtResource("6_t4dqh")
+hframes = 10
+
+[node name="Capacity" type="Sprite2D" parent="."]
+position = Vector2(11, 11)
+hframes = 2
+
+[node name="Locked" type="Sprite2D" parent="."]
+position = Vector2(11, 11)
+texture = ExtResource("3_y3xxa")
+
+[node name="HoverLabel" parent="." instance=ExtResource("7_meegu")]
+visible = false
 layout_mode = 0
-offset_left = 25.0
-offset_right = 175.0
-offset_bottom = 20.0
-
-[node name="HoverBG" type="NinePatchRect" parent="HoverLabel"]
-layout_mode = 2
-texture = ExtResource("6_eq2xu")
-patch_margin_left = 2
-patch_margin_top = 2
-patch_margin_right = 2
-patch_margin_bottom = 2
-
-[node name="Margins" type="MarginContainer" parent="HoverLabel"]
-layout_mode = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
-
-[node name="HoverText" type="VBoxContainer" parent="HoverLabel/Margins"]
-layout_mode = 2
-
-[node name="ItemName" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
-layout_mode = 2
-bbcode_enabled = true
-fit_content = true
-
-[node name="ItemAmount" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
-layout_mode = 2
-bbcode_enabled = true
-fit_content = true
-
-[node name="ItemParam1" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
-layout_mode = 2
-bbcode_enabled = true
-fit_content = true
-
-[node name="ItemParam2" type="RichTextLabel" parent="HoverLabel/Margins/HoverText"]
-layout_mode = 2
-bbcode_enabled = true
-fit_content = true
+offset_left = 27.0
+offset_right = 177.0

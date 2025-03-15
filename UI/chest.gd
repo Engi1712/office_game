@@ -4,98 +4,109 @@ extends Control
 @onready var inventory = $"../Inventory"
 @onready var slots: Array = $NinePatchRect/Grid.get_children()
 
-var slot_selected: int
-var inv_size: int
+var select_slot = null
+var hover_slot = null
 var inv_list: InvList
-var cur_hover: int
-var grey = Color(179/255.0, 179/255.0, 179/255.0, 1.0)
 
 func _ready():
 	hide()
 
 func update_slots():
-	inv_size = inv_list.slots.size()
 	for i in range(slots.size()):
-		if i < inv_size:
-			slots[i].set_available()
+		if i < inv_list.slots.size():
 			slots[i].set_slot(inv_list.slots[i])
+			slots[i].visible = true
 		else:
-			slots[i].set_locked()
+			slots[i].set_slot(null)
 			slots[i].visible = false
 
 func activate(inv_res: InvList):
-	ui.submenu_active = true
 	ui.cur_menu = self
 	inv_list = inv_res
 	update_slots()
-	slot_selected = -1
-	cur_hover = -1
 	inventory.activate(self)
 	show()
 
 func deactivate():
-	if slot_selected != -1:
-		slots[slot_selected].set_available()
-		slot_selected = -1
+	if select_slot:
+		select_slot.deselect()
+		select_slot = null
+	if hover_slot:
+		hover_slot.hover_hide()
+		hover_slot = null
 	hide()
 	inventory.deactivate()
-	ui.submenu_active = false
+	ui.cur_menu = null
+
+func get_slot(point: Vector2):
+	for i in range(inv_list.slots.size()):
+		if slots[i].get_global_rect().has_point(point):
+			return slots[i]
 
 func left_click(point: Vector2):
-	var found_slot = false
-	for i in range(inv_size):
-		if slots[i].get_global_rect().has_point(point):
-			if slot_selected != -1:
-				if i != slot_selected:
-					inventory.place_item(inv_list.slots[i], inv_list.slots[slot_selected])
-				slot_selected = -1
-				update_slots()
-			elif inventory.slot_selected != -1:
-				if i != slot_selected:
-					inventory.place_item(inv_list.slots[i], inventory.inv_list.slots[inventory.slot_selected])
-				inventory.slot_selected = -1
-				update_slots()
-				inventory.update_slots()
-			else:
-				if !slots[i].free:
-					slots[i].set_selected()
-					slot_selected = i
-			found_slot = true
-			break
-	if !found_slot:
+	var slot = get_slot(point)
+	if !slot:
 		inventory.left_click(point)
+	elif select_slot:
+		if slot != select_slot:
+			if inventory.place_item(slot.cur_slot, select_slot.cur_slot) == 0:
+				return
+		select_slot.deselect()
+		select_slot = null
+		update_slots()
+		hover_slot = slot
+		hover_slot.hover_show()
+	elif inventory.select_slot:
+		if inventory.place_item(slot.cur_slot, inventory.select_slot.cur_slot) == 0:
+			return
+		inventory.select_slot.deselect()
+		inventory.select_slot = null
+		update_slots()
+		inventory.update_slots()
+		hover_slot = slot
+		hover_slot.hover_show()
+	else:
+		if slot.cur_slot.item:
+			select_slot = slot
+			select_slot.select()
 
 func right_click(point: Vector2):
-	var found_slot = false
-	for i in range(inv_size):
-		if slots[i].get_global_rect().has_point(point):
-			if slot_selected != -1:
-				if inventory.merge_item(inv_list.slots[i], inv_list.slots[slot_selected]):
-					slot_selected = -1
-					update_slots()
-			elif inventory.slot_selected != -1:
-				if inventory.merge_item(inv_list.slots[i], inventory.inv_list.slots[inventory.slot_selected]):
-					inventory.slot_selected = -1
-					update_slots()
-					inventory.update_slots()
-			found_slot = true
-			break
-	if !found_slot:
-		inventory.right_click(point)
+	var slot = get_slot(point)
+	if !slot:
+		inventory.right_click(point);
+	elif select_slot:
+		if slot != select_slot:
+			if inventory.merge_item(slot.cur_slot, select_slot.cur_slot):
+				select_slot.deselect()
+				select_slot = null
+				update_slots()
+				hover_slot = slot
+				hover_slot.hover_show()
+	elif inventory.select_slot:
+		if inventory.merge_item(slot.cur_slot, inventory.select_slot.cur_slot):
+			inventory.select_slot.deselect()
+			inventory.select_slot = null
+			update_slots()
+			inventory.update_slots()
+			hover_slot = slot
+			hover_slot.hover_show()
 
 func hover(point: Vector2):
-	var found_slot = false
-	for i in range(inv_size):
-		if slots[i].get_global_rect().has_point(point):
-			if cur_hover != i:
-				if cur_hover != -1:
-					slots[cur_hover].hover_hide()
-				slots[i].hover_show()
-				cur_hover = i
-			found_slot = true
-			break
-	if !found_slot:
-		if cur_hover != -1:
-			slots[cur_hover].hover_hide()
-			cur_hover = -1
+	var slot = get_slot(point)
+	if !slot:
+		if hover_slot:
+			hover_slot.hover_hide()
+			hover_slot = null
 		inventory.hover(point)
+	else:
+		if hover_slot:
+			if slot != hover_slot:
+				hover_slot.hover_hide()
+				hover_slot = null
+			else:
+				return
+		elif inventory.hover_slot:
+			inventory.hover_slot.hover_hide()
+			inventory.hover_slot = null
+		hover_slot = slot
+		hover_slot.hover_show()

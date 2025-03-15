@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://db13ac4plu3em"]
+
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_k2w3r"]
+[ext_resource type="Texture2D" uid="uid://7j43ru8lp5m2" path="res://Art/Office Pack/HUD/Icons/blue_pen.png" id="2_7ml5s"]
+
+[resource]
+script = ExtResource("1_k2w3r")
+id = "blue_pen"
+name = "ITEM_NAME_BLUE_PEN"
+texture = ExtResource("2_7ml5s")
+size = 1
+stack_size = 5
+param = 0

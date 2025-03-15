@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://f4cleo4jsp5y"]
+
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_d1thc"]
+[ext_resource type="Texture2D" uid="uid://nq0f5lhm65l2" path="res://Art/Office Pack/HUD/Icons/black_trousers.png" id="2_nuiib"]
+
+[resource]
+script = ExtResource("1_d1thc")
+id = "black_trousers"
+name = "ITEM_NAME_BLACK_TROUSERS"
+texture = ExtResource("2_nuiib")
+size = 2
+stack_size = 1
+type = "trousers"
+param = 0

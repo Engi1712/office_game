@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cx3oh76fqxivc"]
+
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_6tdgd"]
+[ext_resource type="Texture2D" uid="uid://3slc4q06ekd" path="res://Art/Office Pack/HUD/Icons/white_shirt.png" id="2_0lplk"]
+
+[resource]
+script = ExtResource("1_6tdgd")
+id = "white_shirt"
+name = "ITEM_NAME_WHITE_SHIRT"
+texture = ExtResource("2_0lplk")
+size = 2
+stack_size = 1
+type = "shirt"
+param = 0

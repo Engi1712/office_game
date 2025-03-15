@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4flbw0cq4jdo"]
+
+[ext_resource type="Script" path="res://UI/interact_label.gd" id="1_mpdrl"]
+[ext_resource type="Texture2D" uid="uid://cbb8d2vyiiubm" path="res://Art/Office Pack/HUD/window.png" id="2_dduwo"]
+
+[node name="InteractLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 24.0
+script = ExtResource("1_mpdrl")
+
+[node name="Panel" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 24.0
+
+[node name="InteractBG" type="NinePatchRect" parent="Panel"]
+layout_mode = 2
+texture = ExtResource("2_dduwo")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Margins" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="LabelText" type="RichTextLabel" parent="Panel/Margins"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true

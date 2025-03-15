@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://21iaicidht1c"]
+
+[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_5nxtn"]
+[ext_resource type="Texture2D" uid="uid://bwblj6vkxorh" path="res://Art/Office Pack/HUD/Icons/plastic_cup_apple_juice.png" id="2_dbw36"]
+
+[resource]
+script = ExtResource("1_5nxtn")
+id = "plastic_cup_apple_juice"
+name = "ITEM_NAME_PLASTIC_CUP_APPLE_JUICE"
+texture = ExtResource("2_dbw36")
+size = 2
+stack_size = 1
+type = "drink"
+param = 200

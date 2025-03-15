@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b463u8y3hm2b"]
+
+[ext_resource type="Script" path="res://Objects/ladder.gd" id="1_lubra"]
+[ext_resource type="Texture2D" uid="uid://bhxdk6m5hws5a" path="res://Art/Office Pack/MISC/big_fade_left.png" id="1_pegic"]
+[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="2_gr4o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb4wa"]
+size = Vector2(19, 57)
+
+[node name="LadderW" type="StaticBody2D"]
+script = ExtResource("1_lubra")
+
+[node name="Fade" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(-20, -34)
+texture = ExtResource("1_pegic")
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(3, 0)
+
+[node name="TransferArea" parent="." instance=ExtResource("2_gr4o5")]
+
+[node name="TransferCollision" parent="TransferArea" index="0"]
+position = Vector2(-22.5, 3.5)
+shape = SubResource("RectangleShape2D_sb4wa")
+
+[editable path="TransferArea"]

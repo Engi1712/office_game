@@ -371,6 +371,7 @@ position = Vector2(-27, 76)
 position = Vector2(-34, -91)
 
 [node name="Dresser" parent="Dresser" instance=ExtResource("14_o2g7i")]
+inv_res = "f2rstds1"
 
 [node name="CoffeeMachine" parent="Dresser" instance=ExtResource("15_sdyf4")]
 position = Vector2(16, -23)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7u1yamdgtcf4"]
+
+[ext_resource type="Script" path="res://Characters/npc.gd" id="1_66tqi"]
+[ext_resource type="PackedScene" uid="uid://d4fon8u1o46sc" path="res://Characters/character_sprite.tscn" id="1_jpjhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1hsr"]
+size = Vector2(20, 6)
+
+[node name="NPC" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_66tqi")
+
+[node name="CharacterSprite" parent="." instance=ExtResource("1_jpjhq")]
+position = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_o1hsr")

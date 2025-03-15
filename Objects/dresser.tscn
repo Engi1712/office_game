@@ -1,15 +1,123 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkcsvr65wgjyc"]
+[gd_scene load_steps=12 format=3 uid="uid://dkcsvr65wgjyc"]
 
 [ext_resource type="Texture2D" uid="uid://dxnwuyvfyvtxh" path="res://Art/Office Pack/Objects/dresser.png" id="1_d8uk8"]
+[ext_resource type="Script" path="res://Objects/dresser.gd" id="1_f4tci"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="2_n5lau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p8am"]
 size = Vector2(49, 10)
 
+[sub_resource type="Animation" id="Animation_ck0rx"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_gis5p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7wjo4"]
+resource_name = "close"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_unk2q"]
+resource_name = "opening"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_bmko1"]
+resource_name = "closing"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j86le"]
+_data = {
+"RESET": SubResource("Animation_gis5p"),
+"close": SubResource("Animation_7wjo4"),
+"closing": SubResource("Animation_bmko1"),
+"open": SubResource("Animation_ck0rx"),
+"opening": SubResource("Animation_unk2q")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaoto"]
+size = Vector2(49, 31)
+
 [node name="Dresser" type="StaticBody2D"]
+script = ExtResource("1_f4tci")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -10)
+position = Vector2(1, -4)
 texture = ExtResource("1_d8uk8")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6p8am")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j86le")
+}
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_n5lau")]
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(0.5, -10.5)
+shape = SubResource("RectangleShape2D_gaoto")
+
+[editable path="InteractionArea"]

@@ -1,0 +1,145 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2ooilrydb4d2"]
+
+[ext_resource type="Texture2D" uid="uid://cha042kk0oc1c" path="res://Art/Office Pack/Objects/door_w.png" id="1_a1rxv"]
+[ext_resource type="Script" path="res://Objects/door.gd" id="1_kws68"]
+[ext_resource type="Texture2D" uid="uid://dnnsp386i3grr" path="res://Art/Office Pack/MISC/fade_left.png" id="2_5cg0g"]
+[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="4_vkt7s"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="5_og5co"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxain"]
+size = Vector2(4, 31.5)
+
+[sub_resource type="Animation" id="Animation_3ft2g"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_v3y0h"]
+resource_name = "close"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tnvtm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bl6et"]
+resource_name = "opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_jrjeu"]
+resource_name = "closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0k4lb"]
+_data = {
+"RESET": SubResource("Animation_tnvtm"),
+"close": SubResource("Animation_v3y0h"),
+"closing": SubResource("Animation_jrjeu"),
+"open": SubResource("Animation_3ft2g"),
+"opening": SubResource("Animation_bl6et")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wott"]
+size = Vector2(19, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffeu8"]
+size = Vector2(33, 32)
+
+[node name="DoorW" type="StaticBody2D"]
+script = ExtResource("1_kws68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_bxain")
+
+[node name="Door" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-15, -32)
+texture = ExtResource("1_a1rxv")
+hframes = 5
+
+[node name="Fade" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(-18, -34)
+texture = ExtResource("2_5cg0g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0k4lb")
+}
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(5, 0)
+
+[node name="TransferArea" parent="." instance=ExtResource("4_vkt7s")]
+
+[node name="TransferCollision" parent="TransferArea" index="0"]
+position = Vector2(-20.5, 0)
+shape = SubResource("RectangleShape2D_8wott")
+
+[node name="InteractionArea" parent="." instance=ExtResource("5_og5co")]
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(-13.5, 0)
+shape = SubResource("RectangleShape2D_ffeu8")
+
+[editable path="TransferArea"]
+[editable path="InteractionArea"]

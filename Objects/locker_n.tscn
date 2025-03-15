@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=3 uid="uid://coealsnqqcvdr"]
+
+[ext_resource type="Script" path="res://Objects/locker.gd" id="1_uvam0"]
+[ext_resource type="Texture2D" uid="uid://cm5ybjull1d0w" path="res://Art/Office Pack/Objects/locker_n.png" id="2_yo5o2"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_6b3vw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grons"]
+size = Vector2(16, 8)
+
+[sub_resource type="Animation" id="Animation_4t75c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0so5a"]
+resource_name = "close"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_q617f"]
+resource_name = "closing"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_b3d2h"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_5qfv1"]
+resource_name = "opening"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6f1th"]
+_data = {
+"RESET": SubResource("Animation_4t75c"),
+"close": SubResource("Animation_0so5a"),
+"closing": SubResource("Animation_q617f"),
+"open": SubResource("Animation_b3d2h"),
+"opening": SubResource("Animation_5qfv1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6o5n"]
+size = Vector2(16, 72)
+
+[node name="LockerN" type="StaticBody2D"]
+script = ExtResource("1_uvam0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("2_yo5o2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_grons")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6f1th")
+}
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_6b3vw")]
+interact_type = "locker"
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_b6o5n")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="InteractionArea"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6wlgeibb3ict"]
+
+[ext_resource type="Texture2D" uid="uid://cxc7uod5xduju" path="res://Art/Office Pack/MISC/big_fade_up.png" id="1_6cgbq"]
+[ext_resource type="Script" path="res://Objects/ladder.gd" id="1_w8jbv"]
+[ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="2_fyhb2"]
+[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="4_vrobs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_potfq"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vebnf"]
+size = Vector2(64, 47)
+
+[node name="LadderN" type="StaticBody2D"]
+script = ExtResource("1_w8jbv")
+
+[node name="Fade" type="Sprite2D" parent="."]
+z_index = -8
+position = Vector2(0, -32)
+texture = ExtResource("1_6cgbq")
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="DrawArea" parent="." instance=ExtResource("2_fyhb2")]
+
+[node name="DrawCollision" parent="DrawArea" index="0"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_potfq")
+
+[node name="TransferArea" parent="." instance=ExtResource("4_vrobs")]
+
+[node name="TransferCollision" parent="TransferArea" index="0"]
+position = Vector2(0, -40.5)
+shape = SubResource("RectangleShape2D_vebnf")
+
+[editable path="DrawArea"]
+[editable path="TransferArea"]

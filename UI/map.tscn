@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://f4bt62wldrk7"]
+
+[ext_resource type="Texture2D" uid="uid://d33370ctv7edk" path="res://Art/Office Pack/HUD/map_f2.png" id="1_3wwig"]
+[ext_resource type="Script" path="res://UI/map.gd" id="1_wui2s"]
+[ext_resource type="Texture2D" uid="uid://354ssr1v1tv7" path="res://Art/Office Pack/HUD/map_f2_virt.png" id="2_e86sj"]
+[ext_resource type="Texture2D" uid="uid://b8nujdophk5yd" path="res://Art/Office Pack/HUD/minimap_player.png" id="3_68efa"]
+[ext_resource type="Script" path="res://UI/map_anchor.gd" id="5_q21eo"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_wui2s")
+
+[node name="RealMap" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_3wwig")
+centered = false
+offset = Vector2(-48, -48)
+
+[node name="VirtMap" type="Sprite2D" parent="."]
+texture = ExtResource("2_e86sj")
+centered = false
+offset = Vector2(-48, -48)
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("3_68efa")
+centered = false
+offset = Vector2(1, 1)
+
+[node name="Anchor" type="Marker2D" parent="."]
+script = ExtResource("5_q21eo")
+
+[node name="Camera2D" type="Camera2D" parent="Anchor"]

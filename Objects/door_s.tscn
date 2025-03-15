@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://vt33hyg4kbec"]
 
+[ext_resource type="Script" path="res://Objects/door.gd" id="1_hot4j"]
 [ext_resource type="Texture2D" uid="uid://cyb7ro0kvmbmt" path="res://Art/Office Pack/Objects/door_s.png" id="1_obcjo"]
-[ext_resource type="Script" path="res://Objects/door_s.gd" id="1_pxuir"]
 [ext_resource type="Texture2D" uid="uid://vah6fqg8da7p" path="res://Art/Office Pack/MISC/fade_down.png" id="2_mtu2e"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_42bpj"]
 [ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="5_3spnh"]
@@ -105,20 +105,20 @@ size = Vector2(32, 48)
 size = Vector2(32, 65)
 
 [node name="DoorS" type="StaticBody2D"]
-script = ExtResource("1_pxuir")
+script = ExtResource("1_hot4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_mhg8g")
 
 [node name="Door" type="Sprite2D" parent="."]
 z_index = -7
+position = Vector2(0, 14)
 texture = ExtResource("1_obcjo")
 hframes = 5
 
 [node name="Fade" type="Sprite2D" parent="."]
 z_index = 11
-position = Vector2(0, 20)
+position = Vector2(0, 18)
 texture = ExtResource("2_mtu2e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -127,20 +127,23 @@ libraries = {
 }
 
 [node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(0, -21)
+position = Vector2(0, -7)
 
 [node name="DrawArea" parent="." instance=ExtResource("5_3spnh")]
+position = Vector2(0, 14)
 
 [node name="DrawCollision" parent="DrawArea" index="0"]
 position = Vector2(0, 16)
 
 [node name="TransferArea" parent="." instance=ExtResource("6_43lxj")]
+position = Vector2(0, 14)
 
 [node name="TransferCollision" parent="TransferArea" index="0"]
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_luje7")
 
 [node name="InteractionArea" parent="." instance=ExtResource("4_42bpj")]
+position = Vector2(0, 14)
 interact_type = "door"
 
 [node name="InteractionCollision" parent="InteractionArea" index="0"]

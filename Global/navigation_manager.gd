@@ -4,6 +4,11 @@ const scene_floor_0 = preload("res://Levels/floor_0.tscn")
 const scene_floor_1 = preload("res://Levels/floor_1.tscn")
 const scene_floor_2 = preload("res://Levels/floor_2.tscn")
 const scene_room_2_rest = preload("res://Levels/room_2_rest.tscn")
+const scene_room_2_wc1 = preload("res://Levels/floor_2_wc1.tscn")
+const scene_room_0_ladder_l = preload("res://Levels/floor_0_ladder_l.tscn")
+const scene_room_1_ladder_l = preload("res://Levels/floor_1_ladder_l.tscn")
+const scene_room_2_ladder_l = preload("res://Levels/floor_2_ladder_l.tscn")
+const scene_room_008 = preload("res://Levels/room_008.tscn")
 const scene_room_209 = preload("res://Levels/room_209.tscn")
 const scene_elevator_l = preload("res://Levels/elevator_l.tscn")
 
@@ -15,17 +20,27 @@ func go_to_level(level_tag, destination_tag):
 	var scene_to_load
 	
 	match level_tag:
-		"floor_0" :
+		"floor_0":
 			scene_to_load = scene_floor_0
-		"floor_1" :
+		"floor_1":
 			scene_to_load = scene_floor_1
-		"floor_2" :
+		"floor_2":
 			scene_to_load = scene_floor_2
-		"room_2_rest" :
+		"room_2_rest":
 			scene_to_load = scene_room_2_rest
-		"room_209" :
+		"floor_2_wc1":
+			scene_to_load = scene_room_2_wc1
+		"floor_0_ladder_l":
+			scene_to_load = scene_room_0_ladder_l
+		"floor_1_ladder_l":
+			scene_to_load = scene_room_1_ladder_l
+		"floor_2_ladder_l":
+			scene_to_load = scene_room_2_ladder_l
+		"room_008":
+			scene_to_load = scene_room_008
+		"room_209":
 			scene_to_load = scene_room_209
-		"elevator_l" :
+		"elevator_l":
 			scene_to_load = scene_elevator_l
 	
 	if scene_to_load != null:

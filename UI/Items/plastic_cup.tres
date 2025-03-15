@@ -10,4 +10,5 @@ name = "ITEM_NAME_PLASTIC_CUP"
 texture = ExtResource("2_xrg20")
 size = 2
 stack_size = 10
+type = "vessel"
 param = 200

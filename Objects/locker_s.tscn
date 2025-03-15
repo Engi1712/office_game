@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://ix6nsyoreik7"]
+
+[ext_resource type="Texture2D" uid="uid://dfto8nhofpefm" path="res://Art/Office Pack/Objects/locker_s.png" id="1_a5rjg"]
+[ext_resource type="Script" path="res://Objects/locker.gd" id="1_k1g7w"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="2_qlhxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkvvr"]
+size = Vector2(16, 8)
+
+[sub_resource type="Animation" id="Animation_7s1ia"]
+resource_name = "open"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_nhrib"]
+resource_name = "close"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_cq646"]
+resource_name = "opening"
+length = 0.4
+
+[sub_resource type="Animation" id="Animation_drt0h"]
+resource_name = "closing"
+length = 0.4
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jruwb"]
+_data = {
+"close": SubResource("Animation_nhrib"),
+"closing": SubResource("Animation_drt0h"),
+"open": SubResource("Animation_7s1ia"),
+"opening": SubResource("Animation_cq646")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfcb1"]
+size = Vector2(16, 72)
+
+[node name="LockerS" type="StaticBody2D"]
+script = ExtResource("1_k1g7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_a5rjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fkvvr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jruwb")
+}
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_qlhxm")]
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_qfcb1")
+
+[editable path="InteractionArea"]

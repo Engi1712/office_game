@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cm45t7qx208w3"]
 
-[ext_resource type="Script" path="res://Objects/door_n.gd" id="1_a8pxm"]
+[ext_resource type="Script" path="res://Objects/door.gd" id="1_wkke7"]
 [ext_resource type="Texture2D" uid="uid://b1gaoqkgualog" path="res://Art/Office Pack/Objects/door_n.png" id="2_dlmpi"]
 [ext_resource type="Texture2D" uid="uid://csysonmop4g2w" path="res://Art/Office Pack/Objects/doorjamb_n.png" id="3_g2fj7"]
 [ext_resource type="Texture2D" uid="uid://bypugdbuj54xc" path="res://Art/Office Pack/MISC/fade_up.png" id="4_5wbw8"]
@@ -109,7 +109,8 @@ size = Vector2(32, 47)
 size = Vector2(32, 65)
 
 [node name="DoorN" type="StaticBody2D"]
-script = ExtResource("1_a8pxm")
+position = Vector2(0, -45)
+script = ExtResource("1_wkke7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 45)

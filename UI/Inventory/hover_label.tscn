@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqj5nahpvm5nq"]
+
+[ext_resource type="Texture2D" uid="uid://v63jh2vut10s" path="res://Art/Office Pack/HUD/inv_hover_bg.png" id="1_ta7fe"]
+[ext_resource type="Script" path="res://UI/Inventory/hover_label.gd" id="1_txipu"]
+
+[node name="HoverLabel" type="Control"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 24.0
+script = ExtResource("1_txipu")
+
+[node name="Panel" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 24.0
+
+[node name="HoverBG" type="NinePatchRect" parent="Panel"]
+layout_mode = 2
+texture = ExtResource("1_ta7fe")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Margins" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HoverText" type="VBoxContainer" parent="Panel/Margins"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ItemName" type="RichTextLabel" parent="Panel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ItemAmount" type="RichTextLabel" parent="Panel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ItemSize" type="RichTextLabel" parent="Panel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ItemParam1" type="RichTextLabel" parent="Panel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ItemParam2" type="RichTextLabel" parent="Panel/Margins/HoverText"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true

@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=3 uid="uid://bv6wf8mydkn6b"]
+
+[ext_resource type="Texture2D" uid="uid://bjyqt1p1f0v4u" path="res://Art/Office Pack/Objects/ice_cream_fridge.png" id="1_srowa"]
+[ext_resource type="Script" path="res://Objects/ice_cream_fridge.gd" id="1_uwgbv"]
+[ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="2_rvn02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgwx4"]
+size = Vector2(64, 14)
+
+[sub_resource type="Animation" id="Animation_moltc"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_4pvtx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c0xbd"]
+resource_name = "close"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lihn8"]
+resource_name = "opening"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_4c4u0"]
+resource_name = "closing"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60yn6"]
+_data = {
+"RESET": SubResource("Animation_4pvtx"),
+"close": SubResource("Animation_c0xbd"),
+"closing": SubResource("Animation_4c4u0"),
+"open": SubResource("Animation_moltc"),
+"opening": SubResource("Animation_lihn8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjxaq"]
+size = Vector2(64, 49)
+
+[node name="IceCreamFridge" type="StaticBody2D"]
+script = ExtResource("1_uwgbv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("1_srowa")
+hframes = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kgwx4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_60yn6")
+}
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_rvn02")]
+
+[node name="InteractionCollision" parent="InteractionArea" index="0"]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_qjxaq")
+
+[editable path="InteractionArea"]

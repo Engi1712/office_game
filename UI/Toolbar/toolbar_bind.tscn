@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1amgiuoyd0vm"]
+
+[ext_resource type="Texture2D" uid="uid://cmw41q2j3ctw3" path="res://Art/Office Pack/HUD/toolbar_bind.png" id="1_1ptmt"]
+[ext_resource type="Script" path="res://UI/Toolbar/toolbar_bind.gd" id="1_ul4e5"]
+[ext_resource type="Texture2D" uid="uid://cj6172hscrjhy" path="res://Art/Office Pack/HUD/small_numbers_red.png" id="2_jerh0"]
+[ext_resource type="Texture2D" uid="uid://dwfkwdcg3hh0h" path="res://Art/Office Pack/HUD/small_numbers_black.png" id="3_8hd27"]
+[ext_resource type="PackedScene" uid="uid://cqj5nahpvm5nq" path="res://UI/Inventory/hover_label.tscn" id="5_jqrh6"]
+
+[node name="ToolbarBind" type="Control"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ul4e5")
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(14, 14)
+texture = ExtResource("1_1ptmt")
+
+[node name="Number" type="Sprite2D" parent="."]
+position = Vector2(26, 0)
+texture = ExtResource("2_jerh0")
+hframes = 10
+
+[node name="Content" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 24.0
+offset_bottom = 24.0
+
+[node name="Item" type="Sprite2D" parent="Content"]
+position = Vector2(10, 10)
+
+[node name="Number10" type="Sprite2D" parent="Content"]
+position = Vector2(11, 16)
+texture = ExtResource("3_8hd27")
+hframes = 10
+
+[node name="Number1" type="Sprite2D" parent="Content"]
+position = Vector2(17, 16)
+texture = ExtResource("3_8hd27")
+hframes = 10
+
+[node name="HoverLabel" parent="." instance=ExtResource("5_jqrh6")]
+visible = false
+offset_left = 33.0
+offset_right = 183.0

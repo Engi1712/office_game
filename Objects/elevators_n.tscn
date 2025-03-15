@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqf1hfrj4kan4" path="res://Objects/elevator_n.tscn" id="1_6i1gi"]
 [ext_resource type="Script" path="res://Objects/elevators_n.gd" id="1_s5jra"]
 [ext_resource type="PackedScene" uid="uid://jmlb1ibl0mjv" path="res://Objects/button.tscn" id="2_o5en7"]
-[ext_resource type="Texture2D" uid="uid://cyg2024po4fdo" path="res://Art/Office Pack/Objects/floor_sign_n.png" id="4_3k2pq"]
+[ext_resource type="Texture2D" uid="uid://ba2d8vkht4qy5" path="res://Art/Office Pack/Objects/floor_sign.png" id="4_iyiib"]
 
 [node name="ElevatorsN" type="Node2D"]
 position = Vector2(0, 1)
@@ -24,7 +24,7 @@ position = Vector2(0, 8)
 
 [node name="FloorSign" type="Sprite2D" parent="."]
 position = Vector2(0, -45)
-texture = ExtResource("4_3k2pq")
+texture = ExtResource("4_iyiib")
 hframes = 11
 
 [connection signal="on_elevator_called" from="Button" to="." method="_on_button_on_elevator_called"]

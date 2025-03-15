@@ -1,0 +1,192 @@
+[gd_resource type="Resource" script_class="InvList" load_steps=23 format=3 uid="uid://bj3pqkumqvqru"]
+
+[ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="1_r5vrd"]
+[ext_resource type="Resource" uid="uid://dys47n70tpwwr" path="res://UI/Items/plastic_cup.tres" id="1_wgwrm"]
+[ext_resource type="Resource" uid="uid://dmehmi18qcnhf" path="res://UI/Items/teabag.tres" id="2_w27fr"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3_ghhdx"]
+
+[sub_resource type="Resource" id="Resource_ymggh"]
+script = ExtResource("3_ghhdx")
+item = ExtResource("1_wgwrm")
+amount = 2
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_7ip0e"]
+script = ExtResource("3_ghhdx")
+item = ExtResource("2_w27fr")
+amount = 1
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_dxsxi"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_iqxeg"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_uggap"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_qo0eb"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_hjgg6"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_oyq27"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_nroud"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_nuk6q"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_6w5cg"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_n3jua"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_8btpv"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_qscry"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_lvh1e"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_36y6a"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_avknf"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[sub_resource type="Resource" id="Resource_2j8ka"]
+script = ExtResource("3_ghhdx")
+amount = 0
+param1 = 0
+param2 = 0
+toolbar = 0
+capacity = 3
+type = ""
+hover_side = "l"
+
+[resource]
+script = ExtResource("1_r5vrd")
+slots = Array[ExtResource("3_ghhdx")]([SubResource("Resource_ymggh"), SubResource("Resource_7ip0e"), SubResource("Resource_dxsxi"), SubResource("Resource_iqxeg"), SubResource("Resource_uggap"), SubResource("Resource_qo0eb"), SubResource("Resource_hjgg6"), SubResource("Resource_oyq27"), SubResource("Resource_nroud"), SubResource("Resource_nuk6q"), SubResource("Resource_6w5cg"), SubResource("Resource_n3jua"), SubResource("Resource_8btpv"), SubResource("Resource_qscry"), SubResource("Resource_lvh1e"), SubResource("Resource_36y6a"), SubResource("Resource_avknf"), SubResource("Resource_2j8ka")])

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci1aywlm1ut5"]
+
+[ext_resource type="Texture2D" uid="uid://65211htt5pka" path="res://Art/Office Pack/Objects/toilet.png" id="1_dwsjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v7e2"]
+size = Vector2(20, 21)
+
+[node name="Toilet" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = ExtResource("1_dwsjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0v7e2")

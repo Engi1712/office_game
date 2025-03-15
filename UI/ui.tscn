@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://drsh2i2e8vw55"]
+[gd_scene load_steps=30 format=3 uid="uid://drsh2i2e8vw55"]
 
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_i4jcq"]
 [ext_resource type="Texture2D" uid="uid://c7u0xkh6l77hb" path="res://Art/Office Pack/HUD/elevator_panel.png" id="1_osmaf"]
@@ -13,18 +13,21 @@
 [ext_resource type="Script" path="res://UI/Inventory/inventory.gd" id="10_wf0fa"]
 [ext_resource type="Texture2D" uid="uid://bj27efvxmq554" path="res://Art/Office Pack/HUD/inventory.png" id="11_qyv4i"]
 [ext_resource type="PackedScene" uid="uid://csps7d47vffd2" path="res://UI/Inventory/main_grid.tscn" id="12_w4rs2"]
-[ext_resource type="PackedScene" uid="uid://qmp2vls5y66s" path="res://UI/Inventory/special_slot.tscn" id="14_epicu"]
 [ext_resource type="Texture2D" uid="uid://dxn5f00tls4ws" path="res://Art/Office Pack/HUD/toolbar.png" id="14_hbl7p"]
 [ext_resource type="PackedScene" uid="uid://b68hyesng0fk3" path="res://UI/Inventory/small_grid.tscn" id="14_qb01e"]
-[ext_resource type="Script" path="res://UI/toolbar.gd" id="16_4ubke"]
+[ext_resource type="PackedScene" uid="uid://g3vcxmygsqf5" path="res://UI/Inventory/slot.tscn" id="15_tl7vw"]
+[ext_resource type="Script" path="res://UI/Toolbar/toolbar.gd" id="16_4ubke"]
 [ext_resource type="Texture2D" uid="uid://dsx6yqcxynog3" path="res://Art/Office Pack/HUD/inv_hand_slot.png" id="16_gmi3q"]
 [ext_resource type="Script" path="res://UI/chest.gd" id="16_tfplt"]
 [ext_resource type="Texture2D" uid="uid://c6qjximvs4fef" path="res://Art/Office Pack/HUD/inv_jacket_slot.png" id="17_hm7v1"]
-[ext_resource type="PackedScene" uid="uid://2tlsbeyvph4a" path="res://UI/cursor.tscn" id="17_mqexb"]
 [ext_resource type="Texture2D" uid="uid://hip3p6sl25at" path="res://Art/Office Pack/HUD/chest.png" id="17_tma7j"]
 [ext_resource type="Texture2D" uid="uid://ueqy7cxna7un" path="res://Art/Office Pack/HUD/inv_shirt_slot.png" id="18_ep81g"]
 [ext_resource type="Texture2D" uid="uid://hw52vegq35rk" path="res://Art/Office Pack/HUD/inv_trousers_slot.png" id="19_8xhmo"]
 [ext_resource type="Texture2D" uid="uid://bdpj2p0chs73y" path="res://Art/Office Pack/HUD/inv_boots_slot.png" id="20_n3ane"]
+[ext_resource type="Texture2D" uid="uid://dovewf6jh3jyx" path="res://Art/Office Pack/HUD/inv_bag_slot.png" id="20_qpbef"]
+[ext_resource type="PackedScene" uid="uid://ck83dbk2im36d" path="res://UI/Toolbar/toolbar_grid.tscn" id="24_qjohc"]
+[ext_resource type="PackedScene" uid="uid://f4bt62wldrk7" path="res://UI/map.tscn" id="27_dh1ip"]
+[ext_resource type="Texture2D" uid="uid://2t73j0ho24d4" path="res://Art/Office Pack/HUD/minimap_outline.png" id="29_oodoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sva8p"]
 atlas = ExtResource("4_7jkfc")
@@ -469,7 +472,7 @@ texture = ExtResource("11_qyv4i")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Grid" parent="Control/Inventory/NinePatchRect" instance=ExtResource("12_w4rs2")]
+[node name="BagGrid" parent="Control/Inventory/NinePatchRect" instance=ExtResource("12_w4rs2")]
 layout_mode = 0
 offset_left = 220.0
 offset_top = 69.0
@@ -490,48 +493,55 @@ offset_top = 144.0
 offset_right = 163.0
 offset_bottom = 192.0
 
-[node name="HandSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("14_epicu")]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 194.0
-offset_right = 141.0
-offset_bottom = 194.0
-placeholder_texture = ExtResource("16_gmi3q")
-
-[node name="JacketSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("14_epicu")]
+[node name="JacketSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("15_tl7vw")]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 69.0
-offset_right = 66.0
-offset_bottom = 69.0
-placeholder_texture = ExtResource("17_hm7v1")
+offset_right = 88.0
+offset_bottom = 91.0
+placeholder = ExtResource("17_hm7v1")
 
-[node name="ShirtSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("14_epicu")]
+[node name="ShirtSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("15_tl7vw")]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 94.0
-offset_right = 66.0
-offset_bottom = 94.0
-placeholder_texture = ExtResource("18_ep81g")
+offset_right = 88.0
+offset_bottom = 116.0
+placeholder = ExtResource("18_ep81g")
 
-[node name="TrousersSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("14_epicu")]
+[node name="TrousersSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("15_tl7vw")]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 169.0
-offset_right = 66.0
-offset_bottom = 169.0
-placeholder_texture = ExtResource("19_8xhmo")
+offset_right = 88.0
+offset_bottom = 191.0
+placeholder = ExtResource("19_8xhmo")
 
-[node name="BootsSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("14_epicu")]
+[node name="ShoesSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("15_tl7vw")]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 194.0
-offset_right = 66.0
-offset_bottom = 194.0
-placeholder_texture = ExtResource("20_n3ane")
+offset_right = 88.0
+offset_bottom = 216.0
+placeholder = ExtResource("20_n3ane")
+
+[node name="BagSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("15_tl7vw")]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 194.0
+offset_right = 163.0
+offset_bottom = 216.0
+placeholder = ExtResource("20_qpbef")
+
+[node name="HandSlot" parent="Control/Inventory/NinePatchRect" instance=ExtResource("15_tl7vw")]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 194.0
+offset_right = 126.0
+offset_bottom = 216.0
+placeholder = ExtResource("16_gmi3q")
 
 [node name="Toolbar" type="Control" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -541,7 +551,6 @@ grow_vertical = 2
 script = ExtResource("16_4ubke")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Toolbar"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -549,6 +558,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_hbl7p")
+
+[node name="ToolbarGrid" parent="Control/Toolbar/NinePatchRect" instance=ExtResource("24_qjohc")]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 327.0
+offset_right = 396.0
+offset_bottom = 355.0
 
 [node name="Chest" type="Control" parent="Control"]
 layout_mode = 1
@@ -575,5 +591,37 @@ offset_top = 69.0
 offset_right = 599.0
 offset_bottom = 291.0
 
-[node name="Cursor" parent="Control" instance=ExtResource("17_mqexb")]
-visible = false
+[node name="Minimap" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinimapViewportContainer" type="SubViewportContainer" parent="Control/Minimap"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 8.0
+offset_right = 632.0
+offset_bottom = 104.0
+
+[node name="MinimapViewport" type="SubViewport" parent="Control/Minimap/MinimapViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(96, 96)
+render_target_update_mode = 4
+
+[node name="Map" parent="Control/Minimap/MinimapViewportContainer/MinimapViewport" instance=ExtResource("27_dh1ip")]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Minimap"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 6.0
+offset_right = 634.0
+offset_bottom = 106.0
+texture = ExtResource("29_oodoc")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2

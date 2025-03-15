@@ -4,6 +4,17 @@ ITEM_NAME_PLASTIC_CUP_WATER,Water (plastic cup),Вода (пластиковый
 ITEM_NAME_PLASTIC_CUP_TEA,Tea (plastic cup),Чай (пластиковый стаканчик),紅茶（プラスチックカップ）,Té (vaso de plástico),Tee (Plastikbecher),Thé (tasse en plastique),Chá (copo de plástico),Tè (bicchiere di plastica),Çay (plastik bardak)
 ITEM_NAME_PLASTIC_CUP_MILK,Milk (plastic cup),Молоко (пластиковый стаканчик),牛乳（プラスチックカップ）,Leche (vaso de plástico),Milch (Plastikbecher),Lait (tasse en plastique),Leite (copo de plástico),Latte (bicchiere di plastica),Süt (plastik bardak)
 ITEM_NAME_PLASTIC_CUP_COFFEE,Coffee (plastic cup),Кофе (пластиковый стаканчик),コーヒー （プラスチックカップ）,Café (vaso de plástico),Kaffee (Plastikbecher),Café (tasse en plastique),Café (copo de plástico),Caffè (bicchiere di plastica),Kahve (plastik bardak)
+ITEM_NAME_PLASTIC_CUP_APPLE_JUICE,Apple juice (plastic cup),Яблочный сок (пластиковый стаканчик),林檎ジュース（プラスチックカップ）,Zumo de manzana (vaso de plástico),Apfelsaft (Plastikbecher),Jus de pomme (tasse en plastique),Suco de maçã (copo de plástico),Succo di mela (bicchiere di plastica),Elma suyu (plastik bardak)
 ITEM_NAME_TEABAG,Teabag,Чайный пакетик,茶袋,Bolsita de té,Teebeutel,Sachet de thé,Chá em saquinho,Bustina di tè,Çay poşeti
 ITEM_NAME_MILK,Milk,Молоко,牛乳,Leche,Milch,Lait,Leite,Latte,Süt
+ITEM_NAME_BLUE_PEN,Blue pen,Синяя ручка,青ペン,Bolígrafo azul,Blauer Stift,Stylo bleu,Caneta azul,Penna blu,Mavi kalem
+ITEM_NAME_CUP,Cup,Кружка,カップ,Taza,Tasse,Tasse,Xícara,Tazza,Bardak
+ITEM_NAME_WHITE_SHIRT,White shirt,Белая рубашка,白シャツ,Camisa blanca,Weißes Hemd,Chemise blanche,Camisola branca,Camicia bianca,Beyaz gömlek
+ITEM_NAME_BLACK_JACKET,Black jacket,Чёрный пиджак,黒ジャケット,Chaqueta negra,Schwarze Jacke,Veste noire,Jaqueta preta,Giacca nera,Siyah ceket
+ITEM_NAME_BLACK_TROUSERS,Black trousers,Чёрные брюки,黒ズボン,Pantalón negro,Schwarze Hose,Pantalon noir,Calças pretas,Pantaloni neri,Siyah pantolon
+ITEM_NAME_BROWN_BOOTS,Brown boots,Коричневые туфли,茶色のシャツ,Zapatos marrones,Braune Schuhe,Chaussures marron,Sapatos castanhos,Scarpe marroni,Kahverengi ayakkabılar
+ITEM_NAME_BAG,Bag,Сумка,鞄,Bolsa,Tasche,Sac,Saco,Borsa,Çanta
 SUFFIX_ML,ml,мл,ｍｌ,ml,ml,ml,ml,ml,ml
+SMALL,Small,Маленькое,小,Pequeño,Klein,Petit,Pequeno,Piccolo,Küçük
+MEDIUM,Medium,Среднее,中,Mediano,Mittel,Moyen,Médio,Medio,Orta
+LARGE,Large,Большое,大,Grande,Groß,Grand,Grande,Grande,Büyük

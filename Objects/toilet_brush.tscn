@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c434vo77ct4ky"]
+
+[ext_resource type="Texture2D" uid="uid://d223m106ilinv" path="res://Art/Office Pack/Objects/toilet_brush.png" id="1_gwnor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwjw"]
+size = Vector2(8, 3)
+
+[node name="ToiletBrush" type="StaticBody2D"]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gwnor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_tlwjw")

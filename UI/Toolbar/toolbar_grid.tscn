@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck83dbk2im36d"]
+
+[ext_resource type="PackedScene" uid="uid://c1amgiuoyd0vm" path="res://UI/Toolbar/toolbar_bind.tscn" id="1_g5pey"]
+
+[node name="ToolbarGrid" type="GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 152.0
+offset_bottom = 28.0
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+columns = 5
+
+[node name="Bind1" parent="." instance=ExtResource("1_g5pey")]
+layout_mode = 2
+id = 1
+
+[node name="Bind2" parent="." instance=ExtResource("1_g5pey")]
+layout_mode = 2
+id = 2
+
+[node name="Bind3" parent="." instance=ExtResource("1_g5pey")]
+layout_mode = 2
+id = 3
+
+[node name="Bind4" parent="." instance=ExtResource("1_g5pey")]
+layout_mode = 2
+id = 4
+
+[node name="Bind5" parent="." instance=ExtResource("1_g5pey")]
+layout_mode = 2
+id = 5
