@@ -11,6 +11,7 @@ extends Control
 @onready var trousers_inv: Array = $NinePatchRect/TrousersGrid.get_children()
 @onready var bag_inv: Array = $NinePatchRect/BagGrid.get_children()
 @onready var toolbar = $"../Toolbar"
+@onready var character_sprite = $SubViewportContainer/SubViewport/CharacterSprite
 
 var crafts = { 
 	"plastic_cup_water": {
@@ -25,8 +26,10 @@ var remote_inv: Control = null
 func _ready():
 	hide()
 	update_slots()
+	character_sprite.update_animation("Idle", Vector2(0, 1))
+	character_sprite.disable_shadow()
 
-func _input(event: InputEvent):
+func _input(_event: InputEvent):
 	if Input.is_action_just_pressed("1"):
 		toolbar_bind(1)
 	elif Input.is_action_just_pressed("2"):
@@ -43,6 +46,7 @@ func update_slots():
 	if player_inv.jacket_slot.inv:
 		for i in range(jacket_inv.size()):
 			jacket_inv[i].set_slot(player_inv.jacket_slot.inv.slots[i])
+		ResourceSaver.save(player_inv.jacket_slot.inv)
 	else:
 		for i in range(jacket_inv.size()):
 			jacket_inv[i].set_slot(null)
@@ -51,6 +55,7 @@ func update_slots():
 	if player_inv.trousers_slot.inv:
 		for i in range(trousers_inv.size()):
 			trousers_inv[i].set_slot(player_inv.trousers_slot.inv.slots[i])
+		ResourceSaver.save(player_inv.trousers_slot.inv)
 	else:
 		for i in range(trousers_inv.size()):
 			trousers_inv[i].set_slot(null)
@@ -62,10 +67,13 @@ func update_slots():
 				bag_inv[i].set_slot(player_inv.bag_slot.inv.slots[i])
 			else:
 				bag_inv[i].set_slot(null)
+		ResourceSaver.save(player_inv.bag_slot.inv)
 	else:
 		for i in range(bag_inv.size()):
 			bag_inv[i].set_slot(null)
 	hand_slot.set_slot(player_inv.hand_slot)
+	ResourceSaver.save(player_inv)
+	UI.on_inv_changed.emit(player_inv.resource_name)
 
 func activate(remote: Control):
 	if remote:
@@ -235,3 +243,6 @@ func toolbar_bind(num: int):
 		toolbar.bind(select_slot, num)
 		select_slot.cur_slot.toolbar = num
 		select_slot.update_toolbar()
+
+func update_character():
+	character_sprite.update_body()

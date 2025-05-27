@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b2yrmvptpwp6a" path="res://Art/Office Pack/MISC/fade_s2.png" id="1_qirh3"]
 [ext_resource type="Texture2D" uid="uid://cxnpeps4bb3i1" path="res://Art/Office Pack/MISC/black.png" id="3_ue6yh"]
 [ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="5_c46d8"]
-[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/open_area.tscn" id="6_eyme8"]
+[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/location_area.tscn" id="6_eyme8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhbtd"]
 size = Vector2(64, 4)

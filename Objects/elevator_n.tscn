@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bsrosndfwgkde" path="res://Objects/indicator.tscn" id="2_03xio"]
 [ext_resource type="Texture2D" uid="uid://kl8rjwhbnaf2" path="res://Art/Office Pack/MISC/fade_n2.png" id="3_ynroe"]
 [ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="5_kx3ab"]
-[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/open_area.tscn" id="6_l1t4j"]
+[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/location_area.tscn" id="6_l1t4j"]
 [ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="7_6xhd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tybsn"]

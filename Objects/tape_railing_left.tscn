@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4f2c0e3w8kt0"]
+
+[ext_resource type="Texture2D" uid="uid://cg3r54so7tv6o" path="res://Art/Office Pack/Objects/tape_railing_left.png" id="1_d6223"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eof4j"]
+size = Vector2(14, 5)
+
+[node name="TapeRailingLeft" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = ExtResource("1_d6223")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_eof4j")

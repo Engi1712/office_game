@@ -1,15 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://cm45t7qx208w3"]
+[gd_scene load_steps=17 format=3 uid="uid://cm45t7qx208w3"]
 
 [ext_resource type="Script" path="res://Objects/door.gd" id="1_wkke7"]
 [ext_resource type="Texture2D" uid="uid://b1gaoqkgualog" path="res://Art/Office Pack/Objects/door_n.png" id="2_dlmpi"]
 [ext_resource type="Texture2D" uid="uid://csysonmop4g2w" path="res://Art/Office Pack/Objects/doorjamb_n.png" id="3_g2fj7"]
 [ext_resource type="Texture2D" uid="uid://bypugdbuj54xc" path="res://Art/Office Pack/MISC/fade_up.png" id="4_5wbw8"]
-[ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="6_750ya"]
+[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/location_area.tscn" id="6_aal0i"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="7_act8q"]
-[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="7_u4yko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miqm0"]
-size = Vector2(32, 5)
+size = Vector2(32, 4)
 
 [sub_resource type="Animation" id="Animation_qvtho"]
 length = 0.001
@@ -99,35 +98,35 @@ _data = {
 "opening": SubResource("Animation_ncy1v")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yim81"]
-size = Vector2(32, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnig2"]
-size = Vector2(32, 47)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ckj"]
 size = Vector2(32, 65)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5y4m"]
+size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20rc2"]
+size = Vector2(32, 46)
+
 [node name="DoorN" type="StaticBody2D"]
-position = Vector2(0, -45)
 script = ExtResource("1_wkke7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 45)
 shape = SubResource("RectangleShape2D_miqm0")
 
 [node name="Door" type="Sprite2D" parent="."]
 z_index = -7
+position = Vector2(0, -46)
 texture = ExtResource("2_dlmpi")
 hframes = 5
 
 [node name="Doorjamb" type="Sprite2D" parent="."]
 z_index = -1
+position = Vector2(0, -32.5)
 texture = ExtResource("3_g2fj7")
 
 [node name="Fade" type="Sprite2D" parent="."]
 z_index = -8
-position = Vector2(0, 16)
+position = Vector2(0, -30)
 texture = ExtResource("4_5wbw8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -136,28 +135,31 @@ libraries = {
 }
 
 [node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(0, 53)
+position = Vector2(0, 7)
 
-[node name="DrawArea" parent="." instance=ExtResource("6_750ya")]
+[node name="OpenInteractionArea" parent="." instance=ExtResource("7_act8q")]
+interact_type = "open"
 
-[node name="DrawCollision" parent="DrawArea" index="0"]
-position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_yim81")
-
-[node name="TransferArea" parent="." instance=ExtResource("7_u4yko")]
-
-[node name="TransferCollision" parent="TransferArea" index="0"]
-shape = SubResource("RectangleShape2D_mnig2")
-
-[node name="InteractionArea" parent="." instance=ExtResource("7_act8q")]
-interact_type = "door"
-
-[node name="InteractionCollision" parent="InteractionArea" index="0"]
-position = Vector2(0, 16.5)
+[node name="InteractionCollision" parent="OpenInteractionArea" index="0"]
+position = Vector2(0, -29.5)
 shape = SubResource("RectangleShape2D_g3ckj")
+
+[node name="DrawLocationArea" parent="." instance=ExtResource("6_aal0i")]
+location_type = "draw"
+
+[node name="LocationCollision" parent="DrawLocationArea" index="0"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_x5y4m")
+
+[node name="TransferLocationArea" parent="." instance=ExtResource("6_aal0i")]
+location_type = "transfer"
+
+[node name="LocationCollision" parent="TransferLocationArea" index="0"]
+position = Vector2(0, -39)
+shape = SubResource("RectangleShape2D_20rc2")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
-[editable path="DrawArea"]
-[editable path="TransferArea"]
-[editable path="InteractionArea"]
+[editable path="OpenInteractionArea"]
+[editable path="DrawLocationArea"]
+[editable path="TransferLocationArea"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://qmp2vls5y66s"]
 
 [ext_resource type="Script" path="res://UI/Inventory/special_slot.gd" id="1_utujx"]
-[ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/inv_locked_slot.png" id="2_ba6rb"]
-[ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/inv_slot.png" id="3_s1hyq"]
-[ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/inv_selected_slot.png" id="4_d5naq"]
+[ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/Inventory/inv_locked_slot.png" id="2_ba6rb"]
+[ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/Inventory/inv_slot.png" id="3_s1hyq"]
+[ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/Inventory/inv_selected_slot.png" id="4_d5naq"]
 
 [node name="SpecialSlot" type="Panel"]
 script = ExtResource("1_utujx")

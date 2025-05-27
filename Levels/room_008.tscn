@@ -33,7 +33,7 @@ layer_4/z_index = 6
 layer_4/tile_data = PackedInt32Array(-262144, 65545, 0, -262143, 65545, 0, -262142, 65545, 0, -262141, 65545, 0, -262140, 65545, 0, -262139, 65545, 0, -262138, 65545, 0, -262137, 65545, 0, -262136, 65545, 0, -262135, 65545, 0, -262134, 65545, 0, -262133, 65545, 0, -262132, 65545, 0, -262131, 65545, 0, -262130, 65545, 0, -131073, 9, 0, -65537, 9, 0, -1, 9, 0, 65535, 9, 0, 131071, 9, 0, 196607, 9, 0, 262143, 9, 0, 327679, 9, 0, 393215, 9, 0, 458751, 9, 0, 524287, 9, 0, 589823, 9, 0, 655359, 9, 0, 720895, 9, 0, 786431, 9, 0, -196593, 65545, 1, -131057, 65545, 1, -65521, 65545, 1, 15, 65545, 1, 65551, 65545, 1, 131087, 65545, 1, 196623, 65545, 1, 262159, 65545, 1, 327695, 65545, 1, 393231, 65545, 1, 458767, 65545, 1, 524303, 65545, 1, 589839, 65545, 1, 655375, 65545, 1, 720911, 65545, 1, 786432, 9, 1, 786433, 9, 1, 786434, 9, 1, 786435, 9, 1, 786436, 9, 1, 786437, 9, 1, 786438, 9, 1, 786439, 9, 1, 786440, 9, 1, 786441, 9, 1, 786442, 9, 1, 786443, 9, 1, 786444, 9, 1, 786445, 9, 1, 786446, 9, 1, -262129, 65545, 2, -196609, 9, 2, 851967, 9, 3, 786447, 65545, 3)
 
 [node name="Door0" parent="." instance=ExtResource("2_r4ur2")]
-position = Vector2(336, -48)
+position = Vector2(336, -2)
 destination_level_tag = "floor_0"
 destination_door_tag = "008"
 spawn_direction = "down"
@@ -43,432 +43,576 @@ y_sort_enabled = true
 
 [node name="Locker1" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(8, 4)
+colour = "Blue"
 
 [node name="Locker2" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(24, 4)
+colour = "Blue"
 
 [node name="Locker3" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(40, 4)
+colour = "Blue"
 
 [node name="Locker4" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(56, 4)
+colour = "Blue"
 
 [node name="Locker5" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(72, 4)
+colour = "Blue"
 
 [node name="Locker6" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(88, 4)
+colour = "Blue"
 
 [node name="Locker7" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(104, 4)
+colour = "Blue"
 
 [node name="Locker8" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(120, 4)
+colour = "Blue"
 
 [node name="Locker9" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(136, 4)
+colour = "Blue"
 
 [node name="Locker10" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(152, 4)
+colour = "Blue"
 
 [node name="Locker11" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(168, 4)
+colour = "Blue"
 
 [node name="Locker12" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(184, 4)
+colour = "Blue"
 
 [node name="Locker13" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(200, 4)
+colour = "Blue"
 
 [node name="Locker14" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(216, 4)
+colour = "Blue"
 
 [node name="Locker15" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(232, 4)
+colour = "Blue"
 
 [node name="Locker16" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(248, 4)
+colour = "Blue"
 
 [node name="Locker17" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(264, 4)
+colour = "Blue"
 
 [node name="Locker18" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(280, 4)
+colour = "Blue"
 
 [node name="Locker19" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(8, 91)
+position = Vector2(8, 92)
+colour = "Blue"
 
 [node name="Locker20" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(24, 91)
+position = Vector2(24, 92)
+colour = "Blue"
 
 [node name="Locker21" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(40, 91)
+position = Vector2(40, 92)
+colour = "Blue"
 
 [node name="Locker22" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(56, 91)
+position = Vector2(56, 92)
+colour = "Blue"
 
 [node name="Locker23" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(72, 91)
+position = Vector2(72, 92)
+colour = "Blue"
 
 [node name="Locker24" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(88, 91)
+position = Vector2(88, 92)
+colour = "Blue"
 
 [node name="Locker25" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(104, 91)
+position = Vector2(104, 92)
+colour = "Blue"
 
 [node name="Locker26" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(120, 91)
+position = Vector2(120, 92)
+colour = "Blue"
 
 [node name="Locker27" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(136, 91)
+position = Vector2(136, 92)
+colour = "Blue"
 
 [node name="Locker28" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(152, 91)
+position = Vector2(152, 92)
+colour = "Blue"
 
 [node name="Locker29" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(168, 91)
+position = Vector2(168, 92)
+colour = "Blue"
 
 [node name="Locker30" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(184, 91)
+position = Vector2(184, 92)
+colour = "Blue"
 
 [node name="Locker31" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(200, 91)
+position = Vector2(200, 92)
+colour = "Blue"
 
 [node name="Locker32" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(216, 91)
+position = Vector2(216, 92)
+colour = "Blue"
 
 [node name="Locker33" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(232, 91)
+position = Vector2(232, 92)
+colour = "Blue"
 
 [node name="Locker34" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(248, 91)
+position = Vector2(248, 92)
+colour = "Blue"
 
 [node name="Locker35" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(264, 91)
+position = Vector2(264, 92)
+colour = "Blue"
 
 [node name="Locker36" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(280, 91)
+position = Vector2(280, 92)
+colour = "Blue"
 
 [node name="Locker37" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(8, 100)
+colour = "Blue"
 
 [node name="Locker38" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(24, 100)
+colour = "Blue"
 
 [node name="Locker39" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(40, 100)
+colour = "Blue"
 
 [node name="Locker40" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(56, 100)
+colour = "Blue"
 
 [node name="Locker41" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(72, 100)
+colour = "Blue"
 
 [node name="Locker42" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(88, 100)
+colour = "Blue"
 
 [node name="Locker43" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(104, 100)
+colour = "Blue"
 
 [node name="Locker44" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(120, 100)
+colour = "Blue"
 
 [node name="Locker45" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(136, 100)
+colour = "Blue"
 
 [node name="Locker46" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(152, 100)
+colour = "Blue"
 
 [node name="Locker47" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(168, 100)
+colour = "Blue"
 
 [node name="Locker48" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(184, 100)
+colour = "Blue"
 
 [node name="Locker49" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(200, 100)
+colour = "Blue"
 
 [node name="Locker50" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(216, 100)
+colour = "Blue"
 
 [node name="Locker51" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(232, 100)
+colour = "Blue"
 
 [node name="Locker52" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(248, 100)
+colour = "Blue"
 
 [node name="Locker53" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(264, 100)
+colour = "Blue"
 
 [node name="Locker54" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(280, 100)
+colour = "Blue"
 
 [node name="Locker55" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(8, 187)
+position = Vector2(8, 188)
+colour = "Blue"
 
 [node name="Locker56" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(24, 187)
+position = Vector2(24, 188)
+colour = "Blue"
 
 [node name="Locker57" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(40, 187)
+position = Vector2(40, 188)
+colour = "Blue"
 
 [node name="Locker58" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(56, 187)
+position = Vector2(56, 188)
+colour = "Blue"
 
 [node name="Locker59" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(72, 187)
+position = Vector2(72, 188)
+colour = "Blue"
 
 [node name="Locker60" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(88, 187)
+position = Vector2(88, 188)
+colour = "Blue"
 
 [node name="Locker61" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(104, 187)
+position = Vector2(104, 188)
+colour = "Blue"
 
 [node name="Locker62" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(120, 187)
+position = Vector2(120, 188)
+colour = "Blue"
 
 [node name="Locker63" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(136, 187)
+position = Vector2(136, 188)
+colour = "Blue"
 
 [node name="Locker64" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(152, 187)
+position = Vector2(152, 188)
+colour = "Blue"
 
 [node name="Locker65" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(168, 187)
+position = Vector2(168, 188)
+colour = "Blue"
 
 [node name="Locker66" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(184, 187)
+position = Vector2(184, 188)
+colour = "Blue"
 
 [node name="Locker67" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(200, 187)
+position = Vector2(200, 188)
+colour = "Blue"
 
 [node name="Locker68" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(216, 187)
+position = Vector2(216, 188)
+colour = "Blue"
 
 [node name="Locker69" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(232, 187)
+position = Vector2(232, 188)
+colour = "Blue"
 
 [node name="Locker70" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(248, 187)
+position = Vector2(248, 188)
+colour = "Blue"
 
 [node name="Locker71" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(264, 187)
+position = Vector2(264, 188)
+colour = "Blue"
 
 [node name="Locker72" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(280, 187)
+position = Vector2(280, 188)
+colour = "Blue"
 
 [node name="Locker73" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(8, 196)
+colour = "Blue"
 
 [node name="Locker74" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(24, 196)
+colour = "Blue"
 
 [node name="Locker75" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(40, 196)
+colour = "Blue"
 
 [node name="Locker76" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(56, 196)
+colour = "Blue"
 
 [node name="Locker77" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(72, 196)
+colour = "Blue"
 
 [node name="Locker78" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(88, 196)
+colour = "Blue"
 
 [node name="Locker79" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(104, 196)
+colour = "Blue"
 
 [node name="Locker80" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(120, 196)
+colour = "Blue"
 
 [node name="Locker81" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(136, 196)
+colour = "Blue"
 
 [node name="Locker82" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(152, 196)
+colour = "Blue"
 
 [node name="Locker83" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(168, 196)
+colour = "Blue"
 
 [node name="Locker84" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(184, 196)
+colour = "Blue"
 
 [node name="Locker85" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(200, 196)
+colour = "Blue"
 
 [node name="Locker86" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(216, 196)
+colour = "Blue"
 
 [node name="Locker87" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(232, 196)
+colour = "Blue"
 
 [node name="Locker88" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(248, 196)
+colour = "Blue"
 
 [node name="Locker89" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(264, 196)
+colour = "Blue"
 
 [node name="Locker90" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(280, 196)
+colour = "Blue"
 
 [node name="Locker91" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(8, 283)
+position = Vector2(8, 284)
+colour = "Blue"
 
 [node name="Locker92" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(24, 283)
+position = Vector2(24, 284)
+colour = "Blue"
 
 [node name="Locker93" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(40, 283)
+position = Vector2(40, 284)
+colour = "Blue"
 
 [node name="Locker94" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(56, 283)
+position = Vector2(56, 284)
+colour = "Blue"
 
 [node name="Locker95" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(72, 283)
+position = Vector2(72, 284)
+colour = "Blue"
 
 [node name="Locker96" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(88, 283)
+position = Vector2(88, 284)
+colour = "Blue"
 
 [node name="Locker97" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(104, 283)
+position = Vector2(104, 284)
+colour = "Blue"
 
 [node name="Locker98" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(120, 283)
+position = Vector2(120, 284)
+colour = "Blue"
 
 [node name="Locker99" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(136, 283)
+position = Vector2(136, 284)
+colour = "Blue"
 
 [node name="Locker100" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(152, 283)
+position = Vector2(152, 284)
+colour = "Blue"
 
 [node name="Locker101" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(168, 283)
+position = Vector2(168, 284)
+colour = "Blue"
 
 [node name="Locker102" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(184, 283)
+position = Vector2(184, 284)
+colour = "Blue"
 
 [node name="Locker103" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(200, 283)
+position = Vector2(200, 284)
+colour = "Blue"
 
 [node name="Locker104" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(216, 283)
+position = Vector2(216, 284)
+colour = "Blue"
 
 [node name="Locker105" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(232, 283)
+position = Vector2(232, 284)
+colour = "Blue"
 
 [node name="Locker106" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(248, 283)
+position = Vector2(248, 284)
+colour = "Blue"
 
 [node name="Locker107" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(264, 283)
+position = Vector2(264, 284)
+colour = "Blue"
 
 [node name="Locker108" parent="Lockers" instance=ExtResource("6_tn1hw")]
-position = Vector2(280, 283)
+position = Vector2(280, 284)
+colour = "Blue"
 
 [node name="Locker109" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(8, 292)
+colour = "Blue"
 
 [node name="Locker110" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(24, 292)
+colour = "Blue"
 
 [node name="Locker111" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(40, 292)
+colour = "Blue"
 
 [node name="Locker112" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(56, 292)
+colour = "Blue"
 
 [node name="Locker113" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(72, 292)
+colour = "Blue"
 
 [node name="Locker114" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(88, 292)
+colour = "Blue"
 
 [node name="Locker115" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(104, 292)
+colour = "Blue"
 
 [node name="Locker116" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(120, 292)
+colour = "Blue"
 
 [node name="Locker117" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(136, 292)
+colour = "Blue"
 
 [node name="Locker118" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(152, 292)
+colour = "Blue"
 
 [node name="Locker119" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(168, 292)
+colour = "Blue"
 
 [node name="Locker120" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(184, 292)
+colour = "Blue"
 
 [node name="Locker121" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(200, 292)
+colour = "Blue"
 
 [node name="Locker122" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(216, 292)
+colour = "Blue"
 
 [node name="Locker123" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(232, 292)
+colour = "Blue"
 
 [node name="Locker124" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(248, 292)
+colour = "Blue"
 
 [node name="Locker125" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(264, 292)
+colour = "Blue"
 
 [node name="Locker126" parent="Lockers" instance=ExtResource("5_gp857")]
 position = Vector2(280, 292)
+colour = "Blue"
 
 [node name="Locker127" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(8, 380)
+colour = "Blue"
 
 [node name="Locker128" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(24, 380)
+colour = "Blue"
 
 [node name="Locker129" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(40, 380)
+colour = "Blue"
 
 [node name="Locker130" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(56, 380)
+colour = "Blue"
 
 [node name="Locker131" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(72, 380)
+colour = "Blue"
 
 [node name="Locker132" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(88, 380)
+colour = "Blue"
 
 [node name="Locker133" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(104, 380)
+colour = "Blue"
 
 [node name="Locker134" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(120, 380)
+colour = "Blue"
 
 [node name="Locker135" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(136, 380)
+colour = "Blue"
 
 [node name="Locker136" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(152, 380)
+colour = "Blue"
 
 [node name="Locker137" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(168, 380)
+colour = "Blue"
 
 [node name="Locker138" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(184, 380)
+colour = "Blue"
 
 [node name="Locker139" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(200, 380)
+colour = "Blue"
 
 [node name="Locker140" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(216, 380)
+colour = "Blue"
 
 [node name="Locker141" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(232, 380)
+colour = "Blue"
 
 [node name="Locker142" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(248, 380)
+colour = "Blue"
 
 [node name="Locker143" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(264, 380)
+colour = "Blue"
 
 [node name="Locker144" parent="Lockers" instance=ExtResource("6_tn1hw")]
 position = Vector2(280, 380)
+colour = "Blue"

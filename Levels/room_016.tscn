@@ -1,0 +1,619 @@
+[gd_scene load_steps=7 format=3 uid="uid://c517g4n6bpkef"]
+
+[ext_resource type="PackedScene" uid="uid://78pmsn1o2adm" path="res://Characters/player_cam.tscn" id="1_h1wgy"]
+[ext_resource type="Script" path="res://Levels/room_016.gd" id="1_y0qqa"]
+[ext_resource type="TileSet" uid="uid://dlmbd4xvwj17g" path="res://Assests/tileset.tres" id="2_v73cp"]
+[ext_resource type="PackedScene" uid="uid://cm45t7qx208w3" path="res://Objects/door_n.tscn" id="3_rbfby"]
+[ext_resource type="PackedScene" uid="uid://coealsnqqcvdr" path="res://Objects/locker_n.tscn" id="4_gg7lg"]
+[ext_resource type="PackedScene" uid="uid://ix6nsyoreik7" path="res://Objects/locker_s.tscn" id="6_co868"]
+
+[node name="Room016" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_y0qqa")
+
+[node name="PlayerCam" parent="." instance=ExtResource("1_h1wgy")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_v73cp")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Floor"
+layer_0/z_index = -10
+layer_0/tile_data = PackedInt32Array(0, 524294, 0, 65536, 458758, 1, 131072, 458758, 3, 196608, 589830, 3, 262144, 524294, 0, 327680, 196614, 0, 393216, 589830, 2, 458752, 327686, 1, 524288, 262150, 3, 589824, 262150, 3, 655360, 524294, 1, 720896, 655366, 1, 1, 262150, 3, 65537, 393222, 3, 131073, 327686, 3, 196609, 196614, 1, 262145, 458758, 0, 327681, 589830, 1, 393217, 589830, 3, 458753, 655366, 4, 524289, 327686, 1, 589825, 655366, 0, 655361, 458758, 1, 720897, 458758, 2, 2, 393222, 0, 65538, 524294, 4, 131074, 393222, 0, 196610, 327686, 0, 262146, 327686, 3, 327682, 196614, 3, 393218, 589830, 2, 458754, 262150, 1, 524290, 655366, 1, 589826, 655366, 1, 655362, 131078, 2, 720898, 589830, 2, 3, 524294, 2, 65539, 131078, 3, 131075, 262150, 1, 196611, 131078, 1, 262147, 131078, 3, 327683, 655366, 1, 393219, 262150, 3, 458755, 589830, 2, 524291, 131078, 1, 589827, 196614, 0, 655363, 262150, 0, 720899, 458758, 3, 4, 327686, 1, 65540, 524294, 1, 131076, 393222, 3, 196612, 655366, 3, 262148, 393222, 0, 327684, 524294, 0, 393220, 327686, 1, 458756, 524294, 0, 524292, 196614, 1, 589828, 327686, 2, 655364, 327686, 2, 720900, 131078, 3, 5, 131078, 3, 65541, 589830, 2, 131077, 393222, 1, 196613, 524294, 1, 262149, 393222, 0, 327685, 458758, 4, 393221, 262150, 0, 458757, 327686, 2, 524293, 524294, 2, 589829, 131078, 0, 655365, 589830, 2, 720901, 589830, 0, 6, 589830, 1, 65542, 458758, 4, 131078, 262150, 2, 196614, 524294, 4, 262150, 327686, 0, 327686, 131078, 1, 393222, 262150, 1, 458758, 131078, 3, 524294, 589830, 0, 589830, 262150, 2, 655366, 131078, 1, 720902, 262150, 0, 7, 131078, 2, 65543, 327686, 0, 131079, 524294, 0, 196615, 458758, 4, 262151, 458758, 1, 327687, 262150, 3, 393223, 393222, 0, 458759, 393222, 3, 524295, 589830, 1, 589831, 131078, 0, 655367, 262150, 0, 720903, 458758, 0, 8, 524294, 4, 65544, 131078, 2, 131080, 262150, 1, 196616, 589830, 4, 262152, 327686, 1, 327688, 458758, 1, 393224, 524294, 0, 458760, 458758, 3, 524296, 524294, 0, 589832, 655366, 3, 655368, 262150, 2, 720904, 393222, 3, 9, 393222, 3, 65545, 655366, 4, 131081, 458758, 3, 196617, 655366, 0, 262153, 327686, 1, 327689, 196614, 2, 393225, 196614, 0, 458761, 262150, 2, 524297, 655366, 0, 589833, 393222, 2, 655369, 589830, 3, 720905, 458758, 4, 10, 262150, 0, 65546, 589830, 1, 131082, 393222, 1, 196618, 458758, 0, 262154, 589830, 4, 327690, 196614, 1, 393226, 655366, 4, 458762, 327686, 0, 524298, 262150, 2, 589834, 327686, 1, 655370, 458758, 1, 720906, 458758, 1, 11, 196614, 0, 65547, 262150, 3, 131083, 262150, 2, 196619, 655366, 2, 262155, 393222, 0, 327691, 458758, 3, 393227, 589830, 0, 458763, 524294, 1, 524299, 196614, 0, 589835, 327686, 0, 655371, 393222, 0, 720907, 131078, 2, 12, 524294, 2, 65548, 458758, 1, 131084, 524294, 3, 196620, 262150, 1, 262156, 589830, 1, 327692, 393222, 3, 393228, 589830, 4, 458764, 655366, 2, 524300, 327686, 2, 589836, 589830, 4, 655372, 131078, 1, 720908, 655366, 3, 13, 655366, 4, 65549, 196614, 1, 131085, 262150, 0, 196621, 458758, 0, 262157, 393222, 3, 327693, 589830, 4, 393229, 196614, 1, 458765, 262150, 0, 524301, 327686, 1, 589837, 458758, 1, 655373, 131078, 3, 720909, 131078, 2, 14, 589830, 3, 65550, 262150, 2, 131086, 262150, 2, 196622, 524294, 2, 262158, 589830, 3, 327694, 262150, 1, 393230, 196614, 1, 458766, 131078, 1, 524302, 655366, 0, 589838, 655366, 2, 655374, 589830, 1, 720910, 196614, 1, -65532, 655366, 1)
+layer_1/name = "Walls"
+layer_1/z_index = -5
+layer_1/tile_data = PackedInt32Array(-196608, 65543, 0, -131072, 65543, 0, -65536, 65543, 0, -196607, 65543, 0, -131071, 65543, 0, -65535, 65543, 0, -196606, 65543, 0, -131070, 65543, 0, -65534, 65543, 0, -196605, 65543, 0, -131069, 65543, 0, -65533, 65543, 0, -196604, 65543, 0, -196603, 65543, 0, -131067, 65543, 0, -65531, 65543, 0, -196602, 65543, 0, -131066, 65543, 0, -65530, 65543, 0, -196601, 65543, 0, -131065, 65543, 0, -65529, 65543, 0, -196600, 65543, 0, -131064, 65543, 0, -65528, 65543, 0, -196599, 65543, 0, -131063, 65543, 0, -65527, 65543, 0, -196598, 65543, 0, -131062, 65543, 0, -65526, 65543, 0, -196597, 65543, 0, -131061, 65543, 0, -65525, 65543, 0, -196596, 65543, 0, -131060, 65543, 0, -65524, 65543, 0, -196595, 65543, 0, -131059, 65543, 0, -65523, 65543, 0, -196594, 65543, 0, -131058, 65543, 0, -65522, 65543, 0)
+layer_2/name = "Walls Borders"
+layer_2/z_index = -4
+layer_2/tile_data = PackedInt32Array(-65536, 131075, 1, -65535, 131075, 1, -65534, 131075, 1, -65533, 131075, 1, -65531, 131075, 1, -65530, 131075, 1, -65529, 131075, 1, -65528, 131075, 1, -65527, 131075, 1, -65526, 131075, 1, -65525, 131075, 1, -65524, 131075, 1, -65523, 131075, 1, -65522, 131075, 1)
+layer_3/name = "Roof"
+layer_3/z_index = 5
+layer_3/tile_data = PackedInt32Array(-196593, 2, 0, -131057, 2, 0, -65521, 2, 0, 15, 2, 0, 65551, 2, 0, 131087, 2, 0, 196623, 2, 0, 262159, 2, 0, 327695, 2, 0, 393231, 2, 0, 458767, 2, 0, 524303, 2, 0, 589839, 2, 0, 655375, 2, 0, 720911, 2, 0, -196592, 2, 0, -131056, 2, 0, -65520, 2, 0, 16, 2, 0, 65552, 2, 0, 131088, 2, 0, 196624, 2, 0, 262160, 2, 0, 327696, 2, 0, 393232, 2, 0, 458768, 2, 0, 524304, 2, 0, 589840, 2, 0, 655376, 2, 0, 720912, 2, 0, -196591, 2, 0, -131055, 2, 0, -65519, 2, 0, 17, 2, 0, 65553, 2, 0, 131089, 2, 0, 196625, 2, 0, 262161, 2, 0, 327697, 2, 0, 393233, 2, 0, 458769, 2, 0, 524305, 2, 0, 589841, 2, 0, 655377, 2, 0, 720913, 2, 0, -262126, 2, 0, -196590, 2, 0, -131054, 2, 0, -65518, 2, 0, 18, 2, 0, 65554, 2, 0, 131090, 2, 0, 196626, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 458770, 2, 0, 524306, 2, 0, 589842, 2, 0, 655378, 2, 0, 720914, 2, 0, -262125, 2, 0, -196589, 2, 0, -131053, 2, 0, -65517, 2, 0, 19, 2, 0, 65555, 2, 0, 131091, 2, 0, 196627, 2, 0, 262163, 2, 0, 327699, 2, 0, 393235, 2, 0, 458771, 2, 0, 524307, 2, 0, 589843, 2, 0, 655379, 2, 0, 720915, 2, 0, -262124, 2, 0, -196588, 2, 0, -131052, 2, 0, -65516, 2, 0, 20, 2, 0, 65556, 2, 0, 131092, 2, 0, 196628, 2, 0, 262164, 2, 0, 327700, 2, 0, 393236, 2, 0, 458772, 2, 0, 524308, 2, 0, 589844, 2, 0, 655380, 2, 0, 720916, 2, 0, -393216, 2, 0, -327680, 2, 0, -262144, 2, 0, -393215, 2, 0, -327679, 2, 0, -262143, 2, 0, -393214, 2, 0, -327678, 2, 0, -262142, 2, 0, -393213, 2, 0, -327677, 2, 0, -262141, 2, 0, -393212, 2, 0, -327676, 2, 0, -262140, 2, 0, -393211, 2, 0, -327675, 2, 0, -262139, 2, 0, -393210, 2, 0, -327674, 2, 0, -262138, 2, 0, -393209, 2, 0, -327673, 2, 0, -262137, 2, 0, -393208, 2, 0, -327672, 2, 0, -262136, 2, 0, -393207, 2, 0, -327671, 2, 0, -262135, 2, 0, -393206, 2, 0, -327670, 2, 0, -262134, 2, 0, -393205, 2, 0, -327669, 2, 0, -262133, 2, 0, -393204, 2, 0, -327668, 2, 0, -262132, 2, 0, -393203, 2, 0, -327667, 2, 0, -262131, 2, 0, -393202, 2, 0, -327666, 2, 0, -262130, 2, 0, -393201, 2, 0, -327665, 2, 0, -262129, 2, 0, -393200, 2, 0, -327664, 2, 0, -262128, 2, 0, -393199, 2, 0, -327663, 2, 0, -262127, 2, 0, -393198, 2, 0, -327662, 2, 0, -393197, 2, 0, -327661, 2, 0, -393196, 2, 0, -327660, 2, 0, 786432, 2, 0, 851968, 2, 0, 917504, 2, 0, 786433, 2, 0, 851969, 2, 0, 917505, 2, 0, 786434, 2, 0, 851970, 2, 0, 917506, 2, 0, 786435, 2, 0, 851971, 2, 0, 917507, 2, 0, 786436, 2, 0, 851972, 2, 0, 917508, 2, 0, 786437, 2, 0, 851973, 2, 0, 917509, 2, 0, 786438, 2, 0, 851974, 2, 0, 917510, 2, 0, 786439, 2, 0, 851975, 2, 0, 917511, 2, 0, 786440, 2, 0, 851976, 2, 0, 917512, 2, 0, 786441, 2, 0, 851977, 2, 0, 917513, 2, 0, 786442, 2, 0, 851978, 2, 0, 917514, 2, 0, 786443, 2, 0, 851979, 2, 0, 917515, 2, 0, 786444, 2, 0, 851980, 2, 0, 917516, 2, 0, 786445, 2, 0, 851981, 2, 0, 917517, 2, 0, 786446, 2, 0, 851982, 2, 0, 917518, 2, 0, 786447, 2, 0, 851983, 2, 0, 917519, 2, 0, 786448, 2, 0, 851984, 2, 0, 917520, 2, 0, 786449, 2, 0, 851985, 2, 0, 917521, 2, 0, 786450, 2, 0, 851986, 2, 0, 917522, 2, 0, 786451, 2, 0, 851987, 2, 0, 917523, 2, 0, 786452, 2, 0, 851988, 2, 0, 917524, 2, 0, -327683, 2, 0, -262147, 2, 0, -196611, 2, 0, -131075, 2, 0, -65539, 2, 0, -3, 2, 0, 65533, 2, 0, 131069, 2, 0, 196605, 2, 0, 262141, 2, 0, 327677, 2, 0, 393213, 2, 0, 458749, 2, 0, 524285, 2, 0, 589821, 2, 0, 655357, 2, 0, 720893, 2, 0, 786429, 2, 0, 851965, 2, 0, 917501, 2, 0, 983037, 2, 0, -327682, 2, 0, -262146, 2, 0, -196610, 2, 0, -131074, 2, 0, -65538, 2, 0, -2, 2, 0, 65534, 2, 0, 131070, 2, 0, 196606, 2, 0, 262142, 2, 0, 327678, 2, 0, 393214, 2, 0, 458750, 2, 0, 524286, 2, 0, 589822, 2, 0, 655358, 2, 0, 720894, 2, 0, 786430, 2, 0, 851966, 2, 0, 917502, 2, 0, 983038, 2, 0, -327681, 2, 0, -262145, 2, 0, -196609, 2, 0, -131073, 2, 0, -65537, 2, 0, -1, 2, 0, 65535, 2, 0, 131071, 2, 0, 196607, 2, 0, 262143, 2, 0, 327679, 2, 0, 393215, 2, 0, 458751, 2, 0, 524287, 2, 0, 589823, 2, 0, 655359, 2, 0, 720895, 2, 0, 786431, 2, 0, 851967, 2, 0, 917503, 2, 0, 983039, 2, 0, -327686, 2, 0, -262150, 2, 0, -196614, 2, 0, -131078, 2, 0, -65542, 2, 0, -6, 2, 0, 65530, 2, 0, 131066, 2, 0, 196602, 2, 0, 262138, 2, 0, 327674, 2, 0, 393210, 2, 0, 458746, 2, 0, 524282, 2, 0, 589818, 2, 0, 655354, 2, 0, 720890, 2, 0, 786426, 2, 0, 851962, 2, 0, 917498, 2, 0, 983034, 2, 0, -327685, 2, 0, -262149, 2, 0, -196613, 2, 0, -131077, 2, 0, -65541, 2, 0, -5, 2, 0, 65531, 2, 0, 131067, 2, 0, 196603, 2, 0, 262139, 2, 0, 327675, 2, 0, 393211, 2, 0, 458747, 2, 0, 524283, 2, 0, 589819, 2, 0, 655355, 2, 0, 720891, 2, 0, 786427, 2, 0, 851963, 2, 0, 917499, 2, 0, 983035, 2, 0, -327684, 2, 0, -262148, 2, 0, -196612, 2, 0, -131076, 2, 0, -65540, 2, 0, -4, 2, 0, 65532, 2, 0, 131068, 2, 0, 196604, 2, 0, 262140, 2, 0, 327676, 2, 0, 393212, 2, 0, 458748, 2, 0, 524284, 2, 0, 589820, 2, 0, 655356, 2, 0, 720892, 2, 0, 786428, 2, 0, 851964, 2, 0, 917500, 2, 0, 983036, 2, 0, 1048570, 2, 0, 1114106, 2, 0, 1179642, 2, 0, 1048571, 2, 0, 1114107, 2, 0, 1179643, 2, 0, 1048572, 2, 0, 1114108, 2, 0, 1179644, 2, 0, 1048573, 2, 0, 1114109, 2, 0, 1179645, 2, 0, 1048574, 2, 0, 1114110, 2, 0, 1179646, 2, 0, 1048575, 2, 0, 1114111, 2, 0, 1179647, 2, 0, 983040, 2, 0, 1048576, 2, 0, 1114112, 2, 0, 983041, 2, 0, 1048577, 2, 0, 1114113, 2, 0, 983042, 2, 0, 1048578, 2, 0, 1114114, 2, 0, 983043, 2, 0, 1048579, 2, 0, 1114115, 2, 0, 983044, 2, 0, 1048580, 2, 0, 1114116, 2, 0, 983045, 2, 0, 1048581, 2, 0, 1114117, 2, 0, 983046, 2, 0, 1048582, 2, 0, 1114118, 2, 0, 983047, 2, 0, 1048583, 2, 0, 1114119, 2, 0, 983048, 2, 0, 1048584, 2, 0, 1114120, 2, 0, 983049, 2, 0, 1048585, 2, 0, 1114121, 2, 0, 983050, 2, 0, 1048586, 2, 0, 1114122, 2, 0, 983051, 2, 0, 1048587, 2, 0, 1114123, 2, 0, 983052, 2, 0, 1048588, 2, 0, 1114124, 2, 0, 983053, 2, 0, 1048589, 2, 0, 1114125, 2, 0, 983054, 2, 0, 1048590, 2, 0, 1114126, 2, 0, 983055, 2, 0, 1048591, 2, 0, 1114127, 2, 0, 983056, 2, 0, 1048592, 2, 0, 1114128, 2, 0, 983057, 2, 0, 1048593, 2, 0, 1114129, 2, 0, 983058, 2, 0, 1048594, 2, 0, 1114130, 2, 0, 983059, 2, 0, 1048595, 2, 0, 1114131, 2, 0, 983060, 2, 0, 1048596, 2, 0, 1114132, 2, 0, -524294, 2, 0, -458758, 2, 0, -393222, 2, 0, -524293, 2, 0, -458757, 2, 0, -393221, 2, 0, -524292, 2, 0, -458756, 2, 0, -393220, 2, 0, -524291, 2, 0, -458755, 2, 0, -393219, 2, 0, -524290, 2, 0, -458754, 2, 0, -393218, 2, 0, -524289, 2, 0, -458753, 2, 0, -393217, 2, 0, -589824, 2, 0, -524288, 2, 0, -458752, 2, 0, -589823, 2, 0, -524287, 2, 0, -458751, 2, 0, -589822, 2, 0, -524286, 2, 0, -458750, 2, 0, -589821, 2, 0, -524285, 2, 0, -458749, 2, 0, -589820, 2, 0, -524284, 2, 0, -458748, 2, 0, -589819, 2, 0, -524283, 2, 0, -458747, 2, 0, -589818, 2, 0, -524282, 2, 0, -458746, 2, 0, -589817, 2, 0, -524281, 2, 0, -458745, 2, 0, -589816, 2, 0, -524280, 2, 0, -458744, 2, 0, -589815, 2, 0, -524279, 2, 0, -458743, 2, 0, -589814, 2, 0, -524278, 2, 0, -458742, 2, 0, -589813, 2, 0, -524277, 2, 0, -458741, 2, 0, -589812, 2, 0, -524276, 2, 0, -458740, 2, 0, -589811, 2, 0, -524275, 2, 0, -458739, 2, 0, -589810, 2, 0, -524274, 2, 0, -458738, 2, 0, -589809, 2, 0, -524273, 2, 0, -458737, 2, 0, -589808, 2, 0, -524272, 2, 0, -458736, 2, 0, -589807, 2, 0, -524271, 2, 0, -458735, 2, 0, -589806, 2, 0, -524270, 2, 0, -458734, 2, 0, -589805, 2, 0, -524269, 2, 0, -458733, 2, 0, -589804, 2, 0, -524268, 2, 0, -458732, 2, 0)
+layer_4/name = "Roof Borders"
+layer_4/z_index = 6
+layer_4/tile_data = PackedInt32Array(-262129, 65545, 2, 786447, 65545, 3, 851967, 9, 3, -196609, 9, 2, -262144, 65545, 0, -262143, 65545, 0, -262142, 65545, 0, -262141, 65545, 0, -262140, 65545, 0, -262139, 65545, 0, -262138, 65545, 0, -262137, 65545, 0, -262136, 65545, 0, -262135, 65545, 0, -262134, 65545, 0, -262133, 65545, 0, -262132, 65545, 0, -262131, 65545, 0, -262130, 65545, 0, 786432, 9, 1, 786433, 9, 1, 786434, 9, 1, 786435, 9, 1, 786436, 9, 1, 786437, 9, 1, 786438, 9, 1, 786439, 9, 1, 786440, 9, 1, 786441, 9, 1, 786442, 9, 1, 786443, 9, 1, 786444, 9, 1, 786445, 9, 1, 786446, 9, 1, 720911, 65545, 1, 655375, 65545, 1, 589839, 65545, 1, 524303, 65545, 1, 458767, 65545, 1, 393231, 65545, 1, 327695, 65545, 1, 262159, 65545, 1, 196623, 65545, 1, 131087, 65545, 1, 65551, 65545, 1, 15, 65545, 1, -65521, 65545, 1, -131057, 65545, 1, -196593, 65545, 1, -131073, 9, 0, -65537, 9, 0, -1, 9, 0, 65535, 9, 0, 131071, 9, 0, 196607, 9, 0, 262143, 9, 0, 327679, 9, 0, 393215, 9, 0, 458751, 9, 0, 524287, 9, 0, 589823, 9, 0, 655359, 9, 0, 720895, 9, 0, 786431, 9, 0)
+
+[node name="Door0" parent="." instance=ExtResource("3_rbfby")]
+position = Vector2(144, -2)
+destination_level_tag = "floor_0"
+destination_door_tag = "016"
+spawn_direction = "down"
+
+[node name="Lockers" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Locker1" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(200, 4)
+colour = "Pink"
+
+[node name="Locker2" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(216, 4)
+colour = "Pink"
+
+[node name="Locker3" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(232, 4)
+colour = "Pink"
+
+[node name="Locker4" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(248, 4)
+colour = "Pink"
+
+[node name="Locker5" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(264, 4)
+colour = "Pink"
+
+[node name="Locker6" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(280, 4)
+colour = "Pink"
+
+[node name="Locker7" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(296, 4)
+colour = "Pink"
+
+[node name="Locker8" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(312, 4)
+colour = "Pink"
+
+[node name="Locker9" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(328, 4)
+colour = "Pink"
+
+[node name="Locker10" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(344, 4)
+colour = "Pink"
+
+[node name="Locker11" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(360, 4)
+colour = "Pink"
+
+[node name="Locker12" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(376, 4)
+colour = "Pink"
+
+[node name="Locker13" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(392, 4)
+colour = "Pink"
+
+[node name="Locker14" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(408, 4)
+colour = "Pink"
+
+[node name="Locker15" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(424, 4)
+colour = "Pink"
+
+[node name="Locker16" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(440, 4)
+colour = "Pink"
+
+[node name="Locker17" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(456, 4)
+colour = "Pink"
+
+[node name="Locker18" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(472, 4)
+colour = "Pink"
+
+[node name="Locker19" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(200, 92)
+colour = "Pink"
+
+[node name="Locker20" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(216, 92)
+colour = "Pink"
+
+[node name="Locker21" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(232, 92)
+colour = "Pink"
+
+[node name="Locker22" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(248, 92)
+colour = "Pink"
+
+[node name="Locker23" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(264, 92)
+colour = "Pink"
+
+[node name="Locker24" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(280, 92)
+colour = "Pink"
+
+[node name="Locker25" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(296, 92)
+colour = "Pink"
+
+[node name="Locker26" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(312, 92)
+colour = "Pink"
+
+[node name="Locker27" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(328, 92)
+colour = "Pink"
+
+[node name="Locker28" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(344, 92)
+colour = "Pink"
+
+[node name="Locker29" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(360, 92)
+colour = "Pink"
+
+[node name="Locker30" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(376, 92)
+colour = "Pink"
+
+[node name="Locker31" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(392, 92)
+colour = "Pink"
+
+[node name="Locker32" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(408, 92)
+colour = "Pink"
+
+[node name="Locker33" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(424, 92)
+colour = "Pink"
+
+[node name="Locker34" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(440, 92)
+colour = "Pink"
+
+[node name="Locker35" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(456, 92)
+colour = "Pink"
+
+[node name="Locker36" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(472, 92)
+colour = "Pink"
+
+[node name="Locker37" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(200, 100)
+colour = "Pink"
+
+[node name="Locker38" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(216, 100)
+colour = "Pink"
+
+[node name="Locker39" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(232, 100)
+colour = "Pink"
+
+[node name="Locker40" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(248, 100)
+colour = "Pink"
+
+[node name="Locker41" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(264, 100)
+colour = "Pink"
+
+[node name="Locker42" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(280, 100)
+colour = "Pink"
+
+[node name="Locker43" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(296, 100)
+colour = "Pink"
+
+[node name="Locker44" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(312, 100)
+colour = "Pink"
+
+[node name="Locker45" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(328, 100)
+colour = "Pink"
+
+[node name="Locker46" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(344, 100)
+colour = "Pink"
+
+[node name="Locker47" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(360, 100)
+colour = "Pink"
+
+[node name="Locker48" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(376, 100)
+colour = "Pink"
+
+[node name="Locker49" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(392, 100)
+colour = "Pink"
+
+[node name="Locker50" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(408, 100)
+colour = "Pink"
+
+[node name="Locker51" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(424, 100)
+colour = "Pink"
+
+[node name="Locker52" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(440, 100)
+colour = "Pink"
+
+[node name="Locker53" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(456, 100)
+colour = "Pink"
+
+[node name="Locker54" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(472, 100)
+colour = "Pink"
+
+[node name="Locker55" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(200, 188)
+colour = "Pink"
+
+[node name="Locker56" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(216, 188)
+colour = "Pink"
+
+[node name="Locker57" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(232, 188)
+colour = "Pink"
+
+[node name="Locker58" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(248, 188)
+colour = "Pink"
+
+[node name="Locker59" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(264, 188)
+colour = "Pink"
+
+[node name="Locker60" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(280, 188)
+colour = "Pink"
+
+[node name="Locker61" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(296, 188)
+colour = "Pink"
+
+[node name="Locker62" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(312, 188)
+colour = "Pink"
+
+[node name="Locker63" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(328, 188)
+colour = "Pink"
+
+[node name="Locker64" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(344, 188)
+colour = "Pink"
+
+[node name="Locker65" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(360, 188)
+colour = "Pink"
+
+[node name="Locker66" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(376, 188)
+colour = "Pink"
+
+[node name="Locker67" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(392, 188)
+colour = "Pink"
+
+[node name="Locker68" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(408, 188)
+colour = "Pink"
+
+[node name="Locker69" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(424, 188)
+colour = "Pink"
+
+[node name="Locker70" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(440, 188)
+colour = "Pink"
+
+[node name="Locker71" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(456, 188)
+colour = "Pink"
+
+[node name="Locker72" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(472, 188)
+colour = "Pink"
+
+[node name="Locker73" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(200, 196)
+colour = "Pink"
+
+[node name="Locker74" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(216, 196)
+colour = "Pink"
+
+[node name="Locker75" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(232, 196)
+colour = "Pink"
+
+[node name="Locker76" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(248, 196)
+colour = "Pink"
+
+[node name="Locker77" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(264, 196)
+colour = "Pink"
+
+[node name="Locker78" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(280, 196)
+colour = "Pink"
+
+[node name="Locker79" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(296, 196)
+colour = "Pink"
+
+[node name="Locker80" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(312, 196)
+colour = "Pink"
+
+[node name="Locker81" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(328, 196)
+colour = "Pink"
+
+[node name="Locker82" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(344, 196)
+colour = "Pink"
+
+[node name="Locker83" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(360, 196)
+colour = "Pink"
+
+[node name="Locker84" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(376, 196)
+colour = "Pink"
+
+[node name="Locker85" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(392, 196)
+colour = "Pink"
+
+[node name="Locker86" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(408, 196)
+colour = "Pink"
+
+[node name="Locker87" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(424, 196)
+colour = "Pink"
+
+[node name="Locker88" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(440, 196)
+colour = "Pink"
+
+[node name="Locker89" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(456, 196)
+colour = "Pink"
+
+[node name="Locker90" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(472, 196)
+colour = "Pink"
+
+[node name="Locker91" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(200, 284)
+colour = "Pink"
+
+[node name="Locker92" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(216, 284)
+colour = "Pink"
+
+[node name="Locker93" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(232, 284)
+colour = "Pink"
+
+[node name="Locker94" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(248, 284)
+colour = "Pink"
+
+[node name="Locker95" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(264, 284)
+colour = "Pink"
+
+[node name="Locker96" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(280, 284)
+colour = "Pink"
+
+[node name="Locker97" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(296, 284)
+colour = "Pink"
+
+[node name="Locker98" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(312, 284)
+colour = "Pink"
+
+[node name="Locker99" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(328, 284)
+colour = "Pink"
+
+[node name="Locker100" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(344, 284)
+colour = "Pink"
+
+[node name="Locker101" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(360, 284)
+colour = "Pink"
+
+[node name="Locker102" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(376, 284)
+colour = "Pink"
+
+[node name="Locker103" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(392, 284)
+colour = "Pink"
+
+[node name="Locker104" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(408, 284)
+colour = "Pink"
+
+[node name="Locker105" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(424, 284)
+colour = "Pink"
+
+[node name="Locker106" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(440, 284)
+colour = "Pink"
+
+[node name="Locker107" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(456, 284)
+colour = "Pink"
+
+[node name="Locker108" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(472, 284)
+colour = "Pink"
+
+[node name="Locker109" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(200, 292)
+colour = "Pink"
+
+[node name="Locker110" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(216, 292)
+colour = "Pink"
+
+[node name="Locker111" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(232, 292)
+colour = "Pink"
+
+[node name="Locker112" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(248, 292)
+colour = "Pink"
+
+[node name="Locker113" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(264, 292)
+colour = "Pink"
+
+[node name="Locker114" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(280, 292)
+colour = "Pink"
+
+[node name="Locker115" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(296, 292)
+colour = "Pink"
+
+[node name="Locker116" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(312, 292)
+colour = "Pink"
+
+[node name="Locker117" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(328, 292)
+colour = "Pink"
+
+[node name="Locker118" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(344, 292)
+colour = "Pink"
+
+[node name="Locker119" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(360, 292)
+colour = "Pink"
+
+[node name="Locker120" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(376, 292)
+colour = "Pink"
+
+[node name="Locker121" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(392, 292)
+colour = "Pink"
+
+[node name="Locker122" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(408, 292)
+colour = "Pink"
+
+[node name="Locker123" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(424, 292)
+colour = "Pink"
+
+[node name="Locker124" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(440, 292)
+colour = "Pink"
+
+[node name="Locker125" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(456, 292)
+colour = "Pink"
+
+[node name="Locker126" parent="Lockers" instance=ExtResource("4_gg7lg")]
+position = Vector2(472, 292)
+colour = "Pink"
+
+[node name="Locker127" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(200, 380)
+colour = "Pink"
+
+[node name="Locker128" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(216, 380)
+colour = "Pink"
+
+[node name="Locker129" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(232, 380)
+colour = "Pink"
+
+[node name="Locker130" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(248, 380)
+colour = "Pink"
+
+[node name="Locker131" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(264, 380)
+colour = "Pink"
+
+[node name="Locker132" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(280, 380)
+colour = "Pink"
+
+[node name="Locker133" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(296, 380)
+colour = "Pink"
+
+[node name="Locker134" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(312, 380)
+colour = "Pink"
+
+[node name="Locker135" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(328, 380)
+colour = "Pink"
+
+[node name="Locker136" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(344, 380)
+colour = "Pink"
+
+[node name="Locker137" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(360, 380)
+colour = "Pink"
+
+[node name="Locker138" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(376, 380)
+colour = "Pink"
+
+[node name="Locker139" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(392, 380)
+colour = "Pink"
+
+[node name="Locker140" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(408, 380)
+colour = "Pink"
+
+[node name="Locker141" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(424, 380)
+colour = "Pink"
+
+[node name="Locker142" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(440, 380)
+colour = "Pink"
+
+[node name="Locker143" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(456, 380)
+colour = "Pink"
+
+[node name="Locker144" parent="Lockers" instance=ExtResource("6_co868")]
+position = Vector2(472, 380)
+colour = "Pink"

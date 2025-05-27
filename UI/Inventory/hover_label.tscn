@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqj5nahpvm5nq"]
 
-[ext_resource type="Texture2D" uid="uid://v63jh2vut10s" path="res://Art/Office Pack/HUD/inv_hover_bg.png" id="1_ta7fe"]
+[ext_resource type="Texture2D" uid="uid://v63jh2vut10s" path="res://Art/Office Pack/HUD/Inventory/inv_hover_bg.png" id="1_ta7fe"]
 [ext_resource type="Script" path="res://UI/Inventory/hover_label.gd" id="1_txipu"]
 
 [node name="HoverLabel" type="Control"]

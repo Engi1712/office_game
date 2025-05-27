@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfj53vcryp280"]
 
 [ext_resource type="Script" path="res://Levels/room_209.gd" id="1_hlm02"]
-[ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="2_cevrw"]
+[ext_resource type="PackedScene" uid="uid://78pmsn1o2adm" path="res://Characters/player_cam.tscn" id="2_juxml"]
 [ext_resource type="Texture2D" uid="uid://cbkqa8ldpc0fg" path="res://Art/Office Pack/Tiles/roof.png" id="3_1ynbk"]
 [ext_resource type="Texture2D" uid="uid://bnysq25mpbohp" path="res://Art/Office Pack/Tiles/floor.png" id="4_jcvgt"]
 [ext_resource type="Texture2D" uid="uid://x01lrhxwhc4j" path="res://Art/Office Pack/Tiles/walls.png" id="5_3b4f0"]
@@ -62,10 +62,6 @@ texture_region_size = Vector2i(32, 32)
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:1/0 = 0
-4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
@@ -81,9 +77,6 @@ texture_region_size = Vector2i(32, 32)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
-4:3/0 = 0
-4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:3/0/physics_layer_0/angular_velocity = 0.0
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
@@ -93,36 +86,9 @@ texture_region_size = Vector2i(32, 32)
 1:4/0 = 0
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
-1:5/0 = 0
-1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:5/0/physics_layer_0/angular_velocity = 0.0
-0:5/0 = 0
-0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:5/0/physics_layer_0/angular_velocity = 0.0
 0:4/0 = 0
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
-0:6/0 = 0
-0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:6/0/physics_layer_0/angular_velocity = 0.0
-0:7/0 = 0
-0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:7/0/physics_layer_0/angular_velocity = 0.0
-0:8/0 = 0
-0:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:8/0/physics_layer_0/angular_velocity = 0.0
-0:9/0 = 0
-0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:9/0/physics_layer_0/angular_velocity = 0.0
-0:10/0 = 0
-0:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:10/0/physics_layer_0/angular_velocity = 0.0
-1:10/0 = 0
-1:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:10/0/physics_layer_0/angular_velocity = 0.0
-2:10/0 = 0
-2:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16s0"]
 texture = ExtResource("6_gjysa")
@@ -268,11 +234,7 @@ sources/0 = SubResource("TileSetAtlasSource_c2q2b")
 y_sort_enabled = true
 script = ExtResource("1_hlm02")
 
-[node name="Player" parent="." instance=ExtResource("2_cevrw")]
-position = Vector2(168, 103)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(144, 57)
+[node name="PlayerCam" parent="." instance=ExtResource("2_juxml")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_grfwv")

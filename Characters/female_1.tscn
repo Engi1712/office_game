@@ -3929,7 +3929,7 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_amgqq"]
 states/End/position = Vector2(686.667, 99.1852)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_p3qla")
-states/Idle/position = Vector2(363.333, 99.1111)
+states/Idle/position = Vector2(363.333, 98.9383)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_7xe5f")
 states/Walk/position = Vector2(522, 99.9506)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_spd7u"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_kwcy8"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_r575p")]
@@ -4209,5 +4209,5 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_amgqq")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0.401592, 0.287692)
 parameters/Walk/blend_position = Vector2(0, 0)

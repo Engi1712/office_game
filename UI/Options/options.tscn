@@ -1,0 +1,636 @@
+[gd_scene load_steps=41 format=3 uid="uid://b7jmyil5vrb27"]
+
+[ext_resource type="Script" path="res://UI/Options/options.gd" id="1_wowxn"]
+[ext_resource type="Texture2D" uid="uid://ci21ikta4nv6i" path="res://Art/Office Pack/HUD/Options/menu.png" id="2_fvhwb"]
+[ext_resource type="Texture2D" uid="uid://c2bcucmqa4iwa" path="res://Art/Office Pack/HUD/Options/tab_inactive.png" id="3_d701s"]
+[ext_resource type="Texture2D" uid="uid://sgj81d1pe5ky" path="res://Art/Office Pack/HUD/Options/tab_active.png" id="4_cbkm3"]
+[ext_resource type="ButtonGroup" uid="uid://d0ruhmluivb7c" path="res://UI/Options/options_button_group.tres" id="4_f3ty8"]
+[ext_resource type="Texture2D" uid="uid://dy5k8dreb7y2o" path="res://Art/Office Pack/HUD/Options/icon_video.png" id="6_jk73y"]
+[ext_resource type="Texture2D" uid="uid://mr7yu1f4r80r" path="res://Art/Office Pack/HUD/Options/icon_audio.png" id="7_dp8wj"]
+[ext_resource type="Texture2D" uid="uid://s5xy0vv1bf0g" path="res://Art/Office Pack/HUD/Options/icon_gameplay.png" id="8_r2lh3"]
+[ext_resource type="Texture2D" uid="uid://bniewif4pfvba" path="res://Art/Office Pack/HUD/Options/icon_bindings.png" id="9_syq53"]
+[ext_resource type="Theme" uid="uid://0sxsvtkhwtty" path="res://UI/options_theme.tres" id="10_rab17"]
+[ext_resource type="Texture2D" uid="uid://jl4y0y6ewiup" path="res://Art/Office Pack/HUD/Options/arrow_left.png" id="12_g0ncu"]
+[ext_resource type="Texture2D" uid="uid://cwn1rih3eii8v" path="res://Art/Office Pack/HUD/Options/arrow_left_hover.png" id="13_jo6pk"]
+[ext_resource type="Texture2D" uid="uid://c5jqd7lwdtl4d" path="res://Art/Office Pack/HUD/Options/arrow_right.png" id="14_h8jn4"]
+[ext_resource type="Texture2D" uid="uid://d3c2hywqdpei7" path="res://Art/Office Pack/HUD/Options/arrow_left_pressed.png" id="14_pp80f"]
+[ext_resource type="Texture2D" uid="uid://cnr26awsffsh6" path="res://Art/Office Pack/HUD/Options/arrow_right_hover.png" id="15_kqy5y"]
+[ext_resource type="Texture2D" uid="uid://cyuilr4gdumcc" path="res://Art/Office Pack/HUD/Options/arrow_right_pressed.png" id="17_imly5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3u4b"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bm11"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u37cg"]
+texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yow7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ot80"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rjxe"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1gj1"]
+texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_isi7p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8yt10"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh7gm"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6ids"]
+texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6khve"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_do2i1"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooeh1"]
+texture = ExtResource("3_d701s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fn4ju"]
+texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvx8e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tdfw8"]
+texture = ExtResource("12_g0ncu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2b6a"]
+texture = ExtResource("13_jo6pk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tr0cb"]
+texture = ExtResource("14_pp80f")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ap73a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4wjl"]
+texture = ExtResource("14_h8jn4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l66y"]
+texture = ExtResource("15_kqy5y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3hh8"]
+texture = ExtResource("17_imly5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbr0y"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wowxn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_fvhwb")
+
+[node name="VideoButton" type="Button" parent="."]
+custom_minimum_size = Vector2(14, 27)
+layout_mode = 0
+offset_left = 470.0
+offset_top = 62.0
+offset_right = 484.0
+offset_bottom = 89.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_h3u4b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1bm11")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u37cg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6yow7")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("4_f3ty8")
+icon = ExtResource("6_jk73y")
+icon_alignment = 1
+
+[node name="AudioButton" type="Button" parent="."]
+custom_minimum_size = Vector2(14, 27)
+layout_mode = 0
+offset_left = 470.0
+offset_top = 88.0
+offset_right = 484.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ot80")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3rjxe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i1gj1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_isi7p")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("4_f3ty8")
+icon = ExtResource("7_dp8wj")
+icon_alignment = 1
+
+[node name="GameplayButton" type="Button" parent="."]
+custom_minimum_size = Vector2(14, 27)
+layout_mode = 0
+offset_left = 470.0
+offset_top = 114.0
+offset_right = 484.0
+offset_bottom = 141.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8yt10")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rh7gm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y6ids")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6khve")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("4_f3ty8")
+icon = ExtResource("8_r2lh3")
+icon_alignment = 1
+
+[node name="BindingsButton" type="Button" parent="."]
+custom_minimum_size = Vector2(14, 27)
+layout_mode = 0
+offset_left = 470.0
+offset_top = 140.0
+offset_right = 484.0
+offset_bottom = 167.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_do2i1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ooeh1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fn4ju")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fvx8e")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("4_f3ty8")
+icon = ExtResource("9_syq53")
+icon_alignment = 1
+
+[node name="LeftPage" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 69.0
+offset_right = 306.0
+offset_bottom = 285.0
+
+[node name="VideoTab" type="VBoxContainer" parent="LeftPage"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LeftPage/VideoTab"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "OPTIONS_VIDEO"
+horizontal_alignment = 1
+
+[node name="VScrollBar" type="VScrollBar" parent="LeftPage/VideoTab"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LeftPage/VideoTab"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_rab17")
+
+[node name="Label" type="Label" parent="LeftPage/VideoTab/ScrollContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "itjhitrhrtrknrt a ue ghuehg eahgue ugehr ugherug euh guehg  rghkne rgheuirghu rhg uhrv uhrug heruhner  nr gjreng jnregujh eugherug huerhg uerhg ueru gheug"
+autowrap_mode = 2
+
+[node name="Setting" type="ScrollContainer" parent="LeftPage/VideoTab"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_rab17")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPage/VideoTab/Setting"]
+layout_mode = 2
+
+[node name="Fullscreen" type="HBoxContainer" parent="LeftPage/VideoTab/Setting/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/VideoTab/Setting/VBoxContainer/Fullscreen"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_VIDEO_FULLSCREEN"
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="LeftPage/VideoTab/Setting/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="CheckBox" type="CheckBox" parent="LeftPage/VideoTab/Setting/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("10_rab17")
+action_mode = 0
+
+[node name="Resolution" type="HBoxContainer" parent="LeftPage/VideoTab/Setting/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/VideoTab/Setting/VBoxContainer/Resolution"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_VIDEO_RESOLUTION"
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="LeftPage/VideoTab/Setting/VBoxContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="DropDown" type="OptionButton" parent="LeftPage/VideoTab/Setting/VBoxContainer/Resolution"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("10_rab17")
+
+[node name="VSync" type="HBoxContainer" parent="LeftPage/VideoTab/Setting/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/VideoTab/Setting/VBoxContainer/VSync"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_VIDEO_V_SYNC"
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="LeftPage/VideoTab/Setting/VBoxContainer/VSync"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="LeftPage/VideoTab/Setting/VBoxContainer/VSync"]
+custom_minimum_size = Vector2(6, 12)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_tdfw8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w2b6a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tr0cb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ap73a")
+
+[node name="Mode" type="Label" parent="LeftPage/VideoTab/Setting/VBoxContainer/VSync"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+horizontal_alignment = 1
+clip_text = true
+
+[node name="RightButton" type="Button" parent="LeftPage/VideoTab/Setting/VBoxContainer/VSync"]
+custom_minimum_size = Vector2(6, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_j4wjl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6l66y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b3hh8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mbr0y")
+
+[node name="AudioTab" type="VBoxContainer" parent="LeftPage"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LeftPage/AudioTab"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "OPTIONS_AUDIO"
+horizontal_alignment = 1
+
+[node name="Settings" type="ScrollContainer" parent="LeftPage/AudioTab"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_rab17")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPage/AudioTab/Settings"]
+layout_mode = 2
+
+[node name="MasterVolume" type="HBoxContainer" parent="LeftPage/AudioTab/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/AudioTab/Settings/VBoxContainer/MasterVolume"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_AUDIO_MASTER"
+autowrap_mode = 3
+
+[node name="MusicVolume" type="HBoxContainer" parent="LeftPage/AudioTab/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/AudioTab/Settings/VBoxContainer/MusicVolume"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_AUDIO_MUSIC"
+autowrap_mode = 3
+
+[node name="SFX Volume" type="HBoxContainer" parent="LeftPage/AudioTab/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/AudioTab/Settings/VBoxContainer/SFX Volume"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_AUDIO_SFX"
+autowrap_mode = 3
+
+[node name="GameplayTab" type="VBoxContainer" parent="LeftPage"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LeftPage/GameplayTab"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "OPTIONS_GAMEPLAY"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LeftPage/GameplayTab"]
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_rab17")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftPage/GameplayTab/ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sensetivity" type="HBoxContainer" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Sensetivity"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_GAMEPLAY_SENSETIVITY"
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Sensetivity"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="HSlider" type="HSlider" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Sensetivity"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Language" type="HBoxContainer" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Language"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_GAMEPLAY_LANGUAGE"
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Language"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="DropDown" type="OptionButton" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Language"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("10_rab17")
+
+[node name="FPSCounter" type="HBoxContainer" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/FPSCounter"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_GAMEPLAY_FPS_COUNTER"
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/FPSCounter"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="CheckBox" type="CheckBox" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/FPSCounter"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("10_rab17")
+action_mode = 0
+
+[node name="BindingsTab" type="VBoxContainer" parent="LeftPage"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LeftPage/BindingsTab"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "OPTIONS_BINDINGS"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LeftPage/BindingsTab"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_rab17")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPage/BindingsTab/ScrollContainer"]
+layout_mode = 2
+
+[node name="MoveUp" type="HBoxContainer" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer/MoveUp"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_BINDINGS_MOVE_UP"
+autowrap_mode = 3
+
+[node name="MoveDown" type="HBoxContainer" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer/MoveDown"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_BINDINGS_MOVE_DOWN"
+autowrap_mode = 3
+
+[node name="MoveLeft" type="HBoxContainer" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer/MoveLeft"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_BINDINGS_MOVE_LEFT"
+autowrap_mode = 3
+
+[node name="MoveRight" type="HBoxContainer" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="LeftPage/BindingsTab/ScrollContainer/VBoxContainer/MoveRight"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("10_rab17")
+text = "OPTIONS_BINDINGS_MOVE_RIGHT"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftPage"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPage/MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonRow1" type="HBoxContainer" parent="LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 3
+
+[node name="Discard" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow1"]
+custom_minimum_size = Vector2(67, 14)
+layout_mode = 2
+theme = ExtResource("10_rab17")
+disabled = true
+text = "OPTIONS_DISCARD"
+clip_text = true
+
+[node name="Apply" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow1"]
+custom_minimum_size = Vector2(67, 14)
+layout_mode = 2
+theme = ExtResource("10_rab17")
+disabled = true
+text = "OPTIONS_APPLY"
+clip_text = true
+
+[node name="ButtonRow2" type="HBoxContainer" parent="LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 3
+
+[node name="Back" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow2"]
+custom_minimum_size = Vector2(67, 14)
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "OPTIONS_BACK"
+clip_text = true
+
+[node name="Reset" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow2"]
+custom_minimum_size = Vector2(67, 14)
+layout_mode = 2
+theme = ExtResource("10_rab17")
+disabled = true
+text = "OPTIONS_RESET"
+clip_text = true
+
+[node name="RightPage" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 338.0
+offset_top = 69.0
+offset_right = 464.0
+offset_bottom = 285.0
+size_flags_vertical = 3
+theme = ExtResource("10_rab17")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSync" type="VBoxContainer" parent="RightPage/VBoxContainer"]
+layout_mode = 2
+
+[node name="General" type="RichTextLabel" parent="RightPage/VBoxContainer/VSync"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+text = "OPTIONS_VIDEO_VSYNC_DESCRIPTION"
+fit_content = true
+scroll_active = false
+
+[node name="Modes" type="VBoxContainer" parent="RightPage/VBoxContainer/VSync"]
+layout_mode = 2
+
+[node name="Off" type="RichTextLabel" parent="RightPage/VBoxContainer/VSync/Modes"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+bbcode_enabled = true
+text = "OPTIONS_VIDEO_V_SYNC_OFF — "
+fit_content = true
+scroll_active = false
+
+[node name="On" type="RichTextLabel" parent="RightPage/VBoxContainer/VSync/Modes"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+bbcode_enabled = true
+text = "OPTIONS_VIDEO_V_SYNC_ON — "
+fit_content = true
+scroll_active = false
+
+[node name="Adapt" type="RichTextLabel" parent="RightPage/VBoxContainer/VSync/Modes"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+bbcode_enabled = true
+text = "OPTIONS_VIDEO_V_SYNC_ADAPT — "
+fit_content = true
+scroll_active = false
+
+[node name="Fast" type="RichTextLabel" parent="RightPage/VBoxContainer/VSync/Modes"]
+layout_mode = 2
+theme = ExtResource("10_rab17")
+bbcode_enabled = true
+text = "OPTIONS_VIDEO_V_SYNC_FAST — "
+fit_content = true
+scroll_active = false
+
+[connection signal="toggled" from="LeftPage/VideoTab/Setting/VBoxContainer/Fullscreen/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="LeftPage/VideoTab/Setting/VBoxContainer/Resolution/DropDown" to="." method="_on_drop_down_item_selected"]
+[connection signal="gui_input" from="LeftPage/VideoTab/Setting/VBoxContainer/VSync" to="." method="_on_v_sync_gui_input"]
+[connection signal="mouse_entered" from="LeftPage/VideoTab/Setting/VBoxContainer/VSync" to="." method="_on_v_sync_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/VideoTab/Setting/VBoxContainer/VSync" to="." method="_on_v_sync_mouse_exited"]
+[connection signal="pressed" from="LeftPage/VideoTab/Setting/VBoxContainer/VSync/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="LeftPage/VideoTab/Setting/VBoxContainer/VSync/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="LeftPage/MarginContainer/VBoxContainer/ButtonRow1/Discard" to="." method="_on_discard_pressed"]
+[connection signal="pressed" from="LeftPage/MarginContainer/VBoxContainer/ButtonRow1/Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="LeftPage/MarginContainer/VBoxContainer/ButtonRow2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LeftPage/MarginContainer/VBoxContainer/ButtonRow2/Reset" to="." method="_on_reset_pressed"]

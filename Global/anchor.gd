@@ -2,13 +2,13 @@ extends Marker2D
 
 @onready var player = $"../Player"
 @onready var camera = $"Camera"
+@onready var actual_cam_pos = global_position
 
-func _process(_delta):
+func _process(delta):
 	if camera.enabled:
-		var target = player.global_position
-		var target_x = int(lerp(global_position.x, target.x, 0.2))
-		var target_y = int(lerp(global_position.y, target.y, 0.2))
-		global_position = Vector2(target_x, target_y)
-	elif player.cam_ready:
+		actual_cam_pos = lerp(player.global_position, actual_cam_pos, 0.2 * delta)
+		global_position = actual_cam_pos
+	elif player.spawned:
+		actual_cam_pos = player.global_position
 		global_position = player.global_position
 		camera.enabled = true

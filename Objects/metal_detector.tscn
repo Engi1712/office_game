@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://csa0wspso42ck"]
+
+[ext_resource type="Texture2D" uid="uid://dtp6o0tb7e00s" path="res://Art/Office Pack/Objects/metal_detector.png" id="1_0dr0h"]
+[ext_resource type="Script" path="res://Objects/metal_detector.gd" id="1_idsfu"]
+[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/location_area.tscn" id="3_bthm7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3ajc"]
+size = Vector2(4, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ah54x"]
+size = Vector2(32, 11)
+
+[node name="MetalDetector" type="StaticBody2D"]
+script = ExtResource("1_idsfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -37)
+texture = ExtResource("1_0dr0h")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 0)
+shape = SubResource("RectangleShape2D_n3ajc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-18, 0)
+shape = SubResource("RectangleShape2D_n3ajc")
+
+[node name="LocationArea" parent="." instance=ExtResource("3_bthm7")]
+location_type = "light"
+
+[node name="LocationCollision" parent="LocationArea" index="0"]
+shape = SubResource("RectangleShape2D_ah54x")
+
+[editable path="LocationArea"]

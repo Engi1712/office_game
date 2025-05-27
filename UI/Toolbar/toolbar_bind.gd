@@ -51,7 +51,7 @@ func hover_show():
 		hover_label.show()
 		await get_tree().process_frame
 		hover_label.hide()
-		var pixels_down = Game.resolution.y - hover_label.global_position.y
+		var pixels_down = Glob.resolution.y - hover_label.global_position.y
 		if pixels_down < hover_label.get_height():
 			hover_label.position.y -= hover_label.get_height() - pixels_down
 		hover_label.show()

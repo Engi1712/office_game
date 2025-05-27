@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cyb7ro0kvmbmt" path="res://Art/Office Pack/Objects/door_s.png" id="1_obcjo"]
 [ext_resource type="Texture2D" uid="uid://vah6fqg8da7p" path="res://Art/Office Pack/MISC/fade_down.png" id="2_mtu2e"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_42bpj"]
-[ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="5_3spnh"]
-[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="6_43lxj"]
+[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/location_area.tscn" id="5_l027v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhg8g"]
 size = Vector2(32, 4)
@@ -98,11 +97,14 @@ _data = {
 "opening": SubResource("Animation_lexew")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_luje7"]
-size = Vector2(32, 48)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eodvr"]
 size = Vector2(32, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpabg"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3xrr"]
+size = Vector2(64, 64)
 
 [node name="DoorS" type="StaticBody2D"]
 script = ExtResource("1_hot4j")
@@ -129,29 +131,29 @@ libraries = {
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(0, -7)
 
-[node name="DrawArea" parent="." instance=ExtResource("5_3spnh")]
-position = Vector2(0, 14)
+[node name="OpenInteractionArea" parent="." instance=ExtResource("4_42bpj")]
+interact_type = "open"
 
-[node name="DrawCollision" parent="DrawArea" index="0"]
-position = Vector2(0, 16)
-
-[node name="TransferArea" parent="." instance=ExtResource("6_43lxj")]
-position = Vector2(0, 14)
-
-[node name="TransferCollision" parent="TransferArea" index="0"]
-position = Vector2(0, 24)
-shape = SubResource("RectangleShape2D_luje7")
-
-[node name="InteractionArea" parent="." instance=ExtResource("4_42bpj")]
-position = Vector2(0, 14)
-interact_type = "door"
-
-[node name="InteractionCollision" parent="InteractionArea" index="0"]
-position = Vector2(0, 15.5)
+[node name="InteractionCollision" parent="OpenInteractionArea" index="0"]
+position = Vector2(0, 29.5)
 shape = SubResource("RectangleShape2D_eodvr")
+
+[node name="TransferLocationArea" parent="." instance=ExtResource("5_l027v")]
+location_type = "transfer"
+
+[node name="LocationCollision" parent="TransferLocationArea" index="0"]
+position = Vector2(0, 38)
+shape = SubResource("RectangleShape2D_jpabg")
+
+[node name="DrawLocationArea" parent="." instance=ExtResource("5_l027v")]
+location_type = "draw"
+
+[node name="LocationCollision" parent="DrawLocationArea" index="0"]
+position = Vector2(0, 30)
+shape = SubResource("RectangleShape2D_x3xrr")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
-[editable path="DrawArea"]
-[editable path="TransferArea"]
-[editable path="InteractionArea"]
+[editable path="OpenInteractionArea"]
+[editable path="TransferLocationArea"]
+[editable path="DrawLocationArea"]

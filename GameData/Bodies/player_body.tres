@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Body" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Characters/body.gd" id="1_otffu"]
+
+[resource]
+script = ExtResource("1_otffu")
+sex = "Male"
+type = "1"
+skin_colour = "White"
+lips_colour = "Pink"
+eyes_colour = "Blue"
+brows_colour = "Brown"
+hair_style = ""
+hair_colour = "Black"
+beard_style = "Horseshoe"
+beard_colour = "Black"

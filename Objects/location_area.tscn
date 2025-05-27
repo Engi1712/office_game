@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://du6cokib6nvii"]
+
+[ext_resource type="Script" path="res://Objects/location_area.gd" id="1_2qf05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bju1r"]
+
+[node name="LocationArea" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_2qf05")
+
+[node name="LocationCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bju1r")

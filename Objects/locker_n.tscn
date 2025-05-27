@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://coealsnqqcvdr"]
+[gd_scene load_steps=13 format=3 uid="uid://coealsnqqcvdr"]
 
 [ext_resource type="Script" path="res://Objects/locker.gd" id="1_uvam0"]
-[ext_resource type="Texture2D" uid="uid://cm5ybjull1d0w" path="res://Art/Office Pack/Objects/locker_n.png" id="2_yo5o2"]
+[ext_resource type="Texture2D" uid="uid://cm5ybjull1d0w" path="res://Art/Office Pack/Objects/locker_blue_n.png" id="2_3q3th"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_6b3vw"]
+[ext_resource type="Texture2D" uid="uid://ch7u1v0xegoah" path="res://Art/Office Pack/Objects/locker_pink_n.png" id="3_chic4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grons"]
 size = Vector2(16, 8)
@@ -12,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprites/Blue:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +29,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprites/Blue:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,7 +45,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprites/Blue:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -60,7 +61,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprites/Blue:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -76,7 +77,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprites/Blue:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -101,9 +102,16 @@ size = Vector2(16, 72)
 [node name="LockerN" type="StaticBody2D"]
 script = ExtResource("1_uvam0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Blue" type="Sprite2D" parent="Sprites"]
 position = Vector2(0, -32)
-texture = ExtResource("2_yo5o2")
+texture = ExtResource("2_3q3th")
+
+[node name="Pink" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(0, -32)
+texture = ExtResource("3_chic4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_grons")

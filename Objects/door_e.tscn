@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ciad60jwmfwml" path="res://Art/Office Pack/Objects/door_e.png" id="1_7pbhw"]
 [ext_resource type="Script" path="res://Objects/door.gd" id="1_nfadm"]
 [ext_resource type="Texture2D" uid="uid://b15ninxbpkn7h" path="res://Art/Office Pack/MISC/fade_right.png" id="2_21tat"]
-[ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="4_pso4w"]
+[ext_resource type="PackedScene" uid="uid://du6cokib6nvii" path="res://Objects/location_area.tscn" id="5_llkoq"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="5_uo3bj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0gpa"]
@@ -97,11 +97,11 @@ _data = {
 "opening": SubResource("Animation_qhq2k")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehk5u"]
-size = Vector2(19, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ehmc"]
 size = Vector2(33, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwari"]
+size = Vector2(19, 32)
 
 [node name="DoorE" type="StaticBody2D"]
 script = ExtResource("1_nfadm")
@@ -129,17 +129,19 @@ libraries = {
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(-5, 0)
 
-[node name="TransferArea" parent="." instance=ExtResource("4_pso4w")]
+[node name="OpenInteractionArea" parent="." instance=ExtResource("5_uo3bj")]
+interact_type = "open"
 
-[node name="TransferCollision" parent="TransferArea" index="0"]
-position = Vector2(20.5, 0)
-shape = SubResource("RectangleShape2D_ehk5u")
-
-[node name="InteractionArea" parent="." instance=ExtResource("5_uo3bj")]
-
-[node name="InteractionCollision" parent="InteractionArea" index="0"]
+[node name="InteractionCollision" parent="OpenInteractionArea" index="0"]
 position = Vector2(13.5, 0)
 shape = SubResource("RectangleShape2D_4ehmc")
 
-[editable path="TransferArea"]
-[editable path="InteractionArea"]
+[node name="TransferLocationArea" parent="." instance=ExtResource("5_llkoq")]
+location_type = "transfer"
+
+[node name="LocationCollision" parent="TransferLocationArea" index="0"]
+position = Vector2(20.5, 0)
+shape = SubResource("RectangleShape2D_wwari")
+
+[editable path="OpenInteractionArea"]
+[editable path="TransferLocationArea"]

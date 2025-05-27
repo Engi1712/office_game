@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://g3vcxmygsqf5"]
 
 [ext_resource type="Script" path="res://UI/Inventory/slot.gd" id="1_qxsjt"]
-[ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/inv_slot.png" id="2_w8i0r"]
-[ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/inv_locked_slot.png" id="3_y3xxa"]
-[ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/inv_selected_slot.png" id="4_tiu5y"]
-[ext_resource type="Texture2D" uid="uid://dwfkwdcg3hh0h" path="res://Art/Office Pack/HUD/small_numbers_black.png" id="5_o6na8"]
+[ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/Inventory/inv_slot.png" id="2_w8i0r"]
+[ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/Inventory/inv_locked_slot.png" id="3_y3xxa"]
+[ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/Inventory/inv_selected_slot.png" id="4_tiu5y"]
+[ext_resource type="Texture2D" uid="uid://dwfkwdcg3hh0h" path="res://Art/Office Pack/HUD/smal_numbers.png" id="5_o6na8"]
 [ext_resource type="Texture2D" uid="uid://cj6172hscrjhy" path="res://Art/Office Pack/HUD/small_numbers_red.png" id="6_t4dqh"]
 [ext_resource type="PackedScene" uid="uid://cqj5nahpvm5nq" path="res://UI/Inventory/hover_label.tscn" id="7_meegu"]
 

@@ -1,20 +1,20 @@
-[gd_resource type="Resource" script_class="InvChar" load_steps=22 format=3 uid="uid://dd2f01l8dv7j1"]
+[gd_resource type="Resource" script_class="InvChar" load_steps=20 format=3]
 
-[ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="1_y241y"]
-[ext_resource type="Resource" uid="uid://lajh2ocw0en" path="res://GameData/Inventories/bag_inv.tres" id="1_yxkos"]
-[ext_resource type="Resource" uid="uid://1beqkws7cka8" path="res://UI/Items/bag.tres" id="2_ciepb"]
-[ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3_xyh07"]
-[ext_resource type="Resource" uid="uid://dpoxq220vki10" path="res://UI/Items/black_jacket.tres" id="6_7774b"]
-[ext_resource type="Script" path="res://UI/Inventory/inv_char.gd" id="7_u24oa"]
-[ext_resource type="Resource" uid="uid://dgw8gfgungjja" path="res://UI/Items/brown_shoes.tres" id="8_xsrq5"]
-[ext_resource type="Resource" uid="uid://cx3oh76fqxivc" path="res://UI/Items/white_shirt.tres" id="8_y0gwk"]
-[ext_resource type="Resource" uid="uid://f4cleo4jsp5y" path="res://UI/Items/black_trousers.tres" id="9_owp8j"]
+[ext_resource type="Resource" path="res://GameData/Inventories/bag_inv.tres" id="1"]
+[ext_resource type="Resource" path="res://UI/Items/bag.tres" id="2"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="4"]
+[ext_resource type="Resource" path="res://UI/Items/black_jacket.tres" id="5_osvbm"]
+[ext_resource type="Script" path="res://UI/Inventory/inv_char.gd" id="6"]
+[ext_resource type="Resource" path="res://UI/Items/white_shirt.tres" id="7_li4wq"]
+[ext_resource type="Resource" path="res://UI/Items/black_shoes.tres" id="8"]
+[ext_resource type="Resource" path="res://UI/Items/black_trousers.tres" id="9"]
 
 [sub_resource type="Resource" id="Resource_wcicl"]
-script = ExtResource("3_xyh07")
-item = ExtResource("2_ciepb")
+script = ExtResource("3")
+item = ExtResource("2")
 amount = 1
-inv = ExtResource("1_yxkos")
+inv = ExtResource("1")
 param1 = 0
 param2 = 0
 toolbar = 0
@@ -23,7 +23,7 @@ type = "bag"
 hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_a163a"]
-script = ExtResource("3_xyh07")
+script = ExtResource("3")
 amount = 0
 param1 = 0
 param2 = 0
@@ -33,7 +33,7 @@ type = ""
 hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_b0k24"]
-script = ExtResource("3_xyh07")
+script = ExtResource("3")
 amount = 0
 param1 = 0
 param2 = 0
@@ -43,7 +43,7 @@ type = ""
 hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_5agjp"]
-script = ExtResource("3_xyh07")
+script = ExtResource("3")
 amount = 0
 param1 = 0
 param2 = 0
@@ -53,12 +53,12 @@ type = ""
 hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_c4nvi"]
-script = ExtResource("1_y241y")
-slots = Array[ExtResource("3_xyh07")]([SubResource("Resource_b0k24"), SubResource("Resource_5agjp")])
+script = ExtResource("4")
+slots = Array[ExtResource("3")]([SubResource("Resource_b0k24"), SubResource("Resource_5agjp")])
 
 [sub_resource type="Resource" id="Resource_w03hs"]
-script = ExtResource("3_xyh07")
-item = ExtResource("6_7774b")
+script = ExtResource("3")
+item = ExtResource("5_osvbm")
 amount = 1
 inv = SubResource("Resource_c4nvi")
 param1 = 0
@@ -69,8 +69,8 @@ type = "jacket"
 hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_5c6a6"]
-script = ExtResource("3_xyh07")
-item = ExtResource("8_y0gwk")
+script = ExtResource("3")
+item = ExtResource("7_li4wq")
 amount = 1
 param1 = 0
 param2 = 0
@@ -80,45 +80,25 @@ type = "shirt"
 hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_2ug4y"]
-script = ExtResource("3_xyh07")
-item = ExtResource("8_xsrq5")
+script = ExtResource("3")
+item = ExtResource("8")
 amount = 1
 param1 = 0
 param2 = 0
 toolbar = 0
-capacity = 0
+capacity = 2
 type = "shoes"
 hover_side = "r"
 
-[sub_resource type="Resource" id="Resource_ev1h5"]
-script = ExtResource("3_xyh07")
-amount = 0
-param1 = 0
-param2 = 0
-toolbar = 0
-capacity = 1
-type = ""
-hover_side = "r"
-
-[sub_resource type="Resource" id="Resource_4j4il"]
-script = ExtResource("3_xyh07")
-amount = 0
-param1 = 0
-param2 = 0
-toolbar = 0
-capacity = 1
-type = ""
-hover_side = "r"
-
-[sub_resource type="Resource" id="Resource_scfnu"]
-script = ExtResource("1_y241y")
-slots = Array[ExtResource("3_xyh07")]([SubResource("Resource_ev1h5"), SubResource("Resource_4j4il")])
+[sub_resource type="Resource" id="Resource_jk5ck"]
+script = ExtResource("4")
+slots = Array[ExtResource("3")]([null, null])
 
 [sub_resource type="Resource" id="Resource_aywum"]
-script = ExtResource("3_xyh07")
-item = ExtResource("9_owp8j")
+script = ExtResource("3")
+item = ExtResource("9")
 amount = 1
-inv = SubResource("Resource_scfnu")
+inv = SubResource("Resource_jk5ck")
 param1 = 0
 param2 = 0
 toolbar = 0
@@ -127,7 +107,8 @@ type = "trousers"
 hover_side = "r"
 
 [resource]
-script = ExtResource("7_u24oa")
+resource_name = "player_inv"
+script = ExtResource("6")
 jacket_slot = SubResource("Resource_w03hs")
 shirt_slot = SubResource("Resource_5c6a6")
 trousers_slot = SubResource("Resource_aywum")

@@ -1,13 +1,14 @@
 extends Node2D
 
 @export var skin: String
-@export var hair: String
-@export var brows: String
+@export var hair_colour: String
+@export var hair_style: String
 @export var eyes: String
 @export var lips: String
 @export var shoes: String
 @export var trousers: String
 @export var shirt: String
+@export var jacket: String
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -60,15 +61,19 @@ func update_eyes():
 
 func update_brows():
 	for i in $Body/Brows.get_children():
-		if i.get_name() == brows:
+		if i.get_name() == hair_colour:
 			i.visible = true
 		else:
 			i.visible = false
 
 func update_hair():
 	for i in $Body/Hair.get_children():
-		if i.get_name() == hair:
-			i.visible = true
+		if i.get_name() == hair_style:
+			for j in $Body/Hair.i.get_children():
+				if j.get_name() == hair_colour:
+					j.visible = true
+				else:
+					j.visible = false
 		else:
 			i.visible = false
 
@@ -89,6 +94,13 @@ func update_trousers():
 func update_shirt():
 	for i in $Clothes/Shirt.get_children():
 		if i.get_name() == shirt:
+			i.visible = true
+		else:
+			i.visible = false
+
+func update_jacket():
+	for i in $Clothes/Shirt.get_children():
+		if i.get_name() == jacket:
 			i.visible = true
 		else:
 			i.visible = false

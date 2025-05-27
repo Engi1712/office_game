@@ -1,5 +1,8 @@
 extends Panel
 
+@export var cur_slot: InvSlot = null
+@export var placeholder: Texture = null
+
 @onready var available_sprite = $Available
 @onready var locked_sprite = $Locked
 @onready var selected_sprite = $Selected
@@ -12,11 +15,8 @@ extends Panel
 @onready var toolbar = $Content/Toolbar
 @onready var hover_label = $HoverLabel
 
-@export var cur_slot: InvSlot = null
-@export var placeholder: Texture = null
-
 func _ready():
-	Game.on_translation_updated.connect(update_text)
+	Glob.on_translation_updated.connect(update_text)
 	placeholder_sprite.texture = placeholder
 	hover_label.hide()
 	deselect()
@@ -106,7 +106,7 @@ func hover_show():
 		hover_label.show()
 		await get_tree().process_frame
 		hover_label.hide()
-		var pixels_down = Game.resolution.y - hover_label.global_position.y
+		var pixels_down = Glob.resolution.y - hover_label.global_position.y
 		if pixels_down < hover_label.get_height():
 			hover_label.position.y -= hover_label.get_height() - pixels_down
 		hover_label.show()

@@ -16,37 +16,41 @@ func _ready():
 	mutex = Mutex.new()
 	animation_player.play("close")
 
-func touch():
+func touch(_area_type: String):
 	pass
 
-func release():
+func release(_area_type: String):
 	pass
 
-func approach():
-	mutex.lock()
-	if state == "closing":
-		state = "opening"
-		var pos = animation_player.get_current_animation_position()
-		animation_player.play("opening")
-		animation_player.seek(animation_player.get_current_animation_length() - pos)
-		collision.set_deferred("disabled", true)
-	elif state == "close":
-		state = "opening"
-		animation_player.play("opening")
-		collision.set_deferred("disabled", true)
-	mutex.unlock()
+func approach(area_type: String):
+	if area_type == "transfer":
+		NavigationManager.call_deferred("go_to_level", destination_level_tag, destination_door_tag)
+	elif area_type == "open":
+		mutex.lock()
+		if state == "closing":
+			state = "opening"
+			var pos = animation_player.get_current_animation_position()
+			animation_player.play("opening")
+			animation_player.seek(animation_player.get_current_animation_length() - pos)
+			collision.set_deferred("disabled", true)
+		elif state == "close":
+			state = "opening"
+			animation_player.play("opening")
+			collision.set_deferred("disabled", true)
+		mutex.unlock()
 
-func leave():
-	mutex.lock()
-	if state == "opening":
-		state = "closing"
-		var pos = animation_player.get_current_animation_position()
-		animation_player.play("closing")
-		animation_player.seek(animation_player.get_current_animation_length() - pos)
-	elif state == "open":
-		state = "closing"
-		animation_player.play("closing")
-	mutex.unlock()
+func leave(area_type: String):
+	if area_type == "open":
+		mutex.lock()
+		if state == "opening":
+			state = "closing"
+			var pos = animation_player.get_current_animation_position()
+			animation_player.play("closing")
+			animation_player.seek(animation_player.get_current_animation_length() - pos)
+		elif state == "open":
+			state = "closing"
+			animation_player.play("closing")
+		mutex.unlock()
 
 func set_open():
 	mutex.lock()
@@ -65,6 +69,3 @@ func _on_animation_player_animation_finished(anim_name):
 		animation_player.play("close")
 		collision.set_deferred("disabled", false)
 	mutex.unlock()
-
-func transfer():
-	NavigationManager.call_deferred("go_to_level", destination_level_tag, destination_door_tag)

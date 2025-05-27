@@ -9,6 +9,7 @@ const scene_room_0_ladder_l = preload("res://Levels/floor_0_ladder_l.tscn")
 const scene_room_1_ladder_l = preload("res://Levels/floor_1_ladder_l.tscn")
 const scene_room_2_ladder_l = preload("res://Levels/floor_2_ladder_l.tscn")
 const scene_room_008 = preload("res://Levels/room_008.tscn")
+const scene_room_016 = preload("res://Levels/room_016.tscn")
 const scene_room_209 = preload("res://Levels/room_209.tscn")
 const scene_elevator_l = preload("res://Levels/elevator_l.tscn")
 
@@ -38,6 +39,8 @@ func go_to_level(level_tag, destination_tag):
 			scene_to_load = scene_room_2_ladder_l
 		"room_008":
 			scene_to_load = scene_room_008
+		"room_016":
+			scene_to_load = scene_room_016
 		"room_209":
 			scene_to_load = scene_room_209
 		"elevator_l":
@@ -47,6 +50,7 @@ func go_to_level(level_tag, destination_tag):
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		spawn_door_tag = destination_tag
+		Glob.current_level = level_tag
 		get_tree().change_scene_to_packed(scene_to_load)
 
 func trigger_player_spawn(position : Vector2, direction : String ):

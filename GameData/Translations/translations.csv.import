@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cc8wo0hl1dqmv"
+
+[deps]
+
+files=["res://GameData/Translations/translations.en.translation", "res://GameData/Translations/translations.ru.translation", "res://GameData/Translations/translations.ja.translation", "res://GameData/Translations/translations.es.translation", "res://GameData/Translations/translations.de.translation", "res://GameData/Translations/translations.fr.translation", "res://GameData/Translations/translations.pt.translation", "res://GameData/Translations/translations.it.translation", "res://GameData/Translations/translations.tr.translation", "res://GameData/Translations/translations.zh.translation", "res://GameData/Translations/translations.pl.translation", "res://GameData/Translations/translations.ko.translation"]
+
+source_file="res://GameData/Translations/translations.csv"
+dest_files=["res://GameData/Translations/translations.en.translation", "res://GameData/Translations/translations.ru.translation", "res://GameData/Translations/translations.ja.translation", "res://GameData/Translations/translations.es.translation", "res://GameData/Translations/translations.de.translation", "res://GameData/Translations/translations.fr.translation", "res://GameData/Translations/translations.pt.translation", "res://GameData/Translations/translations.it.translation", "res://GameData/Translations/translations.tr.translation", "res://GameData/Translations/translations.zh.translation", "res://GameData/Translations/translations.pl.translation", "res://GameData/Translations/translations.ko.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@export var colour = ""
+
 @onready var animation_player = $AnimationPlayer
 
 var state : String = "close"
@@ -7,9 +9,14 @@ var mutex : Mutex
 
 func _ready():
 	mutex = Mutex.new()
+	for i in $Sprites.get_children():
+		if i.get_name() == colour:
+			i.visible = true
+		else:
+			i.visible = false
 	animation_player.play("close")
 
-func touch():
+func touch(_area_type: String):
 	mutex.lock()
 	match state:
 		"open" :
@@ -30,13 +37,13 @@ func touch():
 			animation_player.seek(animation_player.get_current_animation_length() - pos)
 	mutex.unlock()
 
-func release():
+func release(_area_type: String):
 	pass
 
-func approach():
+func approach(_area_type: String):
 	pass
 
-func leave():
+func leave(_area_type: String):
 	mutex.lock()
 	match state:
 		"open" :
