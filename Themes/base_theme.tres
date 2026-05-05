@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bx78qkjopjaxn"]
+
+[ext_resource type="FontFile" uid="uid://mebkobr8jbml" path="res://Assests/LanaPixel.ttf" id="1_17mdi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_17mdi"]
+
+[resource]
+default_font = ExtResource("1_17mdi")
+default_font_size = 11
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_17mdi")

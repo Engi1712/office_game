@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="PlayerSpecs" format=3 uid="uid://cckqr1wsy2guh"]
+
+[ext_resource type="Script" uid="uid://x4ajy7dtq2sl" path="res://Battle/Container/Templates/player_specs.gd" id="1_j27fh"]
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="2_4x80x"]
+[ext_resource type="Resource" uid="uid://cvupvogfxgeds" path="res://Battle/Container/Scripts/basic_load.tres" id="3_v88e4"]
+[ext_resource type="Resource" uid="uid://b2hmws2sw3mhb" path="res://Battle/Container/Scripts/self_load.tres" id="4_xeeg4"]
+[ext_resource type="Resource" uid="uid://bfi81eepicw7d" path="res://Battle/Container/Scripts/basic_vm.tres" id="5_bk3wy"]
+[ext_resource type="Resource" uid="uid://das764et3l83e" path="res://Battle/Container/Scripts/basic_traffic.tres" id="6_k55o6"]
+[ext_resource type="Resource" uid="uid://cpghvesoqpc2w" path="res://Battle/Container/Scripts/app_policy.tres" id="7_n7mby"]
+[ext_resource type="Resource" uid="uid://bjjs3o7l3ju0n" path="res://Battle/Container/Scripts/app_guard.tres" id="8_8x6mt"]
+[ext_resource type="Resource" uid="uid://bocpp35a8rq87" path="res://Battle/Container/Scripts/kill.tres" id="9_cbnsx"]
+[ext_resource type="Script" uid="uid://7pn3abp05kn8" path="res://Battle/Container/Templates/script_list.gd" id="10_lkmcg"]
+[ext_resource type="Resource" uid="uid://beufhch7xmuh0" path="res://Battle/Container/Scripts/upload.tres" id="11_1lmfm"]
+[ext_resource type="Resource" uid="uid://dfpaxh5umij2d" path="res://Battle/Container/Scripts/sanitizer.tres" id="12_35e3r"]
+[ext_resource type="Resource" uid="uid://0vuo4cwnmls5" path="res://Battle/Container/Wallpapers/city.tres" id="13_4x80x"]
+
+[sub_resource type="Resource" id="Resource_7h567"]
+script = ExtResource("10_lkmcg")
+general = Array[ExtResource("2_4x80x")]([ExtResource("3_v88e4"), ExtResource("4_xeeg4"), ExtResource("5_bk3wy"), ExtResource("6_k55o6"), ExtResource("7_n7mby"), ExtResource("8_8x6mt"), ExtResource("9_cbnsx")])
+shop = Array[ExtResource("2_4x80x")]([ExtResource("11_1lmfm"), ExtResource("12_35e3r")])
+metadata/_custom_type_script = "uid://7pn3abp05kn8"
+
+[resource]
+script = ExtResource("1_j27fh")
+player_name = "John Doe"
+scripts = SubResource("Resource_7h567")
+cpu_num = 3
+iface_num = 4
+wallpaper = ExtResource("13_4x80x")
+metadata/_custom_type_script = "uid://x4ajy7dtq2sl"

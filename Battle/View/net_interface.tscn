@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bjmlmt1f0ytvr"]
+
+[ext_resource type="Script" uid="uid://jtofcp1e3g3r" path="res://Battle/View/net_interface.gd" id="1_srus1"]
+[ext_resource type="Texture2D" uid="uid://bcgu7wu4wenaa" path="res://Art/Office Pack/Battle/UI/button_select.png" id="3_4t728"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_srus1"]
+texture_margin_top = 1.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="Animation" id="Animation_gmm8i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4voa1"]
+resource_name = "highlight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_el71o"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ht84q"]
+_data = {
+&"RESET": SubResource("Animation_gmm8i"),
+&"highlight": SubResource("Animation_4voa1"),
+&"idle": SubResource("Animation_el71o")
+}
+
+[node name="NetInterface" type="PanelContainer" unique_id=752395489]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(104, 21)
+offset_right = 104.0
+offset_bottom = 21.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_srus1")
+script = ExtResource("1_srus1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2052195543]
+layout_mode = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=371617121]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=241576896]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/HBoxContainer" unique_id=1361215454]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+bbcode_enabled = true
+text = "enp1"
+fit_content = true
+
+[node name="Traffic" type="RichTextLabel" parent="MarginContainer/HBoxContainer" unique_id=1316184994]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+bbcode_enabled = true
+text = "0Gb"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=799973690]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2123632681]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(104, 18)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=813375997]
+position = Vector2(52, 9)
+texture = ExtResource("3_4t728")
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport" unique_id=846316919]
+libraries/ = SubResource("AnimationLibrary_ht84q")

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bl2pah13ijr1r"]
+
+[ext_resource type="Script" uid="uid://d22v6r5wikxt0" path="res://Battle/View/battle_manager.gd" id="1_i6dci"]
+[ext_resource type="PackedScene" uid="uid://6otohwgv70yh" path="res://Battle/View/battle_field.tscn" id="2_tn4mw"]
+[ext_resource type="PackedScene" uid="uid://pf87i0g3m0r4" path="res://Battle/View/shop_menu.tscn" id="3_n0njp"]
+[ext_resource type="PackedScene" uid="uid://g3w5jbego3c7" path="res://Battle/View/pause_menu.tscn" id="4_n0njp"]
+[ext_resource type="AudioStream" uid="uid://b54h16rvggcao" path="res://SFX/Battle/click.mp3" id="4_o7q53"]
+[ext_resource type="AudioStream" uid="uid://dciubx1loo8xq" path="res://SFX/Battle/press.mp3" id="5_lgcqi"]
+[ext_resource type="PackedScene" uid="uid://dl2rt7d5bg1g1" path="res://Battle/View/game_over.tscn" id="5_o7q53"]
+[ext_resource type="AudioStream" uid="uid://dxt1l831pgsqf" path="res://SFX/Battle/coins.mp3" id="6_57ppc"]
+
+[node name="BattleManager" type="Control" unique_id=274509594]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6dci")
+
+[node name="BattleField" parent="." unique_id=1528346788 instance=ExtResource("2_tn4mw")]
+layout_mode = 1
+
+[node name="ShopMenu" parent="." unique_id=1311331856 instance=ExtResource("3_n0njp")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="." unique_id=2022995324 instance=ExtResource("4_n0njp")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" parent="." unique_id=2105912216 instance=ExtResource("5_o7q53")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShowTooltipTimer" type="Timer" parent="." unique_id=597627389]
+wait_time = 0.75
+one_shot = true
+
+[node name="HideTooltipTimer" type="Timer" parent="." unique_id=883113446]
+wait_time = 0.05
+one_shot = true
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="." unique_id=832376108]
+stream = ExtResource("4_o7q53")
+volume_db = -15.0
+
+[node name="PressSFX" type="AudioStreamPlayer" parent="." unique_id=195724574]
+stream = ExtResource("5_lgcqi")
+
+[node name="BuySFX" type="AudioStreamPlayer" parent="." unique_id=465114284]
+stream = ExtResource("6_57ppc")
+volume_db = -15.0

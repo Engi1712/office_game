@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://cwfbu4wyi47qv"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_pa2qc"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_aw6ih"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_d6ylm"]
+
+[sub_resource type="Resource" id="Resource_d6ylm"]
+script = ExtResource("2_aw6ih")
+value = "20"
+suffix = "BATTLE_CPU_UNIT"
+comment = "load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_pa2qc")
+script_name = "multi_load"
+copy_price = 6
+delete_price = 6
+run_price = 2
+stop_price = 2
+values = Array[ExtResource("2_aw6ih")]([SubResource("Resource_d6ylm")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

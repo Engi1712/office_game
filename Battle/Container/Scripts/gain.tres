@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://chbk2tl4d3jqp"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_8neqp"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_3ehip"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_bsuvp"]
+
+[sub_resource type="Resource" id="Resource_3s16u"]
+script = ExtResource("2_3ehip")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_3ehip"]
+script = ExtResource("2_bsuvp")
+value = "60"
+suffix = "BATTLE_CPU_UNIT"
+comment = "initial load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_cqmsu"]
+script = ExtResource("2_bsuvp")
+value = "10"
+suffix = "BATTLE_CPU_UNIT"
+comment = "load inc"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_osqyj"]
+script = ExtResource("2_bsuvp")
+value = "90"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "max load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_ajj12"]
+script = ExtResource("2_bsuvp")
+value = "1"
+suffix = "BATTLE_ACTION_UNIT"
+comment = "load dec"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_ii5db"]
+script = ExtResource("2_bsuvp")
+value = "1"
+suffix = "BATTLE_ACTION_UNIT"
+comment = "min load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_8neqp")
+script_name = "gain"
+copy_price = 4
+delete_price = 4
+run_price = 3
+stop_price = 4
+select = Array[ExtResource("2_3ehip")]([SubResource("Resource_3s16u")])
+values = Array[ExtResource("2_bsuvp")]([SubResource("Resource_3ehip"), SubResource("Resource_cqmsu"), SubResource("Resource_osqyj"), SubResource("Resource_ajj12"), SubResource("Resource_ii5db")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

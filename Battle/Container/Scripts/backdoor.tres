@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bd8lb8nr1xbuh"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_iglyy"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_hvjwy"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_oi8uh"]
+
+[sub_resource type="Resource" id="Resource_sixke"]
+script = ExtResource("2_oi8uh")
+value = "100"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "min traffic needed"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_iglyy")
+script_name = "backdoor"
+copy_price = 3
+delete_price = 3
+run_price = 1
+stop_price = 1
+direction = 2
+type = 6
+temporary = 1
+values = Array[ExtResource("2_oi8uh")]([SubResource("Resource_sixke")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

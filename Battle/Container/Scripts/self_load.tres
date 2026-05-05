@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://b2hmws2sw3mhb"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_glold"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_m3l55"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_wflty"]
+
+[sub_resource type="Resource" id="Resource_qru1p"]
+script = ExtResource("2_m3l55")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_glold"]
+script = ExtResource("2_wflty")
+value = "20"
+suffix = "BATTLE_CPU_UNIT"
+comment = "load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_wflty"]
+script = ExtResource("2_wflty")
+value = "1"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/dataweave.png[/img]"
+comment = "generated token"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_glold")
+script_name = "self_load"
+copy_price = 2
+delete_price = 2
+run_price = 1
+stop_price = 1
+direction = 1
+select = Array[ExtResource("2_m3l55")]([SubResource("Resource_qru1p")])
+values = Array[ExtResource("2_wflty")]([SubResource("Resource_glold"), SubResource("Resource_wflty")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

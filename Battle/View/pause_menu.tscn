@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://g3w5jbego3c7"]
+
+[ext_resource type="Script" uid="uid://bhh0bi4hylh2y" path="res://Battle/View/pause_menu.gd" id="1_ggafp"]
+[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/shop.png" id="1_iejri"]
+[ext_resource type="Texture2D" uid="uid://bstvwhpard0cu" path="res://Art/Office Pack/Battle/UI/end_turn.png" id="2_ggafp"]
+[ext_resource type="Texture2D" uid="uid://bxsvq1iunprtq" path="res://Art/Office Pack/Battle/UI/end_turn_pressed.png" id="3_j8hd1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ad6m4"]
+texture = ExtResource("1_iejri")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugoig"]
+texture = ExtResource("2_ggafp")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_off8l"]
+texture = ExtResource("3_j8hd1")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67ty5"]
+texture = ExtResource("2_ggafp")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6su10"]
+texture = ExtResource("3_j8hd1")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txwof"]
+texture = ExtResource("2_ggafp")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15m8p"]
+
+[node name="PauseMenu" type="Control" unique_id=2022995324]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_ggafp")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1142587283]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -20.0
+offset_right = 56.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ad6m4")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1402189435]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1517222649]
+layout_mode = 2
+
+[node name="Pause" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=436390999]
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.105882354, 0.7019608, 0.7019608, 1)
+bbcode_enabled = true
+text = "PAUSE"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1999706183]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_disabled_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ugoig")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_off8l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_67ty5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6su10")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_txwof")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15m8p")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2014855702]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_disabled_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ugoig")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_off8l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_67ty5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6su10")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_txwof")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15m8p")
+text = "Restart"
+
+[node name="Exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1664820259]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_disabled_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ugoig")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_off8l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_67ty5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6su10")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_txwof")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15m8p")
+text = "Exit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bgmdcm4tj8lub"]
+
+[ext_resource type="Script" uid="uid://bts4dv56d7870" path="res://UI/MainMenu/main_menu.gd" id="1_3jj5y"]
+[ext_resource type="Texture2D" uid="uid://de8g6gjq1tfd4" path="res://Art/Office Pack/HUD/MainMenu/null&void.png" id="1_jld46"]
+[ext_resource type="Theme" uid="uid://3v4qy3xpn3x5" path="res://Themes/main_menu_theme.tres" id="2_t17p2"]
+
+[node name="MainMenu" type="Control" unique_id=1890511543]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jj5y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=53919179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1524568747]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=766306065]
+layout_mode = 2
+texture = ExtResource("1_jld46")
+
+[node name="Margin" type="Control" parent="VBoxContainer" unique_id=446805901]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Main" type="VBoxContainer" parent="VBoxContainer" unique_id=485556279]
+custom_minimum_size = Vector2(0, 74)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/Main" unique_id=1496943068]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Play"
+
+[node name="HotSeatButton" type="Button" parent="VBoxContainer/Main" unique_id=42845167]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Hotseat PvP"
+
+[node name="RemoteButton" type="Button" parent="VBoxContainer/Main" unique_id=1610685312]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Remote PvP"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/Main" unique_id=481585376]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Exit"
+
+[node name="RemotePVP" type="VBoxContainer" parent="VBoxContainer" unique_id=1057735637]
+visible = false
+custom_minimum_size = Vector2(0, 74)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="JoinButton" type="Button" parent="VBoxContainer/RemotePVP" unique_id=1153291545]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Join
+"
+
+[node name="HostButton" type="Button" parent="VBoxContainer/RemotePVP" unique_id=1752810190]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Host
+"
+
+[node name="BackButton" type="Button" parent="VBoxContainer/RemotePVP" unique_id=1603842185]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_t17p2")
+text = "Back
+"
+
+[connection signal="pressed" from="VBoxContainer/Main/HotSeatButton" to="." method="_on_hot_seat_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main/RemoteButton" to="." method="_on_remote_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RemotePVP/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RemotePVP/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RemotePVP/BackButton" to="." method="_on_back_button_pressed"]

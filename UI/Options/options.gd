@@ -38,13 +38,16 @@ class VSyncMode:
 class Resolution:
 	var size: Vector2
 	var name: String
+	func _init(new_size, new_name):
+		self.size = new_size
+		self.name = new_name
 
 class Locale:
 	var name: String
 	var code: String
-	func _init(name, code):
-		self.name = name
-		self.code = code
+	func _init(new_name, new_code):
+		self.name = new_name
+		self.code = new_code
 
 var default_settings: Settings
 var saved_settings: Settings
@@ -55,18 +58,20 @@ var video_vsync_mode_labels = ["OPTIONS_VIDEO_V_SYNC_OFF",
 				"OPTIONS_VIDEO_V_SYNC_ADAPT",
 				"OPTIONS_VIDEO_V_SYNC_FAST"]
 var video_vsync_mode_names = ["Off", "On", "Adapt", "Fast"]
-var video_resolutions = [Vector2(640, 360),
-						Vector2(1280, 720),
-						Vector2(1920,1080),
-						Vector2(2560,1440),
-						Vector2(3200,1800),
-						Vector2(3840,2160),
-						Vector2(4480,2520),
-						Vector2(5120,2880),
-						Vector2(5760,3240),
-						Vector2(6400,3600),
-						Vector2(7040,3960),
-						Vector2(7680,4320)]
+var video_resolutions = [
+		Resolution.new(Vector2(640, 360), "640:360"),
+		Resolution.new(Vector2(1280, 720), "1280:720"),
+		Resolution.new(Vector2(1920,1080), "1920:1080"),
+		Resolution.new(Vector2(2560,1440), "2560:1440"),
+		Resolution.new(Vector2(3200,1800), "3200:1800"),
+		Resolution.new(Vector2(3840,2160), "3840:2160"),
+		Resolution.new(Vector2(4480,2520), "4480:2520"),
+		Resolution.new(Vector2(5120,2880), "5120:2880"),
+		Resolution.new(Vector2(5760,3240), "5760:3240"),
+		Resolution.new(Vector2(6400,3600), "6400:3600"),
+		Resolution.new(Vector2(7040,3960), "7040:3960"),
+		Resolution.new(Vector2(7680,4320), "7680:4320")
+]
 var gameplay_languages = [
 		Locale.new("Deutsch", "de"),
 		Locale.new("English", "en"),
@@ -100,8 +105,8 @@ func _ready():
 	
 	var screen_size = DisplayServer.screen_get_size()
 	for i in video_resolutions:
-		if i.x <= screen_size.x and i.y <= screen_size.y:
-			video_resolution_drop_down.add_item(str(i.x) + ":" + str(i.y))
+		if i.size.x <= screen_size.x and i.size.y <= screen_size.y:
+			video_resolution_drop_down.add_item(i.name)
 		else:
 			break
 	video_resolution_drop_down.get_popup().transparent_bg = true
@@ -123,9 +128,9 @@ func _ready():
 	default_settings.video_fullscreen = true
 	default_settings.video_resolution = 5
 	default_settings.gameplay_language = 1
-	for i in gameplay_languages.size():
-		if gameplay_languages[i].code == OS.get_locale().get_slice("_", 0):
-			default_settings.gameplay_language = i
+	#for i in gameplay_languages.size():
+		#if gameplay_languages[i].code == OS.get_locale().get_slice("_", 0):
+			#default_settings.gameplay_language = i
 	copy_settings(saved_settings, default_settings)			#TODO replace with loading from .ini
 	copy_settings(current_settings, saved_settings)
 	
@@ -280,7 +285,7 @@ func apply_video_fullscreen():
 		get_window().borderless = false
 
 func apply_video_resolution():
-	var window_size = video_resolutions[saved_settings.video_resolution]
+	var window_size = video_resolutions[saved_settings.video_resolution].size
 	var screen_size = DisplayServer.screen_get_size()
 	var centered = Vector2(screen_size.x / 2 - window_size.x / 2, screen_size.y / 2 - window_size.y / 2)
 	DisplayServer.window_set_size(window_size)

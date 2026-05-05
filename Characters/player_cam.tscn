@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://78pmsn1o2adm"]
 
 [ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="1_2p8uq"]
-[ext_resource type="Script" path="res://Global/anchor.gd" id="2_y6k2m"]
+[ext_resource type="Script" uid="uid://bg5py03vd2w2y" path="res://Global/anchor.gd" id="2_y6k2m"]
 
 [node name="PlayerCam" type="Node2D"]
 y_sort_enabled = true

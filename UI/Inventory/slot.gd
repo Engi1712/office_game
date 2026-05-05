@@ -81,7 +81,7 @@ func update_capacity():
 	if cur_slot.capacity == 0:
 		capacity_sprite = null
 	else:
-		capacity_sprite.texture = load("res://Art/Office Pack/HUD/capacity" + str(cur_slot.capacity) + ".png")
+		capacity_sprite.texture = load("res://Art/Office Pack/HUD/Inventory/capacity" + str(cur_slot.capacity) + ".png")
 		capacity_sprite.hframes = cur_slot.capacity + 1
 		if !cur_slot.item:
 			capacity_sprite.frame = 0

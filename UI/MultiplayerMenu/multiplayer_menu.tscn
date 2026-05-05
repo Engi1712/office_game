@@ -1,0 +1,325 @@
+[gd_scene load_steps=7 format=3 uid="uid://nfl2b1rimrcj"]
+
+[ext_resource type="Theme" uid="uid://3v4qy3xpn3x5" path="res://Themes/main_menu_theme.tres" id="1_odue7"]
+[ext_resource type="Script" uid="uid://b58bu83agn86g" path="res://UI/MultiplayerMenu/multiplayer_menu.gd" id="2_2h7y8"]
+[ext_resource type="Texture2D" uid="uid://3nbcp653w8a5" path="res://Art/Office Pack/HUD/MainMenu/avatar_placeholder.png" id="3_bap73"]
+[ext_resource type="Texture2D" uid="uid://cu1dqfsuepdtk" path="res://Art/Office Pack/HUD/MainMenu/host_icon.png" id="4_2kmys"]
+[ext_resource type="Texture2D" uid="uid://i56l765hhq6d" path="res://Art/Office Pack/HUD/MainMenu/guest_empty_icon.png" id="5_iwlvg"]
+[ext_resource type="Texture2D" uid="uid://dp7il3omvs1rm" path="res://Art/Office Pack/HUD/MainMenu/guest_online_icon.png" id="6_iwlvg"]
+
+[node name="MultiplayerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_odue7")
+script = ExtResource("2_2h7y8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Error" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Failed to connect to Steam..."
+fit_content = true
+autowrap_mode = 0
+
+[node name="Main" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Search" type="TabContainer" parent="MarginContainer/VBoxContainer/Main"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Friends" type="TabBar" parent="MarginContainer/VBoxContainer/Main/Search"]
+layout_mode = 2
+clip_tabs = false
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Main/Search/Friends"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer"]
+layout_mode = 2
+
+[node name="RefreshButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Refresh"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InviteButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+disabled = true
+text = "Invite"
+
+[node name="All" type="TabBar" parent="MarginContainer/VBoxContainer/Main/Search"]
+visible = false
+layout_mode = 2
+clip_tabs = false
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Main/Search/All"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer"]
+layout_mode = 2
+
+[node name="RefreshButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Refresh"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="JoinButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+disabled = true
+text = "Join"
+
+[node name="Invites" type="TabBar" parent="MarginContainer/VBoxContainer/Main/Search"]
+visible = false
+layout_mode = 2
+clip_tabs = false
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Main/Search/Invites"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer"]
+layout_mode = 2
+
+[node name="RefreshButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Refresh"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="JoinButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 8
+disabled = true
+text = "Join"
+
+[node name="Lobby" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Players" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Main/Lobby"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HostAvatar" type="TextureRect" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_bap73")
+
+[node name="HostIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+custom_minimum_size = Vector2(11, 12)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_2kmys")
+
+[node name="Host" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+bbcode_enabled = true
+text = "Player1"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="VS" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/default_color = Color(0.8, 0.8, 0.16078432, 1)
+bbcode_enabled = true
+text = "VS
+"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Guest" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+bbcode_enabled = true
+text = "???"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GuestEmptyIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+custom_minimum_size = Vector2(11, 12)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_iwlvg")
+
+[node name="GuestOnlineIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+visible = false
+custom_minimum_size = Vector2(11, 12)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_iwlvg")
+
+[node name="GuestAvatar" type="TextureRect" parent="MarginContainer/VBoxContainer/Main/Lobby/Players"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_bap73")
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Main/Lobby"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Main/Lobby/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+item_count = 3
+popup/item_0/text = "Invited"
+popup/item_0/id = 0
+popup/item_1/text = "Friends"
+popup/item_1/id = 1
+popup/item_2/text = "Anyone"
+popup/item_2/id = 2
+
+[node name="HostButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Lobby/Buttons"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "Host"
+
+[node name="LeaveButton" type="Button" parent="MarginContainer/VBoxContainer/Main/Lobby/Buttons"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Leave"
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Back"
+
+[node name="ReadyButton" type="Button" parent="MarginContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 10
+disabled = true
+text = "Ready"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer/VBoxContainer/RefreshButton" to="." method="_on_friends_refresh_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Search/Friends/MarginContainer/VBoxContainer/InviteButton" to="." method="_on_invite_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer/VBoxContainer/RefreshButton" to="." method="_on_lobbies_refresh_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Search/All/MarginContainer/VBoxContainer/JoinButton" to="." method="_on_lobbies_join_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer/VBoxContainer/RefreshButton" to="." method="_on_invites_refresh_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Search/Invites/MarginContainer/VBoxContainer/JoinButton" to="." method="_on_invites_join_button_pressed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Main/Lobby/Buttons/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main/Lobby/Buttons/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons/ReadyButton" to="." method="_on_ready_button_pressed"]

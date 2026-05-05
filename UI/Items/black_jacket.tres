@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dpoxq220vki10"]
 
-[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_53pow"]
+[ext_resource type="Script" uid="uid://cbbtuwq4ubmb5" path="res://UI/Inventory/inv_item.gd" id="1_53pow"]
 [ext_resource type="Texture2D" uid="uid://dc3ce6gtt5jvm" path="res://Art/Office Pack/HUD/Icons/black_jacket.png" id="2_d3nhp"]
 
 [resource]

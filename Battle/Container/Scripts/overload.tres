@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bvsh4al4bjw45"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_67rrv"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_gx1ry"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_l7f4e"]
+
+[sub_resource type="Resource" id="Resource_67rrv"]
+script = ExtResource("3_l7f4e")
+value = "80"
+suffix = "BATTLE_CPU_UNIT"
+comment = "min load needed"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_gx1ry"]
+script = ExtResource("3_l7f4e")
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img]"
+comment = "gained what"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_67rrv")
+script_name = "overload"
+copy_price = 3
+delete_price = 3
+run_price = 1
+stop_price = 1
+type = 5
+temporary = 1
+values = Array[ExtResource("3_l7f4e")]([SubResource("Resource_67rrv"), SubResource("Resource_gx1ry")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

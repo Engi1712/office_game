@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dl2rt7d5bg1g1"]
+
+[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/shop.png" id="1_6uj6g"]
+[ext_resource type="Script" uid="uid://hblv742embwk" path="res://Battle/View/game_over.gd" id="1_l3g1u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l3g1u"]
+texture = ExtResource("1_6uj6g")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[node name="GameOver" type="Control" unique_id=2105912216]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_l3g1u")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=888554452]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -14.0
+offset_right = 58.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_l3g1u")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=799796987]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Message" type="RichTextLabel" parent="PanelContainer/MarginContainer" unique_id=722215121]
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.105882354, 0.7019608, 0.7019608, 1)
+bbcode_enabled = true
+text = "Game over"
+fit_content = true
+horizontal_alignment = 1

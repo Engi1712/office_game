@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://g3vcxmygsqf5"]
 
-[ext_resource type="Script" path="res://UI/Inventory/slot.gd" id="1_qxsjt"]
+[ext_resource type="Script" uid="uid://i2cfrebhi1vd" path="res://UI/Inventory/slot.gd" id="1_qxsjt"]
 [ext_resource type="Texture2D" uid="uid://u8ew6l7urc6g" path="res://Art/Office Pack/HUD/Inventory/inv_slot.png" id="2_w8i0r"]
 [ext_resource type="Texture2D" uid="uid://btnnqg6gs27or" path="res://Art/Office Pack/HUD/Inventory/inv_locked_slot.png" id="3_y3xxa"]
 [ext_resource type="Texture2D" uid="uid://d4lcejsfqo4da" path="res://Art/Office Pack/HUD/Inventory/inv_selected_slot.png" id="4_tiu5y"]

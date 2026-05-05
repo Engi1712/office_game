@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvList" load_steps=23 format=3 uid="uid://bj3pqkumqvqru"]
 
-[ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="1_r5vrd"]
+[ext_resource type="Script" uid="uid://c3rnva5j6mfhd" path="res://UI/Inventory/inv_list.gd" id="1_r5vrd"]
 [ext_resource type="Resource" uid="uid://dys47n70tpwwr" path="res://UI/Items/plastic_cup.tres" id="1_wgwrm"]
 [ext_resource type="Resource" uid="uid://dmehmi18qcnhf" path="res://UI/Items/teabag.tres" id="2_w27fr"]
-[ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3_ghhdx"]
+[ext_resource type="Script" uid="uid://cv4i6wlvm783o" path="res://UI/Inventory/inv_slot.gd" id="3_ghhdx"]
 
 [sub_resource type="Resource" id="Resource_ymggh"]
 script = ExtResource("3_ghhdx")

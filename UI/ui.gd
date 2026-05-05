@@ -16,9 +16,10 @@ func _ready():
 	toolbar.activate()
 
 func _input(event: InputEvent):
-	if event.is_action_pressed("menu"):
-		self.set_process_input(false)
-		pause_menu.activate()
+	#if event.is_action_pressed("menu"):
+		#self.set_process_input(false)
+		#pause_menu.activate()
+	pass
 
 	#if event.is_action_pressed("menu"):
 		#if cur_menu:

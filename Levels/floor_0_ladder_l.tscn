@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5eln5mwjsdlv"]
 
-[ext_resource type="Script" path="res://Levels/floor_0_ladder_l.gd" id="1_fukkd"]
+[ext_resource type="Script" uid="uid://wq1ot6aiqyw6" path="res://Levels/floor_0_ladder_l.gd" id="1_fukkd"]
 [ext_resource type="PackedScene" uid="uid://btvdoxokxd0yt" path="res://Characters/player.tscn" id="1_wu7fi"]
 [ext_resource type="TileSet" uid="uid://dlmbd4xvwj17g" path="res://Assests/tileset.tres" id="2_7k0cr"]
 [ext_resource type="Texture2D" uid="uid://ba2d8vkht4qy5" path="res://Art/Office Pack/Objects/floor_sign.png" id="3_af8fp"]

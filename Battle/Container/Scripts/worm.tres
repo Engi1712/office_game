@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bnx5awh76sic"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_htnqb"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_bf58i"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_6ea02"]
+
+[sub_resource type="Resource" id="Resource_htnqb"]
+script = ExtResource("2_bf58i")
+type = 1
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_bf58i"]
+script = ExtResource("2_bf58i")
+type = 1
+remote = true
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_6ea02"]
+script = ExtResource("3_6ea02")
+value = "60"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "total traffiic"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_ef8cu"]
+script = ExtResource("3_6ea02")
+value = "20"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "max traffic per turn"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_1qay3"]
+script = ExtResource("3_6ea02")
+value = "1"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/petrichor.png[/img]"
+comment = "generated token"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_htnqb")
+script_name = "worm"
+copy_price = 3
+delete_price = 3
+run_price = 2
+stop_price = 2
+direction = 2
+type = 7
+select = Array[ExtResource("2_bf58i")]([SubResource("Resource_htnqb"), SubResource("Resource_bf58i")])
+values = Array[ExtResource("3_6ea02")]([SubResource("Resource_6ea02"), SubResource("Resource_ef8cu"), SubResource("Resource_1qay3")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

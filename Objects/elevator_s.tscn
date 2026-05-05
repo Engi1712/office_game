@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://nvgwthfdonkf"]
 
 [ext_resource type="Texture2D" uid="uid://jivufs1vwq3v" path="res://Art/Office Pack/Objects/elevator_s.png" id="1_0umni"]
-[ext_resource type="Script" path="res://Objects/elevator_s.gd" id="1_ij1jx"]
+[ext_resource type="Script" uid="uid://bimjlgrvgsq4p" path="res://Objects/elevator_s.gd" id="1_ij1jx"]
 [ext_resource type="Texture2D" uid="uid://b2yrmvptpwp6a" path="res://Art/Office Pack/MISC/fade_s2.png" id="1_qirh3"]
 [ext_resource type="Texture2D" uid="uid://cxnpeps4bb3i1" path="res://Art/Office Pack/MISC/black.png" id="3_ue6yh"]
 [ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="5_c46d8"]
@@ -91,11 +91,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d6e5j"]
 _data = {
-"RESET": SubResource("Animation_xciai"),
-"close": SubResource("Animation_121mq"),
-"closed": SubResource("Animation_cxb2r"),
-"open": SubResource("Animation_jr7xw"),
-"opened": SubResource("Animation_msph4")
+&"RESET": SubResource("Animation_xciai"),
+&"close": SubResource("Animation_121mq"),
+&"closed": SubResource("Animation_cxb2r"),
+&"open": SubResource("Animation_jr7xw"),
+&"opened": SubResource("Animation_msph4")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rij83"]

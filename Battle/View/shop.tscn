@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dg54o4nbied7i"]
+
+[ext_resource type="Script" uid="uid://bs8pt7gbdajpq" path="res://Battle/View/shop.gd" id="1_v6mq8"]
+
+[node name="Shop" type="VBoxContainer" unique_id=558838494]
+script = ExtResource("1_v6mq8")
+
+[node name="Scripts" type="VBoxContainer" parent="." unique_id=222160049]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=458581696]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer" unique_id=723752552]
+custom_minimum_size = Vector2(59, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Your balance:"
+fit_content = true
+
+[node name="Balance" type="RichTextLabel" parent="HBoxContainer" unique_id=2139606557]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 2

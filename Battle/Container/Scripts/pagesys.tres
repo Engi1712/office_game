@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://cey4spd2ehpw2"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_4ef70"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_eq0e8"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_yvwm2"]
+
+[resource]
+script = ExtResource("1_4ef70")
+script_name = "pagesys"
+copy_price = 5
+delete_price = 5
+run_price = 2
+stop_price = 2
+type = 6
+temporary = 1
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

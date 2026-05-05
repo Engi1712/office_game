@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://6otohwgv70yh"]
+
+[ext_resource type="Script" uid="uid://dv5tdroo0gkoi" path="res://Battle/View/battle_field.gd" id="1_d46i8"]
+[ext_resource type="PackedScene" uid="uid://v87nkqenvnea" path="res://Battle/View/system.tscn" id="2_c7rvg"]
+[ext_resource type="Texture2D" uid="uid://bstvwhpard0cu" path="res://Art/Office Pack/Battle/UI/end_turn.png" id="3_tqvys"]
+[ext_resource type="Texture2D" uid="uid://bxsvq1iunprtq" path="res://Art/Office Pack/Battle/UI/end_turn_pressed.png" id="3_vfl41"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfl41"]
+texture = ExtResource("3_tqvys")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1fwm"]
+texture = ExtResource("3_vfl41")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78pmv"]
+texture = ExtResource("3_tqvys")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8qw4"]
+texture = ExtResource("3_vfl41")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tml0k"]
+texture = ExtResource("3_tqvys")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqvys"]
+
+[node name="BattleField" type="Control" unique_id=1879527257]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d46i8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=936159226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1620987594]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=821130645]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Upper" parent="MarginContainer/VBoxContainer" unique_id=1993072128 instance=ExtResource("2_c7rvg")]
+layout_mode = 2
+
+[node name="PreMargin" type="Control" parent="MarginContainer/VBoxContainer" unique_id=683803689]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Middle" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1065402285]
+layout_mode = 2
+
+[node name="Tutorial" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Middle" unique_id=1607732995]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Middle" unique_id=889235715]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="EndTurn" type="Button" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer" unique_id=79128808]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_colors/font_disabled_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_vfl41")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a1fwm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_78pmv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_t8qw4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_tml0k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tqvys")
+text = "End turn"
+
+[node name="Bounty" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Middle" unique_id=1096447640]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="UpperBounty" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Middle/Bounty" unique_id=1851617439]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "test1"
+
+[node name="LowerBounty" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Middle/Bounty" unique_id=1224394280]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "test2"
+
+[node name="PostMargin" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1212992630]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Lower" parent="MarginContainer/VBoxContainer" unique_id=1479101856 instance=ExtResource("2_c7rvg")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Middle/HBoxContainer/EndTurn" to="." method="_on_end_turn_pressed"]

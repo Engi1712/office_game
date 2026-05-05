@@ -15,3 +15,5 @@ dest_files=["res://GameData/Translations/translations.en.translation", "res://Ga
 
 compress=true
 delimiter=0
+unescape_keys=false
+unescape_translations=true

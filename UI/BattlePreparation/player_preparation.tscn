@@ -1,0 +1,245 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxjb0eb2uxa5t"]
+
+[ext_resource type="Theme" uid="uid://3v4qy3xpn3x5" path="res://Themes/main_menu_theme.tres" id="1_yuo05"]
+[ext_resource type="Script" uid="uid://ddk0e2oq7uvj7" path="res://UI/BattlePreparation/player_preparation.gd" id="2_0qhjt"]
+
+[node name="PlayerPreparation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yuo05")
+script = ExtResource("2_0qhjt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "First player, prepare for battle!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Padding1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="PlayerName" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerName"]
+layout_mode = 2
+text = "Your name:"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/PlayerName"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_yuo05")
+max_length = 8
+caret_blink = true
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/PlayerName"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Wallpaper" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerName"]
+layout_mode = 2
+text = "Wallpaper:"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/PlayerName"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Random"
+popup/item_0/id = 0
+popup/item_1/text = "City"
+popup/item_1/id = 1
+popup/item_2/text = "Space"
+popup/item_2/id = 2
+
+[node name="Padding2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="PlayerScripts" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AllScripts" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerScripts/AllScripts"]
+layout_mode = 2
+text = "    All scripts"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/AllScripts"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/AllScripts/ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="SelectedScripts" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedScripts"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedScripts/HBoxContainer"]
+layout_mode = 2
+text = "    Selected scripts"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Counter" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedScripts/HBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0/10"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedScripts"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedScripts/ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="AllShopScripts" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerScripts/AllShopScripts"]
+layout_mode = 2
+text = "    All shop scripts"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/AllShopScripts"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/AllShopScripts/ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="SelectedShopScripts" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedShopScripts"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedShopScripts/HBoxContainer"]
+layout_mode = 2
+text = "    Selected shop scripts"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Counter" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedShopScripts/HBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0/4"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedShopScripts"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PlayerScripts/SelectedShopScripts/ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Padding3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Back"
+
+[node name="ReadyButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 2
+size_flags_horizontal = 10
+disabled = true
+text = "Ready"
+
+[node name="ShowTooltipTimer" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="HideTooltipTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/PlayerName/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ReadyButton" to="." method="_on_ready_button_pressed"]

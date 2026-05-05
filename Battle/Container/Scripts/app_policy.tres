@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://cpghvesoqpc2w"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_345n2"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_4dxho"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_lym4n"]
+
+[sub_resource type="Resource" id="Resource_345n2"]
+script = ExtResource("2_4dxho")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_4dxho"]
+script = ExtResource("3_lym4n")
+value = "-20"
+suffix = "BATTLE_CPU_UNIT"
+comment = "cycles subtracted"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_345n2")
+script_name = "app_policy"
+copy_price = 4
+delete_price = 4
+run_price = 2
+stop_price = 2
+direction = 1
+type = 4
+select = Array[ExtResource("2_4dxho")]([SubResource("Resource_345n2")])
+values = Array[ExtResource("3_lym4n")]([SubResource("Resource_4dxho")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

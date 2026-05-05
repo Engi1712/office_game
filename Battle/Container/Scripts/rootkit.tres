@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://cu2itqxrkotcb"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_bs1pa"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_7wvyn"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_8qgrw"]
+
+[sub_resource type="Resource" id="Resource_bs1pa"]
+script = ExtResource("2_7wvyn")
+value = "80"
+suffix = "BATTLE_CPU_UNIT"
+comment = "min load needed"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_bs1pa")
+script_name = "rootkit"
+copy_price = 5
+delete_price = 5
+run_price = 2
+stop_price = 2
+type = 6
+temporary = 1
+values = Array[ExtResource("2_7wvyn")]([SubResource("Resource_bs1pa")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

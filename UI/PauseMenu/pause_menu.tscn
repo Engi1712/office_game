@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://tacmyn8oyo8m"]
 
-[ext_resource type="Script" path="res://UI/PauseMenu/pause_menu.gd" id="1_dug4d"]
-[ext_resource type="Texture2D" uid="uid://cf0rt6d045jww" path="res://Art/Office Pack/HUD/MainMenu/pause_menu.png" id="2_fsgwm"]
-[ext_resource type="Theme" uid="uid://crnipw2xp5luf" path="res://UI/main_menu_theme.tres" id="2_g23tx"]
+[ext_resource type="Script" uid="uid://d0nha2x88fb7h" path="res://UI/PauseMenu/pause_menu.gd" id="1_dug4d"]
+[ext_resource type="Texture2D" uid="uid://cf0rt6d045jww" path="res://Art/Office Pack/HUD/PauseMenu/pause_menu.png" id="2_fsgwm"]
+[ext_resource type="Theme" uid="uid://crnipw2xp5luf" path="res://Themes/pause_menu_theme.tres" id="2_g23tx"]
 [ext_resource type="PackedScene" uid="uid://b7jmyil5vrb27" path="res://UI/Options/options.tscn" id="3_5y78r"]
 
 [node name="PauseMenu" type="Control"]

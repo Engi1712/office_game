@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6wlgeibb3ict"]
 
 [ext_resource type="Texture2D" uid="uid://cxc7uod5xduju" path="res://Art/Office Pack/MISC/big_fade_up.png" id="1_6cgbq"]
-[ext_resource type="Script" path="res://Objects/ladder.gd" id="1_w8jbv"]
+[ext_resource type="Script" uid="uid://r46djtxclhpq" path="res://Objects/ladder.gd" id="1_w8jbv"]
 [ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="2_fyhb2"]
 [ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="4_vrobs"]
 

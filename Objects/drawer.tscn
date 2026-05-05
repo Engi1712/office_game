@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bl763vqldmjg5"]
 
-[ext_resource type="Script" path="res://Objects/drawer.gd" id="1_0q8gd"]
+[ext_resource type="Script" uid="uid://b516pibqkwqb0" path="res://Objects/drawer.gd" id="1_0q8gd"]
 [ext_resource type="Texture2D" uid="uid://dff3hqbve6onf" path="res://Art/Office Pack/Objects/drawer.png" id="1_si3l1"]
 [ext_resource type="PackedScene" uid="uid://b4flbw0cq4jdo" path="res://UI/interact_label.tscn" id="4_41bdn"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_mr8op"]
@@ -89,11 +89,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxad6"]
 _data = {
-"RESET": SubResource("Animation_3yhia"),
-"close": SubResource("Animation_xabgd"),
-"closing": SubResource("Animation_28bhi"),
-"open": SubResource("Animation_6x8us"),
-"opening": SubResource("Animation_sq0k5")
+&"RESET": SubResource("Animation_3yhia"),
+&"close": SubResource("Animation_xabgd"),
+&"closing": SubResource("Animation_28bhi"),
+&"open": SubResource("Animation_6x8us"),
+&"opening": SubResource("Animation_sq0k5")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sasmv"]

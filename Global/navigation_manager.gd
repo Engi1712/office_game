@@ -46,7 +46,7 @@ func go_to_level(level_tag, destination_tag):
 		"elevator_l":
 			scene_to_load = scene_elevator_l
 	
-	if scene_to_load != null:
+	if scene_to_load:
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		spawn_door_tag = destination_tag

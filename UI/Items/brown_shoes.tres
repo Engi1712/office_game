@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dgw8gfgungjja"]
 
-[ext_resource type="Script" path="res://UI/Inventory/inv_item.gd" id="1_6lmdi"]
+[ext_resource type="Script" uid="uid://cbbtuwq4ubmb5" path="res://UI/Inventory/inv_item.gd" id="1_6lmdi"]
 [ext_resource type="Texture2D" uid="uid://c05qm8o3sjev7" path="res://Art/Office Pack/HUD/Icons/brown_shoes.png" id="2_idjac"]
 
 [resource]

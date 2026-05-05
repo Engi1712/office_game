@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://dc6ryt7tlvol2"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_0uffi"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_v3khc"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_7l52u"]
+
+[sub_resource type="Resource" id="Resource_0uffi"]
+script = ExtResource("2_v3khc")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_v3khc"]
+script = ExtResource("3_7l52u")
+value = "3"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/cortex.png[/img]"
+comment = "consumed token"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_7l52u"]
+script = ExtResource("3_7l52u")
+value = "10"
+suffix = "BATTLE_CPU_UNIT"
+comment = "load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_0uffi")
+script_name = "vm_aware"
+copy_price = 4
+delete_price = 4
+run_price = 2
+stop_price = 2
+type = 8
+select = Array[ExtResource("2_v3khc")]([SubResource("Resource_0uffi")])
+values = Array[ExtResource("3_7l52u")]([SubResource("Resource_v3khc"), SubResource("Resource_7l52u")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

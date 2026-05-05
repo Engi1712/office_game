@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bpuuw1fe3e8h2"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_dfv2w"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_j4xxa"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_a7650"]
+
+[sub_resource type="Resource" id="Resource_dfv2w"]
+script = ExtResource("3_a7650")
+value = "1"
+suffix = "BATTLE_ACTION_UNIT"
+comment = "price inc"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_dfv2w")
+script_name = "stop_jam"
+copy_price = 2
+delete_price = 2
+run_price = 1
+stop_price = 1
+direction = 1
+type = 11
+temporary = 1
+values = Array[ExtResource("3_a7650")]([SubResource("Resource_dfv2w")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://cjct6k5ye4470"]
+
+[ext_resource type="Script" uid="uid://d1m02og37qkry" path="res://Battle/View/script_file.gd" id="1_xddv1"]
+[ext_resource type="Texture2D" uid="uid://cr2wanusjqol" path="res://Art/Office Pack/Battle/UI/script_select.png" id="2_pgkb6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6ssw"]
+texture_margin_top = 1.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pw748"]
+
+[sub_resource type="Animation" id="Animation_gmm8i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4voa1"]
+resource_name = "highlight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_el71o"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ht84q"]
+_data = {
+&"RESET": SubResource("Animation_gmm8i"),
+&"highlight": SubResource("Animation_4voa1"),
+&"idle": SubResource("Animation_el71o")
+}
+
+[node name="ScriptFile" type="PanelContainer" unique_id=1574390233]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(106, 12)
+offset_right = 104.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_c6ssw")
+script = ExtResource("1_xddv1")
+
+[node name="DefaultBG" type="ColorRect" parent="." unique_id=1691642688]
+layout_mode = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="HoverBG" type="ColorRect" parent="." unique_id=2088096220]
+visible = false
+layout_mode = 2
+color = Color(1, 1, 1, 0.039215688)
+
+[node name="SelectBG" type="ColorRect" parent="." unique_id=107641137]
+visible = false
+layout_mode = 2
+color = Color(1, 1, 1, 0.15686275)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=26668661]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=524035651]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=489831467]
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "busy_loop.sh"
+fit_content = true
+
+[node name="Specs" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1200240437]
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "@ 4   @ 1   @ 4   @ 1"
+fit_content = true
+
+[node name="Turns" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=537679579]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pw748")
+bbcode_enabled = true
+text = "Turns left: 1"
+fit_content = true
+
+[node name="Price" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=350949092]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Turns left: 1"
+fit_content = true
+
+[node name="Load" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1250521675]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Traffic" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=205270225]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Turns left: 1"
+fit_content = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1112465368]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=683717387]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(106, 31)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=637291065]
+position = Vector2(53, 15.5)
+texture = ExtResource("2_pgkb6")
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport" unique_id=1411873858]
+libraries/ = SubResource("AnimationLibrary_ht84q")

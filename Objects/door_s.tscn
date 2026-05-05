@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://vt33hyg4kbec"]
 
-[ext_resource type="Script" path="res://Objects/door.gd" id="1_hot4j"]
+[ext_resource type="Script" uid="uid://cuxe6aedo7tqw" path="res://Objects/door.gd" id="1_hot4j"]
 [ext_resource type="Texture2D" uid="uid://cyb7ro0kvmbmt" path="res://Art/Office Pack/Objects/door_s.png" id="1_obcjo"]
 [ext_resource type="Texture2D" uid="uid://vah6fqg8da7p" path="res://Art/Office Pack/MISC/fade_down.png" id="2_mtu2e"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_42bpj"]
@@ -90,11 +90,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c0iwb"]
 _data = {
-"RESET": SubResource("Animation_wu4qv"),
-"close": SubResource("Animation_jdcch"),
-"closing": SubResource("Animation_4btq6"),
-"open": SubResource("Animation_wyfp1"),
-"opening": SubResource("Animation_lexew")
+&"RESET": SubResource("Animation_wu4qv"),
+&"close": SubResource("Animation_jdcch"),
+&"closing": SubResource("Animation_4btq6"),
+&"open": SubResource("Animation_wyfp1"),
+&"opening": SubResource("Animation_lexew")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eodvr"]

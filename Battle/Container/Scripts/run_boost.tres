@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://b4h615pjip02m"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_rc2t7"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_umlyy"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_kd7tn"]
+
+[sub_resource type="Resource" id="Resource_rc2t7"]
+script = ExtResource("3_kd7tn")
+value = "1"
+suffix = "BATTLE_ACTION_UNIT"
+comment = "price dec"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_rc2t7")
+script_name = "run_boost"
+copy_price = 2
+delete_price = 2
+run_price = 1
+stop_price = 1
+direction = 1
+type = 10
+temporary = 1
+values = Array[ExtResource("3_kd7tn")]([SubResource("Resource_rc2t7")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

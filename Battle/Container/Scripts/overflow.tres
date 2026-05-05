@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://blyawvq2bkses"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_1vg33"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_t3s1y"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_6hcoh"]
+
+[sub_resource type="Resource" id="Resource_t3s1y"]
+script = ExtResource("3_6hcoh")
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img]"
+comment = "gained what"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_1vg33")
+script_name = "overflow"
+copy_price = 3
+delete_price = 3
+run_price = 1
+stop_price = 1
+type = 5
+temporary = 1
+values = Array[ExtResource("3_6hcoh")]([SubResource("Resource_t3s1y")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

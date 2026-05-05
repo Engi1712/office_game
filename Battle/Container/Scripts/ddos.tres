@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://c8s0dydq08gs7"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_7kbqa"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_fcs10"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_ff8av"]
+
+[sub_resource type="Resource" id="Resource_fck6g"]
+script = ExtResource("2_ff8av")
+type = 1
+remote = true
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_fcs10"]
+script = ExtResource("2_fcs10")
+value = "120"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "total traffic"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_ff8av"]
+script = ExtResource("2_fcs10")
+value = "15"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "max traffic per turn per iface"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_7kbqa")
+script_name = "ddos"
+copy_price = 5
+delete_price = 5
+run_price = 3
+stop_price = 3
+direction = 2
+type = 5
+select = Array[ExtResource("2_ff8av")]([SubResource("Resource_fck6g")])
+values = Array[ExtResource("2_fcs10")]([SubResource("Resource_fcs10"), SubResource("Resource_ff8av")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

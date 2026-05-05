@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b8as3kshhxx86"]
 
-[ext_resource type="Script" path="res://Objects/cooler.gd" id="1_frt06"]
+[ext_resource type="Script" uid="uid://cccfkfkbmxd5f" path="res://Objects/cooler.gd" id="1_frt06"]
 [ext_resource type="Texture2D" uid="uid://cd7oigqc6tbaj" path="res://Art/Office Pack/Objects/cooler.png" id="2_jntl0"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_8vc4d"]
 
@@ -57,9 +57,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sonnt"]
 _data = {
-"RESET": SubResource("Animation_qlnhp"),
-"fill": SubResource("Animation_651i7"),
-"idle": SubResource("Animation_xuv0g")
+&"RESET": SubResource("Animation_qlnhp"),
+&"fill": SubResource("Animation_651i7"),
+&"idle": SubResource("Animation_xuv0g")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hy3pd"]
@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_pdite")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_sonnt")
+&"": SubResource("AnimationLibrary_sonnt")
 }
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_8vc4d")]

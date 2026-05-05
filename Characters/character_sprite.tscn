@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4fon8u1o46sc"]
 
-[ext_resource type="Script" path="res://Characters/character_sprite.gd" id="1_qjcya"]
+[ext_resource type="Script" uid="uid://cvnbfbxi8sqti" path="res://Characters/character_sprite.gd" id="1_qjcya"]
 [ext_resource type="PackedScene" uid="uid://cqxfc6p28g63o" path="res://Characters/male1.tscn" id="2_2l0iq"]
 [ext_resource type="PackedScene" uid="uid://bfhgaw4grtm55" path="res://Characters/female_1.tscn" id="2_pl3xt"]
 

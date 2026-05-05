@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b463u8y3hm2b"]
 
-[ext_resource type="Script" path="res://Objects/ladder.gd" id="1_lubra"]
+[ext_resource type="Script" uid="uid://r46djtxclhpq" path="res://Objects/ladder.gd" id="1_lubra"]
 [ext_resource type="Texture2D" uid="uid://bhxdk6m5hws5a" path="res://Art/Office Pack/MISC/big_fade_left.png" id="1_pegic"]
 [ext_resource type="PackedScene" uid="uid://cqrl8x364vifd" path="res://Objects/transfer_area.tscn" id="2_gr4o5"]
 

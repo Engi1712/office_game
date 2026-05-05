@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ScriptList" format=3 uid="uid://qukfseso772p"]
+
+[ext_resource type="Script" uid="uid://7pn3abp05kn8" path="res://Battle/Container/Templates/script_list.gd" id="1_p4in0"]
+
+[resource]
+script = ExtResource("1_p4in0")
+general = Array[String](["mini_load", "basic_load", "multi_load", "big_load", "gain", "self_load", "basic_traffic", "ddos", "basic_vm", "big_vm", "app_guard", "rootkit", "overload", "backdoor", "overwhelm", "pagesys", "overflow", "vm_aware", "hash", "merge", "kill", "kill_pro", "worm", "copy_jam", "del_jam", "run_jam", "stop_jam", "copy_boost", "del_boost", "run_boost", "stop_boost"])
+shop = Array[String](["sanitizer", "upload"])
+metadata/_custom_type_script = "uid://7pn3abp05kn8"

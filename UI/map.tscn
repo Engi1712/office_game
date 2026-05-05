@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://f4bt62wldrk7"]
 
-[ext_resource type="Script" path="res://UI/map.gd" id="1_wui2s"]
+[ext_resource type="Script" uid="uid://csvs7grcr76w" path="res://UI/map.gd" id="1_wui2s"]
 [ext_resource type="Texture2D" uid="uid://d33370ctv7edk" path="res://Art/Office Pack/HUD/Minimaps/floor_2.png" id="2_k3hpo"]
 [ext_resource type="Texture2D" uid="uid://354ssr1v1tv7" path="res://Art/Office Pack/HUD/Minimaps/floor_2_virt.png" id="3_k536b"]
 [ext_resource type="Texture2D" uid="uid://b8nujdophk5yd" path="res://Art/Office Pack/HUD/Minimaps/player.png" id="4_or4dc"]
-[ext_resource type="Script" path="res://UI/map_anchor.gd" id="5_q21eo"]
+[ext_resource type="Script" uid="uid://hfqsohvv6y66" path="res://UI/map_anchor.gd" id="5_q21eo"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_wui2s")

@@ -9,4 +9,4 @@ func _process(delta):
 	timer += delta
 	if timer > TIMER_LIMIT:
 		timer = 0.0
-		fps_label.text = str(Engine.get_frames_per_second())
+		fps_label.text = str(int(Engine.get_frames_per_second()))

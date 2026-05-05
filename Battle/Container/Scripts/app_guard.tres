@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bjjs3o7l3ju0n"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_ol0mp"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_os3ar"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_vb6y7"]
+
+[sub_resource type="Resource" id="Resource_ol0mp"]
+script = ExtResource("2_os3ar")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_os3ar"]
+script = ExtResource("3_vb6y7")
+value = "-50"
+suffix = "%"
+comment = "percent subtracted"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_ol0mp")
+script_name = "app_guard"
+copy_price = 4
+delete_price = 4
+run_price = 2
+stop_price = 2
+direction = 1
+type = 4
+select = Array[ExtResource("2_os3ar")]([SubResource("Resource_ol0mp")])
+values = Array[ExtResource("3_vb6y7")]([SubResource("Resource_os3ar")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

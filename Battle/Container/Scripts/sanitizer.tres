@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://dfpaxh5umij2d"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_lujvt"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_w6yaq"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_lxysf"]
+
+[resource]
+script = ExtResource("1_lujvt")
+script_name = "sanitizer"
+delete_price = 3
+run_price = 2
+stop_price = 2
+direction = 1
+type = 12
+temporary = 1
+shop_price = 450
+auto_deleted = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

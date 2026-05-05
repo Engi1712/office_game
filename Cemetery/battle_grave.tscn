@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cfcmnr5ikqtlb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rshop"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="BattleGrave" type="Control" unique_id=853601538]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="GameOverDraft" type="RichTextLabel" parent="." unique_id=338008928]
+visible = false
+custom_minimum_size = Vector2(300, 45)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -22.5
+offset_right = 150.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.8, 0.160784, 0.160784, 1)
+theme_override_font_sizes/normal_font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_rshop")
+text = "VICTORY!"
+scroll_active = false
+horizontal_alignment = 1

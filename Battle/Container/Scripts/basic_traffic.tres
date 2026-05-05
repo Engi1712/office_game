@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://das764et3l83e"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_aboei"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_lr2sl"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_mbm65"]
+
+[sub_resource type="Resource" id="Resource_1pw8w"]
+script = ExtResource("2_lr2sl")
+type = 1
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_gupih"]
+script = ExtResource("2_lr2sl")
+type = 1
+remote = true
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_mbm65"]
+script = ExtResource("2_mbm65")
+value = "60"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "total traffic"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_lr2sl"]
+script = ExtResource("2_mbm65")
+value = "20"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "max traffic per turn"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_aboei")
+script_name = "basic_traffic"
+copy_price = 2
+delete_price = 2
+run_price = 1
+stop_price = 1
+direction = 2
+type = 5
+select = Array[ExtResource("2_lr2sl")]([SubResource("Resource_1pw8w"), SubResource("Resource_gupih")])
+values = Array[ExtResource("2_mbm65")]([SubResource("Resource_mbm65"), SubResource("Resource_lr2sl")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

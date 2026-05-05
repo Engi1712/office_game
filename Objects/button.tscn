@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://jmlb1ibl0mjv"]
 
-[ext_resource type="Script" path="res://Objects/button.gd" id="1_anntr"]
+[ext_resource type="Script" uid="uid://cbdkn6p5rvjoa" path="res://Objects/button.gd" id="1_anntr"]
 [ext_resource type="Texture2D" uid="uid://dihdattuawdiw" path="res://Art/Office Pack/Objects/button_n.png" id="1_o4p4w"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="4_y08bk"]
 

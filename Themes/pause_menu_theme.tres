@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://crnipw2xp5luf"]
+
+[ext_resource type="Texture2D" uid="uid://dvdto3qdj0is5" path="res://Art/Office Pack/HUD/PauseMenu/button_hover.png" id="1_rc23g"]
+[ext_resource type="Texture2D" uid="uid://c8lpux01suhnu" path="res://Art/Office Pack/HUD/PauseMenu/button.png" id="2_0hxtj"]
+[ext_resource type="Texture2D" uid="uid://creh4350301el" path="res://Art/Office Pack/HUD/PauseMenu/button_pressed.png" id="3_mfhxg"]
+[ext_resource type="FontFile" uid="uid://mebkobr8jbml" path="res://Assests/LanaPixel.ttf" id="4_0cnql"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khw3c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yv76m"]
+texture = ExtResource("1_rc23g")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ypby"]
+texture = ExtResource("2_0hxtj")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wsfg"]
+texture = ExtResource("3_mfhxg")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[resource]
+default_font = ExtResource("4_0cnql")
+default_font_size = 11
+Button/styles/focus = SubResource("StyleBoxEmpty_khw3c")
+Button/styles/hover = SubResource("StyleBoxTexture_yv76m")
+Button/styles/normal = SubResource("StyleBoxTexture_4ypby")
+Button/styles/pressed = SubResource("StyleBoxTexture_7wsfg")

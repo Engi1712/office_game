@@ -1,0 +1,390 @@
+[gd_scene format=3 uid="uid://v87nkqenvnea"]
+
+[ext_resource type="Texture2D" uid="uid://brvtb6um7i4ru" path="res://Art/Office Pack/Battle/UI/screen_border.png" id="1_5m2bd"]
+[ext_resource type="Script" uid="uid://bjlmxrxai2ed2" path="res://Battle/View/system.gd" id="1_p2wxl"]
+[ext_resource type="PackedScene" uid="uid://kdavy4qmbjd5" path="res://Battle/View/wallpaper.tscn" id="2_p2wxl"]
+[ext_resource type="Texture2D" uid="uid://dk7avf6pnmh1v" path="res://Art/Office Pack/Battle/Wallpapers/space.png" id="3_k6fee"]
+[ext_resource type="Theme" uid="uid://bkgu8ixo3lub4" path="res://Themes/battle_theme.tres" id="4_fdpku"]
+[ext_resource type="Theme" uid="uid://bx78qkjopjaxn" path="res://Themes/base_theme.tres" id="5_xsq87"]
+
+[node name="System" type="PanelContainer" unique_id=1993072128]
+self_modulate = Color(1, 1, 1, 0)
+size_flags_vertical = 3
+script = ExtResource("1_p2wxl")
+
+[node name="Border" type="NinePatchRect" parent="." unique_id=396690016]
+layout_mode = 2
+texture = ExtResource("1_5m2bd")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2035148621]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Wallpaper" parent="MarginContainer" unique_id=288655898 instance=ExtResource("2_p2wxl")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1861759586]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_k6fee")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1036070947]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_fdpku")
+
+[node name="DiskD" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1434902129]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_fdpku")
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/DiskD" unique_id=1340480449]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskD/HBoxContainer" unique_id=1320408965]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+text = "Disk D"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Actions" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskD/HBoxContainer" unique_id=1680625113]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img] [img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PreMargin" type="Control" parent="MarginContainer/HBoxContainer/DiskD" unique_id=2105069435]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Files" type="ScrollContainer" parent="MarginContainer/HBoxContainer/DiskD" unique_id=489556348]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/DiskD/Files" unique_id=310603357]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_xsq87")
+theme_override_constants/separation = 0
+
+[node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/DiskD" unique_id=788676440]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="DiskC" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1070453000]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/DiskC" unique_id=698466390]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskC/HBoxContainer" unique_id=1032798518]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+text = "Disk C"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Actions" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskC/HBoxContainer" unique_id=406367380]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img] [img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Memory" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskC/HBoxContainer" unique_id=412922605]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "0/10"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PreMargin" type="Control" parent="MarginContainer/HBoxContainer/DiskC" unique_id=1071037221]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Files" type="ScrollContainer" parent="MarginContainer/HBoxContainer/DiskC" unique_id=407535123]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/DiskC/Files" unique_id=358834880]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_xsq87")
+theme_override_constants/separation = 0
+
+[node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/DiskC" unique_id=3513621]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="RAM" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1734694581]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RAM" unique_id=628358185]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/RAM/HBoxContainer" unique_id=299047603]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+text = "RAM"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Actions" type="RichTextLabel" parent="MarginContainer/HBoxContainer/RAM/HBoxContainer" unique_id=60988000]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img] [img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PreMargin" type="Control" parent="MarginContainer/HBoxContainer/RAM" unique_id=1550886389]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Processes" type="ScrollContainer" parent="MarginContainer/HBoxContainer/RAM" unique_id=166227136]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RAM/Processes" unique_id=86911711]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_xsq87")
+theme_override_constants/separation = 0
+
+[node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/RAM" unique_id=774705253]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="MISC" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1425451701]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="DiskE" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC" unique_id=606181951]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MISC/DiskE" unique_id=1970663878]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/HBoxContainer" unique_id=684010128]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+text = "Disk E"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PreMargin" type="Control" parent="MarginContainer/HBoxContainer/MISC/DiskE" unique_id=1578586827]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Tokens" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MISC/DiskE" unique_id=1638448021]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens" unique_id=18907564]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Cortex" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer" unique_id=411083573]
+layout_mode = 2
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/cortex.png[/img] 99"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Loom" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer" unique_id=1306758166]
+layout_mode = 2
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/loom.png[/img] 99"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens" unique_id=1346567514]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Dataweave" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer2" unique_id=1479929278]
+layout_mode = 2
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/dataweave.png[/img] 99"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Fractal" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer2" unique_id=1922995304]
+layout_mode = 2
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/fractal.png[/img] 99"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens" unique_id=1139129476]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Petrichor" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer3" unique_id=1096352372]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/petrichor.png[/img] 99"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Taucoin" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer3" unique_id=1569051836]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img] 9999"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/MISC/DiskE" unique_id=1591585023]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="Network" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC" unique_id=893919927]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=169669746]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/Network/HBoxContainer" unique_id=186906888]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+text = "Network"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PreMargin" type="Control" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=1845730358]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Interfaces" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=2142233464]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC/Network/Interfaces" unique_id=1702902801]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_xsq87")
+theme_override_constants/separation = 0
+
+[node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=447545330]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="CPU" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1059298613]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CPU" unique_id=1814702513]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=571272929]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+text = "CPU"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Sudo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=1775255564]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/MISC/locked.png[/img]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Seconds" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=1494822583]
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+text = "10/10"
+fit_content = true
+autowrap_mode = 0
+
+[node name="TaucoinsInc" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=620231643]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_fdpku")
+bbcode_enabled = true
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img] +10"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PreMargin" type="Control" parent="MarginContainer/HBoxContainer/CPU" unique_id=1730569182]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="Bars" type="ScrollContainer" parent="MarginContainer/HBoxContainer/CPU" unique_id=19907018]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CPU/Bars" unique_id=683688405]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_xsq87")
+theme_override_constants/separation = 0
+
+[node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/CPU" unique_id=651060434]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2

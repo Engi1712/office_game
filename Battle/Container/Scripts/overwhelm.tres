@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bo05brpw1dobj"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_m6cvd"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_3q2ro"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_wfnft"]
+
+[sub_resource type="Resource" id="Resource_e6rv5"]
+script = ExtResource("3_wfnft")
+value = "100"
+suffix = "BATTLE_NETWORK_UNIT"
+comment = "min traffic needed"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_m6cvd"]
+script = ExtResource("3_wfnft")
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img]"
+comment = "gained what"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_m6cvd")
+script_name = "overwhelm"
+copy_price = 3
+delete_price = 3
+run_price = 1
+stop_price = 1
+direction = 2
+type = 5
+temporary = 1
+values = Array[ExtResource("3_wfnft")]([SubResource("Resource_e6rv5"), SubResource("Resource_m6cvd")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

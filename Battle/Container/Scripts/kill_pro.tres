@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://7vxus6r2mwm0"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_mom4h"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_t0tkm"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_y1wxr"]
+
+[sub_resource type="Resource" id="Resource_mom4h"]
+script = ExtResource("2_t0tkm")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_t0tkm"]
+script = ExtResource("3_y1wxr")
+value = "3"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/petrichor.png[/img]"
+comment = "consumed token"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_y1wxr"]
+script = ExtResource("3_y1wxr")
+value = "2"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/cortex.png[/img]"
+comment = "generated token"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_mom4h")
+script_name = "kill_pro"
+copy_price = 5
+delete_price = 5
+run_price = 2
+stop_price = 2
+direction = 1
+type = 9
+select = Array[ExtResource("2_t0tkm")]([SubResource("Resource_mom4h")])
+temporary = 1
+values = Array[ExtResource("3_y1wxr")]([SubResource("Resource_t0tkm"), SubResource("Resource_y1wxr")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

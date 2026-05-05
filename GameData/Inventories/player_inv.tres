@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="InvChar" load_steps=20 format=3]
+[gd_resource type="Resource" script_class="InvChar" format=3]
 
 [ext_resource type="Resource" path="res://GameData/Inventories/bag_inv.tres" id="1"]
 [ext_resource type="Resource" path="res://UI/Items/bag.tres" id="2"]
 [ext_resource type="Script" path="res://UI/Inventory/inv_slot.gd" id="3"]
 [ext_resource type="Script" path="res://UI/Inventory/inv_list.gd" id="4"]
-[ext_resource type="Resource" path="res://UI/Items/black_jacket.tres" id="5_osvbm"]
+[ext_resource type="Resource" path="res://UI/Items/black_jacket.tres" id="5"]
 [ext_resource type="Script" path="res://UI/Inventory/inv_char.gd" id="6"]
-[ext_resource type="Resource" path="res://UI/Items/white_shirt.tres" id="7_li4wq"]
+[ext_resource type="Resource" path="res://UI/Items/white_shirt.tres" id="7"]
 [ext_resource type="Resource" path="res://UI/Items/black_shoes.tres" id="8"]
 [ext_resource type="Resource" path="res://UI/Items/black_trousers.tres" id="9"]
 
@@ -15,42 +15,20 @@ script = ExtResource("3")
 item = ExtResource("2")
 amount = 1
 inv = ExtResource("1")
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 3
 type = "bag"
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_a163a"]
 script = ExtResource("3")
-amount = 0
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 3
-type = ""
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_b0k24"]
 script = ExtResource("3")
-amount = 0
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 1
-type = ""
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_5agjp"]
 script = ExtResource("3")
-amount = 0
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 1
-type = ""
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_c4nvi"]
 script = ExtResource("4")
@@ -58,37 +36,25 @@ slots = Array[ExtResource("3")]([SubResource("Resource_b0k24"), SubResource("Res
 
 [sub_resource type="Resource" id="Resource_w03hs"]
 script = ExtResource("3")
-item = ExtResource("5_osvbm")
+item = ExtResource("5")
 amount = 1
 inv = SubResource("Resource_c4nvi")
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 2
 type = "jacket"
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_5c6a6"]
 script = ExtResource("3")
-item = ExtResource("7_li4wq")
+item = ExtResource("7")
 amount = 1
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 2
 type = "shirt"
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_2ug4y"]
 script = ExtResource("3")
 item = ExtResource("8")
 amount = 1
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 2
 type = "shoes"
-hover_side = "r"
 
 [sub_resource type="Resource" id="Resource_jk5ck"]
 script = ExtResource("4")
@@ -99,12 +65,8 @@ script = ExtResource("3")
 item = ExtResource("9")
 amount = 1
 inv = SubResource("Resource_jk5ck")
-param1 = 0
-param2 = 0
-toolbar = 0
 capacity = 2
 type = "trousers"
-hover_side = "r"
 
 [resource]
 resource_name = "player_inv"

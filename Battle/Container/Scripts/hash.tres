@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://bsjw53nw3yhln"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_rctj7"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_na5nd"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_h8oc8"]
+
+[sub_resource type="Resource" id="Resource_rctj7"]
+script = ExtResource("3_h8oc8")
+value = "1"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/cortex.png[/img]"
+comment = "generated token"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_rctj7")
+script_name = "hash"
+copy_price = 3
+delete_price = 3
+run_price = 2
+stop_price = 2
+direction = 1
+type = 1
+temporary = 1
+values = Array[ExtResource("3_h8oc8")]([SubResource("Resource_rctj7")])
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

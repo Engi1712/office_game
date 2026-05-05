@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WallpaperSpecs" format=3 uid="uid://dmgfgxktc53u7"]
+
+[ext_resource type="Script" uid="uid://cq1io3r3pvgnf" path="res://Battle/Container/Templates/wallpaper_specs.gd" id="1_giu5q"]
+
+[resource]
+script = ExtResource("1_giu5q")
+internal_name = "Forest"
+display_name = "Forest"
+rarity = 3
+metadata/_custom_type_script = "uid://cq1io3r3pvgnf"

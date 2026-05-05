@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://cvupvogfxgeds"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_51khm"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_6o8es"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="2_afr15"]
+
+[sub_resource type="Resource" id="Resource_mbwe1"]
+script = ExtResource("2_6o8es")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_6o8es"]
+script = ExtResource("2_afr15")
+value = "40"
+suffix = "BATTLE_CPU_UNIT"
+comment = "load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_51khm")
+script_name = "basic_load"
+copy_price = 3
+delete_price = 3
+run_price = 2
+stop_price = 2
+select = Array[ExtResource("2_6o8es")]([SubResource("Resource_mbwe1")])
+values = Array[ExtResource("2_afr15")]([SubResource("Resource_6o8es")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"

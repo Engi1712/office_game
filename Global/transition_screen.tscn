@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://rrsgnlc54smr"]
 
-[ext_resource type="Script" path="res://Global/transition_screen.gd" id="1_wxpwo"]
+[ext_resource type="Script" uid="uid://c1sdf6gvetcy6" path="res://Global/transition_screen.gd" id="1_wxpwo"]
 
 [sub_resource type="Animation" id="Animation_hxo20"]
 length = 0.001
@@ -51,9 +51,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nla6a"]
 _data = {
-"RESET": SubResource("Animation_hxo20"),
-"fade_to_black": SubResource("Animation_f7424"),
-"fade_to_normal": SubResource("Animation_s0huo")
+&"RESET": SubResource("Animation_hxo20"),
+&"fade_to_black": SubResource("Animation_f7424"),
+&"fade_to_normal": SubResource("Animation_s0huo")
 }
 
 [node name="TransitionScreen" type="CanvasLayer"]

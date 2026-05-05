@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://b7jmyil5vrb27"]
 
-[ext_resource type="Script" path="res://UI/Options/options.gd" id="1_wowxn"]
+[ext_resource type="Script" uid="uid://c6qeibvk5r3p8" path="res://UI/Options/options.gd" id="1_wowxn"]
 [ext_resource type="Texture2D" uid="uid://ci21ikta4nv6i" path="res://Art/Office Pack/HUD/Options/menu.png" id="2_fvhwb"]
 [ext_resource type="Texture2D" uid="uid://c2bcucmqa4iwa" path="res://Art/Office Pack/HUD/Options/tab_inactive.png" id="3_d701s"]
 [ext_resource type="Texture2D" uid="uid://sgj81d1pe5ky" path="res://Art/Office Pack/HUD/Options/tab_active.png" id="4_cbkm3"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://mr7yu1f4r80r" path="res://Art/Office Pack/HUD/Options/icon_audio.png" id="7_dp8wj"]
 [ext_resource type="Texture2D" uid="uid://s5xy0vv1bf0g" path="res://Art/Office Pack/HUD/Options/icon_gameplay.png" id="8_r2lh3"]
 [ext_resource type="Texture2D" uid="uid://bniewif4pfvba" path="res://Art/Office Pack/HUD/Options/icon_bindings.png" id="9_syq53"]
-[ext_resource type="Theme" uid="uid://0sxsvtkhwtty" path="res://UI/options_theme.tres" id="10_rab17"]
+[ext_resource type="Theme" uid="uid://0sxsvtkhwtty" path="res://Themes/pause_submenu_theme.tres" id="10_rab17"]
 [ext_resource type="Texture2D" uid="uid://jl4y0y6ewiup" path="res://Art/Office Pack/HUD/Options/arrow_left.png" id="12_g0ncu"]
 [ext_resource type="Texture2D" uid="uid://cwn1rih3eii8v" path="res://Art/Office Pack/HUD/Options/arrow_left_hover.png" id="13_jo6pk"]
 [ext_resource type="Texture2D" uid="uid://c5jqd7lwdtl4d" path="res://Art/Office Pack/HUD/Options/arrow_right.png" id="14_h8jn4"]
@@ -20,66 +20,66 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3u4b"]
 texture = ExtResource("3_d701s")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bm11"]
-texture = ExtResource("3_d701s")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u37cg"]
 texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bm11"]
+texture = ExtResource("3_d701s")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yow7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ot80"]
 texture = ExtResource("3_d701s")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rjxe"]
-texture = ExtResource("3_d701s")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1gj1"]
 texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rjxe"]
+texture = ExtResource("3_d701s")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_isi7p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8yt10"]
 texture = ExtResource("3_d701s")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh7gm"]
-texture = ExtResource("3_d701s")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6ids"]
 texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh7gm"]
+texture = ExtResource("3_d701s")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6khve"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_do2i1"]
 texture = ExtResource("3_d701s")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooeh1"]
-texture = ExtResource("3_d701s")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fn4ju"]
 texture = ExtResource("4_cbkm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooeh1"]
+texture = ExtResource("3_d701s")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvx8e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tdfw8"]
 texture = ExtResource("12_g0ncu")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2b6a"]
-texture = ExtResource("13_jo6pk")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tr0cb"]
 texture = ExtResource("14_pp80f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2b6a"]
+texture = ExtResource("13_jo6pk")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ap73a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4wjl"]
 texture = ExtResource("14_h8jn4")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l66y"]
-texture = ExtResource("15_kqy5y")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3hh8"]
 texture = ExtResource("17_imly5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l66y"]
+texture = ExtResource("15_kqy5y")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbr0y"]
 
@@ -106,8 +106,8 @@ offset_top = 62.0
 offset_right = 484.0
 offset_bottom = 89.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_h3u4b")
-theme_override_styles/hover = SubResource("StyleBoxTexture_1bm11")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u37cg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1bm11")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6yow7")
 toggle_mode = true
 action_mode = 0
@@ -123,8 +123,8 @@ offset_top = 88.0
 offset_right = 484.0
 offset_bottom = 115.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_2ot80")
-theme_override_styles/hover = SubResource("StyleBoxTexture_3rjxe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i1gj1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3rjxe")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_isi7p")
 toggle_mode = true
 action_mode = 0
@@ -140,8 +140,8 @@ offset_top = 114.0
 offset_right = 484.0
 offset_bottom = 141.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_8yt10")
-theme_override_styles/hover = SubResource("StyleBoxTexture_rh7gm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_y6ids")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rh7gm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6khve")
 toggle_mode = true
 action_mode = 0
@@ -157,8 +157,8 @@ offset_top = 140.0
 offset_right = 484.0
 offset_bottom = 167.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_do2i1")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ooeh1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fn4ju")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ooeh1")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fvx8e")
 toggle_mode = true
 action_mode = 0
@@ -174,7 +174,6 @@ offset_right = 306.0
 offset_bottom = 285.0
 
 [node name="VideoTab" type="VBoxContainer" parent="LeftPage"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -189,10 +188,11 @@ visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="LeftPage/VideoTab"]
-visible = false
+layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("10_rab17")
+vertical_scroll_mode = 4
 
 [node name="Label" type="Label" parent="LeftPage/VideoTab/ScrollContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -209,6 +209,7 @@ horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LeftPage/VideoTab/Setting"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Fullscreen" type="HBoxContainer" parent="LeftPage/VideoTab/Setting/VBoxContainer"]
 layout_mode = 2
@@ -279,8 +280,8 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_tdfw8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_w2b6a")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tr0cb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w2b6a")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ap73a")
 
 [node name="Mode" type="Label" parent="LeftPage/VideoTab/Setting/VBoxContainer/VSync"]
@@ -299,8 +300,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxTexture_j4wjl")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6l66y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_b3hh8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6l66y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mbr0y")
 
 [node name="AudioTab" type="VBoxContainer" parent="LeftPage"]
@@ -357,6 +358,7 @@ text = "OPTIONS_AUDIO_SFX"
 autowrap_mode = 3
 
 [node name="GameplayTab" type="VBoxContainer" parent="LeftPage"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -372,7 +374,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("10_rab17")
 horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+vertical_scroll_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="LeftPage/GameplayTab/ScrollContainer"]
 layout_direction = 2
@@ -385,7 +387,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Sensetivity" type="HBoxContainer" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Sensetivity" type="VBoxContainer" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Name" type="Label" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Sensetivity"]
@@ -395,11 +397,6 @@ mouse_filter = 1
 theme = ExtResource("10_rab17")
 text = "OPTIONS_GAMEPLAY_SENSETIVITY"
 autowrap_mode = 3
-
-[node name="Control" type="Control" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Sensetivity"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 1
 
 [node name="HSlider" type="HSlider" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/Sensetivity"]
 custom_minimum_size = Vector2(50, 0)
@@ -445,6 +442,7 @@ size_flags_horizontal = 3
 mouse_filter = 1
 
 [node name="CheckBox" type="CheckBox" parent="LeftPage/GameplayTab/ScrollContainer/MarginContainer/VBoxContainer/FPSCounter"]
+custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -528,7 +526,7 @@ size_flags_vertical = 8
 theme_override_constants/separation = 3
 
 [node name="Discard" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow1"]
-custom_minimum_size = Vector2(67, 14)
+custom_minimum_size = Vector2(67, 16)
 layout_mode = 2
 theme = ExtResource("10_rab17")
 disabled = true
@@ -536,7 +534,7 @@ text = "OPTIONS_DISCARD"
 clip_text = true
 
 [node name="Apply" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow1"]
-custom_minimum_size = Vector2(67, 14)
+custom_minimum_size = Vector2(67, 16)
 layout_mode = 2
 theme = ExtResource("10_rab17")
 disabled = true
@@ -549,14 +547,14 @@ size_flags_vertical = 8
 theme_override_constants/separation = 3
 
 [node name="Back" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow2"]
-custom_minimum_size = Vector2(67, 14)
+custom_minimum_size = Vector2(67, 16)
 layout_mode = 2
 theme = ExtResource("10_rab17")
 text = "OPTIONS_BACK"
 clip_text = true
 
 [node name="Reset" type="Button" parent="LeftPage/MarginContainer/VBoxContainer/ButtonRow2"]
-custom_minimum_size = Vector2(67, 14)
+custom_minimum_size = Vector2(67, 16)
 layout_mode = 2
 theme = ExtResource("10_rab17")
 disabled = true
@@ -564,7 +562,7 @@ text = "OPTIONS_RESET"
 clip_text = true
 
 [node name="RightPage" type="ScrollContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 338.0
 offset_top = 69.0
 offset_right = 464.0
@@ -622,6 +620,12 @@ bbcode_enabled = true
 text = "OPTIONS_VIDEO_V_SYNC_FAST — "
 fit_content = true
 scroll_active = false
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_right = 14.0
+offset_bottom = 20.0
+theme = ExtResource("10_rab17")
 
 [connection signal="toggled" from="LeftPage/VideoTab/Setting/VBoxContainer/Fullscreen/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="LeftPage/VideoTab/Setting/VBoxContainer/Resolution/DropDown" to="." method="_on_drop_down_item_selected"]

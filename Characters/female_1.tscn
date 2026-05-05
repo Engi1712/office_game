@@ -1,7 +1,7 @@
 [gd_scene load_steps=61 format=3 uid="uid://bfhgaw4grtm55"]
 
 [ext_resource type="Texture2D" uid="uid://bdmc3jifthlcs" path="res://Art/Office Pack/Characters/female1/white_body.png" id="1_a8rcf"]
-[ext_resource type="Script" path="res://Characters/female_1.gd" id="1_yw8tb"]
+[ext_resource type="Script" uid="uid://ch7x5op8u18qv" path="res://Characters/female_1.gd" id="1_yw8tb"]
 [ext_resource type="Texture2D" uid="uid://bpobyb2e0aw6l" path="res://Art/Office Pack/Characters/female1/black_body.png" id="2_lxn4x"]
 [ext_resource type="Texture2D" uid="uid://dufbjexp8jn2p" path="res://Art/Office Pack/Characters/female1/pink_lips.png" id="3_bq6uy"]
 [ext_resource type="Texture2D" uid="uid://ory4paif8201" path="res://Art/Office Pack/Characters/female1/asian_body.png" id="4_0svp5"]
@@ -3858,15 +3858,15 @@ tracks/34/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4dhnd"]
 _data = {
-"RESET": SubResource("Animation_jojs8"),
-"idle_down": SubResource("Animation_he5ti"),
-"idle_left": SubResource("Animation_s13n8"),
-"idle_right": SubResource("Animation_xx5sj"),
-"idle_up": SubResource("Animation_na702"),
-"walk_down": SubResource("Animation_ym8y5"),
-"walk_left": SubResource("Animation_8eqpr"),
-"walk_right": SubResource("Animation_yp5df"),
-"walk_up": SubResource("Animation_4ylo8")
+&"RESET": SubResource("Animation_jojs8"),
+&"idle_down": SubResource("Animation_he5ti"),
+&"idle_left": SubResource("Animation_s13n8"),
+&"idle_right": SubResource("Animation_xx5sj"),
+&"idle_up": SubResource("Animation_na702"),
+&"walk_down": SubResource("Animation_ym8y5"),
+&"walk_left": SubResource("Animation_8eqpr"),
+&"walk_right": SubResource("Animation_yp5df"),
+&"walk_up": SubResource("Animation_4ylo8")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r6rav"]

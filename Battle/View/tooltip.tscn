@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://bu6mcf0e4td1g"]
+
+[ext_resource type="Script" uid="uid://kt2jw0i4ujrh" path="res://Battle/View/tooltip.gd" id="1_7q8k4"]
+[ext_resource type="Texture2D" uid="uid://bniafex3c2u86" path="res://Art/Office Pack/Battle/UI/tooltip.png" id="1_lctle"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihujf"]
+texture = ExtResource("1_lctle")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="Tooltip" type="PanelContainer" unique_id=1210193331]
+top_level = true
+offset_right = 58.0
+offset_bottom = 34.0
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ihujf")
+script = ExtResource("1_7q8k4")
+
+[node name="CPU" type="VBoxContainer" parent="." unique_id=481859065]
+visible = false
+custom_minimum_size = Vector2(125, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="RichTextLabel" parent="CPU" unique_id=1285784413]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "CPU 1"
+fit_content = true
+
+[node name="Load" type="RichTextLabel" parent="CPU" unique_id=2114760883]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "0/100 cycles"
+fit_content = true
+
+[node name="Modifiers" type="RichTextLabel" parent="CPU" unique_id=1223585191]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Modifiers"
+fit_content = true
+
+[node name="ModifierList" type="VBoxContainer" parent="CPU" unique_id=79237860]
+layout_mode = 2
+
+[node name="Script" type="VBoxContainer" parent="." unique_id=641756982]
+custom_minimum_size = Vector2(150, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="RichTextLabel" parent="Script" unique_id=1587956868]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "basic_load.sh"
+fit_content = true
+
+[node name="Description" type="RichTextLabel" parent="Script" unique_id=937492674]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Increabhvfv hg hi jk y8ol 6ll yrk67k 67k 6k"
+fit_content = true
+
+[node name="Direction" type="RichTextLabel" parent="Script" unique_id=570827241]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Attack"
+fit_content = true
+
+[node name="Type" type="RichTextLabel" parent="Script" unique_id=260360636]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Load"
+fit_content = true
+
+[node name="Temporary" type="RichTextLabel" parent="Script" unique_id=992534697]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "2 turns"
+fit_content = true
+
+[node name="AutoDeleted" type="RichTextLabel" parent="Script" unique_id=1627254244]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "2 turns"
+fit_content = true
+
+[node name="CopyPrice" type="RichTextLabel" parent="Script" unique_id=322466271]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Copy price: 3"
+fit_content = true
+
+[node name="DeletePrice" type="RichTextLabel" parent="Script" unique_id=1374048465]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Delete price: 3"
+fit_content = true
+
+[node name="RunPrice" type="RichTextLabel" parent="Script" unique_id=2040109503]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Run price: 2"
+fit_content = true
+
+[node name="StopPrice" type="RichTextLabel" parent="Script" unique_id=1987507830]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Stop price: 2"
+fit_content = true
+
+[node name="Load" type="VBoxContainer" parent="Script" unique_id=31262393]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Header" type="RichTextLabel" parent="Script/Load" unique_id=357137572]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Load"
+fit_content = true
+
+[node name="CPUs" type="VBoxContainer" parent="Script/Load" unique_id=1713153410]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Modifiers" type="VBoxContainer" parent="Script" unique_id=883183307]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Header" type="RichTextLabel" parent="Script/Modifiers" unique_id=1168801756]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Modifiers"
+fit_content = true
+
+[node name="CPUs" type="VBoxContainer" parent="Script/Modifiers" unique_id=1764576194]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Traffic" type="VBoxContainer" parent="Script" unique_id=436855684]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Header" type="RichTextLabel" parent="Script/Traffic" unique_id=247948152]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Traffic"
+fit_content = true
+
+[node name="Ifaces" type="HBoxContainer" parent="Script/Traffic" unique_id=1952664637]
+clip_contents = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Local" type="VBoxContainer" parent="Script/Traffic/Ifaces" unique_id=1497149308]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Remote" type="VBoxContainer" parent="Script/Traffic/Ifaces" unique_id=1783893294]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Iface" type="VBoxContainer" parent="." unique_id=2002064481]
+visible = false
+custom_minimum_size = Vector2(75, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="RichTextLabel" parent="Iface" unique_id=1335895298]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Interface 1"
+fit_content = true
+
+[node name="Traffic" type="RichTextLabel" parent="Iface" unique_id=1804298805]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "0/100 Gb"
+fit_content = true
+
+[node name="Token" type="VBoxContainer" parent="." unique_id=1780857566]
+visible = false
+layout_mode = 2

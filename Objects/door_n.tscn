@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cm45t7qx208w3"]
 
-[ext_resource type="Script" path="res://Objects/door.gd" id="1_wkke7"]
+[ext_resource type="Script" uid="uid://cuxe6aedo7tqw" path="res://Objects/door.gd" id="1_wkke7"]
 [ext_resource type="Texture2D" uid="uid://b1gaoqkgualog" path="res://Art/Office Pack/Objects/door_n.png" id="2_dlmpi"]
 [ext_resource type="Texture2D" uid="uid://csysonmop4g2w" path="res://Art/Office Pack/Objects/doorjamb_n.png" id="3_g2fj7"]
 [ext_resource type="Texture2D" uid="uid://bypugdbuj54xc" path="res://Art/Office Pack/MISC/fade_up.png" id="4_5wbw8"]
@@ -91,11 +91,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2triu"]
 _data = {
-"RESET": SubResource("Animation_qvtho"),
-"close": SubResource("Animation_ytmdh"),
-"closing": SubResource("Animation_fr3ym"),
-"open": SubResource("Animation_r8exo"),
-"opening": SubResource("Animation_ncy1v")
+&"RESET": SubResource("Animation_qvtho"),
+&"close": SubResource("Animation_ytmdh"),
+&"closing": SubResource("Animation_fr3ym"),
+&"open": SubResource("Animation_r8exo"),
+&"opening": SubResource("Animation_ncy1v")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ckj"]

@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bx78qkjopjaxn"]
-
-[ext_resource type="FontFile" uid="uid://mebkobr8jbml" path="res://Assests/LanaPixel.ttf" id="1_gmlti"]
-
-[resource]
-default_font = ExtResource("1_gmlti")
-default_font_size = 11

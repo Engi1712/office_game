@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://coealsnqqcvdr"]
 
-[ext_resource type="Script" path="res://Objects/locker.gd" id="1_uvam0"]
+[ext_resource type="Script" uid="uid://dbmnjj3sn1vh7" path="res://Objects/locker.gd" id="1_uvam0"]
 [ext_resource type="Texture2D" uid="uid://cm5ybjull1d0w" path="res://Art/Office Pack/Objects/locker_blue_n.png" id="2_3q3th"]
 [ext_resource type="PackedScene" uid="uid://vq47cnk5ijpj" path="res://Objects/interaction_area.tscn" id="3_6b3vw"]
 [ext_resource type="Texture2D" uid="uid://ch7u1v0xegoah" path="res://Art/Office Pack/Objects/locker_pink_n.png" id="3_chic4"]
@@ -89,11 +89,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6f1th"]
 _data = {
-"RESET": SubResource("Animation_4t75c"),
-"close": SubResource("Animation_0so5a"),
-"closing": SubResource("Animation_q617f"),
-"open": SubResource("Animation_b3d2h"),
-"opening": SubResource("Animation_5qfv1")
+&"RESET": SubResource("Animation_4t75c"),
+&"close": SubResource("Animation_0so5a"),
+&"closing": SubResource("Animation_q617f"),
+&"open": SubResource("Animation_b3d2h"),
+&"opening": SubResource("Animation_5qfv1")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6o5n"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://boisovhpn138x"]
 
-[ext_resource type="Script" path="res://Objects/door_glass_n.gd" id="1_g82m1"]
+[ext_resource type="Script" uid="uid://pb45dthq0j8l" path="res://Objects/door_glass_n.gd" id="1_g82m1"]
 [ext_resource type="Texture2D" uid="uid://bwgq61eevmrda" path="res://Art/Office Pack/Objects/door_glass_n.png" id="2_w5a46"]
 [ext_resource type="Texture2D" uid="uid://bypugdbuj54xc" path="res://Art/Office Pack/MISC/fade_up.png" id="3_k7cfi"]
 [ext_resource type="PackedScene" uid="uid://b8t8pj6ill58m" path="res://Objects/draw_area.tscn" id="4_d5o81"]
@@ -9,22 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xvvs"]
 size = Vector2(32, 5)
-
-[sub_resource type="Animation" id="Animation_tkcs6"]
-resource_name = "open"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
 
 [sub_resource type="Animation" id="Animation_v2ed3"]
 length = 0.001
@@ -57,22 +41,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_4bgny"]
-resource_name = "opening"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
 [sub_resource type="Animation" id="Animation_cdvu4"]
 resource_name = "closing"
 length = 0.5
@@ -89,13 +57,45 @@ tracks/0/keys = {
 "values": [4, 3, 2, 1, 0]
 }
 
+[sub_resource type="Animation" id="Animation_tkcs6"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_4bgny"]
+resource_name = "opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amg0x"]
 _data = {
-"RESET": SubResource("Animation_v2ed3"),
-"close": SubResource("Animation_7ird4"),
-"closing": SubResource("Animation_cdvu4"),
-"open": SubResource("Animation_tkcs6"),
-"opening": SubResource("Animation_4bgny")
+&"RESET": SubResource("Animation_v2ed3"),
+&"close": SubResource("Animation_7ird4"),
+&"closing": SubResource("Animation_cdvu4"),
+&"open": SubResource("Animation_tkcs6"),
+&"opening": SubResource("Animation_4bgny")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0ujx"]

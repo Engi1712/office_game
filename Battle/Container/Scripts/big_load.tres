@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="ScriptSpecs" format=3 uid="uid://dvdbp32jvfnc1"]
+
+[ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="1_j152r"]
+[ext_resource type="Script" uid="uid://clwwhnr0athso" path="res://Battle/Container/Templates/script_select.gd" id="2_u14v2"]
+[ext_resource type="Script" uid="uid://cs3u1tbkpnkss" path="res://Battle/Container/Templates/script_value.gd" id="3_bi6uv"]
+
+[sub_resource type="Resource" id="Resource_j152r"]
+script = ExtResource("2_u14v2")
+metadata/_custom_type_script = "uid://clwwhnr0athso"
+
+[sub_resource type="Resource" id="Resource_u14v2"]
+script = ExtResource("3_bi6uv")
+value = "40"
+suffix = "BATTLE_CPU_UNIT"
+comment = "load"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_ceasc"]
+script = ExtResource("3_bi6uv")
+value = "4"
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/dataweave.png[/img]"
+comment = "max tokens consumed"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_lti26"]
+script = ExtResource("3_bi6uv")
+value = "10"
+suffix = "BATTLE_CPU_UNIT"
+comment = "added loaded"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[sub_resource type="Resource" id="Resource_5kbyu"]
+script = ExtResource("3_bi6uv")
+suffix = "[img]res://Art/Office Pack/Battle/Icons/Tokens/dataweave.png[/img]"
+comment = "load added per what"
+metadata/_custom_type_script = "uid://cs3u1tbkpnkss"
+
+[resource]
+script = ExtResource("1_j152r")
+script_name = "big_load"
+copy_price = 4
+delete_price = 4
+run_price = 2
+stop_price = 2
+select = Array[ExtResource("2_u14v2")]([SubResource("Resource_j152r")])
+values = Array[ExtResource("3_bi6uv")]([SubResource("Resource_u14v2"), SubResource("Resource_ceasc"), SubResource("Resource_lti26"), SubResource("Resource_5kbyu")])
+cpu_bound = true
+metadata/_custom_type_script = "uid://cu5q83okgmu64"
