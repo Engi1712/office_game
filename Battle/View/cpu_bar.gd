@@ -22,7 +22,6 @@ func _ready():
 
 func update():
 	var prefix = get_id_icon() + get_bounty_icon()
-	#print("CPU #" + str(model.id) + ": " + str(model.cur_load))
 	
 	if model.status == BattleCommonCore.cpu_states.WAITING:
 		visible = false

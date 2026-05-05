@@ -27,12 +27,12 @@ func _init(p_id: int, p_is_vm: bool, p_max_load: int):
 	else:
 		set_inactive()
 	max_load = p_max_load
+	reset_load()
 
 # --- Public ---
 
 func set_active():
 	status = BattleCommonCore.cpu_states.ACTIVE
-	reset_load()
 
 func set_inactive():
 	status = BattleCommonCore.cpu_states.WAITING

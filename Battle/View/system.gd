@@ -45,13 +45,14 @@ func prepare(player_data: PlayerSpecs, p_bounty_label: RichTextLabel, p_upper: b
 	wallpaper.set_wallpaper(player_data.wallpaper.internal_name)
 
 func update_full():
-	update_cpus()
-	
+	var cur_interactor_type = get_current_interactor_rights().type
 	for i in model.cpus:
 		if !i.view:
 			create_view(i, template_cpu_node, cpu_space, BattleCommon.tooltip_types.CPU)
 			create_view(i.vm, template_cpu_node, cpu_space, BattleCommon.tooltip_types.CPU)
+		update_cpu(i, cur_interactor_type)
 		i.view.update()
+		update_cpu(i.vm, cur_interactor_type)
 		i.vm.view.update()
 	
 	for i in model.ifaces:
@@ -225,21 +226,19 @@ func update_border():
 	else:
 		border.visible = false
 
-func update_cpus():
-	var cur_type = get_current_interactor_rights().type
-	for i in model.cpus:
-		if i.has_vm:
-			if i.vm.status == BattleCommonCore.cpu_states.BROKEN:
-				i.view.set_available()
-				i.vm.view.set_unavailable()
-			elif cur_type == BattleCommonCore.user_types.ROOT:
-				i.view.set_available()
-				i.vm.view.set_available()
-			else:
-				i.view.set_unavailable()
-				i.vm.view.set_available()
+func update_cpu(cpu: CPUBarCore, interactor_type: BattleCommonCore.user_types):
+	if cpu.has_vm:
+		if cpu.vm.status == BattleCommonCore.cpu_states.BROKEN:
+			cpu.view.set_available()
+			cpu.vm.view.set_unavailable()
+		elif interactor_type == BattleCommonCore.user_types.ROOT:
+			cpu.view.set_available()
+			cpu.vm.view.set_available()
 		else:
-			i.set_active()
+			cpu.view.set_unavailable()
+			cpu.vm.view.set_available()
+	else:
+		cpu.view.set_available()
 
 func get_current_interactor_rights():
 	if model.sudo == BattleCommonCore.sudo_statuses.OPEN or (interactible and (model.active or !model.opponent.view.interactible)):

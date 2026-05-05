@@ -270,7 +270,6 @@ func rebalance(object: SystemCore):
 	object.calc_taucoin_inc()
 
 func reset_loads(object: SystemCore):
-	print("reset")
 	for i in object.ram_scripts:
 		for j in i.cpus:
 			j.cur_load = 0
@@ -287,7 +286,6 @@ func reset_traffic(object: SystemCore):
 		i.reset_traffic()
 
 func fill_load(object: SystemCore):
-	print("fill")
 	for script_file in object.ram_scripts:
 		for i in script_file.cpus:
 			if i.max_load == 0 or i.cpu_node.status != BattleCommonCore.cpu_states.ACTIVE:
