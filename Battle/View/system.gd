@@ -110,6 +110,7 @@ func update_disk_c():
 			create_view(i, template_script_node, disk_c, BattleCommon.tooltip_types.SCRIPT)
 		i.view.update()
 	
+	update_seconds()
 	update_disk_c_memory()
 	update_tokens()
 
