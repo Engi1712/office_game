@@ -34,6 +34,7 @@ var bounty_cur_turn: int = -1
 var bounty_active_turns: int = 3
 var high_bounty_cpu: CPUBarCore
 var low_bounty_cpu: CPUBarCore
+var bounty_secured: bool = false
 
 var guest_am = BattleCommonCore.access_matrix.new(BattleCommonCore.user_types.GUEST)
 var root_am = BattleCommonCore.access_matrix.new(BattleCommonCore.user_types.ROOT)
@@ -334,6 +335,7 @@ func step_bounty():
 		high_bounty_cpu = null
 		low_bounty_cpu.set_bounty(BattleCommonCore.bounty_types.NONE)
 		low_bounty_cpu = null
+		bounty_secured = false
 	elif bounty_cur_turn == 1:
 		var cpu_list = get_cpus(BattleCommonCore.cpu_types.REAL)
 		if cpu_list.is_empty():
@@ -351,6 +353,7 @@ func step_bounty():
 func secure_bounty():
 	if bounty_cur_turn != bounty_active_turns:
 		return
+	bounty_secured = true
 	var high_bounty_val = 0
 	var low_bounty_val = 0
 	if high_bounty_cpu.status == BattleCommonCore.cpu_states.ACTIVE:

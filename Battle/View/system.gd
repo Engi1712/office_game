@@ -159,7 +159,9 @@ func create_view(item: ItemCore, template: PackedScene, space: VBoxContainer, to
 
 func update_bounty():
 	var bounty_line = system_name + TranslationServer.translate("BATTLE_BOUNTY_NAME")
-	if model.bounty_cur_turn == -1:
+	if model.bounty_secured:
+		bounty_line += TranslationServer.translate("BATTLE_BOUNTY_SECURED")
+	elif model.bounty_cur_turn == -1:
 		bounty_line += TranslationServer.translate("BATTLE_BOUNTY_NONE")
 	elif model.bounty_cur_turn == 0:
 		bounty_line += TranslationServer.translate("BATTLE_BOUNTY_NEXT")
