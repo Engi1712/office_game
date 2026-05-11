@@ -70,10 +70,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=821130645]
 layout_mode = 2
@@ -83,7 +83,7 @@ theme_override_constants/separation = 0
 layout_mode = 2
 
 [node name="PreMargin" type="Control" parent="MarginContainer/VBoxContainer" unique_id=683803689]
-custom_minimum_size = Vector2(0, 4)
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
 [node name="Middle" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1065402285]
@@ -136,7 +136,7 @@ bbcode_enabled = true
 text = "test2"
 
 [node name="PostMargin" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1212992630]
-custom_minimum_size = Vector2(0, 4)
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
 [node name="Lower" parent="MarginContainer/VBoxContainer" unique_id=1479101856 instance=ExtResource("2_c7rvg")]

@@ -70,8 +70,7 @@ func assign_callback(item: Control, window_type: BattleCommon.window_types):
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("menu"):
-		if !back(current_interactor):
-			open_pause_menu()
+		back(current_interactor)
 	elif event.is_action_pressed("inv"):
 		toggle_shop(current_interactor)
 

@@ -125,7 +125,7 @@ script = ExtResource("1_ikbqn")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1911069793]
 handle_input_locally = false
-size = Vector2i(624, 154)
+size = Vector2i(626, 154)
 render_target_update_mode = 4
 
 [node name="City" type="Node2D" parent="SubViewport" unique_id=1416696410]

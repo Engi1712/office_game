@@ -9,6 +9,8 @@
 
 [node name="System" type="PanelContainer" unique_id=1993072128]
 self_modulate = Color(1, 1, 1, 0)
+offset_right = 630.0
+offset_bottom = 158.0
 size_flags_vertical = 3
 script = ExtResource("1_p2wxl")
 
@@ -39,6 +41,7 @@ texture = ExtResource("3_k6fee")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_fdpku")
+theme_override_constants/separation = 4
 
 [node name="DiskD" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1434902129]
 layout_mode = 2
