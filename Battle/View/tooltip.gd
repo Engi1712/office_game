@@ -8,7 +8,7 @@ class_name Tooltip extends PanelContainer
 
 @onready var script_container = $Script
 @onready var script_name_label = $Script/Name
-@onready var script_direction_label = $Script/Direction
+@onready var script_remote_label = $Script/Remote
 @onready var script_type_label = $Script/Type
 @onready var script_description_label = $Script/Description
 @onready var script_temporary_label = $Script/Temporary
@@ -114,7 +114,7 @@ func prepare_script(script_file: ScriptFileCore):
 	prepare_script_modifiers(script_file)
 	prepare_script_traffic(script_file)
 	set_script_name(script_file)
-	set_script_direction(script_file)
+	set_script_remote(script_file)
 	set_script_type(script_file)
 	set_script_description(script_file)
 	set_script_temporary(script_file)
@@ -153,7 +153,7 @@ func set_script_visibility():
 	cpu_modifiers_label.visible = false
 	cpu_modifier_list.visible = false
 	script_name_label.visible = false
-	script_direction_label.visible = false
+	script_remote_label.visible = false
 	script_type_label.visible = false
 	script_description_label.visible = false
 	script_temporary_label.visible = false
@@ -181,11 +181,12 @@ func set_script_name(script_file: ScriptFileCore):
 	script_name_label.text = "[color=" + header_colour + "]" + script_file.script_name + ".sh[/color]"
 	script_name_label.visible = true
 
-func set_script_direction(script_file: ScriptFileCore):
-	script_direction_label.text = "[img]res://Art/Office Pack/Battle/Icons/Directions/" + \
-			BattleCommon.get_line_script_direction(script_file.direction) + ".png[/img] " + \
-			BattleCommon.get_line_script_direction(script_file.direction)
-	script_direction_label.visible = true
+func set_script_remote(script_file: ScriptFileCore):
+	if script_file.owner_system != script_file.location_system:
+		script_remote_label.text = "[img]res://Art/Office Pack/Battle/Icons/MISC/remote.png[/img] remote"
+		script_remote_label.visible = true
+	else:
+		script_remote_label.visible = false
 
 func set_script_type(script_file: ScriptFileCore):
 	script_type_label.text = "[img]res://Art/Office Pack/Battle/Icons/Types/" + \

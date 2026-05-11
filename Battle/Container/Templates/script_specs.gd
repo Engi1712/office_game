@@ -5,7 +5,6 @@ class_name ScriptSpecs extends Resource
 @export var delete_price: int
 @export var run_price: int
 @export var stop_price: int
-@export var direction: BattleCommonCore.script_directions
 @export var type: BattleCommonCore.script_types
 @export var select: Array[ScriptSelect]
 @export var temporary: int

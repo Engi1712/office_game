@@ -7,7 +7,6 @@ var delete_price: int
 var run_price: int
 var stop_price: int
 
-var direction: BattleCommonCore.script_directions
 var type: BattleCommonCore.script_types
 var selections: Array[ScriptSelect]
 var shop_price: int
@@ -44,7 +43,6 @@ func _init(p_resource_name: String, object: SystemCore, subject: SystemCore, p_i
 	delete_price = script_specs.delete_price
 	run_price = script_specs.run_price
 	stop_price = script_specs.stop_price
-	direction = script_specs.direction
 	type = script_specs.type
 	selections = script_specs.select.duplicate()
 	turns_to_live = script_specs.temporary

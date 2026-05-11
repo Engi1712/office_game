@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bu6mcf0e4td1g"]
 
 [ext_resource type="Script" uid="uid://kt2jw0i4ujrh" path="res://Battle/View/tooltip.gd" id="1_7q8k4"]
-[ext_resource type="Texture2D" uid="uid://bniafex3c2u86" path="res://Art/Office Pack/Battle/UI/tooltip.png" id="1_lctle"]
+[ext_resource type="Texture2D" uid="uid://bniafex3c2u86" path="res://Art/Office Pack/Battle/UI/Panel/tooltip_panel.png" id="1_lctle"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihujf"]
 texture = ExtResource("1_lctle")
@@ -70,7 +70,7 @@ bbcode_enabled = true
 text = "Increabhvfv hg hi jk y8ol 6ll yrk67k 67k 6k"
 fit_content = true
 
-[node name="Direction" type="RichTextLabel" parent="Script" unique_id=570827241]
+[node name="Remote" type="RichTextLabel" parent="Script" unique_id=570827241]
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true

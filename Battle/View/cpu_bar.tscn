@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://07fr3fgmcbnt"]
 
 [ext_resource type="Script" uid="uid://b3hw71mlve1f4" path="res://Battle/View/cpu_bar.gd" id="1_rligy"]
-[ext_resource type="Texture2D" uid="uid://bcgu7wu4wenaa" path="res://Art/Office Pack/Battle/UI/button_select.png" id="2_w8dbj"]
+[ext_resource type="Texture2D" uid="uid://bcgu7wu4wenaa" path="res://Art/Office Pack/Battle/UI/Select/standard_select.png" id="2_w8dbj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8dbj"]
 texture_margin_top = 1.0

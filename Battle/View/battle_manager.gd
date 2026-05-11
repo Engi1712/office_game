@@ -51,6 +51,8 @@ func _ready():
 	lower_system.item_added.connect(assign_callback.bind(BattleCommon.window_types.BATTLE))
 	upper_shop.item_added.connect(assign_callback.bind(BattleCommon.window_types.SHOP))
 	lower_shop.item_added.connect(assign_callback.bind(BattleCommon.window_types.SHOP))
+	upper_system.disk_c_selected.connect(click_disk_c.bind(upper_system.model))
+	lower_system.disk_c_selected.connect(click_disk_c.bind(lower_system.model))
 	show_tooltip_timer.timeout.connect(show_tooltip)
 	hide_tooltip_timer.timeout.connect(hide_tooltip)
 	battle_field.end_turn_button_pressed.connect(_on_battle_end_turn_button_pressed)
@@ -87,6 +89,11 @@ func interact(event: InputEvent, item: ItemCore, window_type: BattleCommon.windo
 		elif window_type == BattleCommon.window_types.SHOP and type == BattleCommonCore.mouse_buttons.LEFT:
 			shop_interact(item, current_interactor)
 
+func click_disk_c(object: SystemCore):
+	if model.battle_select_system(object, current_interactor) == BattleCommonCore.action_types.SMALL:
+		click_sfx.play()
+		update_small()
+
 func _on_battle_end_turn_button_pressed():
 	battle_end_turn(current_interactor)
 
@@ -111,10 +118,10 @@ func battle_interact(item: ItemCore, type: BattleCommonCore.mouse_buttons, subje
 			update_full()
 		BattleCommonCore.action_types.SMALL:
 			click_sfx.play()
-			update_disk_c()
+			update_small()
 		BattleCommonCore.action_types.SELECTION:
 			click_sfx.play()
-			update_highlight()
+			update_selection()
 	if model.is_over():
 		current_interactor = null
 		open_game_over()
@@ -137,7 +144,7 @@ func shop_interact(script_file: ScriptFileCore, subject: SystemCore):
 func shop_buy_script(subject: SystemCore):
 	if model.shop_buy_script(subject):
 		buy_sfx.play()
-		update_disk_c()
+		update_small()
 		subject.shop.view.update_full()
 
 func back(subject: SystemCore):
@@ -149,7 +156,7 @@ func back(subject: SystemCore):
 			if was_shop_open and !model.is_shop_active():
 				close_shop_menu()
 			else:
-				update_highlight()
+				update_selection()
 		else:
 			open_pause_menu()
 			paused = true
@@ -169,13 +176,13 @@ func update_full():
 	upper_system.update_full()
 	upper_shop.update_full()
 
-func update_disk_c():
-	lower_system.update_disk_c()
-	upper_system.update_disk_c()
+func update_small():
+	lower_system.update_small()
+	upper_system.update_small()
 
-func update_highlight():
-	lower_system.update_highlights()
-	upper_system.update_highlights()
+func update_selection():
+	lower_system.update_selection()
+	upper_system.update_selection()
 
 # Submenu switching functions
 

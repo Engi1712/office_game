@@ -30,6 +30,7 @@ Glob="*res://Global/glob.gd"
 ColourPalette="*res://Global/colour_palette.gd"
 MenuSwitcher="*res://UI/menu_switcher.gd"
 SteamInterface="*res://SteamInterface/steam_interface.gd"
+SignalLens="*uid://85rkx60vm7a7"
 
 [debug]
 
@@ -49,6 +50,10 @@ window/stretch/scale_mode="integer"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/signal_lens/plugin.cfg")
 
 [gui]
 

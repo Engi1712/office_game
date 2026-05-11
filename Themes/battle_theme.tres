@@ -1,10 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://bkgu8ixo3lub4"]
 
-[ext_resource type="Texture2D" uid="uid://bniafex3c2u86" path="res://Art/Office Pack/Battle/UI/tooltip.png" id="1_o53hc"]
-[ext_resource type="Texture2D" uid="uid://bbfpg77hpppng" path="res://Art/Office Pack/Battle/UI/scroll_graber.png" id="2_ssvij"]
-[ext_resource type="Texture2D" uid="uid://jhcgix8mw8wn" path="res://Art/Office Pack/Battle/UI/scroll_grabber_hover.png" id="3_b3xaf"]
-[ext_resource type="Texture2D" uid="uid://blxu1nfsrwdox" path="res://Art/Office Pack/Battle/UI/scroll_grabber_pressed.png" id="4_qn8ud"]
-[ext_resource type="Texture2D" uid="uid://dp2tjkqo1824m" path="res://Art/Office Pack/Battle/UI/scroll_panel.png" id="5_c05u4"]
+[ext_resource type="Texture2D" uid="uid://bniafex3c2u86" path="res://Art/Office Pack/Battle/UI/Panel/tooltip_panel.png" id="1_o53hc"]
+[ext_resource type="Texture2D" uid="uid://bbfpg77hpppng" path="res://Art/Office Pack/Battle/UI/Scroll/scroll_graber.png" id="2_ssvij"]
+[ext_resource type="Texture2D" uid="uid://jhcgix8mw8wn" path="res://Art/Office Pack/Battle/UI/Scroll/scroll_grabber_hover.png" id="3_b3xaf"]
+[ext_resource type="Texture2D" uid="uid://blxu1nfsrwdox" path="res://Art/Office Pack/Battle/UI/Scroll/scroll_grabber_pressed.png" id="4_qn8ud"]
+[ext_resource type="Texture2D" uid="uid://dp2tjkqo1824m" path="res://Art/Office Pack/Battle/UI/Scroll/scroll_panel.png" id="5_c05u4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n7qj7"]
 texture = ExtResource("1_o53hc")

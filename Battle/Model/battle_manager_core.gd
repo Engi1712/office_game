@@ -47,6 +47,15 @@ func battle_interact(item: ItemCore, type: BattleCommonCore.mouse_buttons, subje
 	check_game_over()
 	return res
 
+func battle_select_system(object: SystemCore, subject: SystemCore):
+	if current_system != subject:
+		return BattleCommonCore.action_types.NONE
+	if current_state != BattleCommonCore.states.BATTLE:
+		return BattleCommonCore.action_types.NONE
+	
+	var res = battle.click_system(object, subject)
+	return res
+
 func battle_end_turn(subject: SystemCore):
 	if current_system != subject:
 		return false

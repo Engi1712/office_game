@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kdavy4qmbjd5" path="res://Battle/View/wallpaper.tscn" id="2_p2wxl"]
 [ext_resource type="Texture2D" uid="uid://dk7avf6pnmh1v" path="res://Art/Office Pack/Battle/Wallpapers/space.png" id="3_k6fee"]
 [ext_resource type="Theme" uid="uid://bkgu8ixo3lub4" path="res://Themes/battle_theme.tres" id="4_fdpku"]
-[ext_resource type="Theme" uid="uid://bx78qkjopjaxn" path="res://Themes/base_theme.tres" id="5_xsq87"]
+[ext_resource type="PackedScene" uid="uid://du4mja2ruldtw" path="res://Battle/View/item_space.tscn" id="6_p2wxl"]
 
 [node name="System" type="PanelContainer" unique_id=1993072128]
 self_modulate = Color(1, 1, 1, 0)
@@ -71,17 +71,9 @@ autowrap_mode = 0
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Files" type="ScrollContainer" parent="MarginContainer/HBoxContainer/DiskD" unique_id=489556348]
+[node name="ItemSpace" parent="MarginContainer/HBoxContainer/DiskD" unique_id=1700130791 instance=ExtResource("6_p2wxl")]
 layout_mode = 2
 size_flags_vertical = 3
-vertical_scroll_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/DiskD/Files" unique_id=310603357]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("5_xsq87")
-theme_override_constants/separation = 0
 
 [node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/DiskD" unique_id=788676440]
 custom_minimum_size = Vector2(0, 3)
@@ -126,17 +118,9 @@ autowrap_mode = 0
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Files" type="ScrollContainer" parent="MarginContainer/HBoxContainer/DiskC" unique_id=407535123]
+[node name="ItemSpace" parent="MarginContainer/HBoxContainer/DiskC" unique_id=1963798866 instance=ExtResource("6_p2wxl")]
 layout_mode = 2
 size_flags_vertical = 3
-vertical_scroll_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/DiskC/Files" unique_id=358834880]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("5_xsq87")
-theme_override_constants/separation = 0
 
 [node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/DiskC" unique_id=3513621]
 custom_minimum_size = Vector2(0, 3)
@@ -172,17 +156,9 @@ autowrap_mode = 0
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Processes" type="ScrollContainer" parent="MarginContainer/HBoxContainer/RAM" unique_id=166227136]
+[node name="ItemSpace" parent="MarginContainer/HBoxContainer/RAM" unique_id=1848980752 instance=ExtResource("6_p2wxl")]
 layout_mode = 2
 size_flags_vertical = 3
-vertical_scroll_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RAM/Processes" unique_id=86911711]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("5_xsq87")
-theme_override_constants/separation = 0
 
 [node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/RAM" unique_id=774705253]
 custom_minimum_size = Vector2(0, 3)
@@ -308,17 +284,9 @@ autowrap_mode = 0
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Interfaces" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=2142233464]
+[node name="ItemSpace" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=1768171495 instance=ExtResource("6_p2wxl")]
 layout_mode = 2
 size_flags_vertical = 3
-vertical_scroll_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MISC/Network/Interfaces" unique_id=1702902801]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("5_xsq87")
-theme_override_constants/separation = 0
 
 [node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/MISC/Network" unique_id=447545330]
 custom_minimum_size = Vector2(0, 3)
@@ -373,17 +341,9 @@ autowrap_mode = 0
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="Bars" type="ScrollContainer" parent="MarginContainer/HBoxContainer/CPU" unique_id=19907018]
+[node name="ItemSpace" parent="MarginContainer/HBoxContainer/CPU" unique_id=2054240528 instance=ExtResource("6_p2wxl")]
 layout_mode = 2
 size_flags_vertical = 3
-vertical_scroll_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CPU/Bars" unique_id=683688405]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("5_xsq87")
-theme_override_constants/separation = 0
 
 [node name="PostMargin" type="Control" parent="MarginContainer/HBoxContainer/CPU" unique_id=651060434]
 custom_minimum_size = Vector2(0, 3)

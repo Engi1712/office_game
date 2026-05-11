@@ -18,6 +18,12 @@ enum action_types {
 	NONE
 }
 
+enum selection_state {
+	NONE,
+	ITEM,
+	SYSTEM
+}
+
 enum results {
 	WIN,
 	LOSS,
@@ -48,12 +54,6 @@ enum item_types {
 }
 
 # Script
-
-enum script_directions {
-	ATTACK,
-	DEFEND,
-	NET
-}
 
 enum script_types {
 	LOAD,
@@ -295,3 +295,11 @@ class load_mod:
 		op = p_op
 		val = p_val
 		source = p_source
+
+class item_group:
+	var object: SystemCore
+	var type: item_types
+	
+	func _init(p_object: SystemCore, p_type: item_types):
+		object = p_object
+		type = p_type

@@ -63,7 +63,7 @@ func get_id_icon():
 		cpu_id = str(model.id + 1)
 	if !model.modifiers.is_empty():
 		cpu_id += "_safe"
-	return "[img]res://Art/Office Pack/Battle/Icons/MISC/cpu_" + cpu_id + ".png[/img]"
+	return "[img]res://Art/Office Pack/Battle/Icons/MISC/CPU/cpu_" + cpu_id + ".png[/img]"
 
 func get_bounty_icon():
 	var cur_bounty: String
@@ -74,7 +74,7 @@ func get_bounty_icon():
 			cur_bounty = "high"
 		BattleCommonCore.bounty_types.LOW:
 			cur_bounty = "low"
-	return "[img]res://Art/Office Pack/Battle/Icons/MISC/bounty_" + cur_bounty + ".png[/img]"
+	return "[img]res://Art/Office Pack/Battle/Icons/MISC/Bounty/bounty_" + cur_bounty + ".png[/img]"
 
 func get_load_preceed(p_load: int):
 	var digits = str(p_load).length()

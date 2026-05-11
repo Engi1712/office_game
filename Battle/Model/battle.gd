@@ -1,14 +1,6 @@
 class_name Battle
 
-class Selection:
-	var object: SystemCore
-	var type: BattleCommonCore.item_types
-
-var pending_script: ScriptFileCore
-var pending_subject: SystemCore
-var selections: Array[Selection]
-var choices: Array[ItemCore]
-
+var cur_selection = Selections.new()
 var history: Array[ScriptFileCore] = []
 
 # --- Public ---
@@ -17,7 +9,7 @@ func click_manager(item: ItemCore, mouse_button: BattleCommonCore.mouse_buttons,
 	if !subject.active:
 		return BattleCommonCore.action_types.NONE
 	
-	if selections.is_empty():
+	if cur_selection.is_inactive():
 		if item is not ScriptFileCore:
 			return BattleCommonCore.action_types.NONE
 		if !item.location_system.check_permission(subject, item.location, mouse_button):
@@ -37,19 +29,31 @@ func click_manager(item: ItemCore, mouse_button: BattleCommonCore.mouse_buttons,
 					BattleCommonCore.item_types.RAM_SCRIPT:
 						res = right_click_ram_script(item, subject)
 		return res
-	else:
+	elif cur_selection.is_item_active():
 		if mouse_button != BattleCommonCore.mouse_buttons.LEFT:
 			return BattleCommonCore.action_types.NONE
 		if !item.highlighted:
 			return BattleCommonCore.action_types.NONE
-		choices.append(item)
-		idle_selection()
-		selections.remove_at(0)
-		if selections.is_empty():
-			return activate_script(pending_script, pending_subject)
-		if !highlight_selection():
-			clear_selection_queue()
-		return BattleCommonCore.action_types.SELECTION
+		cur_selection.item_choose(item)
+		if cur_selection.is_item_ready():
+			return activate_script(cur_selection.get_pending_script(), subject)
+		else:
+			return BattleCommonCore.action_types.SELECTION
+	else:
+		return BattleCommonCore.action_types.NONE
+
+func click_system(object: SystemCore, subject: SystemCore):
+	if !subject.active:
+		return BattleCommonCore.action_types.NONE
+	
+	if cur_selection.is_system_active():
+		var script_file = cur_selection.get_pending_script()
+		object.add_disk_c_script(script_file.resource_name, subject)
+		subject.dec_price(script_file, BattleCommonCore.price_types.COPY)
+		cur_selection.done()
+		return BattleCommonCore.action_types.SMALL
+	else:
+		return BattleCommonCore.action_types.NONE
 
 func click_end_turn(subject: SystemCore):
 	if !subject.active:
@@ -82,13 +86,10 @@ func check_for_end(object: SystemCore):
 		return BattleCommonCore.results.NONE
 
 func idle():
-	if !selections.is_empty():
-		idle_selection()
-		clear_selection_queue()
-	return true
+	cur_selection.done()
 
 func check_if_idle():
-	return selections.is_empty()
+	return cur_selection.is_inactive()
 
 # --- Private ---
 
@@ -96,32 +97,19 @@ func left_click_disk_d_script(script_file: ScriptFileCore, subject: SystemCore):
 	if !subject.check_price(script_file, BattleCommonCore.price_types.COPY):
 		return BattleCommonCore.action_types.NONE
 	
-	if script_file.direction == BattleCommonCore.script_directions.ATTACK:
-		script_file.location_system.opponent.add_disk_c_script(script_file.resource_name, subject)
-	else:
-		script_file.location_system.add_disk_c_script(script_file.resource_name, subject)
-	subject.dec_price(script_file, BattleCommonCore.price_types.COPY)
-	return BattleCommonCore.action_types.SMALL
+	cur_selection.system_start(script_file, subject)
+	return BattleCommonCore.action_types.SELECTION
 
 func left_click_disk_c_script(script_file: ScriptFileCore, subject: SystemCore):
 	if !script_file.available:
 		return BattleCommonCore.action_types.NONE
 	if !subject.check_price(script_file, BattleCommonCore.price_types.RUN):
 		return BattleCommonCore.action_types.NONE
+	if !cur_selection.item_check(script_file, subject):
+		return BattleCommonCore.action_types.NONE
 	
-	for i in script_file.selections:
-		var new_selection = Selection.new()
-		if i.remote:
-			new_selection.object = script_file.location_system.opponent
-		else:
-			new_selection.object = script_file.location_system
-		new_selection.type = i.type
-		selections.append(new_selection)
-	if selections.size() != 0:
-		pending_script = script_file
-		pending_subject = subject
-		if !highlight_selection():
-			clear_selection_queue()
+	cur_selection.item_start(script_file, subject)
+	if cur_selection.is_item_active():
 		return BattleCommonCore.action_types.SELECTION
 	else:
 		return activate_script(script_file, subject)
@@ -142,11 +130,11 @@ func right_click_ram_script(script_file: ScriptFileCore, subject: SystemCore):
 
 func activate_script(script_file: ScriptFileCore, subject: SystemCore):
 	var new_script_file = script_file.location_system.add_ram_script(script_file, subject)
-	if !Scripts.activate(new_script_file, subject, choices):
+	if !Scripts.activate(new_script_file, subject, cur_selection.item_get_choices()):
 		script_file.location_system.del_ram_script(new_script_file)
-		clear_selection_queue()
+		cur_selection.done()
 		return BattleCommonCore.action_types.NONE
-	clear_selection_queue()
+	cur_selection.done()
 	subject.dec_price(script_file, BattleCommonCore.price_types.RUN)
 	add_script_to_history(new_script_file)
 	if script_file.auto_deleted:
@@ -198,41 +186,6 @@ func scripts_before_turn(object: SystemCore, subject: SystemCore):
 			object.move_script_to_limbo(script)
 	rebalance(object)
 	deactivate_limbo_scripts(object)
-
-# Selection
-
-func idle_selection():
-	match selections[0].type:
-		BattleCommonCore.item_types.CPU:
-			selections[0].object.idle_cpus()
-		BattleCommonCore.item_types.IFACE:
-			selections[0].object.idle_ifaces()
-		BattleCommonCore.item_types.DISK_D_SCRIPT:
-			selections[0].object.idle_disk_d_scripts()
-
-func highlight_selection():
-	var num_selected: int
-	match selections[0].type:
-		BattleCommonCore.item_types.CPU:
-			if pending_script.type == BattleCommonCore.script_types.VM:
-				num_selected = selections[0].object.highlight_cpus(BattleCommonCore.cpu_types.AVAIL_REAL)
-			elif selections[0].object == pending_subject or !selections[0].object.check_if_sudo_locked():
-				num_selected = selections[0].object.highlight_cpus(BattleCommonCore.cpu_types.ALL)
-			else:
-				num_selected = selections[0].object.highlight_cpus(BattleCommonCore.cpu_types.CUR)
-		BattleCommonCore.item_types.IFACE:
-			num_selected = selections[0].object.highlight_ifaces()
-		BattleCommonCore.item_types.DISK_D_SCRIPT:
-			num_selected = selections[0].object.highlight_disk_d_scripts()
-	if num_selected == 0:
-		return false
-	return true
-
-func clear_selection_queue():
-	selections.clear()
-	choices.clear()
-	pending_script = null
-	pending_subject = null
 
 # Rebalancing
 

@@ -60,11 +60,11 @@ func deselect():
 func set_script_name():
 	var display_script_name: String = ""
 	display_script_name += \
-			"[img]res://Art/Office Pack/Battle/Icons/Directions/" + \
-			BattleCommon.get_line_script_direction(model.direction) + ".png[/img] " + \
 			"[img]res://Art/Office Pack/Battle/Icons/Types/" + \
-			BattleCommon.get_line_script_type(model.type) + ".png[/img] " + \
-			model.script_name + ".sh"
+			BattleCommon.get_line_script_type(model.type) + ".png[/img] "
+	if model.owner_system != model.location_system:
+		display_script_name += "[img]res://Art/Office Pack/Battle/Icons/MISC/remote.png[/img] "
+	display_script_name += model.script_name + ".sh"
 	if model.available:
 		name_label.text = display_script_name
 	else:

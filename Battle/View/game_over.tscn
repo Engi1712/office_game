@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dl2rt7d5bg1g1"]
 
-[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/shop.png" id="1_6uj6g"]
+[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/Panel/shop_panel.png" id="1_6uj6g"]
 [ext_resource type="Script" uid="uid://hblv742embwk" path="res://Battle/View/game_over.gd" id="1_l3g1u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l3g1u"]

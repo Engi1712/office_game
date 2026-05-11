@@ -30,6 +30,8 @@ var delete_price_mod: int
 var run_price_mod: int
 var stop_price_mod: int
 
+var disk_c_highlighted: bool = false
+
 var bounty_cur_turn: int = -1
 var bounty_active_turns: int = 3
 var high_bounty_cpu: CPUBarCore
@@ -198,33 +200,44 @@ func del_vm(cpu_id):
 	vcpus[cpu_id].set_inactive()
 	cpus[cpu_id].has_vm = false
 
-func get_cpus(type: BattleCommonCore.cpu_types):
-	var cpu_list = []
+func get_cpus(type: BattleCommonCore.cpu_types, exclude_items: Array[ItemCore] = []):
+	var cpu_list: Array[ItemCore] = []
 	for i in cpus:
 		if i.status != BattleCommonCore.cpu_states.ACTIVE:
 			continue
 		match type:
 			BattleCommonCore.cpu_types.AVAIL_REAL:
 				if !i.has_vm:
-					cpu_list.append(i)
+					append_with_check(cpu_list, i, exclude_items)
 			BattleCommonCore.cpu_types.REAL:
-				cpu_list.append(i)
+				append_with_check(cpu_list, i, exclude_items)
 			BattleCommonCore.cpu_types.CUR:
 				if i.has_vm and i.vm.status == BattleCommonCore.cpu_states.ACTIVE:
-					cpu_list.append(i.vm)
+					append_with_check(cpu_list, i.vm, exclude_items)
 				else:
-					cpu_list.append(i)
+					append_with_check(cpu_list, i, exclude_items)
 			BattleCommonCore.cpu_types.ALL:
-				cpu_list.append(i)
+				append_with_check(cpu_list, i, exclude_items)
 				if i.has_vm and i.vm.status == BattleCommonCore.cpu_states.ACTIVE:
-					cpu_list.append(i.vm)
+					append_with_check(cpu_list, i.vm, exclude_items)
 	return cpu_list
 
-func highlight_cpus(type: BattleCommonCore.cpu_types):
-	var cpu_list = get_cpus(type)
-	for i in cpu_list:
+func get_ifaces(exclude_items: Array[ItemCore] = []):
+	var iface_list: Array[ItemCore] = []
+	for i in ifaces:
+		if i.cur_traffic != i.max_traffic:
+			append_with_check(iface_list, i, exclude_items)
+	return iface_list
+
+func get_disk_d_scripts(exclude_items: Array[ItemCore] = []):
+	var script_list: Array[ItemCore] = []
+	for i in disk_d_scripts:
+		append_with_check(script_list, i, exclude_items)
+	return script_list
+
+func highlight_cpus(type: BattleCommonCore.cpu_types, exclude_items: Array[ItemCore] = []):
+	for i in get_cpus(type, exclude_items):
 		i.highlighted = true
-	return cpu_list.size()
 
 func idle_cpus():
 	for i in vcpus:
@@ -232,29 +245,30 @@ func idle_cpus():
 	for i in cpus:
 		i.highlighted = false
 
-func highlight_ifaces():
-	var cnt = 0
-	for i in ifaces:
-		if i.cur_traffic == i.max_traffic:
-			continue
-		cnt += 1
+func highlight_ifaces(exclude_items: Array[ItemCore] = []):
+	for i in get_ifaces(exclude_items):
 		i.highlighted = true
-	return cnt
 
 func idle_ifaces():
 	for i in ifaces:
 		i.highlighted = false
 
-func highlight_disk_d_scripts():
-	var cnt = 0
-	for i in disk_d_scripts:
-		cnt += 1
+func highlight_disk_d_scripts(exclude_items: Array[ItemCore] = []):
+	for i in get_disk_d_scripts(exclude_items):
 		i.highlighted = true
-	return cnt
 
 func idle_disk_d_scripts():
 	for i in disk_d_scripts:
 		i.highlighted = false
+
+func highlight_disk_c():
+	disk_c_highlighted = true
+
+func idle_disk_c():
+	disk_c_highlighted = false
+
+func is_disk_c_hihlighted():
+	return disk_c_highlighted
 
 func check_permission(subject: SystemCore, loc: BattleCommonCore.locations, mb: BattleCommonCore.mouse_buttons):
 	if subject == self or sudo == BattleCommonCore.sudo_statuses.OPEN:
@@ -313,6 +327,12 @@ func get_all_ram_scripts_for_owner(subject: SystemCore):
 	return res_scripts
 
 # --- Private ---
+
+func append_with_check(dst: Array[ItemCore], target: ItemCore, check_list: Array[ItemCore]):
+	for i in check_list:
+		if target == i:
+			return
+	dst.append(target)
 
 func get_taucoin():
 	if !taucoin_stolen:

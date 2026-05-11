@@ -1,17 +1,18 @@
 class_name System extends PanelContainer
 
 signal item_added(item: Control)
+signal disk_c_selected
 
 const template_cpu_node = preload("res://Battle/View/cpu_bar.tscn")
 const template_script_node = preload("res://Battle/View/script_file.tscn")
 const template_iface_node = preload("res://Battle/View/net_interface.tscn")
 const template_tooltip = preload("res://Battle/View/tooltip.tscn")
 
-@onready var cpu_space: VBoxContainer = $MarginContainer/HBoxContainer/CPU/Bars/VBoxContainer
-@onready var iface_space: VBoxContainer = $MarginContainer/HBoxContainer/MISC/Network/Interfaces/VBoxContainer
-@onready var disk_d: VBoxContainer = $MarginContainer/HBoxContainer/DiskD/Files/VBoxContainer
-@onready var disk_c: VBoxContainer = $MarginContainer/HBoxContainer/DiskC/Files/VBoxContainer
-@onready var ram: VBoxContainer = $MarginContainer/HBoxContainer/RAM/Processes/VBoxContainer
+@onready var cpu_space: ItemSpace = $MarginContainer/HBoxContainer/CPU/ItemSpace
+@onready var iface_space: ItemSpace = $MarginContainer/HBoxContainer/MISC/Network/ItemSpace
+@onready var disk_d: ItemSpace = $MarginContainer/HBoxContainer/DiskD/ItemSpace
+@onready var disk_c: ItemSpace = $MarginContainer/HBoxContainer/DiskC/ItemSpace
+@onready var ram: ItemSpace = $MarginContainer/HBoxContainer/RAM/ItemSpace
 @onready var disk_d_actions: RichTextLabel = $MarginContainer/HBoxContainer/DiskD/HBoxContainer/Actions
 @onready var disk_c_actions: RichTextLabel = $MarginContainer/HBoxContainer/DiskC/HBoxContainer/Actions
 @onready var ram_actions: RichTextLabel = $MarginContainer/HBoxContainer/RAM/HBoxContainer/Actions
@@ -43,6 +44,7 @@ func prepare(player_data: PlayerSpecs, p_bounty_label: RichTextLabel, p_upper: b
 	system_name = player_data.player_name
 	upper = p_upper
 	wallpaper.set_wallpaper(player_data.wallpaper.internal_name)
+	disk_c.gui_input.connect(interact_disk_c)
 
 func update_full():
 	var cur_interactor_type = get_current_interactor_rights().type
@@ -52,7 +54,6 @@ func update_full():
 			create_view(i.vm, template_cpu_node, cpu_space, BattleCommon.tooltip_types.CPU)
 		update_cpu(i, cur_interactor_type)
 		i.view.update()
-		update_cpu(i.vm, cur_interactor_type)
 		i.vm.view.update()
 	
 	for i in model.ifaces:
@@ -60,31 +61,19 @@ func update_full():
 			create_view(i, template_iface_node, iface_space, BattleCommon.tooltip_types.IFACE)
 		i.view.update()
 	
-	for i in disk_d.get_children():
-		if i.model.dead:
-			i.model = null
-			disk_d.remove_child(i)
-			i.queue_free()
+	delete_dead_views(disk_d)
 	for i in model.disk_d_scripts:
 		if !i.view:
 			create_view(i, template_script_node, disk_d, BattleCommon.tooltip_types.SCRIPT)
 		i.view.update()
 	
-	for i in disk_c.get_children():
-		if i.model.dead:
-			i.model = null
-			disk_c.remove_child(i)
-			i.queue_free()
+	delete_dead_views(disk_c)
 	for i in model.disk_c_scripts:
 		if !i.view:
 			create_view(i, template_script_node, disk_c, BattleCommon.tooltip_types.SCRIPT)
 		i.view.update()
 	
-	for i in ram.get_children():
-		if i.model.dead:
-			i.model = null
-			ram.remove_child(i)
-			i.queue_free()
+	delete_dead_views(ram)
 	for i in model.ram_scripts:
 		if !i.view:
 			create_view(i, template_script_node, ram, BattleCommon.tooltip_types.SCRIPT)
@@ -98,23 +87,21 @@ func update_full():
 	update_bounty()
 	update_actions()
 	update_border()
-	update_highlights()
+	update_selection()
 
-func update_disk_c():
-	for i in disk_c.get_children():
-		if !i.model:
-			disk_c.remove_child(i)
-			i.queue_free()
+func update_small():
+	delete_dead_views(disk_c)
 	for i in model.disk_c_scripts:
 		if !i.view:
 			create_view(i, template_script_node, disk_c, BattleCommon.tooltip_types.SCRIPT)
 		i.view.update()
 	
+	update_disk_c_selection()
 	update_seconds()
 	update_disk_c_memory()
 	update_tokens()
 
-func update_highlights():
+func update_selection():
 	for i in model.cpus:
 		if i.highlighted:
 			i.view.highlight()
@@ -135,6 +122,7 @@ func update_highlights():
 			i.view.highlight()
 		else:
 			i.view.idle()
+	update_disk_c_selection()
 
 func set_interactible():
 	interactible = true
@@ -150,13 +138,31 @@ func resume():
 
 # --- Private ---
 
-func create_view(item: ItemCore, template: PackedScene, space: VBoxContainer, tooltip_type: BattleCommon.tooltip_types):
+func interact_disk_c(event: InputEvent):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT \
+			and event.pressed and model.is_disk_c_hihlighted():
+		disk_c_selected.emit()
+
+func create_view(item: ItemCore, template: PackedScene, space: ItemSpace, tooltip_type: BattleCommon.tooltip_types):
 	var new_view = template.instantiate()
 	new_view.model = item
 	item.view = new_view
-	space.add_child(new_view)
+	space.add_item(new_view)
 	add_tooltip(new_view, tooltip_type)
 	item_added.emit(new_view)
+
+func delete_dead_views(space: ItemSpace):
+	for i in space.get_items():
+		if i.model.dead:
+			i.model = null
+			space.remove_item(i)
+			i.queue_free()
+
+func update_disk_c_selection():
+	if model.disk_c_highlighted:
+		disk_c.highlight()
+	else:
+		disk_c.idle()
 
 func update_bounty():
 	var bounty_line = system_name + TranslationServer.translate("BATTLE_BOUNTY_NAME")
@@ -181,7 +187,7 @@ func update_sudo():
 			sudo_str = "unlocked"
 		BattleCommonCore.sudo_statuses.OPEN:
 			sudo_str = "open"
-	sudo_label.text = "[img]res://Art/Office Pack/Battle/Icons/MISC/" + sudo_str + ".png[/img]"
+	sudo_label.text = "[img]res://Art/Office Pack/Battle/Icons/MISC/Sudo/sudo_" + sudo_str + ".png[/img]"
 
 func update_actions():
 	var cur_am: BattleCommonCore.access_matrix = get_current_interactor_rights()

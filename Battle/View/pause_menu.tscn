@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://g3w5jbego3c7"]
 
 [ext_resource type="Script" uid="uid://bhh0bi4hylh2y" path="res://Battle/View/pause_menu.gd" id="1_ggafp"]
-[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/shop.png" id="1_iejri"]
-[ext_resource type="Texture2D" uid="uid://bstvwhpard0cu" path="res://Art/Office Pack/Battle/UI/end_turn.png" id="2_ggafp"]
-[ext_resource type="Texture2D" uid="uid://bxsvq1iunprtq" path="res://Art/Office Pack/Battle/UI/end_turn_pressed.png" id="3_j8hd1"]
+[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/Panel/shop_panel.png" id="1_iejri"]
+[ext_resource type="Texture2D" uid="uid://bstvwhpard0cu" path="res://Art/Office Pack/Battle/UI/End Turn/end_turn.png" id="2_ggafp"]
+[ext_resource type="Texture2D" uid="uid://bxsvq1iunprtq" path="res://Art/Office Pack/Battle/UI/End Turn/end_turn_pressed.png" id="3_j8hd1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ad6m4"]
 texture = ExtResource("1_iejri")

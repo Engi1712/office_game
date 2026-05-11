@@ -286,8 +286,7 @@ static func deactivate(script_file: ScriptFileCore):
 		"basic_vm", \
 		"big_vm":
 			for i in script_file.get_selected_cpus():
-				if i.check_if_vm_running():
-					i.del_vm()
+				script_file.location_system.del_vm(i.id)
 		"app_guard", \
 		"app_policy":
 			for i in script_file.get_selected_cpus():

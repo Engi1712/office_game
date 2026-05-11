@@ -27,24 +27,6 @@ enum wallpaper_rarity {
 	LEGENDARY
 }
 
-static func get_line_item_type(item_type: BattleCommonCore.item_types):
-	match item_type:
-		BattleCommonCore.item_types.CPU:
-			return "cpu"
-		BattleCommonCore.item_types.IFACE:
-			return "iface"
-		BattleCommonCore.item_types.DISK_D_SCRIPT:
-			return "disk d script"
-
-static func get_line_script_direction(script_direction: BattleCommonCore.script_directions):
-	match script_direction:
-		BattleCommonCore.script_directions.ATTACK:
-			return "attack"
-		BattleCommonCore.script_directions.DEFEND:
-			return "defend"
-		BattleCommonCore.script_directions.NET:
-			return "net"
-
 static func get_line_script_type(script_type:BattleCommonCore. script_types):
 	match script_type:
 		BattleCommonCore.script_types.LOAD:
