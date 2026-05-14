@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bstvwhpard0cu"
-path="res://.godot/imported/end_turn.png-e1e99994a66a2245ce00d9d7cfccf0c0.ctex"
+path="res://.godot/imported/button_normal.png-272b7da5d92dad634f1b27473632d08e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Office Pack/Battle/UI/End Turn/end_turn.png"
-dest_files=["res://.godot/imported/end_turn.png-e1e99994a66a2245ce00d9d7cfccf0c0.ctex"]
+source_file="res://Art/Office Pack/Battle/UI/Button/button_normal.png"
+dest_files=["res://.godot/imported/button_normal.png-272b7da5d92dad634f1b27473632d08e.ctex"]
 
 [params]
 

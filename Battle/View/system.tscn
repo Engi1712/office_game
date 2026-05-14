@@ -12,6 +12,7 @@ self_modulate = Color(1, 1, 1, 0)
 offset_right = 630.0
 offset_bottom = 158.0
 size_flags_vertical = 3
+theme = ExtResource("4_fdpku")
 script = ExtResource("1_p2wxl")
 
 [node name="Border" type="NinePatchRect" parent="." unique_id=396690016]
@@ -40,13 +41,11 @@ texture = ExtResource("3_k6fee")
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1036070947]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_fdpku")
 theme_override_constants/separation = 4
 
 [node name="DiskD" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1434902129]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_fdpku")
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/DiskD" unique_id=1340480449]
@@ -55,7 +54,7 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskD/HBoxContainer" unique_id=1320408965]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 text = "Disk D"
 fit_content = true
@@ -64,7 +63,7 @@ autowrap_mode = 0
 [node name="Actions" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskD/HBoxContainer" unique_id=1680625113]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img] [img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img]"
 fit_content = true
@@ -93,7 +92,7 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskC/HBoxContainer" unique_id=1032798518]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 text = "Disk C"
 fit_content = true
@@ -102,7 +101,7 @@ autowrap_mode = 0
 [node name="Actions" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskC/HBoxContainer" unique_id=406367380]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img] [img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img]"
 fit_content = true
@@ -111,7 +110,7 @@ autowrap_mode = 0
 [node name="Memory" type="RichTextLabel" parent="MarginContainer/HBoxContainer/DiskC/HBoxContainer" unique_id=412922605]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "0/10"
 fit_content = true
@@ -140,7 +139,7 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/RAM/HBoxContainer" unique_id=299047603]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 text = "RAM"
 fit_content = true
@@ -149,7 +148,7 @@ autowrap_mode = 0
 [node name="Actions" type="RichTextLabel" parent="MarginContainer/HBoxContainer/RAM/HBoxContainer" unique_id=60988000]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img] [img]res://Art/Office Pack/Battle/Icons/Actions/blank.png[/img]"
 fit_content = true
@@ -183,7 +182,7 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/HBoxContainer" unique_id=684010128]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 text = "Disk E"
 fit_content = true
@@ -204,7 +203,7 @@ theme_override_constants/separation = 0
 
 [node name="Cortex" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer" unique_id=411083573]
 layout_mode = 2
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/cortex.png[/img] 99"
 fit_content = true
@@ -212,7 +211,7 @@ autowrap_mode = 0
 
 [node name="Loom" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer" unique_id=1306758166]
 layout_mode = 2
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/loom.png[/img] 99"
 fit_content = true
@@ -225,7 +224,7 @@ theme_override_constants/separation = 0
 
 [node name="Dataweave" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer2" unique_id=1479929278]
 layout_mode = 2
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/dataweave.png[/img] 99"
 fit_content = true
@@ -233,7 +232,7 @@ autowrap_mode = 0
 
 [node name="Fractal" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer2" unique_id=1922995304]
 layout_mode = 2
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/fractal.png[/img] 99"
 fit_content = true
@@ -247,7 +246,7 @@ theme_override_constants/separation = 0
 [node name="Petrichor" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer3" unique_id=1096352372]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/petrichor.png[/img] 99"
 fit_content = true
@@ -256,7 +255,7 @@ autowrap_mode = 0
 [node name="Taucoin" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/DiskE/Tokens/VBoxContainer3" unique_id=1569051836]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img] 9999"
 fit_content = true
@@ -277,7 +276,7 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MISC/Network/HBoxContainer" unique_id=186906888]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 text = "Network"
 fit_content = true
@@ -306,7 +305,7 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=571272929]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 text = "CPU"
 fit_content = true
@@ -315,10 +314,10 @@ autowrap_mode = 0
 [node name="Sudo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=1775255564]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 theme_override_colors/default_color = Color(0.105882, 0.701961, 0.701961, 1)
 bbcode_enabled = true
-text = "[img]res://Art/Office Pack/Battle/Icons/MISC/locked.png[/img]"
+text = "[img]res://Art/Office Pack/Battle/Icons/MISC/Sudo/sudo_locked.png[/img]"
 fit_content = true
 autowrap_mode = 0
 
@@ -326,7 +325,7 @@ autowrap_mode = 0
 custom_minimum_size = Vector2(30, 12)
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 text = "10/10"
 fit_content = true
 autowrap_mode = 0
@@ -334,7 +333,7 @@ autowrap_mode = 0
 [node name="TaucoinsInc" type="RichTextLabel" parent="MarginContainer/HBoxContainer/CPU/HBoxContainer" unique_id=620231643]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("4_fdpku")
+theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
 text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img] +10"
 fit_content = true

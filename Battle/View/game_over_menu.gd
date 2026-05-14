@@ -1,6 +1,9 @@
-extends Control
+class_name GameOverMenu extends Control
 
-@onready var message = $PanelContainer/MarginContainer/Message
+signal new_game_button_pressed
+signal exit_button_pressed
+
+@onready var message = $PanelContainer/MarginContainer/VBoxContainer/PanelContainer/Message
 
 var opened: bool
 
@@ -27,3 +30,9 @@ func close():
 
 func is_opened():
 	return opened
+
+func _on_new_game_pressed():
+	new_game_button_pressed.emit()
+
+func _on_exit_pressed():
+	exit_button_pressed.emit()

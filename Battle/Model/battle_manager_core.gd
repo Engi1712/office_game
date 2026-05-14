@@ -5,7 +5,7 @@ var lower_system: SystemCore
 var upper_system: SystemCore
 var current_system: SystemCore
 var current_state: BattleCommonCore.states
-var winners = []
+var winners: Array[SystemCore]
 
 var view: Control
 
@@ -112,15 +112,15 @@ func check_game_over():
 	var game_over = battle.check_for_end(current_system)
 	match game_over:
 		BattleCommonCore.results.WIN:
-			wrap_up()
 			winners.append(current_system)
+			wrap_up()
 		BattleCommonCore.results.LOSS:
-			wrap_up()
 			winners.append(current_system.opponent)
-		BattleCommonCore.results.DRAW:
 			wrap_up()
+		BattleCommonCore.results.DRAW:
 			winners.append(current_system)
 			winners.append(current_system.opponent)
+			wrap_up()
 
 func wrap_up():
 	current_state = BattleCommonCore.states.OVER

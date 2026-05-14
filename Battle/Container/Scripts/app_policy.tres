@@ -22,7 +22,6 @@ copy_price = 4
 delete_price = 4
 run_price = 2
 stop_price = 2
-direction = 1
 type = 4
 select = Array[ExtResource("2_4dxho")]([SubResource("Resource_345n2")])
 values = Array[ExtResource("3_lym4n")]([SubResource("Resource_4dxho")])

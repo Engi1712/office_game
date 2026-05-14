@@ -40,7 +40,6 @@ script_name = "upload"
 delete_price = 3
 run_price = 1
 stop_price = 1
-direction = 2
 type = 12
 select = Array[ExtResource("2_fj6v5")]([SubResource("Resource_5f1yx"), SubResource("Resource_dakeu"), SubResource("Resource_fj6v5")])
 values = Array[ExtResource("2_dakeu")]([SubResource("Resource_e5gqo"), SubResource("Resource_hg370")])

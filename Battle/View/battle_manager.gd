@@ -3,7 +3,7 @@ extends Control
 @onready var battle_field = $BattleField
 @onready var shop_menu = $ShopMenu
 @onready var pause_menu = $PauseMenu
-@onready var game_over_label = $GameOver
+@onready var game_over_menu = $GameOver
 @onready var show_tooltip_timer = $ShowTooltipTimer
 @onready var hide_tooltip_timer = $HideTooltipTimer
 @onready var click_sfx = $ClickSFX
@@ -22,6 +22,7 @@ var current_mode: BattleCommon.modes
 var two_interactors: bool
 
 var paused: bool = false
+var over: bool = false
 
 var current_tooltip: Tooltip
 var next_tooltip: Tooltip
@@ -47,12 +48,12 @@ func _ready():
 	current_interactor = model.current_system
 	
 	# Connect signals
-	upper_system.item_added.connect(assign_callback.bind(BattleCommon.window_types.BATTLE))
-	lower_system.item_added.connect(assign_callback.bind(BattleCommon.window_types.BATTLE))
-	upper_shop.item_added.connect(assign_callback.bind(BattleCommon.window_types.SHOP))
-	lower_shop.item_added.connect(assign_callback.bind(BattleCommon.window_types.SHOP))
-	upper_system.disk_c_selected.connect(click_disk_c.bind(upper_system.model))
-	lower_system.disk_c_selected.connect(click_disk_c.bind(lower_system.model))
+	upper_system.item_added.connect(_on_item_added.bind(BattleCommon.window_types.BATTLE))
+	lower_system.item_added.connect(_on_item_added.bind(BattleCommon.window_types.BATTLE))
+	upper_shop.item_added.connect(_on_item_added.bind(BattleCommon.window_types.SHOP))
+	lower_shop.item_added.connect(_on_item_added.bind(BattleCommon.window_types.SHOP))
+	upper_system.disk_c_selected.connect(_on_disk_c_clicked.bind(upper_system.model))
+	lower_system.disk_c_selected.connect(_on_disk_c_clicked.bind(lower_system.model))
 	show_tooltip_timer.timeout.connect(show_tooltip)
 	hide_tooltip_timer.timeout.connect(hide_tooltip)
 	battle_field.end_turn_button_pressed.connect(_on_battle_end_turn_button_pressed)
@@ -60,21 +61,27 @@ func _ready():
 	pause_menu.resume_button_pressed.connect(_on_pause_menu_resume_button_pressed)
 	pause_menu.restart_button_pressed.connect(_on_pause_menu_restart_button_pressed)
 	pause_menu.exit_button_pressed.connect(_on_pause_menu_exit_button_pressed)
+	game_over_menu.new_game_button_pressed.connect(_on_game_over_menu_new_game_button_pressed)
+	game_over_menu.exit_button_pressed.connect(_on_game_over_menu_exit_button_pressed)
 	
 	update_full()
 
-func assign_callback(item: Control, window_type: BattleCommon.window_types):
-	item.gui_input.connect(interact.bind(item.model, window_type))
-	item.mouse_entered.connect(item_hover.bind(item))
-	item.mouse_exited.connect(item_dehover.bind(item))
+# Signal callbacks
 
 func _input(event: InputEvent):
+	if over:
+		return
 	if event.is_action_pressed("menu"):
 		back(current_interactor)
 	elif event.is_action_pressed("inv"):
 		toggle_shop(current_interactor)
 
-func interact(event: InputEvent, item: ItemCore, window_type: BattleCommon.window_types):
+func _on_item_added(item: Control, window_type: BattleCommon.window_types):
+	item.gui_input.connect(_on_item_interacted.bind(item.model, window_type))
+	item.mouse_entered.connect(_on_item_hover.bind(item))
+	item.mouse_exited.connect(_on_item_dehover.bind(item))
+
+func _on_item_interacted(event: InputEvent, item: ItemCore, window_type: BattleCommon.window_types):
 	if event is InputEventMouseButton and event.pressed:
 		var type: BattleCommonCore.mouse_buttons
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -88,7 +95,7 @@ func interact(event: InputEvent, item: ItemCore, window_type: BattleCommon.windo
 		elif window_type == BattleCommon.window_types.SHOP and type == BattleCommonCore.mouse_buttons.LEFT:
 			shop_interact(item, current_interactor)
 
-func click_disk_c(object: SystemCore):
+func _on_disk_c_clicked(object: SystemCore):
 	if model.battle_select_system(object, current_interactor) == BattleCommonCore.action_types.SMALL:
 		click_sfx.play()
 		update_small()
@@ -103,10 +110,16 @@ func _on_pause_menu_resume_button_pressed():
 	close_pause_menu()
 
 func _on_pause_menu_restart_button_pressed():
-	get_tree().reload_current_scene()
+	restart()
 
 func _on_pause_menu_exit_button_pressed():
-	MenuSwitcher.switch("main_menu")
+	exit()
+
+func _on_game_over_menu_new_game_button_pressed():
+	restart()
+
+func _on_game_over_menu_exit_button_pressed():
+	exit()
 
 # Interface with graphic updates
 
@@ -123,6 +136,7 @@ func battle_interact(item: ItemCore, type: BattleCommonCore.mouse_buttons, subje
 			update_selection()
 	if model.is_over():
 		current_interactor = null
+		over = true
 		open_game_over()
 
 func battle_end_turn(subject: SystemCore):
@@ -167,6 +181,14 @@ func toggle_shop(subject: SystemCore):
 		else:
 			close_shop_menu()
 
+# Game handling
+
+func restart():
+	get_tree().reload_current_scene()
+
+func exit():
+	MenuSwitcher.switch("main_menu")
+
 # Update
 
 func update_full():
@@ -203,15 +225,15 @@ func close_pause_menu():
 
 func open_game_over():
 	battle_field.pause()
-	game_over_label.open(model.winners, current_mode)
+	game_over_menu.open(model.winners, current_mode)
 
 # Hover functions
 
-func item_hover(item: Control):
+func _on_item_hover(item: Control):
 	item.hover()
 	set_tooltip(item)
 
-func item_dehover(item: Control):
+func _on_item_dehover(item: Control):
 	item.dehover()
 	reset_tooltip(item)
 

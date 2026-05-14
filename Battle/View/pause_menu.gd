@@ -1,4 +1,4 @@
-extends Control
+class_name PauseMenu extends Control
 
 signal resume_button_pressed
 signal restart_button_pressed

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://duf3hydjg116i" path="res://Battle/View/shop_menu.gd" id="1_5ait3"]
 [ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/Panel/shop_panel.png" id="2_eykvc"]
 [ext_resource type="PackedScene" uid="uid://dg54o4nbied7i" path="res://Battle/View/shop.tscn" id="3_eykvc"]
-[ext_resource type="Texture2D" uid="uid://bstvwhpard0cu" path="res://Art/Office Pack/Battle/UI/End Turn/end_turn.png" id="3_g2pyx"]
-[ext_resource type="Texture2D" uid="uid://bxsvq1iunprtq" path="res://Art/Office Pack/Battle/UI/End Turn/end_turn_pressed.png" id="4_wmgs0"]
+[ext_resource type="Texture2D" uid="uid://bstvwhpard0cu" path="res://Art/Office Pack/Battle/UI/Button/button_normal.png" id="3_g2pyx"]
+[ext_resource type="Texture2D" uid="uid://bxsvq1iunprtq" path="res://Art/Office Pack/Battle/UI/Button/button_pressed.png" id="4_wmgs0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejf4r"]
 texture = ExtResource("2_eykvc")

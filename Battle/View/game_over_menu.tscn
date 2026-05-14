@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dl2rt7d5bg1g1"]
+
+[ext_resource type="Script" uid="uid://hblv742embwk" path="res://Battle/View/game_over_menu.gd" id="1_aiwfv"]
+[ext_resource type="Theme" uid="uid://bkgu8ixo3lub4" path="res://Themes/battle_theme.tres" id="1_vg6kh"]
+[ext_resource type="Texture2D" uid="uid://dggrfxr5xpr6s" path="res://Art/Office Pack/Battle/UI/Panel/shop_panel.png" id="2_vg6kh"]
+[ext_resource type="Texture2D" uid="uid://bdmlae6owsm84" path="res://Art/Office Pack/Battle/UI/game_over_border.png" id="4_3bo2g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l3g1u"]
+texture = ExtResource("2_vg6kh")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[node name="GameOverMenu" type="Control" unique_id=2105912216]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_vg6kh")
+script = ExtResource("1_aiwfv")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=888554452]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -14.0
+offset_right = 58.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_l3g1u")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=799796987]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=354090008]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=56222890]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1798022575]
+layout_mode = 2
+texture = ExtResource("4_3bo2g")
+patch_margin_left = 11
+patch_margin_top = 12
+patch_margin_right = 11
+patch_margin_bottom = 12
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Message" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=722215121]
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.105882354, 0.7019608, 0.7019608, 1)
+bbcode_enabled = true
+text = "Game over"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=119138674]
+layout_mode = 2
+
+[node name="NewGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1909388434]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "New game"
+
+[node name="Exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1445017944]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Exit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

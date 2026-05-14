@@ -3,20 +3,21 @@
 [ext_resource type="Script" uid="uid://x4ajy7dtq2sl" path="res://Battle/Container/Templates/player_specs.gd" id="1_ck8oj"]
 [ext_resource type="Script" uid="uid://cu5q83okgmu64" path="res://Battle/Container/Templates/script_specs.gd" id="2_6cjq1"]
 [ext_resource type="Resource" uid="uid://cvupvogfxgeds" path="res://Battle/Container/Scripts/basic_load.tres" id="3_b665p"]
-[ext_resource type="Resource" uid="uid://b2hmws2sw3mhb" path="res://Battle/Container/Scripts/self_load.tres" id="4_t5pft"]
+[ext_resource type="Resource" uid="uid://b2hmws2sw3mhb" path="res://Battle/Container/Scripts/gen_load.tres" id="4_t5pft"]
 [ext_resource type="Resource" uid="uid://bfi81eepicw7d" path="res://Battle/Container/Scripts/basic_vm.tres" id="5_mv8wc"]
 [ext_resource type="Resource" uid="uid://das764et3l83e" path="res://Battle/Container/Scripts/basic_traffic.tres" id="6_0ojf1"]
 [ext_resource type="Resource" uid="uid://cpghvesoqpc2w" path="res://Battle/Container/Scripts/app_policy.tres" id="7_c2wjm"]
 [ext_resource type="Resource" uid="uid://bjjs3o7l3ju0n" path="res://Battle/Container/Scripts/app_guard.tres" id="8_hyt1p"]
 [ext_resource type="Resource" uid="uid://bocpp35a8rq87" path="res://Battle/Container/Scripts/kill.tres" id="9_lvu7n"]
 [ext_resource type="Script" uid="uid://7pn3abp05kn8" path="res://Battle/Container/Templates/script_list.gd" id="10_7var1"]
+[ext_resource type="Resource" uid="uid://cu2itqxrkotcb" path="res://Battle/Container/Scripts/rootkit.tres" id="10_b665p"]
 [ext_resource type="Resource" uid="uid://beufhch7xmuh0" path="res://Battle/Container/Scripts/upload.tres" id="11_0fe57"]
 [ext_resource type="Resource" uid="uid://dfpaxh5umij2d" path="res://Battle/Container/Scripts/sanitizer.tres" id="12_f0pbq"]
 [ext_resource type="Resource" uid="uid://dmgfgxktc53u7" path="res://Battle/Container/Wallpapers/forest.tres" id="13_lq6wa"]
 
 [sub_resource type="Resource" id="Resource_recr4"]
 script = ExtResource("10_7var1")
-general = Array[ExtResource("2_6cjq1")]([ExtResource("3_b665p"), ExtResource("4_t5pft"), ExtResource("5_mv8wc"), ExtResource("6_0ojf1"), ExtResource("7_c2wjm"), ExtResource("8_hyt1p"), ExtResource("9_lvu7n")])
+general = Array[ExtResource("2_6cjq1")]([ExtResource("3_b665p"), ExtResource("4_t5pft"), ExtResource("5_mv8wc"), ExtResource("6_0ojf1"), ExtResource("7_c2wjm"), ExtResource("8_hyt1p"), ExtResource("9_lvu7n"), ExtResource("10_b665p")])
 shop = Array[ExtResource("2_6cjq1")]([ExtResource("11_0fe57"), ExtResource("12_f0pbq")])
 metadata/_custom_type_script = "uid://7pn3abp05kn8"
 

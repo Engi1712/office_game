@@ -3,8 +3,7 @@ class_name Scripts
 static func activate(script_file: ScriptFileCore, subject: SystemCore, choices: Array[ItemCore]):
 	match script_file.script_name:
 		"basic_load", \
-		"mini_load", \
-		"self_load", \
+		"gen_load", \
 		"gain", \
 		"high_bounty", \
 		"low_bounty":
@@ -317,7 +316,7 @@ static func after_death_action(script_file: ScriptFileCore):
 
 static func before_turn(script_file: ScriptFileCore):
 	match script_file.script_name:
-		"self_load":
+		"gen_load":
 			var dataweave_generated = int(script_file.values[1].value)
 			
 			script_file.location_system.add_token(BattleCommonCore.tokens.DATAWEAVE, dataweave_generated)

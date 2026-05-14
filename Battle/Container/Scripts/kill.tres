@@ -29,7 +29,6 @@ copy_price = 3
 delete_price = 3
 run_price = 1
 stop_price = 1
-direction = 1
 type = 9
 select = Array[ExtResource("2_6ongl")]([SubResource("Resource_hlp8v")])
 temporary = 1
