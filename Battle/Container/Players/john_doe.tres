@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cvupvogfxgeds" path="res://Battle/Container/Scripts/basic_load.tres" id="3_v88e4"]
 [ext_resource type="Resource" uid="uid://b2hmws2sw3mhb" path="res://Battle/Container/Scripts/gen_load.tres" id="4_xeeg4"]
 [ext_resource type="Resource" uid="uid://bfi81eepicw7d" path="res://Battle/Container/Scripts/basic_vm.tres" id="5_bk3wy"]
-[ext_resource type="Resource" uid="uid://das764et3l83e" path="res://Battle/Container/Scripts/basic_traffic.tres" id="6_k55o6"]
+[ext_resource type="Resource" uid="uid://bsjw53nw3yhln" path="res://Battle/Container/Scripts/hash.tres" id="6_v88e4"]
 [ext_resource type="Resource" uid="uid://cpghvesoqpc2w" path="res://Battle/Container/Scripts/app_policy.tres" id="7_n7mby"]
 [ext_resource type="Resource" uid="uid://bjjs3o7l3ju0n" path="res://Battle/Container/Scripts/app_guard.tres" id="8_8x6mt"]
 [ext_resource type="Resource" uid="uid://bocpp35a8rq87" path="res://Battle/Container/Scripts/kill.tres" id="9_cbnsx"]
@@ -17,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_7h567"]
 script = ExtResource("10_lkmcg")
-general = Array[ExtResource("2_4x80x")]([ExtResource("3_v88e4"), ExtResource("4_xeeg4"), ExtResource("5_bk3wy"), ExtResource("6_k55o6"), ExtResource("7_n7mby"), ExtResource("8_8x6mt"), ExtResource("9_cbnsx"), ExtResource("10_v88e4")])
+general = Array[ExtResource("2_4x80x")]([ExtResource("3_v88e4"), ExtResource("4_xeeg4"), ExtResource("5_bk3wy"), ExtResource("6_v88e4"), ExtResource("7_n7mby"), ExtResource("8_8x6mt"), ExtResource("9_cbnsx"), ExtResource("10_v88e4")])
 shop = Array[ExtResource("2_4x80x")]([ExtResource("11_1lmfm"), ExtResource("12_35e3r")])
 metadata/_custom_type_script = "uid://7pn3abp05kn8"
 

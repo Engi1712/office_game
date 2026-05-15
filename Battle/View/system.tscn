@@ -326,7 +326,7 @@ custom_minimum_size = Vector2(30, 12)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_type_variation = &"SystemLabel"
-text = "10/10"
+text = "100/100"
 fit_content = true
 autowrap_mode = 0
 
@@ -335,7 +335,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_type_variation = &"SystemLabel"
 bbcode_enabled = true
-text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img] +10"
+text = "[img]res://Art/Office Pack/Battle/Icons/Tokens/taucoin.png[/img] +100"
 fit_content = true
 autowrap_mode = 0
 

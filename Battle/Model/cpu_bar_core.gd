@@ -41,6 +41,8 @@ func add_load(delta: int):
 	cur_load += delta
 	if cur_load >= max_load:
 		status = BattleCommonCore.cpu_states.BROKEN
+		if !is_vm:
+			vm.status = BattleCommonCore.cpu_states.WAITING
 
 func reset_load():
 	cur_load = min_load

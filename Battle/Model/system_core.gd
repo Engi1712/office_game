@@ -12,7 +12,7 @@ var max_disk_c_scripts: int = 10
 
 var disk_e_tokens = BattleCommonCore.token_storage.new()
 
-var max_seconds: int = 100
+var max_seconds: int = 90
 var cur_seconds: int
 var cur_taucoin_inc: int = 0
 var sudo = BattleCommonCore.sudo_statuses.LOCKED
@@ -75,7 +75,7 @@ func set_active():
 	if active:
 		return
 	active = true
-	step_sudo()
+	lock_sudo()
 	refill_seconds()
 	step_bounty()
 	shop.set_active()
@@ -84,7 +84,7 @@ func set_inactive():
 	if !active:
 		return
 	active = false
-	step_sudo()
+	open_sudo()
 	get_taucoin()
 	restore_taucoin()
 	secure_bounty()
@@ -382,8 +382,10 @@ func secure_bounty():
 		low_bounty_val = low_bounty_cpu.cur_load / 10
 	add_token(BattleCommonCore.tokens.LOOM, high_bounty_val - low_bounty_val)
 
-func step_sudo():
+func open_sudo():
+	if sudo == BattleCommonCore.sudo_statuses.UNLOCKED:
+		sudo = BattleCommonCore.sudo_statuses.OPEN
+
+func lock_sudo():
 	if sudo == BattleCommonCore.sudo_statuses.OPEN:
 		sudo = BattleCommonCore.sudo_statuses.LOCKED
-	elif sudo == BattleCommonCore.sudo_statuses.UNLOCKED:
-		sudo = BattleCommonCore.sudo_statuses.OPEN

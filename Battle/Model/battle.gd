@@ -176,8 +176,8 @@ func scripts_before_turn(object: SystemCore, subject: SystemCore):
 	for i in ram_scripts:
 		Scripts.before_turn(i)
 		rebalance(object)
-	for i in range(object.ram_scripts.size() - 1, -1, -1):
-		var script = object.ram_scripts[i]
+	for i in range(ram_scripts.size() - 1, -1, -1):
+		var script = ram_scripts[i]
 		if script.turns_to_live != 0:
 			script.turns_left -= 1
 			if script.turns_left == 0:

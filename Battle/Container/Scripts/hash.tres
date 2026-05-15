@@ -18,7 +18,6 @@ copy_price = 3
 delete_price = 3
 run_price = 2
 stop_price = 2
-direction = 1
 type = 1
 temporary = 1
 values = Array[ExtResource("3_h8oc8")]([SubResource("Resource_rctj7")])
